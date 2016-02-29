@@ -13,17 +13,28 @@
   </head>
 
   <body>
-
+    <br>
+    <br>
+    <br>
+    <br>
   <?php require_once('includes/navbar.php');?>
 
     
     <div class="container">
-
       <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+        <h1>Login</h1>
+        <p class="lead">Please login or click register to create an account.<br></p>
       </div>
-
+      <div>
+        <form action="login.php" method="post">
+          <input type="text" name="username" placeholder="username">
+          <input type="text" name="password" placeholder="password">
+          <input type="submit" value="login">        
+        </form>
+      </div>
+      <div>
+        <a href="includes/register.php">Register</a>
+      </div>
     </div><!-- /.container -->
 
     <?php require_once('includes/footer.php');?>
