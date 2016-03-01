@@ -34,7 +34,7 @@ require_once('navbar.php');
 			$user_name = mysql_real_escape_string($user_name);
 			$password = mysql_real_escape_string($password);
 			//$db = mysql_select_db("ecommerce", $connection);
-			$query = mysql_query("SELECT * FROM customer where password='$password' AND user_name='$user_name'"/*, $connection*/);
+			$query = mysql_query("SELECT * FROM customer WHERE password='$password' AND user_name='$user_name'"/*, $connection*/);
 			$rows = mysql_num_rows($query);
 			if ($rows == 1) {
 				$_SESSION['login_user']=$user_name; 
