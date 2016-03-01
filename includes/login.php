@@ -18,9 +18,42 @@
     <br>
 
 <?php
+require_once('database.php');
+require_once('navbar.php');
 
-	require_once('database.php');
-	require_once('navbar.php');
+
+/*if (!empty($_POST)) {
+	$user_name = $_POST['user_name'];
+	$password = $_POST['password'];
+*/
+
+
+$error=''; 
+if (isset($_POST['login'])) {
+	if (empty($_POST['user_name']) || empty($_POST['password'])) {
+		$error = "Username or Password is invalid";
+	} else {
+		$user_name=$_POST['user_name'];
+		$password=$_POST['password'];
+		$connection = mysql_connect("localhost", "root", "");
+		$user_name = stripslashes($user_name);
+		$password = stripslashes($password);
+		$user_name = mysql_real_escape_string($user_name);
+		$password = mysql_real_escape_string($password);
+		$db = mysql_select_db("ecommerce", $connection);
+		$query = mysql_query("SELECT * FROM customer where password='$password' AND user_name='$user_name'", $connection);
+		$rows = mysql_num_rows($query);
+		if ($rows == 1) {
+			$_SESSION['login_user']=$user_name; // Initializing Session
+			header("location: index.php"); // Redirecting To Other Page
+		} else {
+			$error = "Username or Password is invalid";
+		}
+		mysql_close($connection); // Closing Connection
+	}
+}
+
+
 
 /*	$user_name = $_POST['user_name']; 
 	$password = $_POST['password']; 

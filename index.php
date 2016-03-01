@@ -37,6 +37,15 @@
           <input type="submit" value="Register">
         </form>
       </div>
+      <div>
+        <?php
+          if ($loggedin){
+            echo "you are logged in.";
+          } else {
+            echo "logged out.";
+          }
+        ?>
+      </div>
     </div><!-- /.container -->
 
     <?php require_once('includes/footer.php');?>
