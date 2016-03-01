@@ -65,7 +65,7 @@
           $q = $pdo->prepare($sql);
           $q->execute(array($name,$last_name,$birthdate,$phone_number,$email_address,$user_name,$password));
           Database::disconnect();
-          //header("Location: index.php");
+          header("Location: index.php");
         } catch (PDOException $e) {
           echo $e->getMessage();
         }
