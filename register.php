@@ -24,40 +24,40 @@
         // validate input
       $valid = true;
         
-      if (empty($name)) {
-        $nameError = 'Please enter Name';
-        $valid = false;
-      }
-      if (empty($last_name)) {
-        $last_nameError = 'Please enter Last Name';
-        $valid = false;
-      }
-      if (empty($birthdate)) {
-        $birthdateError = 'Please enter Birthdate';
-        $valid = false;
-      }
-      if (empty($phone_number)) {
-        $phone_numberError = 'Please enter Phone Number';
-        $valid = false;
-      }
-      if (empty($email_address)) {
-        $email_addressError = 'Please enter Email Address';
-        $valid = false;
-      } else if ( !filter_var($email_address,FILTER_VALIDATE_EMAIL) ) {
-        $email_addressError = 'Please Enter a valid Emial Address';
-        $valid = false;
-      }
-      if (empty($user_name)) {
-        $user_nameError = 'Please enter User Name';
-        $valid = false;
-      }
-      if (empty($password)) {
-        $passwordError = 'Please enter Password';
-        $valid = false;
-      }
+      // if (empty($name)) {
+      //   $nameError = 'Please enter Name';
+      //   $valid = false;
+      // }
+      // if (empty($last_name)) {
+      //   $last_nameError = 'Please enter Last Name';
+      //   $valid = false;
+      // }
+      // if (empty($birthdate)) {
+      //   $birthdateError = 'Please enter Birthdate';
+      //   $valid = false;
+      // }
+      // if (empty($phone_number)) {
+      //   $phone_numberError = 'Please enter Phone Number';
+      //   $valid = false;
+      // }
+      // if (empty($email_address)) {
+      //   $email_addressError = 'Please enter Email Address';
+      //   $valid = false;
+      // } else if ( !filter_var($email_address,FILTER_VALIDATE_EMAIL) ) {
+      //   $email_addressError = 'Please Enter a valid Emial Address';
+      //   $valid = false;
+      // }
+      // if (empty($user_name)) {
+      //   $user_nameError = 'Please enter User Name';
+      //   $valid = false;
+      // }
+      // if (empty($password)) {
+      //   $passwordError = 'Please enter Password';
+      //   $valid = false;
+      // }
          
         // insert data
-/*      if ($valid) {
+      if ($valid) {
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sql = "INSERT INTO customer (name,last_name,birthdate,phone_number,email_address,user_name,password) values(?, ?, ?, ?, ?, ?, ?)";
@@ -66,7 +66,7 @@
         Database::disconnect();
         header("Location: index.php");
       }
-*/    }
+    }
 ?>
 
 <!DOCTYPE html>
