@@ -2,7 +2,7 @@
     error_reporting(E_ALL);
     require_once 'includes/database.php';
  
-    if ( !empty($_POST)) {
+/*    if ( !empty($_POST)) {
         // keep track validation errors
       $nameError = null;
       $last_nameError = null;
@@ -24,7 +24,7 @@
         // validate input
       $valid = true;
         
-/*      if (empty($name)) {
+      if (empty($name)) {
         $nameError = 'Please enter Name';
         $valid = false;
       }
@@ -65,8 +65,8 @@
         $q->execute(array($name,$last_name,$birthdate,$phone_number,$email_address,$user_name,$password));
         Database::disconnect();
         header("Location: index.php");
-      }*/
-    }
+      }
+    }*/
 ?>
 
 <!DOCTYPE html>
