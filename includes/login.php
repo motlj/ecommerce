@@ -25,16 +25,22 @@ require_once('session.php');
 		if(!empty($_POST['password'])&&isset($_POST['password'])){
 			$_SESSION['uid'] = ""
 			$_SESSION['user_name']=$_POST['user_name'];
-			header('Location: ../index.php');
-			$pdo = Database::connect();
-		    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		    $sql = "SELECT * FROM customer WHERE password='$password' AND user_name='$user_name'");
-		    $q = $pdo->prepare($sql);
-		    Database::disconnect();
-		    header("Location: ../index.php");
+			//header('Location: ../index.php');
+			try { 
+				$pdo = Database::connect();
+			    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			    $sql = "SELECT * FROM customer WHERE password='$password' AND user_name='$user_name'");
+			    $q = $pdo->prepare($sql);
+			    Database::disconnect();
+			    //header("Location: ../index.php");
+			} catch (PDOException $e) { 
+           		echo "Syntax Error: ".$e->getMessage(); 
+           		die();
+       			}
+			}
 		}
 	}
-	header('Location: ../index.php');
+	//header('Location: ../index.php');
 
 
 
