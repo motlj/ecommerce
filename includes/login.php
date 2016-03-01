@@ -25,6 +25,7 @@ require_once('navbar.php');
 	if (isset($_POST['submit'])) {
 		if (empty($_POST['user_name']) || empty($_POST['password'])) {
 			$error = "Username or Password is invalid";
+			header("Location: ../index.php");
 		} else {
 			$user_name=$_POST['user_name'];
 			$password=$_POST['password'];
@@ -38,7 +39,7 @@ require_once('navbar.php');
 			$rows = mysql_num_rows($query);
 			if ($rows == 1) {
 				$_SESSION['login_user']=$user_name; 
-				header("location: ../index.php"); // Redirecting To Other Page
+				header("Location: ../index.php"); // Redirecting To Other Page
 			} else {
 				$error = "Username or Password is invalid";
 			}
