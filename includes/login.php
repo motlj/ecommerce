@@ -3,8 +3,8 @@
 	require_once('database.php');
 	require_once('navbar.php');
 
-	$ID = $_POST['user_name']; 
-	$Password = $_POST['password']; 
+	$user_name = $_POST['user_name']; 
+	$password = $_POST['password']; 
 
 	function SignIn() { 
 		session_start(); //starting the session for user profile page 
@@ -15,7 +15,7 @@
 				$_SESSION['user_name'] = $row['password']; 
 				echo "SUCCESSFULLY LOGIN TO USER PROFILE PAGE..."; 
 			} else { 
-			echo "SORRY... YOU ENTERD WRONG ID AND PASSWORD... PLEASE RETRY..."; 
+				echo "SORRY... YOU ENTERED WRONG ID AND PASSWORD... PLEASE RETRY..."; 
 			} 
 		} 
 	} 
