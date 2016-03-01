@@ -1,5 +1,7 @@
 <?php
 
+	require_once('database.php');
+	require_once('navbar.php');
 
 	$ID = $_POST['user_name']; 
 	$Password = $_POST['password']; 
@@ -32,4 +34,9 @@
 			header('Location: ../index.php');
 		}
 	}
+
+
 header('Location: ../index.php');
+
+
+require_once('footer.php');
