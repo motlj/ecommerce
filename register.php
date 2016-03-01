@@ -24,7 +24,7 @@
         // validate input
       $valid = true;
         
-      if (empty($name)) {
+/*      if (empty($name)) {
         $nameError = 'Please enter Name';
         $valid = false;
       }
@@ -55,7 +55,7 @@
         $passwordError = 'Please enter Password';
         $valid = false;
       }
-         
+*/         
         // insert data
       if ($valid) {
         $pdo = Database::connect();
