@@ -89,7 +89,7 @@
         <div class="row">
           <h3>Please fill out all fields to register.</h3>
         </div>           
-        <form class="form-horizontal" action="index.php" method="post"> 
+        <form class="form-horizontal" action="register.php" method="post"> 
 
           <div class="control-group <?php echo !empty($nameError)?'error':'';?>">
             <label class="control-label">Name</label>
