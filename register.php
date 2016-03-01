@@ -55,7 +55,7 @@
         $passwordError = 'Please enter Password';
         $valid = false;
       }
-*/         
+         
         // insert data
       if ($valid) {
         $pdo = Database::connect();
@@ -65,7 +65,7 @@
         $q->execute(array($name,$last_name,$birthdate,$phone_number,$email_address,$user_name,$password));
         Database::disconnect();
         header("Location: index.php");
-      }
+      }*/
     }
 ?>
 
