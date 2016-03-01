@@ -1,6 +1,6 @@
 <?php
     error_reporting(E_ALL);
-/*    require_once 'includes/database.php';
+    require_once 'includes/database.php';
  
     if ( !empty($_POST)) {
         // keep track validation errors
@@ -57,7 +57,7 @@
       }
          
         // insert data
-      if ($valid) {
+/*      if ($valid) {
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sql = "INSERT INTO customer (name,last_name,birthdate,phone_number,email_address,user_name,password) values(?, ?, ?, ?, ?, ?, ?)";
@@ -66,8 +66,8 @@
         Database::disconnect();
         header("Location: index.php");
       }
-    }
-*/?>
+*/    }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
