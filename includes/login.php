@@ -1,3 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Login</title>
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+
+  </head>
+
+  <body>
+    <br>
+    <br>
+    <br>
+    <br>
+
 <?php
 
 	require_once('database.php');
@@ -39,4 +58,11 @@
 header('Location: ../index.php');
 */
 
-require_once('footer.php');
+	require_once('footer.php');
+?>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>  
+
+  </body>
+</html>
