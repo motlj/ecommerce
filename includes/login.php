@@ -4,13 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Login</title>
-
     <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
-
   </head>
-
   <body>
     <br>
     <br>
@@ -20,13 +16,6 @@
 <?php
 require_once('database.php');
 require_once('navbar.php');
-
-
-/*if (!empty($_POST)) {
-	$user_name = $_POST['user_name'];
-	$password = $_POST['password'];
-*/
-
 
 $error=''; 
 if (isset($_POST['login'])) {
@@ -44,12 +33,12 @@ if (isset($_POST['login'])) {
 		$query = mysql_query("SELECT * FROM customer where password='$password' AND user_name='$user_name'", $connection);
 		$rows = mysql_num_rows($query);
 		if ($rows == 1) {
-			$_SESSION['login_user']=$user_name; // Initializing Session
-			header("location: index.php"); // Redirecting To Other Page
+			$_SESSION['login_user']=$user_name;
+			header("location: ../index.php");
 		} else {
 			$error = "Username or Password is invalid";
 		}
-		mysql_close($connection); // Closing Connection
+		mysql_close($connection);
 	}
 }
 
@@ -85,7 +74,7 @@ if (isset($_POST['login'])) {
 			$_SESSION['user_name']=$_POST['user_name'];
 			header('Location: ../index.php');
 		}
-	}
+	
 
 
 header('Location: ../index.php');
