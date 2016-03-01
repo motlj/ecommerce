@@ -2,7 +2,7 @@
     error_reporting(E_ALL);
     require_once 'includes/database.php';
  
-/*    if ( !empty($_POST)) {
+    if ( !empty($_POST)) {
         // keep track validation errors
       $nameError = null;
       $last_nameError = null;
@@ -66,7 +66,7 @@
         Database::disconnect();
         header("Location: index.php");
       }
-    }*/
+    }
 ?>
 
 <!DOCTYPE html>
