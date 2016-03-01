@@ -18,8 +18,10 @@ require_once('session.php');
 				    $_SESSION['uid'] = 5;
 				    $_SESSION['permissions'] = 2;
 				    $_SESSION['name'] = "bob jones";
+				    echo "You have successfully logged in."
 				    header('Location: ../index.php'); // successfully logged in
 			    } else {
+			    	echo "Username/Password pair not recognized.";
 					header('Location: ../index.php'); // username/password pair not found
 				}
 			} catch (PDOException $e) { 
