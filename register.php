@@ -64,7 +64,7 @@
         $q = $pdo->prepare($sql);
         $q->execute(array($name,$last_name,$birthdate,$phone_number,$email_address,$user_name,$password));
         Database::disconnect();
-        header("Location: ../index.php");
+        header("Location: index.php");
       }
     }
 ?>
@@ -73,7 +73,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <link   href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link   href="assets/css/bootstrap.min.css" rel="stylesheet">
 </head>
  
  <body>
@@ -85,7 +85,7 @@
         <div class="row">
           <h3>Please fill out all fields to register.</h3>
         </div>           
-        <form class="form-horizontal" action="../index.php" method="post"> 
+        <form class="form-horizontal" action="index.php" method="post"> 
 
           <div class="control-group <?php echo !empty($nameError)?'error':'';?>">
             <label class="control-label">Name</label>
@@ -167,5 +167,5 @@
 
     <?php require_once('includes/footer.php');?>
  </body>
- <script src="../assets/js/bootstrap.min.js"></script>
+ <script src="assets/js/bootstrap.min.js"></script>
 </html>
