@@ -3,7 +3,7 @@
 	require_once('database.php');
 	require_once('navbar.php');
 
-	$user_name = $_POST['user_name']; 
+/*	$user_name = $_POST['user_name']; 
 	$password = $_POST['password']; 
 
 	function SignIn() { 
@@ -37,6 +37,6 @@
 
 
 header('Location: ../index.php');
-
+*/
 
 require_once('footer.php');
