@@ -40,9 +40,9 @@
       <div>
         <?php
           if ($loggedin){
-            echo "you are logged in.";
+            echo "You are logged in.";
           } else {
-            echo "logged out.";
+            echo "You are logged out.";
           }
         ?>
       </div>
