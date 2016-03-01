@@ -33,7 +33,7 @@
         </form>
       </div>
       <div>
-        <a href="includes/register.php">Register</a>
+        <a href="register.php">Register</a>
       </div>
     </div><!-- /.container -->
 
