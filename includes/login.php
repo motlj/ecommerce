@@ -10,7 +10,7 @@ require_once('session.php');
 
 			try { 
 			    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			    $sql = "SELECT * FROM customer WHERE user_name = ? AND $password = ?");
+			    $sql = "SELECT * FROM customer WHERE user_name = ? AND $password = ?";
 			    $q = $pdo->prepare($sql);
            		$q->query(array($username,$password));
            		$query = $q->fetch(PDO::FETCH_ASSOC);

@@ -32,7 +32,7 @@
         </form>
       </div>
       <div>
-      	<h3>If you do not have an account please click register below</h3>
+      	<p>If you do not have an account please click register below</p>
       </div>
       <div>
         <form action="register.php" method="post">
