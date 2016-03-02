@@ -75,12 +75,11 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <link   href="assets/css/bootstrap.min.css" rel="stylesheet">
-</head>
- 
- <body>
+    <?php require_once('includes/head.php');?>
+
+  <title>Ecommerce</title>
+  
+  <body>
     <?php require_once('includes/navbar.php');?>
 
 
@@ -171,5 +170,4 @@
 
     <?php require_once('includes/footer.php');?>
  </body>
- <script src="assets/js/bootstrap.min.js"></script>
 </html>

@@ -1,22 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php require_once('includes/head.php');?>
 
-    <title>Login</title>
-
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-
-  </head>
-
+  <title>Login</title>
+  
   <body>
-    <br>
-    <br>
-    <br>
-    <br>
-  <?php require_once('includes/navbar.php');?>
+    <?php require_once('includes/navbar.php');?>
 
     
     <div class="container">
@@ -42,9 +31,6 @@
     </div>
 
     <?php require_once('includes/footer.php');?>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>  
 
   </body>
 </html>
