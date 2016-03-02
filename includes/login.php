@@ -15,9 +15,7 @@ require_once('database.php');
        		$q->execute(array($username,$loginpassword));
        		$query = $q->fetch(PDO::FETCH_ASSOC);
 
-       		echo $sql;
-       		echo $q;
-       		echo $query;
+       		print_r($query)
 /*       		$name = $query['name'];
        		$user_name = $query['user_name'];
        		$password = $query['password'];
