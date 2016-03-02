@@ -1,5 +1,5 @@
 <?php
-require_once('session.php');
+require_once('includes/database.php');
 
 	if(!empty($_POST['user_name']) && isset($_POST['user_name'])){
 		if(!empty($_POST['password']) && isset($_POST['password'])){
@@ -12,7 +12,7 @@ require_once('session.php');
 		    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		    $sql = "SELECT * FROM customer WHERE user_name = ? AND $password = ?";
 		    $q = $pdo->prepare($sql);
-       		$q->query(array($username,$password));
+       		$q->execute(array($username,$password));
        		$query = $q->fetch(PDO::FETCH_ASSOC);
        		$name = $query['name'];
        		$last_name = $query['last_name'];
@@ -22,7 +22,7 @@ require_once('session.php');
        		$permission = $query['permission'];
 		    Database::disconnect();
 
-			    //session_start();
+			session_start();
 			$_SESSION['id'] = $id;
 			$_SESSION['name'] = $name;
 			$_SESSION['last_name'] = $last_name;
