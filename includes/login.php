@@ -10,13 +10,13 @@ require_once('database.php');
 			$loginpassword = $_POST['password'];
 
 		    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		    $sql = "SELECT * FROM customer WHERE user_name = ? AND password = ?";
+		    $sql = "SELECT * FROM customer WHERE user_name = ?";
 		    $q = $pdo->prepare($sql);
        		$q->execute(array($username,$loginpassword));
        		$query = $q->fetch(PDO::FETCH_ASSOC);
 
-       		print_r($query);
-/*       		$name = $query['name'];
+       		//print_r($query);
+       		$name = $query['name'];
        		$user_name = $query['user_name'];
        		$password = $query['password'];
        		$id = $query['id'];
@@ -34,9 +34,8 @@ require_once('database.php');
 			} else {
 		    	echo "Username/Password pair not recognized.";
 			}
-*/			//header('Location: ../index.php');			
+			//header('Location: ../index.php');			
 		}
 	}
 	//header('Location: ../index.php'); 
-?>
 
