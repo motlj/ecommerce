@@ -22,8 +22,8 @@ require_once('session.php');
            		$permission = $query['permission'];
 			    Database::disconnect();
 
-			    session_start();
-				$_SESSION['uid'] = $id;
+			    //session_start();
+				$_SESSION['id'] = $id;
 				$_SESSION['name'] = $name;
 				$_SESSION['last_name'] = $last_name;
 				$_SESSION['user_name'] = $user_name;
