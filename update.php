@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
- <head>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 
     <title>Ecommerce</title>
- </head>
+  </head>
   <body>
 
   <?php 
@@ -41,6 +41,7 @@
         <tbody>
           <?php
             // include '../database.php';   --already required above
+          if(!empty($_SESSION['user_name'])) {
             $pdo = Database::connect();
             $sql = 'SELECT * FROM customer WHERE user_name = ?';
             foreach ($pdo->query($sql) as $row) {
@@ -66,6 +67,7 @@
               echo '</tr>';
             }
             Database::disconnect();
+          }
           ?>
         </tbody>
       </table>
