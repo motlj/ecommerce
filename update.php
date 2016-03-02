@@ -52,7 +52,7 @@
 
               //$q = $pdo->prepare($sql);
               //$q->execute(array($username));
-              foreach ($pdo->query($query) as $row) {
+              foreach ($pdo->query($sql) as $row) {
                 echo '<tr>';
 
                 echo '<form method="POST" action="userUpdate.php">';
