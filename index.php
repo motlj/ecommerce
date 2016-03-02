@@ -33,18 +33,18 @@
         </form>
       </div>
 
-<!--    <form action="includes/login.php" method="post">
-          <input type="text" name="user_name" placeholder="user_name">
-          <input type="text" name="password" placeholder="password">
-          <input type="submit" value="Login">        
-        </form>
- -->      
-
       <div>
         <form action="register.php" method="post">
           <input type="submit" value="Register">
         </form>
       </div>
+
+      <div>
+        <form action="includes/logout.php" method="post">
+          <input type="submit" value="Logout">
+        </form>
+      </div>
+      
       <div>
         <br>
         <br>
