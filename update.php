@@ -1,6 +1,6 @@
 <?php require_once('includes/session.php');?>
 
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -12,14 +12,14 @@
     <title>Ecommerce</title>
   </head>
   <body>
- -->
+
   <?php 
-    //require_once('includes/navbar.php');
+    require_once('includes/navbar.php');
     require_once('includes/database.php');
     error_reporting(E_ALL);
   ?>
 
-<!--   <div class="container">
+  <div class="container">
     <div class="row">
       <h3>Update User Information</h3>
     </div>
@@ -39,7 +39,7 @@
           </tr>
         </thead>
         <tbody>
- -->          <?php
+          <?php
             // include '../database.php';   --already required above
           if($loggedin) {
               $pdo = Database::connect();
@@ -53,7 +53,7 @@
               $q = $pdo->prepare($sql);
               $q->execute(array($username));
               foreach ($pdo->query($query) as $row) {
-/*                echo '<tr>';
+                echo '<tr>';
 
                 echo '<form method="POST" action="userUpdate.php">';
                 echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
@@ -73,10 +73,10 @@
                 echo '</form>';
 
                 echo '</tr>';
-*/              }
+              }
                 
               Database::disconnect();
-              print_r($query);
+              //print_r($query);
           }
           ?>
         </tbody>
