@@ -43,8 +43,11 @@
             // include '../database.php';   --already required above
           if(!empty($_SESSION['user_name'])) {
             $pdo = Database::connect();
+            $username = $_POST['user_name'];
             $sql = 'SELECT * FROM customer WHERE user_name = ?';
-            while ($pdo->query($sql) as $row) {
+            $q = $pdo->prepare($sql);
+            $q->execute(array($username));
+            foreach ($pdo->query($q) as $row) {
               echo '<tr>';
 
               echo '<form method="POST" action="userUpdate.php">';
