@@ -45,9 +45,9 @@
             try {
               $pdo = Database::connect();
               $username = $_POST['user_name'];
-              $sql = 'SELECT * FROM customer WHERE user_name = ?';
-              $q = $pdo->prepare($sql);
-              $q->execute(array($username));
+              $sql = 'SELECT * FROM customer WHERE user_name = $username';
+//              $q = $pdo->prepare($sql);
+  //            $q->execute(array($username));
               foreach ($pdo->query($q) as $row) {
                 echo '<tr>';
 
