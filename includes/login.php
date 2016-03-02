@@ -2,8 +2,8 @@
 <?php
 require_once('database.php');
 
-	if(!empty($_POST['user_name']) && isset($_POST['user_name'])){
-		if(!empty($_POST['password']) && isset($_POST['password'])){
+//	if(!empty($_POST['user_name']) && isset($_POST['user_name'])){
+//		if(!empty($_POST['password']) && isset($_POST['password'])){
 			$pdo = Database::connect();
 
 			$username = $_POST['user_name'];
@@ -16,7 +16,6 @@ require_once('database.php');
        		$q->execute(array($username,$loginpassword));
        		$query = $q->fetch(PDO::FETCH_ASSOC);
        		$name = $query['name'];
-       		$last_name = $query['last_name'];
        		$user_name = $query['user_name'];
        		$password = $query['password'];
        		$id = $query['id'];
@@ -24,10 +23,9 @@ require_once('database.php');
 		    Database::disconnect();
 
 			session_start();
-			$_SESSION['id'] = $id;
 			$_SESSION['name'] = $name;
-			$_SESSION['last_name'] = $last_name;
 			$_SESSION['user_name'] = $user_name;
+			$_SESSION['id'] = $id;
 			$_SESSION['permission'] = $permission;
 
 			    // check if user was found and
@@ -37,13 +35,13 @@ require_once('database.php');
 			} else {
 		    	echo "Username/Password pair not recognized.";
 			}
-			header('Location: ../index.php');
+			//header('Location: ../index.php');
 		//	} catch (PDOException $e) { 
           // 		echo "Syntax Error: ".$e->getMessage(); 
            	//	die();
 			
-		}
-	}
+//		}
+//	}
 	header('Location: ../index.php'); // accessed page incorrectly, redirecting
-
+?>
 
