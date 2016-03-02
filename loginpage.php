@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-    <?php require_once('includes/head.php');?>
+ <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Login</title>
+    <!--   <link rel="stylesheet" type="text/css" href="../assets/css/styles.css">   -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+
+    <title>Login</title>
+ </head>
   
   <body>
     <?php require_once('includes/navbar.php');?>
@@ -31,6 +38,9 @@
     </div>
 
     <?php require_once('includes/footer.php');?>
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
 
   </body>
 </html>
