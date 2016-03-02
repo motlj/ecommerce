@@ -70,6 +70,9 @@
         </tbody>
       </table>
     </div>
+    <div>
+      <a href="index.php">Return to Index</a>
+    </div>
   </div> <!-- /container -->
 
   <?php require_once('includes/footer.php');?>
