@@ -2,8 +2,9 @@
 <?php
 require_once('database.php');
 
-	if(!empty($_POST['user_name']) && isset($_POST['user_name'])){
-		if(!empty($_POST['password']) && isset($_POST['password'])){
+//	if(!empty($_POST['user_name']) && isset($_POST['user_name'])){
+//		if(!empty($_POST['password']) && isset($_POST['password'])){
+			
 			$pdo = Database::connect();
 
 			$username = $_POST['user_name'];
@@ -29,6 +30,9 @@ require_once('database.php');
 			$_SESSION['id'] = $id;
 			$_SESSION['permission'] = $permission;
 
+
+	if(!empty($_POST['user_name']) && isset($_POST['user_name'])){
+		if(!empty($_POST['password']) && isset($_POST['password'])){
 			if ($username == $user_name && $loginpassword == $password) {
 			    echo "You have successfully logged in. Welcome back," . $_SESSION['name'] . "We've been waiting for you.";
 			} else {
