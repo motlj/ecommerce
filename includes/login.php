@@ -33,10 +33,10 @@ require_once('session.php');
 			    // check if user was found and
 			    // check if password from db = $password; if it is the same
 				if ($username = ($_POST['user_name']) && $password = ($_POST['password'])) {
-				    echo "You have successfully logged in. Welcome back" . $_SESSION['name'];
+				    echo "You have successfully logged in. Welcome back," . $_SESSION['name'];
 				} else {
 			    	echo "Username/Password pair not recognized.";
-					header('Location: ../index.php'); // username/password pair not found
+					//header('Location: ../index.php'); // username/password pair not found
 				}
 
 				    //header('Location: ../index.php'); // successfully logged in     				}
