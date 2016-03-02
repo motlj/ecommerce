@@ -46,7 +46,7 @@
             foreach ($pdo->query($sql) as $row) {
               echo '<tr>';
 
-              echo '<form method="POST" action="customerUpdate.php">';
+              echo '<form method="POST" action="userUpdate.php">';
               echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
               echo '<td><input type="text" name="first_name" value="'.$row['name'].'"></td>'; 
               echo '<td><input type="text" name="last_name" value="'.$row['last_name'].'"></td>';
