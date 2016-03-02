@@ -35,6 +35,7 @@ require_once('database.php');
 			    // check if password from db = $password; if it is the same
 			if ($username == $user_name && $loginpassword == $password) {
 			    echo "You have successfully logged in. Welcome back," . $_SESSION['name'];
+			    header('Location: ../index.php');
 			} else {
 		    	echo "Username/Password pair not recognized.";
 				//header('Location: ../index.php'); // username/password pair not found
