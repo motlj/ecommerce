@@ -74,7 +74,8 @@
                 echo '</form>';
 
                 echo '</tr>';
-*/              }
+              }
+                */
               Database::disconnect();
             } catch (PDOException $e) {
               echo $e->getMessage();
