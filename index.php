@@ -2,26 +2,13 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php require_once('includes/head.php');?>
 
-    <title>Ecommerce</title>
-
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-
-  </head>
-
+  <title>Ecommerce</title>
+  
   <body>
-    <br>
-    <br>
-    <br>
-    <br>
+    <?php require_once('includes/navbar.php');?>
 
-  <?php require_once('includes/navbar.php');?>
-
-    
     <div class="container">
       <div class="starter-template">
         <h1>Login</h1>
@@ -32,19 +19,23 @@
           <input type="submit" value="Login">
         </form>
       </div>
-
+      
+      <br>
+      
       <div>
         <form action="register.php" method="post">
           <input type="submit" value="Register">
         </form>
       </div>
+      
+      <br>
 
       <div>
         <form action="includes/logout.php" method="post">
           <input type="submit" value="Logout">
         </form>
       </div>
-      
+
       <div>
         <br>
         <br>
@@ -59,9 +50,6 @@
     </div><!-- /.container -->
 
     <?php require_once('includes/footer.php');?>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>  
 
   </body>
 </html>
