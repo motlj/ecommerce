@@ -45,6 +45,7 @@
             try {
               $pdo = Database::connect();
               $username = $_POST['user_name'];
+              $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               $sql = 'SELECT * FROM customer WHERE user_name = ?';
               $q = $pdo->prepare($sql);
               $q->execute(array($username));
