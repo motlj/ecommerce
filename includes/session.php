@@ -1,4 +1,3 @@
-<?php	
 	require_once('database.php');
 	session_start();
 	
@@ -6,4 +5,3 @@
 	if (!empty($_SESSION['id'])) {
 		$loggedin = true;
 	}
-?>
