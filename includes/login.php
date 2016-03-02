@@ -10,7 +10,7 @@ require_once('session.php');
 			    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			    $sql = "SELECT * FROM customer WHERE user_name = ? AND $password = ?");
 			    $q = $pdo->prepare($sql);
-           		$q->execute(array($username));
+           		$q->query(array($username));
 			    Database::disconnect();
 			    // check if user was found and
 			    // check if password from db = $password; if it is the same
