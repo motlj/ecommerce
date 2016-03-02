@@ -17,8 +17,11 @@
     <br>
     <br>
     <br>
-  <?php require_once('includes/navbar.php');?>
-  <?php require_once('includes/session.php');?>
+
+  <?php 
+    require_once('includes/navbar.php');
+    require_once('includes/session.php');
+  ?>
 
     
     <div class="container">
@@ -46,7 +49,7 @@
       </div>
       <div>
         <?php
-          if ($loggedin){
+          if ($loggedin) {
             echo "You are logged in.";
           } else {
             echo "You are logged out.";
