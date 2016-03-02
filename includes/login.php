@@ -37,7 +37,7 @@ require_once('database.php');
 			} else {
 		    	echo "Username/Password pair not recognized.";
 			}
-
+			header('Location: ../index.php');
 		//	} catch (PDOException $e) { 
           // 		echo "Syntax Error: ".$e->getMessage(); 
            	//	die();
