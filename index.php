@@ -2,10 +2,12 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <?php require_once('includes/head.php');?>
-
-  <title>Ecommerce</title>
+  <?php require_once('includes/head.php');?>
   
+  <head>
+    <title>Ecommerce</title>
+  </head>
+
   <body>
     <?php require_once('includes/navbar.php');?>
 
