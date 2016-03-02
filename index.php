@@ -38,13 +38,15 @@
           <input type="submit" value="Login">        
         </form>
  -->      
-      </div>
+
       <div>
         <form action="register.php" method="post">
           <input type="submit" value="Register">
         </form>
       </div>
       <div>
+        <br>
+        <br>
         <?php
           if ($loggedin) {
             session_start();
