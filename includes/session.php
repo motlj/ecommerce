@@ -2,6 +2,6 @@
 	session_start();
 	
 	$loggedin = false
-	if (!empty($_SESSION['id'])) {
+	if (!empty($_SESSION['user_name'])) {
 		$loggedin = true;
 	}
