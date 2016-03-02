@@ -29,7 +29,7 @@ require_once('database.php');
 			$_SESSION['permission'] = $permission;
 
 
-       		print_r($query);
+       		//print_r($query);
 
 
 /*			if ($username == $user_name && $loginpassword == $password) {
