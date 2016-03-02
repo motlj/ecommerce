@@ -17,7 +17,6 @@ require_once('database.php');
        		$query = $q->fetch(PDO::FETCH_ASSOC);
 		    Database::disconnect();
 
-       		//print_r($query);
        		$name = $query['name'];
        		$user_name = $query['user_name'];
        		$id = $query['id'];
@@ -29,6 +28,10 @@ require_once('database.php');
 			$_SESSION['id'] = $id;
 			$_SESSION['permission'] = $permission;
 
+
+       		print_r($query);
+
+
 /*			if ($username == $user_name && $loginpassword == $password) {
 			    echo "You have successfully logged in. Welcome back," . $_SESSION['name'] . "We've been waiting for you.";
 			} else {
@@ -36,8 +39,8 @@ require_once('database.php');
 			}*/
 
 
-			header('Location: ../index.php');			
+			//header('Location: ../index.php');			
 		}
 	}
-	header('Location: ../loginpage.php'); 
+	//header('Location: ../loginpage.php'); 
 ?>
