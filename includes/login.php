@@ -6,7 +6,7 @@ require_once('session.php');
 			$pdo = Database::connect();
 
 			$username=$_POST['user_name'];
-			$password=$_POST['password'];
+			$loginpassword=$_POST['password'];
 
 			try { 
 			    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -32,7 +32,7 @@ require_once('session.php');
 
 			    // check if user was found and
 			    // check if password from db = $password; if it is the same
-				if ($username = ($_POST['user_name']) && $password = ($_POST['password'])) {
+				if ($username == $user_name && $loginpassword == $password) {
 				    echo "You have successfully logged in. Welcome back," . $_SESSION['name'];
 				} else {
 			    	echo "Username/Password pair not recognized.";
