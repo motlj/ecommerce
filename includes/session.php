@@ -6,3 +6,4 @@
 	if (!empty($_SESSION['id'])) {
 		$loggedin = true;
 	}
+?>
