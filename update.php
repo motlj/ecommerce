@@ -42,7 +42,6 @@
           <?php
             // include '../database.php';   --already required above
           if($loggedin) {
-            try {
               $pdo = Database::connect();
               $username = $_POST['user_name'];
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -51,7 +50,6 @@
               $q->execute(array($username));
               $query = $q->fetch(PDO::FETCH_ASSOC);
 
-              print_r($query);
 //              $q = $pdo->prepare($sql);
   //            $q->execute(array($username));
 /*              foreach ($pdo->query($query) as $row) {
@@ -78,9 +76,7 @@
               }
                 */
               Database::disconnect();
-            } catch (PDOException $e) {
-              echo $e->getMessage();
-            }
+              print_r($query);
           }
           ?>
         </tbody>
