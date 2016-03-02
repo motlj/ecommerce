@@ -49,9 +49,11 @@
               $q = $pdo->prepare($sql);
               $q->execute(array($username));
               $query = $q->fetch(PDO::FETCH_ASSOC);
+
+              print_r($query);
 //              $q = $pdo->prepare($sql);
   //            $q->execute(array($username));
-              foreach ($pdo->query($query) as $row) {
+/*              foreach ($pdo->query($query) as $row) {
                 echo '<tr>';
 
                 echo '<form method="POST" action="userUpdate.php">';
@@ -72,7 +74,7 @@
                 echo '</form>';
 
                 echo '</tr>';
-              }
+*/              }
               Database::disconnect();
             } catch (PDOException $e) {
               echo $e->getMessage();
