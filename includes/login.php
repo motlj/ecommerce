@@ -13,7 +13,7 @@ require_once('database.php');
 		    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		    $sql = "SELECT * FROM customer WHERE user_name = ? AND password = ?";
 		    $q = $pdo->prepare($sql);
-       		$q->execute(array($username,$password));
+       		$q->execute(array($username,$loginpassword));
        		$query = $q->fetch(PDO::FETCH_ASSOC);
        		$name = $query['name'];
        		$last_name = $query['last_name'];
