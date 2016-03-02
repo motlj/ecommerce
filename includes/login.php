@@ -2,8 +2,8 @@
 <?php
 require_once('database.php');
 
-//	if(!empty($_POST['user_name']) && isset($_POST['user_name'])){
-//		if(!empty($_POST['password']) && isset($_POST['password'])){
+	if(!empty($_POST['user_name']) && isset($_POST['user_name'])){
+		if(!empty($_POST['password']) && isset($_POST['password'])){
 			
 			$pdo = Database::connect();
 
@@ -37,7 +37,7 @@ require_once('database.php');
 			    echo "You have successfully logged in. Welcome back," . $_SESSION['name'] . "We've been waiting for you.";
 			} else {
 		    	echo "Username/Password pair not recognized.";
-*/			}
+			}*/
 			//header('Location: ../index.php');			
 		}
 	}
