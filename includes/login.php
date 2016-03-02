@@ -1,5 +1,6 @@
+
 <?php
-require_once('includes/database.php');
+require_once('database.php');
 
 	if(!empty($_POST['user_name']) && isset($_POST['user_name'])){
 		if(!empty($_POST['password']) && isset($_POST['password'])){
@@ -47,3 +48,5 @@ require_once('includes/database.php');
 		}
 	}
 	header('Location: ../index.php'); // accessed page incorrectly, redirecting
+
+
