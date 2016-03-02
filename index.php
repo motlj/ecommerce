@@ -47,6 +47,7 @@
       <div>
         <?php
           if ($loggedin) {
+            session_start();
             echo "You are logged in.";
           } else {
             echo "You are logged out.";
