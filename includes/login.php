@@ -6,12 +6,12 @@ require_once('database.php');
 		//if(!empty($_POST['password']) && isset($_POST['password'])){
 			$pdo = Database::connect();
 
-			$username=$_POST['user_name'];
-			$loginpassword=$_POST['password'];
+			$username = $_POST['user_name'];
+			$loginpassword = $_POST['password'];
 
 	//try { 
 		    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		    $sql = "SELECT * FROM customer WHERE user_name = ? AND $password = ?";
+		    $sql = "SELECT * FROM customer WHERE user_name = ? AND password = ?";
 		    $q = $pdo->prepare($sql);
        		$q->execute(array($username,$password));
        		$query = $q->fetch(PDO::FETCH_ASSOC);
