@@ -39,7 +39,7 @@ require_once('database.php');
 			}*/
 
 
-			//header('Location: ../index.php');			
+			header('Location: ../index.php');			
 		}
 	}
 	//header('Location: ../loginpage.php'); 
