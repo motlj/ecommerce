@@ -26,14 +26,12 @@
         <p class="lead">Please click login to sign into your account or click register to create an account.<br></p>
       </div>
       <div>
-        <a href="loginpage.php">Login</a>
-      </div>
-
-<!--    <form action="loginpage.php" method="post">
+        <form action="loginpage.php" method="post">
           <input type="submit" value="Login">
         </form>
-    
-        <form action="includes/login.php" method="post">
+      </div>
+
+<!--    <form action="includes/login.php" method="post">
           <input type="text" name="user_name" placeholder="user_name">
           <input type="text" name="password" placeholder="password">
           <input type="submit" value="Login">        
