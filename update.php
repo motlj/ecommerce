@@ -43,7 +43,7 @@
             // include '../database.php';   --already required above
           if(!empty($_SESSION['user_name'])) {
             $pdo = Database::connect();
-            $sql = 'SELECT * FROM customer WHERE user_name = ?';
+            $sql = "SELECT FROM `ecommerce`.`customer` WHERE `customer`.`user_name` = ?";
             foreach ($pdo->query($sql) as $row) {
               echo '<tr>';
 
