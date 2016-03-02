@@ -16,8 +16,8 @@ require_once('database.php');
        		$q->execute(array($username,$loginpassword));
        		$query = $q->fetch(PDO::FETCH_ASSOC);
 
-       		//print_r($query);
-       		$name = $query['name'];
+       		print_r($query);
+/*       		$name = $query['name'];
        		$user_name = $query['user_name'];
        		$password = $query['password'];
        		$id = $query['id'];
@@ -37,7 +37,7 @@ require_once('database.php');
 			    echo "You have successfully logged in. Welcome back," . $_SESSION['name'] . "We've been waiting for you.";
 			} else {
 		    	echo "Username/Password pair not recognized.";
-			}
+*/			}
 			//header('Location: ../index.php');			
 		}
 	}
