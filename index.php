@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--   <link rel="stylesheet" type="text/css" href="../assets/css/styles.css">   -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 
     <title>Ecommerce</title>
  </head>
@@ -59,7 +59,7 @@
     <?php require_once('includes/footer.php');?>
 
 
-  <script src="../assets/js/jquery.min.js"></script>
-  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
   </body>
 </html>
