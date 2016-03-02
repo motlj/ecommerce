@@ -18,10 +18,7 @@
     <br>
     <br>
 
-  <?php 
-    require_once('includes/navbar.php');
-    require_once('includes/session.php');
-  ?>
+  <?php require_once('includes/navbar.php');?>
 
     
     <div class="container">
