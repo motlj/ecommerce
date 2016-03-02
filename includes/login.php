@@ -27,7 +27,7 @@ require_once('session.php');
 				$_SESSION['name'] = $name;
 				$_SESSION['last_name'] = $last_name;
 				$_SESSION['user_name'] = $user_name;
-				$_SESSION['permissions'] = $permission;
+				$_SESSION['permission'] = $permission;
 
 
 			    // check if user was found and
