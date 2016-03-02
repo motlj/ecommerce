@@ -1,3 +1,4 @@
+<?php require_once('includes/session.php');?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -49,7 +50,6 @@
         <br>
         <?php
           if ($loggedin) {
-            session_start();
             echo "You are logged in.";
           } else {
             echo "You are logged out.";
