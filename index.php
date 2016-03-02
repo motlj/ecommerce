@@ -4,10 +4,10 @@
 <html lang="en">
   <?php require_once('includes/head.php');?>
   
-  <head>
+<!--   <head>
     <title>Ecommerce</title>
   </head>
-
+ -->
   <body>
     <?php require_once('includes/navbar.php');?>
 
