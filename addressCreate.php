@@ -54,7 +54,7 @@
           $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
           $sql = "INSERT INTO address (street1,street2,city,state,zip,country) values(?, ?, ?, ?, ?, ?)";
           $q = $pdo->prepare($sql);
-          $q->execute(array($strret1,$street2,$city,$state,$zip,$country));
+          $q->execute(array($street1,$street2,$city,$state,$zip,$country));
           $addressID = $pdo->lastInsertId();
           Database::disconnect();
           echo $addressID;
