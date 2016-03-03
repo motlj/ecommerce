@@ -58,14 +58,19 @@
           $addressID = $pdo->lastInsertId();
           Database::disconnect();
           echo $addressID;
-          //header("Location: update.php");
+          header("Location: update.php");
         } catch (PDOException $e) {
           echo $e->getMessage();
           die();
         }
       }
     }
+
+//need to debug, not erroring out state, not redirecting to update, not showing query row on update.
+
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
