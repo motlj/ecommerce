@@ -81,6 +81,10 @@
     <div class="row">
       <h3>Update Address</h3>
     </div>
+    <div>
+      <p>If you have not registered an address with your account, please <a href="addressCreate.php">Create an Address</a>.</p>
+      <p>Please make updates to your existing addresses below.</p>
+    </div>
     <div class="row">
       <table class="table table-striped table-bordered">
         <thead>
