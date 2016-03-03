@@ -86,7 +86,7 @@
         <div class="row">
           <h3>Please fill out all fields to create an address.</h3>
         </div>           
-        <form class="form-horizontal" action="createAddress.php" method="post"> 
+        <form class="form-horizontal" action="addressCreate.php" method="post"> 
 
           <div class="control-group <?php echo !empty($street1Error)?'error':'';?>">
             <label class="control-label">Street Number</label>
