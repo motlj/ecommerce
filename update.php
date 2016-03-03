@@ -125,7 +125,7 @@
           }
                 
           Database::disconnect();
-              //print_r($query);
+              print_r($query);
           ?>
         </tbody>
       </table>
