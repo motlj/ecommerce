@@ -46,8 +46,8 @@
               $username = $_SESSION['user_name'];
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               $sql = 'SELECT * FROM customer WHERE user_name = ?';
-              $q = $pdo->prepare($sql);
-              $q->execute(array($username));
+              //$q = $pdo->prepare($sql);
+             // $q->execute(array($username));
               $query = $q->fetch(PDO::FETCH_ASSOC);
 
               //$q = $pdo->prepare($sql);
@@ -76,7 +76,7 @@
               }
                 
               Database::disconnect();
-              print_r($query);
+              print_r($sql);
           }
           ?>
         </tbody>
