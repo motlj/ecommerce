@@ -46,29 +46,29 @@
               $username = $_SESSION['user_name'];
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               $sql = 'SELECT * FROM customer WHERE user_name = ?';
-              //$q = $pdo->prepare($sql);
-             // $q->execute(array($username));
+              $q = $pdo->prepare($sql);
+              $q->execute(array($username));
               $query = $q->fetch(PDO::FETCH_ASSOC);
 
               //$q = $pdo->prepare($sql);
               //$q->execute(array($username));
-              foreach ($pdo->query($sql) as $row) {
+              foreach ($pdo->query($query) as $row) {
                 echo '<tr>';
 
                 echo '<form method="POST" action="userUpdate.php">';
-                echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
-                echo '<td><input type="text" name="first_name" value="'.$row['name'].'"></td>'; 
-                echo '<td><input type="text" name="last_name" value="'.$row['last_name'].'"></td>';
-                echo '<td><input type="text" name="dob" value="'.$row['birthdate'].'"></td>';
-                echo '<td><input type="text" name="phone" value="'.$row['phone_number'].'"></td>';
-                echo '<td><input type="text" name="email" value="'.$row['email_address'].'"></td>';
-                echo '<td><input type="text" name="username" value="'.$row['user_name'].'"></td>';
+                echo '<input type="hidden" name="id" value="' . $query['id'] . '">';
+                echo '<td><input type="text" name="first_name" value="'.$query['name'].'"></td>'; 
+                echo '<td><input type="text" name="last_name" value="'.$query['last_name'].'"></td>';
+                echo '<td><input type="text" name="dob" value="'.$query['birthdate'].'"></td>';
+                echo '<td><input type="text" name="phone" value="'.$query['phone_number'].'"></td>';
+                echo '<td><input type="text" name="email" value="'.$query['email_address'].'"></td>';
+                echo '<td><input type="text" name="username" value="'.$query['user_name'].'"></td>';
                 echo '<td>***</td>';
                 echo '<td><input type="submit" value="Update"></td>';
                 echo '</form>';
 
                 echo '<form method="POST" action="userDelete.php">';
-                echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
+                echo '<input type="hidden" name="id" value="' . $query['id'] . '">';
                 echo '<td><input type="submit" value="Delete"></td>';
                 echo '</form>';
 
@@ -76,7 +76,7 @@
               }
                 
               Database::disconnect();
-              print_r($sql);
+              print_r($query);
           }
           ?>
         </tbody>
