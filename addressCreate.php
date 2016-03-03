@@ -55,7 +55,10 @@
           $sql = "INSERT INTO address (street1,street2,city,state,zip,country) values(?, ?, ?, ?, ?, ?)";
           $q = $pdo->prepare($sql);
           $q->execute(array($strret1,$street2,$city,$state,$zip,$country));
+          $addressID = $pdo->lastInsertId();
           Database::disconnect();
+          echo $addressID;
+          die();
           header("Location: update.php");
         } catch (PDOException $e) {
           echo $e->getMessage();
@@ -86,7 +89,7 @@
         <div class="row">
           <h3>Please fill out all fields to create an address.</h3>
         </div>           
-        <form class="form-horizontal" action="addressCreate.php" method="post"> 
+        <form class="form-horizontal" action="update.php" method="post"> 
 
           <div class="control-group <?php echo !empty($street1Error)?'error':'';?>">
             <label class="control-label">Street Number</label>
