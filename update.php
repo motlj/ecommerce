@@ -40,7 +40,6 @@
         </thead>
         <tbody>
           <?php
-            // include '../database.php';   --already required above
           if($loggedin) {
               $pdo = Database::connect();
               $username = $_SESSION['user_name'];
@@ -50,11 +49,7 @@
               $q->execute(array($username));
               $query = $q->fetch(PDO::FETCH_ASSOC);
 
-              //$q = $pdo->prepare($sql);
-              //$q->execute(array($username));
-              //foreach ($pdo->query($query) as $row) {
                 echo '<tr>';
-
                 echo '<form method="POST" action="userUpdate.php">';
                 echo '<input type="hidden" name="id" value="' . $query['id'] . '">';
                 echo '<td><input type="text" name="first_name" value="'.$query['name'].'"></td>'; 
@@ -66,18 +61,15 @@
                 echo '<td>***</td>';
                 echo '<td><input type="submit" value="Update"></td>';
                 echo '</form>';
-
                 echo '<form method="POST" action="userDelete.php">';
                 echo '<input type="hidden" name="id" value="' . $query['id'] . '">';
                 echo '<td><input type="submit" value="Delete"></td>';
                 echo '</form>';
-
                 echo '</tr>';
-              }
+          }
                 
-              Database::disconnect();
-              print_r($query);
-          //}
+          Database::disconnect();
+              //print_r($query);
           ?>
         </tbody>
       </table>
