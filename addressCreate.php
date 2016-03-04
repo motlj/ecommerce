@@ -57,7 +57,7 @@
           $q->execute(array($street1,$street2,$city,$state,$zip,$country));
           $addressID = $pdo->lastInsertId();
           Database::disconnect();
-          print_r($addressId);
+          echo $addressID;
           die();
 
           //header("Location: update.php");
