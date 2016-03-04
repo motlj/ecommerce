@@ -55,10 +55,10 @@
           $sql = "INSERT INTO address (street1,street2,city,state,zip,country) values(?, ?, ?, ?, ?, ?)";
           $q = $pdo->prepare($sql);
           $q->execute(array($street1,$street2,$city,$state,$zip,$country));
-          //$addressID = $pdo->lastInsertId();
-          $addressID = $pdo->db2_last_insert_id(ecommerce);
+          $addressID = $pdo->lastInsertId();
           Database::disconnect();
-          echo $addressID;
+          print_r($addressId);
+
           header("Location: update.php");
         } catch (PDOException $e) {
           echo $e->getMessage();
