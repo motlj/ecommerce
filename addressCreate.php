@@ -55,7 +55,7 @@
           $sql = "INSERT INTO address (street1,street2,city,state,zip,country) values(?, ?, ?, ?, ?, ?)";
           $q = $pdo->prepare($sql);
           $q->execute(array($street1,$street2,$city,$state,$zip,$country));
-          $addressID = $pdo->lastInsertId($q);
+          $addressID = $q->lastInsertId($q);
           Database::disconnect();
           print_r($addressId);
 
