@@ -55,7 +55,7 @@
           $sql = "INSERT INTO address (street1,street2,city,state,zip,country) values(?, ?, ?, ?, ?, ?)";
           $q = $pdo->prepare($sql);
           $q->execute(array($street1,$street2,$city,$state,$zip,$country));
-          $addressID = $sql->lastInsertId();
+          $addressID = $pdo->lastInsertId();
           Database::disconnect();
           print_r($addressId);
 
@@ -67,7 +67,7 @@
       }
     }
 
-//need to debug, not erroring out state, not redirecting to update, not showing query row on update.
+//need to debug, not redirecting to update, not showing query row on update.
 
 ?>
 
@@ -132,7 +132,7 @@
             <div class="controls">
               <input name="state" type="text" placeholder="State" value="<?php echo !empty($state)?$state:'';?>">
               <?php if (!empty($stateError)): ?>
-                <span class="help-inline"><?php echo $staterError;?></span>
+                <span class="help-inline"><?php echo $stateError;?></span>
               <?php endif;?>
             </div>
           </div>
