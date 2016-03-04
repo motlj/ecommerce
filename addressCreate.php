@@ -55,7 +55,8 @@
           $sql = "INSERT INTO address (street1,street2,city,state,zip,country) values(?, ?, ?, ?, ?, ?)";
           $q = $pdo->prepare($sql);
           $q->execute(array($street1,$street2,$city,$state,$zip,$country));
-          $addressID = $pdo->lastInsertId();
+          //$addressID = $pdo->lastInsertId();
+          $addressID = $pdo->db2_last_insert_id(ecommerce)
           Database::disconnect();
           echo $addressID;
           header("Location: update.php");
