@@ -58,11 +58,11 @@
           $addressID = $pdo->lastInsertId();
           Database::disconnect();
           print_r($addressId);
+          die();
 
-          header("Location: update.php");
+          //header("Location: update.php");
         } catch (PDOException $e) {
           echo $e->getMessage();
-          die();
         }
       }
     }
