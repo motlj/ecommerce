@@ -114,7 +114,7 @@
             } catch (PDOException $e) {
               echo $e->getMessage();
             }
-            die();
+            //die();
             
             foreach ($pdo->query($sql) as $row) {
 
