@@ -89,7 +89,7 @@ require_once 'includes/database.php';
  </head>
   
   <body>
-    /<?php // require_once('includes/navbar.php');?>
+    <?php // require_once('includes/navbar.php');?>
 
 
     <div class="container">
