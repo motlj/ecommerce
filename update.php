@@ -144,8 +144,68 @@
     </div>
 
 
+    <div class="row">
+      <h3>Update Credit Card Information</h3>
+    </div>
+    <div>
+      <p>If you have not registered a credit card with your account, please <a href="ccCreate.php">add a credit card</a>.</p>
+      <p>Please make updates to your existing creidt cards below.</p>
+    </div>
+    <div class="row">
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Name on Card</th>
+            <th>Card Number</th>
+            <th>Expiration Date</th>
+            <th>CVV Code</th>
+            <th>Action</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+          if($loggedin) {
+            //try {
+              $pdo = Database::connect();
+              $id = $_SESSION['id'];
+              $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+              $sql = 'SELECT * FROM credit_card WHERE id IN (SELECT credit_card_fk FROM customer_credit_card WHERE customer_fk = ?)';
+              $q = $pdo->prepare($sql);
+              $q->execute(array($id));
+              $query = $q->fetchAll(PDO::FETCH_ASSOC);
+            //} catch (PDOException $e) {
+            //  echo $e->getMessage();
+            //}
+            //die();
+            
+            foreach ($query as $row) {
 
-
+                echo '<tr>';
+                echo '<form method="POST" action="ccUpdate.php">';
+                echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
+                echo '<td><input type="text" name="type" value="'.$row['type'].'"></td>'; 
+                echo '<td><input type="text" name="name" value="'.$row['name'].'"></td>';
+                echo '<td><input type="text" name="card_number" value="'.$row['card_number'].'"></td>';
+                echo '<td><input type="text" name="expiration" value="'.$row['expiration'].'"></td>';
+                echo '<td><input type="text" name="security" value="'.$row['secuirty'].'"></td>';
+                echo '<td><input type="submit" value="Update"></td>';
+                echo '</form>';
+                echo '<form method="POST" action="ccDelete.php">';
+                echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
+                echo '<td><input type="submit" value="Delete"></td>';
+                echo '</form>';
+                echo '</tr>';
+              }
+          }
+                
+          Database::disconnect();
+              //print_r($query);
+          ?>
+        </tbody>
+      </table>
+    </div>
 
     <div>
       <a href="index.php">Return to Index</a>
