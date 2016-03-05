@@ -106,7 +106,7 @@
               $pdo = Database::connect();
               $id = $_SESSION['id'];
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-              $sql = 'SELECT * FROM address WHERE id = (SELECT address_fk FROM customer_address WHERE customer_fk = ?)';
+              $sql = 'SELECT * FROM address WHERE id IN (SELECT address_fk FROM customer_address WHERE customer_fk = ?)';
               $q = $pdo->prepare($sql);
               $q->execute(array($_SESSION['id']));
               $query = $q->fetch(PDO::FETCH_ASSOC);
