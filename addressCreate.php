@@ -56,9 +56,12 @@
           $q = $pdo->prepare($sql);
           $q->execute(array($street1,$street2,$city,$state,$zip,$country));
           $addressID = $pdo->lastInsertId();
-          $sql = "INSERT INTO customer_address (address_fk) values(?) WHERE customer_fk = $_SESSION[id]";
+          //attempting to use $addressID in another SQL statement
+          $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+          $sql = "INSERT INTO customer_address (address_fk) values(?)";
           $q = $pdo->prepare($sql);
           $q->execute(array($addressID));
+
           Database::disconnect();
           echo $addressID;
           die();
