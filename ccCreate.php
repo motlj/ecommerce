@@ -153,16 +153,11 @@ require_once 'includes/database.php';
 
           <?php
           $sql = "SELECT id,street1 FROM address WHERE id = IN (SELECT address_fk FROM customer_address WHERE customer_fk = ?)";
-        try {
           echo "<select name=Address value=''>Address</option>";
           foreach ($dbo->query($sql) as $row) {
             echo "<option value=$row[id]>$row[street1]</option>";
           }
-          echo "</select>"
-        } catch (PDOException $e) {
-          echo $e->getMessage();
-        }
-
+          echo "</select>";
           ?>
 
 <!--           <select name="Address">
