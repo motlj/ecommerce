@@ -59,14 +59,14 @@ require_once 'includes/database.php';
           $addressID = $pdo->lastInsertId();
           //attempting to use $addressID in another SQL statement
           $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-          $sql = "INSERT INTO customer_address (address_fk,customer_fk) values(?,?) WHERE customer_fk = (SELECT id FROM customer WHERE user_name = ?)";
+          $sql = "INSERT INTO customer_address (address_fk,customer_fk) values(?,?) WHERE customer_fk = ?)";
           $q = $pdo->prepare($sql);
-          $q->execute(array($addressID, $_SESSION['id'], $_SESSION['user_name']));
+          $q->execute(array($addressID, $_SESSION['id']));
           $query = $q->fetch(PDO::FETCH_ASSOC);
-          print_r($query);
+          //print_r($query);
           Database::disconnect();
-          echo $addressID;
-          die();
+          //echo $addressID;
+          //die();
 
           header("Location: update.php");
         } catch (PDOException $e) {
