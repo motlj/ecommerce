@@ -149,6 +149,12 @@ require_once 'includes/database.php';
             </div>
           </div>
 
+          <select name="Address">
+           <option value="0">Select Address</option>
+           <option value="1">Address 1</option>
+
+          </select>
+
           <div class="form-actions">
             <button type="submit" class="btn btn-success">Add Credit Card</button>
             <!-- no longer need a button to go back as this is the page being updated   <a class="btn" href="index.php">Back</a>   -->
