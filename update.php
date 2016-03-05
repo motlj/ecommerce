@@ -110,7 +110,6 @@
               $q = $pdo->prepare($sql);
               $q->execute(array($id));
               $query = $q->fetch(PDO::FETCH_ASSOC);
-              //print_r($query);
             //} catch (PDOException $e) {
             //  echo $e->getMessage();
             //}
@@ -138,7 +137,7 @@
           }
                 
           Database::disconnect();
-              print_r($query);
+              //print_r($query);
           ?>
         </tbody>
       </table>
