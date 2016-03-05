@@ -115,23 +115,26 @@
               echo $e->getMessage();
             }
             die();
+            
+            foreach ($pdo->query($sql) as $row) {
 
                 echo '<tr>';
                 echo '<form method="POST" action="addressUpdate.php">';
-                echo '<input type="hidden" name="id" value="' . $query['id'] . '">';
-                echo '<td><input type="text" name="street1" value="'.$query['street1'].'"></td>'; 
-                echo '<td><input type="text" name="street2" value="'.$query['street2'].'"></td>';
-                echo '<td><input type="text" name="city" value="'.$query['city'].'"></td>';
-                echo '<td><input type="text" name="state" value="'.$query['state'].'"></td>';
-                echo '<td><input type="text" name="zip" value="'.$query['zip'].'"></td>';
-                echo '<td><input type="text" name="country" value="'.$query['country'].'"></td>';
+                echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
+                echo '<td><input type="text" name="street1" value="'.$row['street1'].'"></td>'; 
+                echo '<td><input type="text" name="street2" value="'.$row['street2'].'"></td>';
+                echo '<td><input type="text" name="city" value="'.$row['city'].'"></td>';
+                echo '<td><input type="text" name="state" value="'.$row['state'].'"></td>';
+                echo '<td><input type="text" name="zip" value="'.$row['zip'].'"></td>';
+                echo '<td><input type="text" name="country" value="'.$row['country'].'"></td>';
                 echo '<td><input type="submit" value="Update"></td>';
                 echo '</form>';
                 echo '<form method="POST" action="addressDelete.php">';
-                echo '<input type="hidden" name="id" value="' . $query['id'] . '">';
+                echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
                 echo '<td><input type="submit" value="Delete"></td>';
                 echo '</form>';
                 echo '</tr>';
+              }
           }
                 
           Database::disconnect();
