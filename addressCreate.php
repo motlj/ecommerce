@@ -61,7 +61,7 @@ require_once 'includes/database.php';
           $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
           $sql = "INSERT INTO customer_address (address_fk,customer_fk) values(?,?) WHERE customer_fk = (SELECT id FROM customer WHERE user_name = ?)";
           $q = $pdo->prepare($sql);
-          $q->execute(array($addressID, $_SESSION['user_name'], $_SESSION['id']));
+          $q->execute(array($addressID, $_SESSION['id'], $_SESSION['user_name']));
           $query = $q->fetch(PDO::FETCH_ASSOC);
           print_r($query);
           Database::disconnect();
