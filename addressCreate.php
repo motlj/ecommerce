@@ -59,9 +59,9 @@ require_once 'includes/database.php';
           $addressID = $pdo->lastInsertId();
           //attempting to use $addressID in another SQL statement
           $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-          $sql = "INSERT INTO customer_address (address_fk) values(?)";
+          $sql = "INSERT INTO customer_address (address_fk) values(?) WHERE customer_fk = (SELECT id FROM customer WHERE user_name = ?)";
           $q = $pdo->prepare($sql);
-          $q->execute(array($addressID));
+          $q->execute(array($addressID, $_SESSION['user_name']));
 
           Database::disconnect();
           echo $addressID;
