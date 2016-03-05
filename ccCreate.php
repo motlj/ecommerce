@@ -159,7 +159,7 @@ require_once 'includes/database.php';
               $q = $pdo->prepare($sql);
               echo "<select name=Address value=''>";
               echo "<option>Address</option>";
-              foreach ($pdo->query($q) as $row) {
+              foreach ($pdo->query($sql) as $row) {
                 echo "<option value=$row[id]>$row[street1]</option>";
               }
               echo "</select>";
@@ -170,6 +170,7 @@ require_once 'includes/database.php';
             }
           ?>
 
+          <br>
           <div class="form-actions">
             <button type="submit" class="btn btn-success">Add Credit Card</button>
             <!-- no longer need a button to go back as this is the page being updated   <a class="btn" href="index.php">Back</a>   -->
