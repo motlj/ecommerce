@@ -14,7 +14,7 @@
   <body>
 
   <?php 
-    require_once('includes/navbar.php');
+    //require_once('includes/navbar.php');
     require_once('includes/database.php');
     error_reporting(E_ALL);
   ?>
@@ -102,6 +102,7 @@
         <tbody>
           <?php
           if($loggedin) {
+            try {
               $pdo = Database::connect();
               $id = $_SESSION['id'];
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -110,7 +111,10 @@
               $q->execute(array($_SESSION['id']));
               $query = $q->fetch(PDO::FETCH_ASSOC);
               print_r($query);
-              die();
+            } catch (PDOException $e) {
+              echo $e->getMessage();
+            }
+            die();
 
                 echo '<tr>';
                 echo '<form method="POST" action="addressUpdate.php">';
