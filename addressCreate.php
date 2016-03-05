@@ -62,7 +62,7 @@ require_once 'includes/database.php';
           $sql = "INSERT INTO customer_address (address_fk,customer_fk) values(?,?)";
           $q = $pdo->prepare($sql);
           $q->execute(array($addressID, $_SESSION['id']));
-          $query = $q->fetch(PDO::FETCH_ASSOC);
+          //$query = $q->fetch(PDO::FETCH_ASSOC);
           //print_r($query);
           Database::disconnect();
           //echo $addressID;
