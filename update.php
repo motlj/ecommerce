@@ -109,7 +109,7 @@
               $sql = 'SELECT * FROM address WHERE id IN (SELECT address_fk FROM customer_address WHERE customer_fk = ?)';
               $q = $pdo->prepare($sql);
               $q->execute(array($id));
-              $query = $q->fetch(PDO::FETCH_ASSOC);
+              $query = $q->fetchAll(PDO::FETCH_ASSOC);
             //} catch (PDOException $e) {
             //  echo $e->getMessage();
             //}
