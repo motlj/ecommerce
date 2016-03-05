@@ -102,7 +102,7 @@
         <tbody>
           <?php
           if($loggedin) {
-            try {
+            //try {
               $pdo = Database::connect();
               $id = $_SESSION['id'];
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -110,13 +110,13 @@
               $q = $pdo->prepare($sql);
               $q->execute(array($id));
               $query = $q->fetch(PDO::FETCH_ASSOC);
-              print_r($query);
-            } catch (PDOException $e) {
-              echo $e->getMessage();
-            }
+              //print_r($query);
+            //} catch (PDOException $e) {
+            //  echo $e->getMessage();
+            //}
             //die();
             
-            foreach ($pdo->query($sql) as $row) {
+            foreach ($pdo->query($query) as $row) {
 
                 echo '<tr>';
                 echo '<form method="POST" action="addressUpdate.php">';
