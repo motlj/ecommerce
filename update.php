@@ -52,7 +52,7 @@
                 echo '<tr>';
                 echo '<form method="POST" action="userUpdate.php">';
                 echo '<input type="hidden" name="id" value="' . $query['id'] . '">';
-                echo '<td><input type="text" name="name" value="'.$query['name'].'"></td>'; 
+                echo '<td><input type="text" name="first_name" value="'.$query['name'].'"></td>'; 
                 echo '<td><input type="text" name="last_name" value="'.$query['last_name'].'"></td>';
                 echo '<td><input type="text" name="dob" value="'.$query['birthdate'].'"></td>';
                 echo '<td><input type="text" name="phone" value="'.$query['phone_number'].'"></td>';
