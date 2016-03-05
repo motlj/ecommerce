@@ -165,6 +165,7 @@ require_once 'includes/database.php';
               Database::disconnect();
             } catch (PDOException $e) {
               echo $e->getMessage();
+              die();
             }
           ?>
 
