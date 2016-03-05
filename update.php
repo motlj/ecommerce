@@ -109,6 +109,8 @@
               $q = $pdo->prepare($sql);
               $q->execute(array($_SESSION['id']));
               $query = $q->fetch(PDO::FETCH_ASSOC);
+              print_r($query);
+              die();
 
                 echo '<tr>';
                 echo '<form method="POST" action="addressUpdate.php">';
