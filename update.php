@@ -115,7 +115,7 @@
             //}
             //die();
             
-            foreach ($pdo->query($sql) as $row) {
+            foreach ($query as $row) {
 
                 echo '<tr>';
                 echo '<form method="POST" action="addressUpdate.php">';
