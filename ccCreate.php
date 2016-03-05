@@ -156,7 +156,8 @@ require_once 'includes/database.php';
               $pdo = Database::connect();
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               $sql = "SELECT id,street1 FROM address WHERE id = IN (SELECT address_fk FROM customer_address WHERE customer_fk = ?)";
-              echo "<select name=Address value=''>Address</option>";
+              echo "<select name=Address value=''>";
+              echo "<option>Address</option>";
               foreach ($dbo->query($sql) as $row) {
                 echo "<option value=$row[id]>$row[street1]</option>";
               }
