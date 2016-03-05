@@ -156,6 +156,10 @@ require_once 'includes/database.php';
               $pdo = Database::connect();
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               $sql = "SELECT id,street1 FROM address WHERE id = IN (SELECT address_fk FROM customer_address WHERE customer_fk = ?)";
+              $q = $pdo->prepare($sql);
+          $query = $q->fetch(PDO::FETCH_ASSOC);
+          print_r($query);
+          die();
               echo "<select name=Address value=''>";
               echo "<option>Address</option>";
               foreach ($pdo->query($sql) as $row) {
@@ -165,16 +169,10 @@ require_once 'includes/database.php';
               Database::disconnect();
             } catch (PDOException $e) {
               echo $e->getMessage();
-              die();
+
             }
           ?>
 
-<!--           <select name="Address">
-           <option value="0">Select Address</option>
-           <option value="1">Address 1</option>
-          </select>
-          <br>
- -->
           <div class="form-actions">
             <button type="submit" class="btn btn-success">Add Credit Card</button>
             <!-- no longer need a button to go back as this is the page being updated   <a class="btn" href="index.php">Back</a>   -->
