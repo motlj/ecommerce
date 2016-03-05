@@ -157,12 +157,9 @@ require_once 'includes/database.php';
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               $sql = "SELECT id,street1 FROM address WHERE id = IN (SELECT address_fk FROM customer_address WHERE customer_fk = ?)";
               $q = $pdo->prepare($sql);
-          $query = $q->fetch(PDO::FETCH_ASSOC);
-          print_r($query);
-          die();
               echo "<select name=Address value=''>";
               echo "<option>Address</option>";
-              foreach ($pdo->query($sql) as $row) {
+              foreach ($pdo->query($q) as $row) {
                 echo "<option value=$row[id]>$row[street1]</option>";
               }
               echo "</select>";
