@@ -155,7 +155,7 @@ require_once 'includes/database.php';
             try {
               $pdo = Database::connect();
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-              $sql = "SELECT id,street1 FROM address WHERE id = (SELECT address_fk FROM customer_address WHERE customer_fk = ? GROUP BY address_fk)";
+              $sql = "SELECT id,street1 FROM address WHERE id = IN (SELECT address_fk FROM customer_address WHERE customer_fk = ? GROUP BY address_fk)";
               $q = $pdo->prepare($sql);
               $address = $q->execute(array($_SESSION['id']));
               // $q->fetchAll());
