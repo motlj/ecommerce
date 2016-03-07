@@ -15,6 +15,22 @@
   <body>
     <?php require_once('includes/navbar.php');?>
 
+    <div id="pallet" class="container main-bg">
+      <div class="flexslider">
+        <ul class="slides">
+          <li>
+            <img src="assets/img/homesignhigh.jpg" title="Wisconsin Home" alt="Wisconsin Home"/>
+          </li>
+          <li>
+            <img src="assets/img/woodflaghigh.jpg" title="Wooden American Flag" alt="Wooden American Flag"/>
+          </li>
+          <li>
+            <img src="assets/img/woodwisconsinhigh.jpg" title="Wooden Wisconsin." alt="Wooden Wisconsin"/>
+          </li>
+        </ul>
+      </div>
+    </div>
+
     <div class="container">
       <div class="starter-template">
         <h1>Login</h1>
