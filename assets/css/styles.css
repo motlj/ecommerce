@@ -4,5 +4,25 @@
 
 
 #auto {
-	width: 75%;
+	width: 50%;
 }
+
+.flexslider .slides img {
+	height: auto;
+	width: 100%;
+	display: block;
+}
+
+.slides {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.flexslider {
+    margin: 0 0 60px;
+    background: #ffffff;
+    border: 4px solid #ffffff;
+    position: relative;
+}
+

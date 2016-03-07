@@ -16,19 +16,21 @@
     <?php require_once('includes/navbar.php');?>
 
     <div class="container">
-      <div class="flexslider">
-        <ul class="slides">
-          <li>
-            <img id="auto" src="assets/img/homesignhigh.jpg" title="Wisconsin Home" alt="Wisconsin Home"/>
-          </li>
-          <li>
-            <img id="auto" src="assets/img/woodflaghigh.jpg" title="Wooden American Flag" alt="Wooden American Flag"/>
-          </li>
-          <li>
-            <img id="auto" src="assets/img/woodwisconsinhigh.jpg" title="Wooden Wisconsin." alt="Wooden Wisconsin"/>
-          </li>
-        </ul>
-      </div>
+      <section class="slider">
+        <div class="flexslider">
+          <ul class="slides">
+            <li>
+              <img id="auto" src="assets/img/homesignhigh.jpg" title="Wisconsin Home" alt="Wisconsin Home"/>
+            </li>
+            <li>
+              <img id="auto" src="assets/img/woodflaghigh.jpg" title="Wooden American Flag" alt="Wooden American Flag"/>
+            </li>
+            <li>
+              <img id="auto" src="assets/img/woodwisconsinhigh.jpg" title="Wooden Wisconsin." alt="Wooden Wisconsin"/>
+            </li>
+          </ul>
+        </div>
+      </section>
     </div>
 
     <div class="container">
