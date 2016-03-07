@@ -12,10 +12,10 @@
     <title>Ecommerce</title>
  </head>
 
-  <body>
+  <body id="background-image">
     <?php require_once('includes/navbar.php');?>
 
-    <div id="pallet" class="container main-bg">
+    <div class="container">
       <div class="flexslider">
         <ul class="slides">
           <li>

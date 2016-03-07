@@ -1,8 +1,8 @@
-body {
+#background-image {
 	background-image: url("assets/img/background.jpg");
 }
 
 
 #auto {
-	width: 100%;
+	width: 75%;
 }
