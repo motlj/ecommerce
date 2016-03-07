@@ -19,13 +19,13 @@
       <div class="flexslider">
         <ul class="slides">
           <li>
-            <img src="assets/img/homesignhigh.jpg" title="Wisconsin Home" alt="Wisconsin Home"/>
+            <img class=auto src="assets/img/homesignhigh.jpg" title="Wisconsin Home" alt="Wisconsin Home"/>
           </li>
           <li>
-            <img src="assets/img/woodflaghigh.jpg" title="Wooden American Flag" alt="Wooden American Flag"/>
+            <img class=auto src="assets/img/woodflaghigh.jpg" title="Wooden American Flag" alt="Wooden American Flag"/>
           </li>
           <li>
-            <img src="assets/img/woodwisconsinhigh.jpg" title="Wooden Wisconsin." alt="Wooden Wisconsin"/>
+            <img class=auto src="assets/img/woodwisconsinhigh.jpg" title="Wooden Wisconsin." alt="Wooden Wisconsin"/>
           </li>
         </ul>
       </div>
