@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/flexslider.css">
 
     <title>Ecommerce</title>
  </head>
@@ -20,13 +21,13 @@
         <div class="flexslider">
           <ul class="slides">
             <li>
-              <img id="auto" src="assets/img/homesignhigh.jpg" title="Wisconsin Home" alt="Wisconsin Home"/>
+              <img src="assets/img/homesignhigh.jpg" title="Wisconsin Home" alt="Wisconsin Home"/>
             </li>
             <li>
-              <img id="auto" src="assets/img/woodflaghigh.jpg" title="Wooden American Flag" alt="Wooden American Flag"/>
+              <img src="assets/img/woodflaghigh.jpg" title="Wooden American Flag" alt="Wooden American Flag"/>
             </li>
             <li>
-              <img id="auto" src="assets/img/woodwisconsinhigh.jpg" title="Wooden Wisconsin." alt="Wooden Wisconsin"/>
+              <img src="assets/img/woodwisconsinhigh.jpg" title="Wooden Wisconsin." alt="Wooden Wisconsin"/>
             </li>
           </ul>
         </div>
