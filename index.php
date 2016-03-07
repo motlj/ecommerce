@@ -8,31 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/flexslider.css">
 
     <title>Ecommerce</title>
  </head>
 
   <body id="background-image">
     <?php require_once('includes/navbar.php');?>
-
-    <div class="container">
-      <section class="slider">
-        <div class="flexslider">
-          <ul class="slides">
-            <li>
-              <img src="assets/img/homesignhigh.jpg" title="Wisconsin Home" alt="Wisconsin Home"/>
-            </li>
-            <li>
-              <img src="assets/img/woodflaghigh.jpg" title="Wooden American Flag" alt="Wooden American Flag"/>
-            </li>
-            <li>
-              <img src="assets/img/woodwisconsinhigh.jpg" title="Wooden Wisconsin." alt="Wooden Wisconsin"/>
-            </li>
-          </ul>
-        </div>
-      </section>
-    </div>
 
     <div class="container">
       <div class="starter-template">
@@ -79,15 +60,7 @@
     </div><!-- /.container -->
 
     <?php require_once('includes/footer.php');?>
-    
-  <script type="text/javascript" src="js/shCore.js"></script>
-  <script type="text/javascript" src="js/shBrushXml.js"></script>
-  <script type="text/javascript" src="js/shBrushJScript.js"></script>
 
-  <!-- Optional FlexSlider Additions -->
-  <script src="js/jquery.easing.js"></script>
-  <script src="js/jquery.mousewheel.js"></script>
-  <script defer src="js/demo.js"></script>
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
   </body>
