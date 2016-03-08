@@ -189,7 +189,7 @@
                 echo '<td><input type="text" name="name" value="'.$row['name'].'"></td>';
                 echo '<td><input type="text" name="card_number" value="'.$row['card_number'].'"></td>';
                 echo '<td><input type="text" name="expiration" value="'.$row['expiration'].'"></td>';
-                echo '<td><input type="text" name="security" value="'.$row['secuirty'].'"></td>';
+                echo '<td><input type="text" name="security" value="'.$row['security'].'"></td>';
                 echo '<td><input type="submit" value="Update"></td>';
                 echo '</form>';
                 echo '<form method="POST" action="ccDelete.php">';
