@@ -19,7 +19,6 @@ require_once 'includes/database.php';
       $security = $_POST['security'];
       $address_fk = $_POST['Address'];
 
-      print_r($address_fk);
 
         // validate input
       $valid = true;
@@ -45,6 +44,8 @@ require_once 'includes/database.php';
         $valid = false;
       }
          
+            echo ($address_fk);
+
       if ($valid) {
         try {
           $pdo = Database::connect();
