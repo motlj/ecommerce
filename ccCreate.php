@@ -160,8 +160,8 @@ require_once 'includes/database.php';
               // $q->fetchAll());
               echo "<select name='Address'>";
               foreach ($address as $row) {
+                $address_fk = $row['id'];
                 echo "<option value='" . $row['id'] . "'>" . $row['street1'] . "</option>";
-                  $address_fk = $row['id'];
               }
               echo "</select>";
               Database::disconnect();
