@@ -155,7 +155,7 @@ require_once 'includes/database.php';
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               $sql = "SELECT * FROM address LEFT JOIN customer_address ON (address.id=customer_address.address_fk) WHERE (customer_address.customer_fk = ". $_SESSION['id'] . ")";
               $address = $pdo->query($sql);
-              echo "<select name='Address'>";
+              echo "<select name='address_fk'>";
               foreach ($address as $row) {
                 echo "<option name='address_fk' value='" . $row['id'] . "'>" . $row['street1'] . "</option>";
               }
