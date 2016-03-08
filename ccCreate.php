@@ -154,7 +154,7 @@ require_once 'includes/database.php';
               $address = $pdo->query($sql);
               echo "<select name='Address'>";
               foreach ($address as $row) {
-                echo "<option name='address_fk' type="text" value='" . $row['id'] . "'>" . $row['street1'] . "</option>";
+                echo "<option name='address_fk' method='post' type='text' value='" . $row['id'] . "'>" . $row['street1'] . "</option>";
               }
               echo "</select>";
               Database::disconnect();
