@@ -1,8 +1,4 @@
-<?php 
-require_once('includes/session.php');
-require_once('includes/database.php');
-$pdo = Datbase::connect();
-?>
+<?php require_once('includes/session.php');?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -63,10 +59,9 @@ $pdo = Datbase::connect();
       </div>
     </div><!-- /.container -->
 
-    <?php 
-    require_once('includes/footer.php');
-    Database::disconnect();
-    ?>
+    <?php require_once('includes/footer.php');?>
 
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
   </body>
 </html>
