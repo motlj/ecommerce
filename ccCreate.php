@@ -47,9 +47,9 @@ require_once 'includes/database.php';
         try {
           $pdo = Database::connect();
           $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-          $sql = "INSERT INTO credit_card (type,name,card_number,expiration,security) values(?, ?, ?, ?, ?)";
+          $sql = "INSERT INTO credit_card (type,name,card_number,expiration,security,address_fk) values(?, ?, ?, ?, ?, ?)";
           $q = $pdo->prepare($sql);
-          $q->execute(array($type,$name,$card_number,$expiration,$security));
+          $q->execute(array($type,$name,$card_number,$expiration,$security,$address_fk));
           $ccID = $pdo->lastInsertId();
           //attempting to use $addressID in another SQL statement
           $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -155,15 +155,13 @@ require_once 'includes/database.php';
             try {
               $pdo = Database::connect();
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-              // $sql = "SELECT id,street1 FROM address WHERE id = (SELECT address_fk FROM customer_address WHERE customer_fk = ?) GROUP BY str";
-              // $sql = 'SELECT * FROM address WHERE id IN (SELECT address_fk FROM customer_address WHERE customer_fk = ?)';
               $sql = "SELECT * FROM address LEFT JOIN customer_address ON (address.id=customer_address.address_fk) AND (customer_address.customer_fk = ". $_SESSION['id'] . ")";
-
               $address = $pdo->query($sql);
               // $q->fetchAll());
               echo "<select name='Address'>";
               foreach ($address as $row) {
                 echo "<option value='" . $row['id'] . "'>" . $row['street1'] . "</option>";
+                  $address_fk = $_POST['address_id'];
               }
               echo "</select>";
               Database::disconnect();
