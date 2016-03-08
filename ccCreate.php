@@ -44,7 +44,6 @@ require_once 'includes/database.php';
         $valid = false;
       }
          
-            echo ($address_fk);
 
       if ($valid) {
         try {
@@ -172,7 +171,7 @@ require_once 'includes/database.php';
           <br>
           <div class="form-actions">
             <button type="submit" class="btn btn-success">Add Credit Card</button>
-            <!-- no longer need a button to go back as this is the page being updated   <a class="btn" href="index.php">Back</a>   -->
+            <a class="btn" href="update.php">Back</a>
           </div>
         </form>
       </div>
