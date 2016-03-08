@@ -1,7 +1,7 @@
 <?php 
 require_once('includes/session.php');
 require_once('includes/database.php');
-Datbase::connect();
+$pdo = Datbase::connect();
 ?>
 
 <!DOCTYPE html>
