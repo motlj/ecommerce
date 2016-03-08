@@ -46,7 +46,7 @@ require_once 'includes/database.php';
          
 
       if ($valid) {
-        try {
+        //try {
           $pdo = Database::connect();
           $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
           $sql = "INSERT INTO credit_card (type,name,card_number,expiration,security,address_fk) values(?, ?, ?, ?, ?, ?)";
@@ -61,9 +61,9 @@ require_once 'includes/database.php';
           Database::disconnect();
 
           header("Location: update.php");
-        } catch (PDOException $e) {
-          echo $e->getMessage();
-        }
+        //} catch (PDOException $e) {
+         // echo $e->getMessage();
+        //}
       }
     }
 
