@@ -51,7 +51,7 @@ require_once 'includes/database.php';
           $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
           $sql = "INSERT INTO credit_card (type,name,card_number,expiration,security,address_fk) values(?, ?, ?, ?, ?, ?)";
           $q = $pdo->prepare($sql);
-          $q->execute(array($type,$name,$card_number,$expiration,$security,$row['id']));
+          $q->execute(array($type,$name,$card_number,$expiration,$security,$address_fk));
           $ccID = $pdo->lastInsertId();
           //attempting to use $addressID in another SQL statement
           $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -160,8 +160,11 @@ require_once 'includes/database.php';
               $sql = "SELECT * FROM address LEFT JOIN customer_address ON (address.id=customer_address.address_fk) AND (customer_address.customer_fk = ". $_SESSION['id'] . ")";
               $address = $pdo->query($sql);
               // $q->fetchAll());
-              echo "<select>";
+              echo "<select name='Address'>";
               foreach ($address as $row) {
+                echo $row['id'];
+                print_r($row['id']);
+                die();
                 echo "<option name='Address' value='" . $row['id'] . "'>" . $row['street1'] . "</option>";
               }
               echo "</select>";
