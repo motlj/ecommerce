@@ -153,7 +153,7 @@ require_once 'includes/database.php';
             try {
               $pdo = Database::connect();
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-              $sql = "SELECT * FROM address LEFT JOIN customer_address ON (address.id=customer_address.address_fk) WHERE (customer_address.customer_fk = ". $_SESSION['id'] . ")";
+              $sql = "SELECT `address`.`id`, `address`.`street1` FROM `address` LEFT JOIN `customer_address` ON `address`.`id`=`customer_address`.`address_fk` WHERE (`customer_address`.`customer_fk` = `". $_SESSION['id'] . "`)";
               $address = $pdo->query($sql);
               echo "<select name='address_fk'>";
               foreach ($address as $row) {
