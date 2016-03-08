@@ -51,7 +51,7 @@ require_once 'includes/database.php';
           $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
           $sql = "INSERT INTO credit_card (type,name,card_number,expiration,security,address_fk) values(?, ?, ?, ?, ?, ?)";
           $q = $pdo->prepare($sql);
-          echo $address_fk;
+          print_r($address_fk);
           die();
           $q->execute(array($type,$name,$card_number,$expiration,$security,$address_fk));
           $ccID = $pdo->lastInsertId();
