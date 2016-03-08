@@ -171,7 +171,7 @@
               $pdo = Database::connect();
               $id = $_SESSION['id'];
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-              $sql = 'SELECT * FROM credit_card WHERE id IN (SELECT credit_card_fk FROM customer_credit_card WHERE customer_fk = ?)';
+              $sql = 'SELECT * FROM credit_card WHERE id IN (SELECT creditcard_fk FROM customer_credit_card WHERE customer_fk = ?)';
               $q = $pdo->prepare($sql);
               $q->execute(array($id));
               $query = $q->fetchAll(PDO::FETCH_ASSOC);
