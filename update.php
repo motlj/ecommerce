@@ -210,6 +210,10 @@
     <div>
       <a href="index.php">Return to Index</a>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
   </div> <!-- /container -->
 
   <?php require_once('includes/footer.php');?>
