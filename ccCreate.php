@@ -51,9 +51,6 @@ require_once 'includes/database.php';
           $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
           $sql = "INSERT INTO credit_card (type,name,card_number,expiration,security,address_fk) values(?, ?, ?, ?, ?, ?)";
           $q = $pdo->prepare($sql);
-          echo $address_fk;
-          print_r($address_fk);
-          die();
           $q->execute(array($type,$name,$card_number,$expiration,$security,$address_fk));
           $ccID = $pdo->lastInsertId();
           //attempting to use $addressID in another SQL statement
@@ -165,7 +162,7 @@ require_once 'includes/database.php';
               // $q->fetchAll());
               echo "<select>";
               foreach ($address as $row) {
-                echo "<option name='Address' value='" . $row['id'] . "'>" . $row['street1'] . "</option>";
+                echo "<option name='Address' method="post" value='" . $row['id'] . "'>" . $row['street1'] . "</option>";
               }
               echo "</select>";
               Database::disconnect();
