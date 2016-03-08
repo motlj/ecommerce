@@ -161,7 +161,8 @@ require_once 'includes/database.php';
 
               $q = $pdo->prepare($sql);
               $address = $q->execute(array($_SESSION['id']));
-              echo $_SESSION['id'];
+              print_r($address);
+              die();
               // $q->fetchAll());
               echo "<select name='Address'>";
               foreach ($address as $row) {
