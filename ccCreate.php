@@ -17,6 +17,7 @@ require_once 'includes/database.php';
       $card_number = $_POST['card_number'];
       $expiration = $_POST['expiration'];
       $security = $_POST['security'];
+      $address_fk = $POST['$row['id']']
          
         // validate input
       $valid = true;
@@ -160,7 +161,6 @@ require_once 'includes/database.php';
               // $q->fetchAll());
               echo "<select name='Address'>";
               foreach ($address as $row) {
-                $address_fk = $row['id'];
                 echo "<option value='" . $row['id'] . "'>" . $row['street1'] . "</option>";
               }
               echo "</select>";
