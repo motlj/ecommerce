@@ -19,6 +19,7 @@ require_once 'includes/database.php';
       $security = $_POST['security'];
       $address_fk = $_POST['address_fk'];
 
+      print_r($address_fk);
 
         // validate input
       $valid = true;
