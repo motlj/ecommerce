@@ -1,5 +1,8 @@
-<?php require_once('includes/session.php');?>
-
+<?php 
+require_once'includes/session.php';
+require_once'includes/database.php';
+Database::connect();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,7 +17,7 @@
   <body>
 
   <?php 
-    //require_once('includes/navbar.php');
+    require_once('includes/navbar.php');
     require_once('includes/database.php');
     error_reporting(E_ALL);
   ?>
@@ -41,7 +44,7 @@
         <tbody>
           <?php
           if($loggedin) {
-              $pdo = Database::connect();
+              //$pdo = Database::connect();
               $username = $_SESSION['user_name'];
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               $sql = 'SELECT * FROM customer WHERE user_name = ?';
@@ -68,8 +71,7 @@
                 echo '</tr>';
           }
                 
-          Database::disconnect();
-              //print_r($query);
+          //Database::disconnect();
           ?>
         </tbody>
       </table>
@@ -103,7 +105,7 @@
           <?php
           if($loggedin) {
             //try {
-              $pdo = Database::connect();
+              //$pdo = Database::connect();
               $id = $_SESSION['id'];
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               $sql = 'SELECT * FROM address WHERE id IN (SELECT address_fk FROM customer_address WHERE customer_fk = ?)';
@@ -136,7 +138,7 @@
               }
           }
                 
-          Database::disconnect();
+          //Database::disconnect();
               //print_r($query);
           ?>
         </tbody>
@@ -149,7 +151,7 @@
     </div>
     <div>
       <p>If you have not registered a credit card with your account, please <a href="ccCreate.php">add a credit card</a>.</p>
-      <p>Please make updates to your existing creidt cards below.</p>
+      <p>Please make updates to your existing credit cards below.</p>
     </div>
     <div class="row">
       <table class="table table-striped table-bordered">
@@ -168,7 +170,7 @@
           <?php
           if($loggedin) {
             //try {
-              $pdo = Database::connect();
+              //$pdo = Database::connect();
               $id = $_SESSION['id'];
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               $sql = 'SELECT * FROM credit_card WHERE id IN (SELECT creditcard_fk FROM customer_credit_card WHERE customer_fk = ?)';
@@ -200,7 +202,7 @@
               }
           }
                 
-          Database::disconnect();
+          //Database::disconnect();
               //print_r($query);
           ?>
         </tbody>
@@ -217,7 +219,5 @@
   </div> <!-- /container -->
 
   <?php require_once('includes/footer.php');?>
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/bootstrap.min.js"></script>
   </body>
 </html>

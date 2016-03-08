@@ -1,4 +1,8 @@
-<?php require_once('includes/session.php');?>
+<?php 
+require_once('includes/session.php');
+require_once('includes/database.php');
+Datbase::connect();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -59,9 +63,10 @@
       </div>
     </div><!-- /.container -->
 
-    <?php require_once('includes/footer.php');?>
+    <?php 
+    require_once('includes/footer.php');
+    Database::disconnect();
+    ?>
 
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/bootstrap.min.js"></script>
   </body>
 </html>
