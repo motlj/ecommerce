@@ -17,7 +17,7 @@ require_once 'includes/database.php';
       $card_number = $_POST['card_number'];
       $expiration = $_POST['expiration'];
       $security = $_POST['security'];
-      $address_fk = $_POST['Address'];
+      $address_fk = $_POST['address_fk'];
 
 
         // validate input
@@ -44,7 +44,6 @@ require_once 'includes/database.php';
         $valid = false;
       }
          
-        // insert data
       if ($valid) {
         try {
           $pdo = Database::connect();
@@ -53,16 +52,11 @@ require_once 'includes/database.php';
           $q = $pdo->prepare($sql);
           $q->execute(array($type,$name,$card_number,$expiration,$security,$address_fk));
           $ccID = $pdo->lastInsertId();
-          //attempting to use $addressID in another SQL statement
           $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
           $sql = "INSERT INTO customer_credit_card (creditcard_fk,customer_fk) values(?,?)";
           $q = $pdo->prepare($sql);
           $q->execute(array($ccID, $_SESSION['id']));
-          //$query = $q->fetch(PDO::FETCH_ASSOC);
-          //print_r($query);
           Database::disconnect();
-          //echo $addressID;
-          //die();
 
           header("Location: update.php");
         } catch (PDOException $e) {
@@ -71,7 +65,6 @@ require_once 'includes/database.php';
       }
     }
 
-//need to debug, not redirecting to update, not showing query row on update.
 
 ?>
 
@@ -159,19 +152,18 @@ require_once 'includes/database.php';
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               $sql = "SELECT * FROM address LEFT JOIN customer_address ON (address.id=customer_address.address_fk) AND (customer_address.customer_fk = ". $_SESSION['id'] . ")";
               $address = $pdo->query($sql);
-              // $q->fetchAll());
               echo "<select name='Address'>";
               foreach ($address as $row) {
-                echo "<option name='Address' value='" . $row['id'] . "'>" . $row['street1'] . "</option>";
+                echo "<option name='address_fk' value='" . $row['id'] . "'>" . $row['street1'] . "</option>";
               }
               echo "</select>";
               Database::disconnect();
             } catch (PDOException $e) {
               echo $e->getMessage();
               Database::disconnect();
-              //die();
             }
           ?>
+
           <br>
           <br>
           <br>
