@@ -164,6 +164,7 @@ require_once 'includes/database.php';
               foreach ($address as $row) {
                 echo "<option name='Address' value='" . $row['id'] . "'>" . $row['street1'] . "</option>";
                 echo $row['id'];
+                die();
               }
               echo "</select>";
               Database::disconnect();
