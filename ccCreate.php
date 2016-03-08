@@ -160,8 +160,6 @@ require_once 'includes/database.php';
               $sql = "SELECT * FROM address LEFT JOIN customer_address ON (address.id=customer_address.address_fk) AND (customer_address.customer_fk = ". $_SESSION['id'] . ")";
 
               $address = $pdo->query($sql);
-              print_r($address);
-              die();
               // $q->fetchAll());
               echo "<select name='Address'>";
               foreach ($address as $row) {
