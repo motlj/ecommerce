@@ -164,7 +164,6 @@ require_once 'includes/database.php';
               foreach ($address as $row) {
                 echo $row['id'];
                 print_r($row['id']);
-                die();
                 echo "<option name='Address' value='" . $row['id'] . "'>" . $row['street1'] . "</option>";
               }
               echo "</select>";
