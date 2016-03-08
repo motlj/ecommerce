@@ -164,7 +164,7 @@ require_once 'includes/database.php';
               // $q->fetchAll());
               echo "<select name='Address'>";
               foreach ($address as $row) {
-                echo "<option value='" . $row[id] . "'>" . $row[street1] . "</option>";
+                echo "<option value='" . $row['id'] . "'>" . $row['street1'] . "</option>";
               }
               echo "</select>";
               Database::disconnect();
@@ -174,7 +174,8 @@ require_once 'includes/database.php';
               //die();
             }
           ?>
-
+          <br>
+          <br>
           <br>
           <div class="form-actions">
             <button type="submit" class="btn btn-success">Add Credit Card</button>
