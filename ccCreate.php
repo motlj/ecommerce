@@ -17,7 +17,7 @@ require_once 'includes/database.php';
       $card_number = $_POST['card_number'];
       $expiration = $_POST['expiration'];
       $security = $_POST['security'];
-      $address_fk = $_POST['address_fk'];
+      $address_fk = $_POST['Address'];
 
 
         // validate input
@@ -51,6 +51,7 @@ require_once 'includes/database.php';
           $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
           $sql = "INSERT INTO credit_card (type,name,card_number,expiration,security,address_fk) values(?, ?, ?, ?, ?, ?)";
           $q = $pdo->prepare($sql);
+          echo $address_fk;
           print_r($address_fk);
           die();
           $q->execute(array($type,$name,$card_number,$expiration,$security,$address_fk));
@@ -164,7 +165,7 @@ require_once 'includes/database.php';
               // $q->fetchAll());
               echo "<select name='Address'>";
               foreach ($address as $row) {
-                echo "<option name='address_fk' value='" . $row['id'] . "'>" . $row['street1'] . "</option>";
+                echo "<option name='Address' value='" . $row['id'] . "'>" . $row['street1'] . "</option>";
               }
               echo "</select>";
               Database::disconnect();
