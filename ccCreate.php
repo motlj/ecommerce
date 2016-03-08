@@ -157,10 +157,9 @@ require_once 'includes/database.php';
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               // $sql = "SELECT id,street1 FROM address WHERE id = (SELECT address_fk FROM customer_address WHERE customer_fk = ?) GROUP BY str";
               // $sql = 'SELECT * FROM address WHERE id IN (SELECT address_fk FROM customer_address WHERE customer_fk = ?)';
-              $sql = "SELECT * FROM address LEFT JOIN customer_address ON (address.id=customer_address.address_fk) AND (customer_address.customer_fk = ?)";
+              $sql = "SELECT * FROM address LEFT JOIN customer_address ON (address.id=customer_address.address_fk) AND (customer_address.customer_fk = ". $_SESSION['id'] . ")";
 
-              $q = $pdo->prepare($sql);
-              $address = $q->execute(array($_SESSION['id']));
+              $address = $pdo->query($sql);
               print_r($address);
               die();
               // $q->fetchAll());
