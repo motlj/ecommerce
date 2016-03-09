@@ -58,9 +58,9 @@
 
           if ($admin) {
             echo "You have access to admin functions.";
-            echo '<form method="POST" action="adminUpdate.php">'
-            echo '<input type="submit" value="Update Admin Info">'
-            echo '</form>'
+            echo '<form method="POST" action="adminUpdate.php">';
+            echo '<input type="submit" value="Update Admin Info">';
+            echo '</form>';
           }
         ?>
       </div>
