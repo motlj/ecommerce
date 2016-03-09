@@ -6,22 +6,23 @@
 
       // keep track post values
       $id = $_POST['id'];
-      $name = $_POST['name'];
+      $product_name = $_POST['product_name'];
       $description = $_POST['description'];
+      $price = $_POST['price'];
          
       function valid($varname){
         return ( !empty($varname) && isset($varname) );
       }
 
-      if (!valid($name) || !valid($description)) {
+      if (!valid($product_name) || !valid($description) || !valid($price)) {
         header("Location: adminUpdate.php");
       }
 
       $pdo = Database::connect();
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "UPDATE category SET name = ?, description = ? WHERE id = ?";
+        $sql = "UPDATE category SET product_name = ?, description = ?, price = ? WHERE id = ?";
         $q = $pdo->prepare($sql);
-        $q->execute(array($name,$description,$id));
+        $q->execute(array($name,$description,$price,$id));
       Database::disconnect();
       header("Location: adminUpdate.php");
     }

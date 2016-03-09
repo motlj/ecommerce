@@ -72,14 +72,14 @@ require_once 'includes/database.php';
     <div class="container">
       <div class="span10 offset1">
         <div class="row">
-          <h3>Please enter a name to create a Bin.</h3>
+          <h3>Please enter following information to create a Category.</h3>
         </div>           
         <form class="form-horizontal" action="categoryCreate.php" method="post"> 
 
           <div class="control-group <?php echo !empty($nameError)?'error':'';?>">
-            <label class="control-label">Bin Name</label>
+            <label class="control-label">Category Name</label>
             <div class="controls">
-              <input name="name" type="text" placeholder="Bin Name" value="<?php echo !empty($name)?$name:'';?>">
+              <input name="name" type="text" placeholder="Category Name" value="<?php echo !empty($name)?$name:'';?>">
               <?php if (!empty($nameError)): ?>
                 <span class="help-inline"><?php echo $nameError;?></span>
               <?php endif;?>

@@ -35,7 +35,7 @@ require_once 'includes/database.php';
         try {
           $pdo = Database::connect();
           $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-          $sql = "INSERT INTO category (product_name, description, price) values(?, ?, ?)";
+          $sql = "INSERT INTO product (product_name, description, price) values(?, ?, ?)";
           $q = $pdo->prepare($sql);
           $q->execute(array($name,$description,$price));
           $productID = $pdo->lastInsertId();
