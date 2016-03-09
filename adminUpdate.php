@@ -23,6 +23,74 @@ require_once'includes/database.php';
  <body>
 
   <div class="container">
+
+    <div class="row">
+      <h3>Update Shipment Center Information</h3>
+      <p>Please <a href="shipmentCreate.php">Create a Shipment Center</a>.</p>
+      <p>Please make updates to your existing Shipment Centers below.</p>
+    </div>
+    <div class="row">
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>Shipment Center</th>
+            <th>Address</th>
+            <th>Action</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+            if($loggedin) {
+              $pdo = Database::connect();
+              $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+              $sql = 'SELECT * FROM shipment_center ORDER BY name';
+              $q = $pdo->prepare($sql);
+              $q->execute(array());
+              $query = $q->fetchAll(PDO::FETCH_ASSOC);
+           	 
+           	  foreach ($query as $row) {
+                echo '<tr>';
+                echo '<form method="POST" action="shipmentUpdate.php">';
+                echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
+                echo '<td><input type="text" name="name" value="'.$row['name'].'"></td>'; 
+
+   	            //dropdown for address
+	            echo '<td>';
+	            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $sql = "SELECT `address`.`id`, `address`.`street1` FROM `address` ORDER BY `street1` ASC";
+       	        $address = $pdo->query($sql);
+                echo "<select name='address_fk'>";
+
+                foreach ($address as $row1) {
+                  echo "<option value='" . $row1['id'] . "'";
+                  if($row1['id']==$row['address_fk']){
+                  	echo " selected ";
+                  }
+                  echo ">" . $row1['street1'] . "</option>";
+                }
+                echo "</select>";
+                echo "</td>";
+                //end dropdown
+
+                echo '<td><input type="submit" value="Update"></td>';
+                echo '</form>';
+                echo '<form method="POST" action="shipmentDelete.php">';
+                echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
+                echo '<td><input type="submit" value="Delete"></td>';
+                echo '</form>';
+                echo '</tr>';
+              }
+            }
+          Database::disconnect();
+              //print_r($query);
+          ?>
+        </tbody>
+      </table>
+    </div>
+
+    <br>
+
     <div class="row">
       <h3>Update Bin Information</h3>
       <p>Please <a href="binCreate.php">Create a Bin</a>.</p>
@@ -68,7 +136,6 @@ require_once'includes/database.php';
       </table>
     </div>
 
-    <br>
     <br>
 
     <div class="row">
