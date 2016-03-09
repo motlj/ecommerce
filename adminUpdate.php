@@ -40,7 +40,7 @@ require_once'includes/database.php';
         <tbody>
           <?php
           if($loggedin) {
-              //$pdo = Database::connect();
+              $pdo = Database::connect();
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               $sql = 'SELECT * FROM bin ORDER BY id';
               $q = $pdo->prepare($sql);
@@ -60,7 +60,7 @@ require_once'includes/database.php';
                 echo '</tr>';
           }
                 
-          //Database::disconnect();
+          Database::disconnect();
               //print_r($query);
           ?>
         </tbody>
@@ -74,7 +74,7 @@ require_once'includes/database.php';
       <h3>Update Category</h3>
     </div>
     <div>
-      <p>Please <a href="addressCreate.php">Create a Category</a>.</p>
+      <p>Please <a href="categoryCreate.php">Create a Category</a>.</p>
       <p>Please make updates to your existing Categories below.</p>
     </div>
     <div class="row">
