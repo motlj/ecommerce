@@ -24,7 +24,7 @@
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sql = "UPDATE product SET product_name = ?, description = ?, price = ?, category_fk = ?, bin_fk = ? WHERE id = ?";
         $q = $pdo->prepare($sql);
-        $q->execute(array($name,$description,$price,$category_fk,$bin_fk,$id));
+        $q->execute(array($product_name,$description,$price,$category_fk,$bin_fk,$id));
       Database::disconnect();
       header("Location: adminUpdate.php");
     }
