@@ -118,6 +118,8 @@ require_once 'includes/database.php';
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               $sql = "SELECT * FROM `bin` ORDER BY `name` ASC";
               $bin = $pdo->query($sql);
+              echo "Please choose Bin";
+              echo "<br>";
               echo "<select name='bin_fk'>";
               foreach ($bin as $row) {
                 echo "<option value='" . $row['id'] . "'>" . $row['name'] . "</option>";
@@ -128,6 +130,8 @@ require_once 'includes/database.php';
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               $sql = "SELECT * FROM `category` ORDER BY `name` ASC";
               $category = $pdo->query($sql);
+              echo "Please choose Category";
+              echo "<br>";
               echo "<select name='category_fk'>";
               foreach ($category as $row1) {
                 echo "<option value='" . $row1['id'] . "'>" . $row1['name'] . "</option>";
