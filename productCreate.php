@@ -32,10 +32,6 @@ require_once 'includes/database.php';
         $valid = false;
       }
          
-      echo $category_fk;
-      echo $bin_fk;
-      die();
-
         // insert data
       if ($valid) {
         try {
