@@ -14,6 +14,7 @@
         <li class="active"><a href="adminUpdate.php">Administrative Functions</a></li>
         <li><a href="productList.php">Products</a></li>
         <li><a href="management.php">Contact Manager</a></li>
+        <li><a href="includes/logout.php">Logout</a></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
