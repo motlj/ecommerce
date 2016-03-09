@@ -124,11 +124,11 @@ require_once'includes/database.php';
    	            //dropdown for address
 	            echo '<td>';
 	            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                $sql = "SELECT `shipment_center`.`id`, `shipment_center`.`name`ORDER BY `name` ASC";
-       	        $shipment = $pdo->query($sql);
+                $sql = "SELECT `shipment_center`.`id`, `shipment_center`.`name` FROM `shipment_center` ORDER BY `name` ASC";
+       	        $shipment_center = $pdo->query($sql);
                 echo "<select name='shipment_center_fk'>";
 
-                foreach ($shipment as $row1) {
+                foreach ($shipment_center as $row1) {
                   echo "<option value='" . $row1['id'] . "'";
                   if($row1['id']==$row['shipment_center_fk']){
                   	echo " selected ";
