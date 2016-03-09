@@ -36,7 +36,7 @@ require_once'includes/database.php';
             <th>Phone Number</th>
             <th>Email Address</th>
             <th>User Name</th>
-            <th>Password</th>
+            <!-- <th>Password</th> -->
             <th>Action</th>
             <!-- <th>Action</th>  -->
           </tr>
