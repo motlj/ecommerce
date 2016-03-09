@@ -18,7 +18,7 @@
 
       $pdo = Database::connect();
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "UPDATE address SET name = ? WHERE id = ?";
+        $sql = "UPDATE bin SET name = ? WHERE id = ?";
         $q = $pdo->prepare($sql);
         $q->execute(array($name,$id));
       Database::disconnect();
