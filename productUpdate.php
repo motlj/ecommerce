@@ -10,7 +10,7 @@
       $description = $_POST['description'];
       $price = $_POST['price'];
       $category_fk = $_POST['category_fk'];
-      $bin_fk = $_POST['bin_fk']
+      $bin_fk = $_POST['bin_fk'];
          
       function valid($varname){
         return ( !empty($varname) && isset($varname) );
