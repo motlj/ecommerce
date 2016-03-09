@@ -38,7 +38,7 @@ require_once'includes/database.php';
             <th>User Name</th>
             <th>Password</th>
             <th>Action</th>
-            <th>Action</th>
+            <!-- <th>Action</th>  -->
           </tr>
         </thead>
         <tbody>
@@ -61,13 +61,13 @@ require_once'includes/database.php';
                 echo '<td><input type="text" name="phone" value="'.$query['phone_number'].'"></td>';
                 echo '<td><input type="text" name="email" value="'.$query['email_address'].'"></td>';
                 echo '<td><input type="text" name="username" value="'.$query['user_name'].'"></td>';
-                echo '<td>***</td>';
+                // echo '<td>***</td>';
                 echo '<td><input type="submit" value="Update"></td>';
                 echo '</form>';
-                echo '<form method="POST" action="userDelete.php">';
-                echo '<input type="hidden" name="id" value="' . $query['id'] . '">';
-                echo '<td><input type="submit" value="Delete"></td>';
-                echo '</form>';
+                // echo '<form method="POST" action="userDelete.php">';
+                // echo '<input type="hidden" name="id" value="' . $query['id'] . '">';
+                // echo '<td><input type="submit" value="Delete"></td>';
+                // echo '</form>';
                 echo '</tr>';
           }
                 
