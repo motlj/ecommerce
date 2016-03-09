@@ -113,7 +113,8 @@ require_once 'includes/database.php';
               <?php endif;?>
             </div>
           </div>
-          
+          <br>
+
           <?php
             try {
               $pdo = Database::connect();
@@ -125,14 +126,22 @@ require_once 'includes/database.php';
                 echo "<option value='" . $row['id'] . "'>" . $row['name'] . "</option>";
               }
               echo "</select>";
+              echo "<br>";
+              $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+              $sql = "SELECT * FROM `category` ORDER BY `name` ASC";
+              $category = $pdo->query($sql);
+              echo "<select name='category_fk'>";
+              foreach ($category as $row1) {
+                echo "<option value='" . $row1['id'] . "'>" . $row1['name'] . "</option>";
+              }
+              echo "</select>";
+              echo "<br>";
               Database::disconnect();
             } catch (PDOException $e) {
               echo $e->getMessage();
               Database::disconnect();
             }
           ?>
-
-
 
           <div class="form-actions">
             <button type="submit" class="btn btn-success">Add Product</button>
