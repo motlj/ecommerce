@@ -18,6 +18,11 @@
           <?php
           if ($loggedin) {
             echo '<li>';
+            echo '<form action="update.php" method="post">';
+              echo '<input type="submit" value="Update Profile">';
+            echo '</form>';
+            echo '</li>';
+            echo '<li>';
             echo '<form action="includes/logout.php" method="post">';
               echo '<input type="submit" value="Logout">';
             echo '</form>';
