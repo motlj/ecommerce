@@ -7,8 +7,8 @@ session_start();
 		$loggedin = true;
 	}
 
-/*	$admin = false;
-	if (!empty($_SESSION['permission']) && ($_SESSION['permission']) ) == 1 {
+	$admin = false;
+	if (!empty($_SESSION['id']) && ($_SESSION['permission']) == 1 ) {
 		$admin = true;
 	}
-*/?>
+?>
