@@ -162,17 +162,26 @@ require_once'includes/database.php';
                 echo '<td><input type="text" name="product_name" value="'.$row['product_name'].'"></td>'; 
                 echo '<td><input type="text" name="description" value="'.$row['description'].'"></td>';
                 echo '<td><input type="text" name="price" value="'.$row['price'].'"></td>';
-                echo '<td><input type="submit" value="Update"></td>';
-	            
+	            //dropdown for category
 	            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                $sql = "SELECT `bin`.`id`, `bin`.`name` FROM `bin` ORDER BY `name` ASC";
-       	        $bin = $pdo->query($sql);
+                $sql = "SELECT `category`.`id`, `category`.`name` FROM `category` ORDER BY `name` ASC";
+       	        $category = $pdo->query($sql);
                 echo "<select name='id'>";
-                foreach ($bin as $row1) {
+                foreach ($category as $row1) {
                   echo "<option value='" . $row1['id'] . "'>" . $row1['name'] . "</option>";
                 }
                 echo "</select>";
+                //dropdown for bin
+                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $sql = "SELECT `bin`.`id`, `bin`.`name` FROM `bin` ORDER BY `name` ASC";
+       	        $bin = $pdo->query($sql);
+                echo "<select name='id'>";
+                foreach ($bin as $row2) {
+                  echo "<option value='" . $row2['id'] . "'>" . $row2['name'] . "</option>";
+                }
+                echo "</select>";
 
+                echo '<td><input type="submit" value="Update"></td>';
                 echo '</form>';
                 echo '<form method="POST" action="productDelete.php">';
                 echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
