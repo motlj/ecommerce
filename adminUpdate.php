@@ -168,7 +168,7 @@ require_once'includes/database.php';
 	            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $sql = "SELECT `category`.`id`, `category`.`name` FROM `category` ORDER BY `name` ASC";
        	        $category = $pdo->query($sql);
-                echo "<select name='id'>";
+                echo "<select name='category_fk'>";
 
                 foreach ($category as $row1) {
                   echo "<option value='" . $row1['id'] . "'";
@@ -186,7 +186,7 @@ require_once'includes/database.php';
                 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $sql = "SELECT `bin`.`id`, `bin`.`name` FROM `bin` ORDER BY `name` ASC";
        	        $bin = $pdo->query($sql);
-                echo "<select name='id'>";
+                echo "<select name='bin_fk'>";
 
                 foreach ($bin as $row2) {
                   echo "<option value='" . $row2['id'] . "'";
