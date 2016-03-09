@@ -45,7 +45,7 @@ require_once'includes/database.php';
               $sql = 'SELECT * FROM bin ORDER BY name';
               $q = $pdo->prepare($sql);
               $q->execute(array());
-              $query = $q->fetch(PDO::FETCH_ASSOC);
+              $query = $q->fetchAll(PDO::FETCH_ASSOC);
            	 
            	  foreach ($query as $row) {
                 echo '<tr>';
