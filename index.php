@@ -46,7 +46,7 @@
         <br>
         <br>
         <?php
-          if ($loggedin) {
+          if ($loggedin) { //add elseif here to check if logged in as admin then access adminUpdate.php, else if logged in as user access update.php else you are logged out.
             echo "You are logged in.";
             echo '<form method="POST" action="update.php">';
             echo '<input type="submit" value="Update User Info">';
@@ -54,6 +54,13 @@
           
           } else {
             echo "You are logged out.";
+          }
+
+          if ($admin) {
+            echo "You have access to admin functions.";
+            echo '<form method="POST" action="adminUpdate.php">'
+            echo '<input type="submit" value="Update Admin Info">'
+            echo '</form>'
           }
         ?>
       </div>
