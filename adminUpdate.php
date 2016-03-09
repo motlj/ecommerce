@@ -163,20 +163,12 @@ require_once'includes/database.php';
                 echo '<td><input type="text" name="description" value="'.$row['description'].'"></td>';
                 echo '<td><input type="text" name="price" value="'.$row['price'].'"></td>';
 	           
-
-
-
-
 	            //dropdown for category
 	            echo '<td>';
 	            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $sql = "SELECT `category`.`id`, `category`.`name` FROM `category` ORDER BY `name` ASC";
        	        $category = $pdo->query($sql);
                 echo "<select name='id'>";
-
-                //$sql2 = "SELECT `category`.`name` FROM `category` LEFT JOIN `product` ON (`category`.`id`=`product`.`category_fk`)";
-                //$categoryname = $pdo->query($sql2);
-                //echo "<option value='" . $row['category_fk'] . "'>"
 
                 foreach ($category as $row1) {
                   echo "<option value='" . $row1['id'] . "'";
@@ -185,13 +177,9 @@ require_once'includes/database.php';
                   }
                   echo ">" . $row1['name'] . "</option>";
                 }
-
                 echo "</select>";
                 echo "</td>";
-
-
-
-
+                //end dropdown
 
                 //dropdown for bin
                 echo '<td>';
@@ -199,11 +187,17 @@ require_once'includes/database.php';
                 $sql = "SELECT `bin`.`id`, `bin`.`name` FROM `bin` ORDER BY `name` ASC";
        	        $bin = $pdo->query($sql);
                 echo "<select name='id'>";
+
                 foreach ($bin as $row2) {
-                  echo "<option value='" . $row2['id'] . "'>" . $row2['name'] . "</option>";
+                  echo "<option value='" . $row2['id'] . "'";
+                  if($row2['id']==$row['bin_fk']){
+                  	echo " selected ";
+                  }
+                  echo ">" . $row2['name'] . "</option>";
                 }
                 echo "</select>";
                 echo "</td>";
+                //end dropdown
 
                 echo '<td><input type="submit" value="Update"></td>';
                 echo '</form>';
