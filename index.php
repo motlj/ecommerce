@@ -24,7 +24,7 @@
     <div class="container">
       <?php
       if ($loggedin) {
-        echo "Welcome Back, " . "$_SESSION['user_name']";
+        echo "Welcome Back, " . '"$_SESSION['user_name']"';
       }
       ?>
 
