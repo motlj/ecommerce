@@ -43,7 +43,7 @@ require_once 'includes/database.php';
           $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
           $sql = "INSERT INTO `product` (product_name, description, price, category_fk, bin_fk) values(?, ?, ?, ?, ?)";
           $q = $pdo->prepare($sql);
-          $q->execute(array($name,$description,$price,$category_fk,$bin_fk));
+          $q->execute(array($product_name,$description,$price,$category_fk,$bin_fk));
               // $productID = $pdo->lastInsertId();
               // attempting to use $binID in another SQL statement for bin_shipment
               // $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
