@@ -163,6 +163,7 @@ require_once'includes/database.php';
                 echo '<td><input type="text" name="description" value="'.$row['description'].'"></td>';
                 echo '<td><input type="text" name="price" value="'.$row['price'].'"></td>';
 	            //dropdown for category
+	            echo '<td>';
 	            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $sql = "SELECT `category`.`id`, `category`.`name` FROM `category` ORDER BY `name` ASC";
        	        $category = $pdo->query($sql);
@@ -171,7 +172,9 @@ require_once'includes/database.php';
                   echo "<option value='" . $row1['id'] . "'>" . $row1['name'] . "</option>";
                 }
                 echo "</select>";
+                echo "</td>";
                 //dropdown for bin
+                echo '<td>'
                 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $sql = "SELECT `bin`.`id`, `bin`.`name` FROM `bin` ORDER BY `name` ASC";
        	        $bin = $pdo->query($sql);
@@ -180,6 +183,7 @@ require_once'includes/database.php';
                   echo "<option value='" . $row2['id'] . "'>" . $row2['name'] . "</option>";
                 }
                 echo "</select>";
+                echo "</td>";
 
                 echo '<td><input type="submit" value="Update"></td>';
                 echo '</form>';
