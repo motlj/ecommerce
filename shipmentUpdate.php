@@ -14,7 +14,7 @@
       }
 
       if (!valid($name) || !valid($address_fk)) {
-        header("Location: update.php");
+        header("Location: adminUpdate.php");
       }
 
       $pdo = Database::connect();
