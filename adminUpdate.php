@@ -100,7 +100,8 @@ require_once'includes/database.php';
       <table class="table table-striped table-bordered">
         <thead>
           <tr>
-            <th>name</th>
+            <th>Bin Name</th>
+            <th>Shipment Center</th>
             <th>Action</th>
             <th>Action</th>
           </tr>
@@ -120,6 +121,23 @@ require_once'includes/database.php';
                 echo '<form method="POST" action="binUpdate.php">';
                 echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
                 echo '<td><input type="text" name="name" value="'.$row['name'].'"></td>'; 
+   	            //dropdown for address
+	            echo '<td>';
+	            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $sql = "SELECT `shipment_center`.`id`, `shipment_center`.`name`ORDER BY `name` ASC";
+       	        $shipment = $pdo->query($sql);
+                echo "<select name='shipment_center_fk'>";
+
+                foreach ($shipment as $row1) {
+                  echo "<option value='" . $row1['id'] . "'";
+                  if($row1['id']==$row['shipment_center_fk']){
+                  	echo " selected ";
+                  }
+                  echo ">" . $row1['name'] . "</option>";
+                }
+                echo "</select>";
+                echo "</td>";
+                //end dropdown
                 echo '<td><input type="submit" value="Update"></td>';
                 echo '</form>';
                 echo '<form method="POST" action="binDelete.php">';

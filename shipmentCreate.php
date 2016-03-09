@@ -29,7 +29,7 @@ require_once 'includes/database.php';
           $q->execute(array($name,$address_fk));
           Database::disconnect();
 
-          header("Location: update.php");
+          header("Location: adminUpdate.php");
         } catch (PDOException $e) {
           echo $e->getMessage();
         }
@@ -81,7 +81,7 @@ require_once 'includes/database.php';
             try {
               $pdo = Database::connect();
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-              $sql = "SELECT `address`.`id`, `address`.`street1` FROM `address`";
+              $sql = "SELECT `address`.`id`, `address`.`street1` FROM `address` ORDER BY `name`";
               $address = $pdo->query($sql);
               echo "<select name='address_fk'>";
               foreach ($address as $row) {

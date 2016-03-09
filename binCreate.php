@@ -9,6 +9,7 @@ require_once 'includes/database.php';
          
         // keep track post values
       $name = $_POST['name'];
+      $shipment_center_fk = $_POST['shipment_center_fk'];
          
         // validate input
       $valid = true;
@@ -23,15 +24,9 @@ require_once 'includes/database.php';
         try {
           $pdo = Database::connect();
           $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-          $sql = "INSERT INTO bin (name) values(?)";
+          $sql = "INSERT INTO bin (name, shipment_center_fk) values(?, ?)";
           $q = $pdo->prepare($sql);
-          $q->execute(array($name));
-          $binID = $pdo->lastInsertId();
-              //attempting to use $binID in another SQL statement for bin_shipment
-              // $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-              // $sql = "INSERT INTO bin_shipment (bin_fk,customer_fk) values(?,?)";
-              // $q = $pdo->prepare($sql);
-              // $q->execute(array($addressID, $_SESSION['id']));
+          $q->execute(array($name,$shipment_center_fk));
           Database::disconnect();
 
           header("Location: adminUpdate.php");
@@ -79,6 +74,26 @@ require_once 'includes/database.php';
               <?php endif;?>
             </div>
           </div>
+
+          <br>
+
+          <?php
+            try {
+              $pdo = Database::connect();
+              $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+              $sql = "SELECT `shipment_center`.`id`, `shipment_center`.`name` FROM `shipment_center` ORDER BY `name` ASC";
+              $address = $pdo->query($sql);
+              echo "<select name='shipment_center_fk'>";
+              foreach ($address as $row) {
+                echo "<option value='" . $row['id'] . "'>" . $row['name'] . "</option>";
+              }
+              echo "</select>";
+              Database::disconnect();
+            } catch (PDOException $e) {
+              echo $e->getMessage();
+              Database::disconnect();
+            }
+          ?>
                         
           <div class="form-actions">
             <button type="submit" class="btn btn-success">Create Bin</button>
