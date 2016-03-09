@@ -25,7 +25,7 @@
       <?php
       if ($loggedin) {
         echo "Welcome Back, ";
-        echo $_SESSION['user_name'];
+        echo $_SESSION['name'];
       }
       ?>
 
