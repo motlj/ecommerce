@@ -22,11 +22,15 @@
     ?>
 
     <div class="container">
-      
+      <?php
+      if ($loggedin) {
+        echo "Welcome Back, " . "$_SESSION['user_name']";
+      }
+      ?>
 
 
 
-      
+
     </div><!-- /.container -->
 
     <?php require_once('includes/footer.php');?>
