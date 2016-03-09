@@ -117,25 +117,6 @@ require_once 'includes/database.php';
 
           <?php
             try {
-              $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-              $sql = "SELECT * FROM `category` ORDER BY `name` ASC";
-              $category = $pdo->query($sql);
-              echo "<select name='category_fk'>";
-              foreach ($category as $row1) {
-                echo "<option value='" . $row1['id'] . "'>" . $row1['name'] . "</option>";
-              }
-              echo "</select>";
-              echo "<br>";
-            } catch (PDOException $e) {
-              echo $e->getMessage();
-              Database::disconnect();
-            }
-          ?>
-
-          <br>
-          
-          <?php
-            try {  
               $pdo = Database::connect();
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               $sql = "SELECT * FROM `bin` ORDER BY `name` ASC";
@@ -145,7 +126,17 @@ require_once 'includes/database.php';
                 echo "<option value='" . $row['id'] . "'>" . $row['name'] . "</option>";
               }
               echo "</select>";
-              echo "<br>";              
+              echo "<br>";
+              
+              $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+              $sql = "SELECT * FROM `category` ORDER BY `name` ASC";
+              $category = $pdo->query($sql);
+              echo "<select name='category_fk'>";
+              foreach ($category as $row1) {
+                echo "<option value='" . $row1['id'] . "'>" . $row1['name'] . "</option>";
+              }
+              echo "</select>";
+              echo "<br>";
               Database::disconnect();
             } catch (PDOException $e) {
               echo $e->getMessage();
@@ -153,7 +144,6 @@ require_once 'includes/database.php';
             }
           ?>
 
-          <br>
           <div class="form-actions">
             <button type="submit" class="btn btn-success">Add Product</button>
           </div>
