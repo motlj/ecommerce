@@ -136,6 +136,8 @@ require_once'includes/database.php';
             <th>Name</th>
             <th>Description</th>
             <th>Price</th>
+            <th>Category</th>
+            <th>Bin</th>
             <th>Action</th>
             <th>Action</th>
           </tr>
@@ -160,6 +162,16 @@ require_once'includes/database.php';
                 echo '<td><input type="text" name="description" value="'.$row['description'].'"></td>';
                 echo '<td><input type="text" name="price" value="'.$row['price'].'"></td>';
                 echo '<td><input type="submit" value="Update"></td>';
+	            
+	            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $sql = "SELECT `bin`.`id`, `bin`.`name` FROM `bin` ORDER BY `name` ASC";
+       	        $bin = $pdo->query($sql);
+                echo "<select name='id'>";
+                foreach ($bin as $row1) {
+                  echo "<option value='" . $row1['id'] . "'>" . $row1['name'] . "</option>";
+                }
+                echo "</select>";
+
                 echo '</form>';
                 echo '<form method="POST" action="productDelete.php">';
                 echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
