@@ -20,6 +20,19 @@
         header("Location: adminUpdate.php");
       }
 
+      try {
+        $pdo = Database::connect();
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+          $sql = "UPDATE category SET product_name = ?, description = ?, price = ?, category_fk = ?, bin_fk = ? WHERE id = ?";
+          $q = $pdo->prepare($sql);
+          $q->execute(array($name,$description,$price,$category_fk,$bin_fk,$id));
+        Database::disconnect();
+        //header("Location: adminUpdate.php");
+        } catch (PDOException $e) {
+          echo $e->getMessage();
+          die();
+        }
+        
       $pdo = Database::connect();
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sql = "UPDATE category SET product_name = ?, description = ?, price = ?, category_fk = ?, bin_fk = ? WHERE id = ?";
