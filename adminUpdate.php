@@ -174,7 +174,7 @@ require_once'includes/database.php';
                 echo "</select>";
                 echo "</td>";
                 //dropdown for bin
-                echo '<td>'
+                echo '<td>';
                 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $sql = "SELECT `bin`.`id`, `bin`.`name` FROM `bin` ORDER BY `name` ASC";
        	        $bin = $pdo->query($sql);
