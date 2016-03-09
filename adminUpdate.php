@@ -16,11 +16,14 @@ require_once'includes/database.php';
   <title>Ecommerce | Admin</title>
  </head>
 
- <?php 
-  require_once('includes/navbar.php');
- ?>
- 
  <body>
+    <?php 
+    if ($admin) {
+      require_once'includes/adminNavBar.php';
+    } else {
+      header('Location: index.php');
+    }
+    ?>
 
   <div class="container">
 
