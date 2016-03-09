@@ -165,7 +165,7 @@ require_once'includes/database.php';
 	            //dropdown for category
 	            echo '<td>';
                 echo "<select name='id'>";
-                echo "<option value='" . $row['category_fk'] . "'>"
+                echo "<option value='" . $row['category_fk'] . "'>";
 	            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $sql = "SELECT `category`.`id`, `category`.`name` FROM `category` ORDER BY `name` ASC";
        	        $category = $pdo->query($sql);
