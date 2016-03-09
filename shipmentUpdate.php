@@ -23,5 +23,5 @@
         $q = $pdo->prepare($sql);
         $q->execute(array($name,$address_fk));
       Database::disconnect();
-      header("Location: update.php");
+      header("Location: adminUpdate.php");
     }
