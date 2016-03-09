@@ -81,7 +81,7 @@ require_once 'includes/database.php';
             try {
               $pdo = Database::connect();
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-              $sql = "SELECT `address`.`id`, `address`.`street1` FROM `address` ORDER BY `name`";
+              $sql = "SELECT `address`.`id`, `address`.`street1` FROM `address` ORDER BY `street1`";
               $address = $pdo->query($sql);
               echo "<select name='address_fk'>";
               foreach ($address as $row) {
