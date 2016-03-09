@@ -83,6 +83,7 @@ require_once 'includes/database.php';
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               $sql = "SELECT `shipment_center`.`id`, `shipment_center`.`name` FROM `shipment_center` ORDER BY `name` ASC";
               $address = $pdo->query($sql);
+              echo "Please choose a Shipment Center."
               echo "<select name='shipment_center_fk'>";
               foreach ($address as $row) {
                 echo "<option value='" . $row['id'] . "'>" . $row['name'] . "</option>";
