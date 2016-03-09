@@ -12,7 +12,7 @@
     <title>Ecommerce</title>
  </head>
 
-  <body id="background-image">
+  <body>
     <?php require_once('includes/navbar.php');?>
 
     <div class="container">

@@ -8,7 +8,7 @@ session_start();
 	}
 
 	$admin = false;
-	if (!empty($_SESSION['permission']) ) && ($_SESSION['permission']) == 1 {
+	if (!empty($_SESSION['permission']) && ($_SESSION['permission']) ) == 1 {
 		$admin = true;
 	}
 ?>
