@@ -14,27 +14,28 @@
         <li class="active"><a href="#">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li>
-          <form action="register.php" method="post">
-            <input type="submit" value="Register">
-          </form>
-        </li>
-        <li>
+        
           <?php
           if ($loggedin) {
+            echo '<li>';
             echo '<form action="includes/logout.php" method="post">';
               echo '<input type="submit" value="Logout">';
             echo '</form>';
+            echo '</li>';
           } else {
+            echo '<li>';
             echo '<form action="loginpage.php" method="post">';
               echo '<input type="submit" value="Login">';
             echo '</form>';
+            echo '</li>';
+            echo '<li>';
             echo '<form action="register.php" method="post">';
               echo '<input type="submit" value="Register">';
             echo '</form>';
+            echo '</li>';
           }
           ?>
-        </li>
+        
       </ul>
     </div><!--/.nav-collapse -->
   </div>
