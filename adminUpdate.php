@@ -39,9 +39,10 @@ require_once'includes/database.php';
         </thead>
         <tbody>
           <?php
+            if($loggedin) {
               $pdo = Database::connect();
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-              $sql = 'SELECT * FROM bin ORDER BY name ASC';
+              $sql = 'SELECT * FROM bin ORDER BY id ASC';
               $q = $pdo->prepare($sql);
               $q->execute(array());
               $query = $q->fetch(PDO::FETCH_ASSOC);
@@ -59,6 +60,7 @@ require_once'includes/database.php';
                 echo '</form>';
                 echo '</tr>';
               }
+            }
           Database::disconnect();
               //print_r($query);
           ?>
