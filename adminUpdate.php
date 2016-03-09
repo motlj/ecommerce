@@ -42,7 +42,7 @@ require_once'includes/database.php';
             if($loggedin) {
               $pdo = Database::connect();
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-              $sql = 'SELECT * FROM bin ORDER BY id ASC';
+              $sql = 'SELECT * FROM bin ORDER BY name';
               $q = $pdo->prepare($sql);
               $q->execute(array());
               $query = $q->fetch(PDO::FETCH_ASSOC);
