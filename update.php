@@ -17,7 +17,11 @@ require_once'includes/database.php';
   <body>
 
   <?php 
-    require_once('includes/navbar.php');
+    if ($admin) {
+      require_once'includes/adminNavBar.php';
+    } else {
+      require_once'includes/navbar.php';
+    }
     require_once('includes/database.php');
     error_reporting(E_ALL);
   ?>
