@@ -18,6 +18,17 @@
           <?php
           if ($loggedin) {
             echo '<li>';
+              echo '<a href="update.php">';
+                echo "Update Profile";
+              echo '</a>';
+            echo '</li>';
+            echo '<li>';
+              echo '<a href="logout.php">';
+                echo "Logout";
+              echo '</a>';
+            echo '</li>';
+
+/*            echo '<li>';
             echo '<form action="update.php" method="post">';
               echo '<input type="submit" value="Update Profile">';
             echo '</form>';
@@ -27,8 +38,19 @@
               echo '<input type="submit" value="Logout">';
             echo '</form>';
             echo '</li>';
-          } else {
+*/          } else {
             echo '<li>';
+              echo '<a href="loginpage.php">';
+                echo "Login";
+              echo '</a>';
+            echo '</li>';
+            echo '<li>';
+              echo '<a href="register.php">';
+                echo "Register";
+              echo '</a>';
+            echo '</li>';
+
+/*            echo '<li>';
             echo '<form action="loginpage.php" method="post">';
               echo '<input type="submit" value="Login">';
             echo '</form>';
@@ -38,7 +60,7 @@
               echo '<input type="submit" value="Register">';
             echo '</form>';
             echo '</li>';
-          }
+*/          }
           ?>
         
       </ul>
