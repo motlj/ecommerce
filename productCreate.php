@@ -32,16 +32,20 @@ require_once 'includes/database.php';
         $valid = false;
       }
          
+      echo $category_fk;
+      echo $bin_fk;
+      die();
+
         // insert data
       if ($valid) {
         try {
           $pdo = Database::connect();
           $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-          $sql = "INSERT INTO product (product_name, description, price, category_fk, bin_fk) values(?, ?, ?, ?, ?)";
+          $sql = "INSERT INTO `product` (product_name, description, price, category_fk, bin_fk) values(?, ?, ?, ?, ?)";
           $q = $pdo->prepare($sql);
           $q->execute(array($name,$description,$price,$category_fk,$bin_fk));
-          $productID = $pdo->lastInsertId();
-              //attempting to use $binID in another SQL statement for bin_shipment
+              // $productID = $pdo->lastInsertId();
+              // attempting to use $binID in another SQL statement for bin_shipment
               // $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               // $sql = "INSERT INTO bin_shipment (bin_fk,customer_fk) values(?,?)";
               // $q = $pdo->prepare($sql);
@@ -54,9 +58,6 @@ require_once 'includes/database.php';
         }
       }
     }
-
-//need to debug, not redirecting to update, not showing query row on update.
-
 ?>
 
 
@@ -127,7 +128,7 @@ require_once 'includes/database.php';
               }
               echo "</select>";
               echo "<br>";
-              
+
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               $sql = "SELECT * FROM `category` ORDER BY `name` ASC";
               $category = $pdo->query($sql);
