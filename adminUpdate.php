@@ -179,7 +179,11 @@ require_once'includes/database.php';
                 //echo "<option value='" . $row['category_fk'] . "'>"
 
                 foreach ($category as $row1) {
-                  echo "<option value='" . $row1['id'] . "'>" . $row1['name'] . "</option>";
+                  echo "<option value='" . $row1['id'] . "'";
+                  if($row1['id']==$row['category_fk']){
+                  	echo " selected ";
+                  }
+                  echo ">" . $row1['name'] . "</option>";
                 }
 
                 echo "</select>";
