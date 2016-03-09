@@ -162,18 +162,33 @@ require_once'includes/database.php';
                 echo '<td><input type="text" name="product_name" value="'.$row['product_name'].'"></td>'; 
                 echo '<td><input type="text" name="description" value="'.$row['description'].'"></td>';
                 echo '<td><input type="text" name="price" value="'.$row['price'].'"></td>';
+	           
+
+
+
+
 	            //dropdown for category
 	            echo '<td>';
-                echo "<select name='id'>";
-                echo "<option value='" . $row['category_fk'] . "'>";
 	            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $sql = "SELECT `category`.`id`, `category`.`name` FROM `category` ORDER BY `name` ASC";
        	        $category = $pdo->query($sql);
+                echo "<select name='id'>";
+
+                //$sql2 = "SELECT `category`.`name` FROM `category` LEFT JOIN `product` ON (`category`.`id`=`product`.`category_fk`)";
+                //$categoryname = $pdo->query($sql2);
+                //echo "<option value='" . $row['category_fk'] . "'>"
+
                 foreach ($category as $row1) {
                   echo "<option value='" . $row1['id'] . "'>" . $row1['name'] . "</option>";
                 }
+
                 echo "</select>";
                 echo "</td>";
+
+
+
+
+
                 //dropdown for bin
                 echo '<td>';
                 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
