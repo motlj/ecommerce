@@ -13,7 +13,9 @@ require_once 'includes/database.php';
       $product_name = $_POST['product_name'];
       $description = $_POST['description'];
       $price = $_POST['price'];
-         
+      $category_fk = $_POST['category_fk'];
+      $bin_fk = $_POST['bin_fk'];
+
         // validate input
       $valid = true;
         
@@ -35,9 +37,9 @@ require_once 'includes/database.php';
         try {
           $pdo = Database::connect();
           $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-          $sql = "INSERT INTO product (product_name, description, price) values(?, ?, ?)";
+          $sql = "INSERT INTO product (product_name, description, price, category_fk, bin_fk) values(?, ?, ?, ?, ?)";
           $q = $pdo->prepare($sql);
-          $q->execute(array($name,$description,$price));
+          $q->execute(array($name,$description,$price,$category_fk,$bin_fk));
           $productID = $pdo->lastInsertId();
               //attempting to use $binID in another SQL statement for bin_shipment
               // $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -111,7 +113,27 @@ require_once 'includes/database.php';
               <?php endif;?>
             </div>
           </div>
-                        
+          
+          <?php
+            try {
+              $pdo = Database::connect();
+              $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+              $sql = "SELECT * FROM `bin` ORDER BY `name` ASC";
+              $bin = $pdo->query($sql);
+              echo "<select name='bin_fk'>";
+              foreach ($bin as $row) {
+                echo "<option value='" . $row['id'] . "'>" . $row['name'] . "</option>";
+              }
+              echo "</select>";
+              Database::disconnect();
+            } catch (PDOException $e) {
+              echo $e->getMessage();
+              Database::disconnect();
+            }
+          ?>
+
+
+
           <div class="form-actions">
             <button type="submit" class="btn btn-success">Add Product</button>
           </div>
