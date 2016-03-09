@@ -23,7 +23,7 @@
               echo '</a>';
             echo '</li>';
             echo '<li>';
-              echo '<a href="logout.php">';
+              echo '<a href="includes/logout.php">';
                 echo "Logout";
               echo '</a>';
             echo '</li>';
