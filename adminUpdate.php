@@ -41,7 +41,7 @@ require_once'includes/database.php';
           <?php
               $pdo = Database::connect();
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-              $sql = 'SELECT * FROM bin GROUP BY id ORDER BY id ASC';
+              $sql = 'SELECT * FROM bin ORDER BY name ASC';
               $q = $pdo->prepare($sql);
               $q->execute(array());
               $query = $q->fetch(PDO::FETCH_ASSOC);
