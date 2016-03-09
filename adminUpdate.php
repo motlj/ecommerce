@@ -45,19 +45,20 @@ require_once'includes/database.php';
               $q = $pdo->prepare($sql);
               $q->execute(array());
               $query = $q->fetch(PDO::FETCH_ASSOC);
-
+           	 
+           	  foreach ($query as $row) {
                 echo '<tr>';
                 echo '<form method="POST" action="binUpdate.php">';
-                echo '<input type="hidden" name="id" value="' . $query['id'] . '">';
-                echo '<td><input type="text" name="name" value="'.$query['name'].'"></td>'; 
+                echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
+                echo '<td><input type="text" name="name" value="'.$row['name'].'"></td>'; 
                 echo '<td><input type="submit" value="Update"></td>';
                 echo '</form>';
                 echo '<form method="POST" action="binDelete.php">';
-                echo '<input type="hidden" name="id" value="' . $query['id'] . '">';
+                echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
                 echo '<td><input type="submit" value="Delete"></td>';
                 echo '</form>';
                 echo '</tr>';
-                
+              }
           Database::disconnect();
               //print_r($query);
           ?>
