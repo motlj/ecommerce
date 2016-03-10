@@ -122,7 +122,7 @@ require_once'includes/crud.php';
             }
             }
 */  
-            $myAddresses = new customerAddress($_SESSION['id']);
+        /*    $myAddresses = new customerAddress($_SESSION['id']);
 
             foreach ($myAddresses->read() as $row) {
 
@@ -143,9 +143,9 @@ require_once'includes/crud.php';
                 echo '</form>';
                 echo '</tr>';
               }
-          
+          */
                 
-          Database::disconnect();
+          //Database::disconnect();
               //print_r($query);
           ?>
         </tbody>
