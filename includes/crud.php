@@ -1,7 +1,7 @@
 <?php
 //require_once'database.php';
 // helper function for validation
-/*function valid($varname){
+function valid($varname){
 	return ( !empty($varname) && isset($varname) );
 }
 
@@ -9,11 +9,11 @@
 class customerAddress {	
 ​
 	public $customer_id;
-​*/
-	/*public function __construct($customer_id){
+​
+	public function __construct($customer_id){
 		$this->customer_id = $customer_id;
-	}*/
-​/*
+	}
+​
 	public function create($street1, $street2, $city, $state, $zip, $country){
 		if (!valid($street1) || !valid($street2) || !valid($city) || !valid($state) || !valid($zip) || !valid($country)) {
 			return false;
@@ -69,9 +69,9 @@ class customerAddress {
         return true;
 	}
 
-*/
 
-//}
+
+}
 ​
 ​
 ​
