@@ -45,7 +45,7 @@ require_once 'includes/crud.php';
         </thead>
         <tbody>
 
-          <?php/*
+          <?php
             $customer = new customer($_SESSION['id']);
             $customer->read();
                 echo '<tr>';
@@ -63,7 +63,7 @@ require_once 'includes/crud.php';
                 echo '<input type="hidden" name="id" value="' . $customer['id'] . '">';
                 echo '<td><input type="submit" value="Delete"></td>';
                 echo '</form>';
-                echo '</tr>';*/
+                echo '</tr>';
           ?>
 
         </tbody>
