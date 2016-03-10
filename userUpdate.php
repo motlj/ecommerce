@@ -15,7 +15,7 @@
       $email_address = $_POST['email'];
       $user_name = $_POST['username'];
          
-      $updateCustomer = new customerAddress($_SESSION['id']);
+      $updateCustomer = new customer($_SESSION['id']);
       $response = $updateCustomer->update($name,$last_name,$birthdate,$phone_number,$email_address,$user_name,$id);
 
       if ($response) {
