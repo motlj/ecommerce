@@ -1,7 +1,7 @@
 <?php 
 require_once'includes/session.php';
 require_once'includes/database.php';
-require_once'includes/crud.php';
+//require_once'includes/crud.php';
 ?>
 
 <!DOCTYPE html>
@@ -40,9 +40,7 @@ require_once'includes/crud.php';
             <th>Phone Number</th>
             <th>Email Address</th>
             <th>User Name</th>
-            <!-- <th>Password</th> -->
             <th>Action</th>
-            <!-- <th>Action</th>  -->
           </tr>
         </thead>
         <tbody>
@@ -65,7 +63,6 @@ require_once'includes/crud.php';
                 echo '<td><input type="text" name="phone" value="'.$query['phone_number'].'"></td>';
                 echo '<td><input type="text" name="email" value="'.$query['email_address'].'"></td>';
                 echo '<td><input type="text" name="username" value="'.$query['user_name'].'"></td>';
-                // echo '<td>***</td>';
                 echo '<td><input type="submit" value="Update"></td>';
                 echo '</form>';
                 // echo '<form method="POST" action="userDelete.php">';
@@ -76,7 +73,6 @@ require_once'includes/crud.php';
           }
                 
           Database::disconnect();
-              //print_r($query);
           ?>
         </tbody>
       </table>
