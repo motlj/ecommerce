@@ -14,7 +14,6 @@
       $zip = $_POST['zip'];
       $country = $_POST['country'];
 
-
       $updateAddress = new customerAddress($_SESSION['id']);
       $response = $updateAddress->update($street1,$street2,$city,$state,$zip,$country,$id);
 

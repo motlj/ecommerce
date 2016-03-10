@@ -101,9 +101,7 @@ class customerAddress {
 		} catch (PDOException $error){
 			header( "Location: 500.php" );
 			die();
-
 		}
-
     }
 
 	public function update($street1, $street2, $city, $state, $zip, $country, $addressID){
@@ -129,6 +127,72 @@ class customerAddress {
 	}
 }
 //end of address crud
+
+//--------------------------------------------------------------------------------
+
+//credit card table crud functions
+class creditCard {	
+	public $customer_id;
+	
+	public function __construct($customer_id){
+		$this->customer_id = $customer_id;
+	}
+	
+	public function create($type, $name, $card_number, $expiration, $security, $address_fk){
+		if (!valid($type) || !valid($name) || !valid($card_number) || !valid($expiration) || !valid($security) || !valid($address_fk)) {
+			return false;
+		} else {
+			$pdo = Database::connect();
+			$sql = "INSERT INTO credit_card (type,name,card_number,expiration,security,address_fk) values(?, ?, ?, ?, ?, ?)";
+			$q = $pdo->prepare($sql);
+			$q->execute(array($type,$name,$card_number,$expiration,$security,$address_fk));
+			$ccID = $pdo->lastInsertId();
+            $sql = "INSERT INTO customer_credit_card (creditcard_fk,customer_fk) values(?,?)";
+			$q = $pdo->prepare($sql);
+			$q->execute(array($ccID, $this->customer_id)); 
+			Database::disconnect();
+			return true;
+		}
+	}
+
+	public function read(){
+		try{
+			$pdo = Database::connect();
+             $sql = 'SELECT * FROM credit_card WHERE id IN (SELECT creditcard_fk FROM customer_credit_card WHERE customer_fk = ?) ORDER BY id DESC';
+			$q = $pdo->prepare($sql);
+			$q->execute(array($this->customer_id));
+			$data = $q->fetchAll(PDO::FETCH_ASSOC);
+	        Database::disconnect();
+	        return $data;
+		} catch (PDOException $error){
+			header( "Location: 500.php" );
+			die();
+		}
+    }
+
+	public function update($type, $name, $card_number, $expiration, $security, $country, $addressID){
+		if (!valid($street1) || !valid($street2) || !valid($city) || !valid($state) || !valid($zip) || !valid($country)) {
+			return false;
+		} else {
+			$pdo = Database::connect();
+			$sql = "UPDATE credit_card SET street1 = ?, street2 = ?, city = ?, state = ?, zip = ?, country = ? address_fk = ? WHERE id = ?";
+			$q = $pdo->prepare($sql);
+        $q->execute(array($type,$name,$card_number,$expiration,$security,$address_fk,$id));
+			Database::disconnect();
+			return true;
+		}
+	}
+
+	public function delete($ccID){
+        $pdo = Database::connect();
+        $sql = "DELETE FROM `ecommerce`.`customer_credit_card` WHERE `creditcard_fk` = ?";
+        $q = $pdo->prepare($sql);
+        $q->execute(array($ccID));
+        Database::disconnect();
+        return true;
+	}
+}
+//end of credit card crud
 
 
 
