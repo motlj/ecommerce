@@ -21,7 +21,12 @@
       $addressID = $_POST['id'];
 
       $deleteAddress = new customerAddress($_SESSION['id']);
-      $deleteAddress->delete($addressID);
+      $response = $deleteAddress->delete($addressID);
 
+      if ($response) {
+        header('Location: update.php');
+      } else {
+        header('Location: update.php');
+      }
 
     }
