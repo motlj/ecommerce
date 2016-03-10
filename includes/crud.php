@@ -6,7 +6,7 @@ function valid($varname){
 }
 
 //customer table crud functions
-class customer {	
+/*class customer {	
 
 	public function create($street1, $street2, $city, $state, $zip, $country){
 		if (!valid($street1) || !valid($street2) || !valid($city) || !valid($state) || !valid($zip) || !valid($country)) {
@@ -60,7 +60,7 @@ class customer {
         return true;
 	}
 }
-//end of customer crud
+*///end of customer crud
 
 //--------------------------------------------------------------------------------
 
