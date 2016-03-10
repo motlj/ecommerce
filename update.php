@@ -1,6 +1,6 @@
 <?php 
 require_once'includes/session.php';
-require_once'includes/crud.php';
+require_once'crud.php';
 
 echo 'asjkhf';
 die();
