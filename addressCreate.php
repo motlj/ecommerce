@@ -1,7 +1,8 @@
 <?php
-require_once('includes/session.php');
 error_reporting(E_ALL);
 require_once 'includes/database.php';
+require_once 'includes/crud.php';
+require_once 'includes/session.php';
  
     if ( !empty($_POST)) {
         // keep track validation errors
@@ -78,8 +79,8 @@ require_once 'includes/database.php';
       }
 */
 
-//$createAddress = new customerAddress($_SESSION['id']);
-//$createAddress->create($street1,$street2,$city,$state,$zip,$country);
+$createAddress = new customerAddress($_SESSION['id']);
+$createAddress->create($street1,$street2,$city,$state,$zip,$country);
 
 ?>
 
