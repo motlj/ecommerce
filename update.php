@@ -1,6 +1,7 @@
 <?php 
 require_once'includes/session.php';
 require_once'includes/database.php';
+require_once'includes/crud.php';
 
 ?>
 <!DOCTYPE html>
@@ -22,7 +23,6 @@ require_once'includes/database.php';
     } else {
       require_once'includes/navbar.php';
     }
-    require_once('includes/database.php');
     error_reporting(E_ALL);
   ?>
 
@@ -109,7 +109,7 @@ require_once'includes/database.php';
         <tbody>
           <?php
           if($loggedin) {
-            //try {
+/*            try {
               $pdo = Database::connect();
               $id = $_SESSION['id'];
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -117,12 +117,13 @@ require_once'includes/database.php';
               $q = $pdo->prepare($sql);
               $q->execute(array($id));
               $query = $q->fetchAll(PDO::FETCH_ASSOC);
-            //} catch (PDOException $e) {
-            //  echo $e->getMessage();
-            //}
-            //die();
-            
-            foreach ($query as $row) {
+            } catch (PDOException $e) {
+              echo $e->getMessage();
+            }
+*/  
+            $myAddresses = new customerAddress($_SESSION['id']);
+
+            foreach ($myAddress->read() as $row) {
 
                 echo '<tr>';
                 echo '<form method="POST" action="addressUpdate.php">';

@@ -3,7 +3,7 @@
     require_once 'includes/database.php';
  
     if ( !empty($_POST['id']) && isset($_POST['id'])) {
-      try { 
+/*      try { 
         $id = $_POST['id'];
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -13,8 +13,14 @@
         Database::disconnect();
         header("Location: update.php");
       } catch (PDOException $e) { 
-        //echo "Syntax Error: ".$e->getMessage() . "<br />\n"; 
-        //die();
+        echo "Syntax Error: ".$e->getMessage() . "<br />\n"; 
         header("Location: update.php?error=1");
       }
+*/
+      $addressID = $_POST['id'];
+
+      $deleteAddress = new customerAddress($_SESSION['id']);
+      $deleteAddress->delete($addressID);
+
+
     }

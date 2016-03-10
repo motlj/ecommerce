@@ -12,8 +12,13 @@
       $state = $_POST['state'];
       $zip = $_POST['zip'];
       $country = $_POST['country'];
+
+
+      $updateAddress = new customerAddress($_SESSION['id']);
+      $updateAddress->update($street1,$street2,$city,$state,$zip,$country,$id);
+
          
-      function valid($varname){
+/*      function valid($varname){
         return ( !empty($varname) && isset($varname) );
       }
 
@@ -28,4 +33,4 @@
         $q->execute(array($street1,$street2,$city,$state,$zip,$country,$id));
       Database::disconnect();
       header("Location: update.php");
-    }
+*/    }

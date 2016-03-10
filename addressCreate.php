@@ -5,12 +5,12 @@ require_once 'includes/database.php';
  
     if ( !empty($_POST)) {
         // keep track validation errors
-      $street1Error = null;
-      $street2Error = null;
-      $cityError = null;
-      $stateError = null;
-      $zipError = null;
-      $countryError = null;
+      //$street1Error = null;
+      //$street2Error = null;
+      //$cityError = null;
+      //$stateError = null;
+      //$zipError = null;
+      //$countryError = null;
          
         // keep track post values
       $street1 = $_POST['street1'];
@@ -21,7 +21,7 @@ require_once 'includes/database.php';
       $country = $_POST['country'];
          
         // validate input
-      $valid = true;
+/*      $valid = true;
         
       if (empty($street1)) {
         $street1Error = 'Please enter Street Number';
@@ -47,9 +47,9 @@ require_once 'includes/database.php';
         $countryError = 'Please enter Country';
         $valid = false;
       }
-         
+*/         
         // insert data
-      if ($valid) {
+/*      if ($valid) {
         try {
           $pdo = Database::connect();
           $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -73,13 +73,15 @@ require_once 'includes/database.php';
           echo $e->getMessage();
         }
       }
-    }
+      
 
-//need to debug, not redirecting to update, not showing query row on update.
+      }
+*/
+
+$createAddress = new customerAddress($_SESSION['id']);
+$createAddress->create($street1,$street2,$city,$state,$zip,$country);
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
