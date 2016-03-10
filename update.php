@@ -46,7 +46,7 @@ require_once 'includes/crud.php';
         <tbody>
 
           <?php
-            $customer = new customer($_SESSION['id']);
+            $customer = new customer();
             $customer->read($_SESSION['id']);
                 echo '<tr>';
                 echo '<form method="POST" action="userUpdate.php">';
