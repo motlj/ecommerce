@@ -5,13 +5,6 @@ require_once 'includes/crud.php';
 require_once 'includes/session.php';
  
     if ( !empty($_POST)) {
-        // keep track validation errors
-      //$street1Error = null;
-      //$street2Error = null;
-      //$cityError = null;
-      //$stateError = null;
-      //$zipError = null;
-      //$countryError = null;
          
         // keep track post values
       $street1 = $_POST['street1'];
@@ -20,64 +13,6 @@ require_once 'includes/session.php';
       $state = $_POST['state'];
       $zip = $_POST['zip'];
       $country = $_POST['country'];
-         
-        // validate input
-/*      $valid = true;
-        
-      if (empty($street1)) {
-        $street1Error = 'Please enter Street Number';
-        $valid = false;
-      }
-      if (empty($street2)) {
-        $street2Error = 'Please enter Street Number (continued)';
-        $valid = false;
-      }
-      if (empty($city)) {
-        $cityError = 'Please enter City';
-        $valid = false;
-      }
-      if (empty($state)) {
-        $stateError = 'Please enter State';
-        $valid = false;
-      }
-      if (empty($zip)) {
-        $zipError = 'Please enter Zip Code';
-        $valid = false;
-      }
-      if (empty($country)) {
-        $countryError = 'Please enter Country';
-        $valid = false;
-      }
-*/         
-        // insert data
-/*      if ($valid) {
-        try {
-          $pdo = Database::connect();
-          $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-          $sql = "INSERT INTO address (street1,street2,city,state,zip,country) values(?, ?, ?, ?, ?, ?)";
-          $q = $pdo->prepare($sql);
-          $q->execute(array($street1,$street2,$city,$state,$zip,$country));
-          $addressID = $pdo->lastInsertId();
-          //attempting to use $addressID in another SQL statement
-          $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-          $sql = "INSERT INTO customer_address (address_fk,customer_fk) values(?,?)";
-          $q = $pdo->prepare($sql);
-          $q->execute(array($addressID, $_SESSION['id']));
-          //$query = $q->fetch(PDO::FETCH_ASSOC);
-          //print_r($query);
-          Database::disconnect();
-          //echo $addressID;
-          //die();
-
-          header("Location: update.php");
-        } catch (PDOException $e) {
-          echo $e->getMessage();
-        }
-      }
-      
-
-      }
-*/
 
 $createAddress = new customerAddress($_SESSION['id']);
 $response = $createAddress->create($street1,$street2,$city,$state,$zip,$country);
@@ -175,7 +110,6 @@ $response = $createAddress->create($street1,$street2,$city,$state,$zip,$country)
                         
           <div class="form-actions">
             <button type="submit" class="btn btn-success">Add Address</button>
-            <!-- no longer need a button to go back as this is the page being updated   <a class="btn" href="index.php">Back</a>   -->
           </div>
         </form>
       </div>
