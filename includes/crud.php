@@ -8,14 +8,14 @@ function valid($varname){
 //customer table crud functions
 class customer {	
 
-	public function create($name, $last_name, $birthdate, $phone_number, $email_address, $user_name){
-		if (!valid($name) || !valid($last_name) || !valid($birthdate) || !valid($phone_number) || !valid($email_address) || !valid($user_name)) {
+	public function create($name, $last_name, $birthdate, $phone_number, $email_address, $user_name, $password){
+		if (!valid($name) || !valid($last_name) || !valid($birthdate) || !valid($phone_number) || !valid($email_address) || !valid($user_name) || !valid($password)) {
 			return false;
 		} else {
 			$pdo = Database::connect();
-			$sql = "INSERT INTO customer (name,last_name,birthdate,phone_number,email_address,user_name) values(?, ?, ?, ?, ?, ?)";
+			$sql = "INSERT INTO customer (name,last_name,birthdate,phone_number,email_address,user_name,password) values(?, ?, ?, ?, ?, ?, ?)";
 			$q = $pdo->prepare($sql);
-			$q->execute(array($name,$last_name,$birthdate,$phone_number,$email_address,$user_name));
+			$q->execute(array($name,$last_name,$birthdate,$phone_number,$email_address,$user_name,$password));
 			Database::disconnect();
 			return true;
 		}
