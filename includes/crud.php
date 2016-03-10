@@ -6,7 +6,7 @@ function valid($varname){
 }
 
 //begin customer class for crud
-public class customerAddress {	
+class customerAddress {	
 ​
 	public $customer_id = NULL;
 ​
