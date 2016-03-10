@@ -47,20 +47,20 @@ require_once 'includes/crud.php';
 
           <?php
             $customer = new customer($_SESSION['id']);
-            $customer->read();
+            foreach ($customer->read($_SESSION['id']) as $row) {
                 echo '<tr>';
                 echo '<form method="POST" action="userUpdate.php">';
-                echo '<input type="hidden" name="id" value="' . $customer['id'] . '">';
-                echo '<td><input type="text" name="first_name" value="'.$customer['name'].'"></td>'; 
-                echo '<td><input type="text" name="last_name" value="'.$customer['last_name'].'"></td>';
-                echo '<td><input type="text" name="dob" value="'.$customer['birthdate'].'"></td>';
-                echo '<td><input type="text" name="phone" value="'.$customer['phone_number'].'"></td>';
-                echo '<td><input type="text" name="email" value="'.$customer['email_address'].'"></td>';
-                echo '<td><input type="text" name="username" value="'.$customer['user_name'].'"></td>';
+                echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
+                echo '<td><input type="text" name="first_name" value="'.$row['name'].'"></td>'; 
+                echo '<td><input type="text" name="last_name" value="'.$row['last_name'].'"></td>';
+                echo '<td><input type="text" name="dob" value="'.$row['birthdate'].'"></td>';
+                echo '<td><input type="text" name="phone" value="'.$row['phone_number'].'"></td>';
+                echo '<td><input type="text" name="email" value="'.$row['email_address'].'"></td>';
+                echo '<td><input type="text" name="username" value="'.$row['user_name'].'"></td>';
                 echo '<td><input type="submit" value="Update"></td>';
                 echo '</form>';
                 echo '<form method="POST" action="userDelete.php">';
-                echo '<input type="hidden" name="id" value="' . $customer['id'] . '">';
+                echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
                 echo '<td><input type="submit" value="Delete"></td>';
                 echo '</form>';
                 echo '</tr>';
