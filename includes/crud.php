@@ -2,10 +2,6 @@
 
 require_once'database.php';
 
-echo 'got here';
-die();
-
-
 // helper function for validation
 function valid($varname){
 	return ( !empty($varname) && isset($varname) );

@@ -1,6 +1,12 @@
 <?php 
 require_once'includes/session.php';
-require_once'includes/crud.php';
+//require_once'includes/crud.php';
+
+echo 'asjkhf';
+die();
+
+
+
 ?>
 
 <!DOCTYPE html>
