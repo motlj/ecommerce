@@ -78,8 +78,8 @@ require_once 'includes/database.php';
       }
 */
 
-$createAddress = new customerAddress($_SESSION['id']);
-$createAddress->create($street1,$street2,$city,$state,$zip,$country);
+//$createAddress = new customerAddress($_SESSION['id']);
+//$createAddress->create($street1,$street2,$city,$state,$zip,$country);
 
 ?>
 
