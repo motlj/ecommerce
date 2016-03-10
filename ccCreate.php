@@ -14,7 +14,7 @@ require_once 'includes/session.php';
       $security = $_POST['security'];
       $address_fk = $_POST['address_fk'];
 
-      $createCC = new customerAddress($_SESSION['id']);
+      $createCC = new creditCard($_SESSION['id']);
       $response = $createCC->create($type,$name,$card_number,$expiration,$security,$address_fk);
 
       if ($response) {
