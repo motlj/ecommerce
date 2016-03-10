@@ -6,7 +6,7 @@ function valid($varname){
 }
 
 //customer table crud functions
-/*class customer {	
+class customer {	
 
 	public function create($street1, $street2, $city, $state, $zip, $country){
 		if (!valid($street1) || !valid($street2) || !valid($city) || !valid($state) || !valid($zip) || !valid($country)) {
@@ -24,7 +24,7 @@ function valid($varname){
 	public function read($customer_id){
 		try{
 			$pdo = Database::connect();
-			$sql = 'SELECT * FROM customer WHERE id = ?'
+			$sql = 'SELECT * FROM customer WHERE id = ?';
 			$q = $pdo->prepare($sql);
 			$q->execute(array($customer_id));
 			$data = $q->fetchAll(PDO::FETCH_ASSOC);
@@ -60,7 +60,7 @@ function valid($varname){
         return true;
 	}
 }
-*///end of customer crud
+//end of customer crud
 
 //--------------------------------------------------------------------------------
 
