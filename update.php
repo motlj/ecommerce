@@ -46,15 +46,11 @@ require_once('includes/crud.php');
           </tr>
         </thead>
         <tbody>
+
           <?php
-          if($loggedin) {
-              $pdo = Database::connect();
-              $username = $_SESSION['user_name'];
-              $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-              $sql = 'SELECT * FROM customer WHERE user_name = ?';
-              $q = $pdo->prepare($sql);
-              $q->execute(array($username));
-              $query = $q->fetch(PDO::FETCH_ASSOC);
+            $customer = new customer($_SESSION['id']);
+
+            foreach ($customer->read() as $query) {
 
                 echo '<tr>';
                 echo '<form method="POST" action="userUpdate.php">';
@@ -73,9 +69,8 @@ require_once('includes/crud.php');
                 echo '</form>';
                 echo '</tr>';
           }
-                
-          Database::disconnect();
           ?>
+
         </tbody>
       </table>
     </div>
