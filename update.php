@@ -67,10 +67,10 @@ require_once('includes/crud.php');
                 echo '<td><input type="text" name="username" value="'.$query['user_name'].'"></td>';
                 echo '<td><input type="submit" value="Update"></td>';
                 echo '</form>';
-                // echo '<form method="POST" action="userDelete.php">';
-                // echo '<input type="hidden" name="id" value="' . $query['id'] . '">';
-                // echo '<td><input type="submit" value="Delete"></td>';
-                // echo '</form>';
+                echo '<form method="POST" action="userDelete.php">';
+                echo '<input type="hidden" name="id" value="' . $query['id'] . '">';
+                echo '<td><input type="submit" value="Delete"></td>';
+                echo '</form>';
                 echo '</tr>';
           }
                 
@@ -105,21 +105,8 @@ require_once('includes/crud.php');
           </tr>
         </thead>
         <tbody>
+
           <?php
-/*          if($loggedin) {
-              try {
-              $pdo = Database::connect();
-              $id = $_SESSION['id'];
-              $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-              $sql = 'SELECT * FROM address WHERE id IN (SELECT address_fk FROM customer_address WHERE customer_fk = ?)';
-              $q = $pdo->prepare($sql);
-              $q->execute(array($id));
-              $query = $q->fetchAll(PDO::FETCH_ASSOC);
-            } catch (PDOException $e) {
-              echo $e->getMessage();
-            }
-            }
-*/  
             $myAddresses = new customerAddress($_SESSION['id']);
 
             foreach ($myAddresses->read() as $row) {
