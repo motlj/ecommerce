@@ -123,7 +123,7 @@ require_once'includes/crud.php';
 */  
             $myAddresses = new customerAddress($_SESSION['id']);
 
-            foreach ($myAddress->read() as $row) {
+            foreach ($myAddresses->read() as $row) {
 
                 echo '<tr>';
                 echo '<form method="POST" action="addressUpdate.php">';
