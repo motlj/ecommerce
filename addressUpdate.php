@@ -1,6 +1,7 @@
 <?php
  error_reporting(E_ALL);
     require_once 'includes/database.php';
+    require_once 'includes/crud.php';
  
     if ( !empty($_POST)) {
 
@@ -15,22 +16,12 @@
 
 
       $updateAddress = new customerAddress($_SESSION['id']);
-      $updateAddress->update($street1,$street2,$city,$state,$zip,$country,$id);
+      $response = $updateAddress->update($street1,$street2,$city,$state,$zip,$country,$id);
 
-         
-/*      function valid($varname){
-        return ( !empty($varname) && isset($varname) );
+      if ($response) {
+        header('Location: update.php');
+      } else {
+        header('Location: update.php');
       }
 
-      if (!valid($street1) || !valid($street2) || !valid($city) || !valid($state) || !valid($zip) || !valid($country)) {
-        header("Location: update.php");
-      }
-
-      $pdo = Database::connect();
-      $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "UPDATE address SET street1 = ?, street2 = ?, city = ?, state = ?, zip = ?, country = ? WHERE id = ?";
-        $q = $pdo->prepare($sql);
-        $q->execute(array($street1,$street2,$city,$state,$zip,$country,$id));
-      Database::disconnect();
-      header("Location: update.php");
-*/    }
+    }
