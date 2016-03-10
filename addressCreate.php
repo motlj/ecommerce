@@ -80,8 +80,14 @@ require_once 'includes/session.php';
 */
 
 $createAddress = new customerAddress($_SESSION['id']);
-$createAddress->create($street1,$street2,$city,$state,$zip,$country);
+$response = $createAddress->create($street1,$street2,$city,$state,$zip,$country);
 
+  if ($response) {
+    header('Location: update.php');
+  } else {
+    header('Location: update.php');
+  }
+}
 ?>
 
 <!DOCTYPE html>
