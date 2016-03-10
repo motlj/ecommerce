@@ -6,7 +6,7 @@
     if ( !empty($_POST['id']) && isset($_POST['id'])) {
       $ccID = $_POST['id'];
 
-      $deleteCC = new customerAddress($_SESSION['id']);
+      $deleteCC = new creditCard($_SESSION['id']);
       $response = $deleteCC->delete($ccID);
 
       if ($response) {
