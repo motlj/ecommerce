@@ -1,6 +1,8 @@
 <?php
  error_reporting(E_ALL);
+    require_once 'includes/session.php';
     require_once 'includes/database.php';
+    require_once 'includes/crud.php';
  
     if ( !empty($_POST)) {
 
