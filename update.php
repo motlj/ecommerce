@@ -2,8 +2,8 @@
 require_once'includes/session.php';
 require_once'includes/database.php';
 require_once'includes/crud.php';
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -108,8 +108,8 @@ require_once'includes/crud.php';
         </thead>
         <tbody>
           <?php
-          if($loggedin) {
-/*            try {
+/*          if($loggedin) {
+              try {
               $pdo = Database::connect();
               $id = $_SESSION['id'];
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -119,6 +119,7 @@ require_once'includes/crud.php';
               $query = $q->fetchAll(PDO::FETCH_ASSOC);
             } catch (PDOException $e) {
               echo $e->getMessage();
+            }
             }
 */  
             $myAddresses = new customerAddress($_SESSION['id']);
@@ -142,7 +143,7 @@ require_once'includes/crud.php';
                 echo '</form>';
                 echo '</tr>';
               }
-          }
+          
                 
           Database::disconnect();
               //print_r($query);
