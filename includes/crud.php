@@ -5,13 +5,7 @@ function valid($varname){
 	return ( !empty($varname) && isset($varname) );
 }
 
-
-
-
-
-
 class customerAddress {	
-
 
 	public $customer_id;
 
@@ -19,20 +13,20 @@ class customerAddress {
 		$this->customer_id = $customer_id;
 	}
 
-	public function create($street_one, $street_two, $city, $state, $zip, $country){
-		if (!valid($street_one) || !valid($street_two) || !valid($city) || !valid($state) || !valid($zip) || !valid($country)) {
+	public function create($street1, $street2, $city, $state, $zip, $country){
+		if (!valid($street1) || !valid($street2) || !valid($city) || !valid($state) || !valid($zip) || !valid($country)) {
 			return false;
 		} else {
 
 			$pdo = Database::connect();
-			$sql = "INSERT INTO address (street_one,street_two,city,state,zip,country) values(?, ?, ?, ?, ?, ?)";
+			$sql = "INSERT INTO address (street1,street2,city,state,zip,country) values(?, ?, ?, ?, ?, ?)";
 			$q = $pdo->prepare($sql);
-			$q->execute(array($street_one,$street_two,$city,$state,$zip,$country));
-			$address_id = $pdo->lastInsertId();
+			$q->execute(array($street1,$street2,$city,$state,$zip,$country));
+			$addressID = $pdo->lastInsertId();
 
 			$sql = "INSERT INTO customer_address (address_fk, customer_fk) values(?, ?)";
 			$q = $pdo->prepare($sql);
-			$q->execute(array($address_id, $this->customer_id)); 
+			$q->execute(array($addressID, $this->customer_id)); 
 
 			Database::disconnect();
 			return true;
@@ -58,25 +52,25 @@ class customerAddress {
 
     }
 
-	public function update($street_one, $street_two, $city, $state, $zip, $country, $address_id){
-		if (!valid($street_one) || !valid($street_two) || !valid($city) || !valid($state) || !valid($zip) || !valid($country)) {
+	public function update($street1, $street2, $city, $state, $zip, $country, $addressID){
+		if (!valid($street1) || !valid($street2) || !valid($city) || !valid($state) || !valid($zip) || !valid($country)) {
 			return false;
 		} else {
 			$pdo = Database::connect();
-			$sql = "UPDATE address SET street_one = ?, street_two = ?, city = ?, state = ?, zip = ?, country = ? WHERE id = ?";
+			$sql = "UPDATE address SET street1 = ?, street2 = ?, city = ?, state = ?, zip = ?, country = ? WHERE id = ?";
 			$q = $pdo->prepare($sql);
-			$q->execute(array($street_one,$street_two,$city,$state,$zip,$country,$address_id));
+			$q->execute(array($street1,$street2,$city,$state,$zip,$country,$addressID));
 			Database::disconnect();
 			return true;
 		}
 	}
 
-	public function delete($address_id){
+	public function delete($addressID){
 
         $pdo = Database::connect();
         $sql = "DELETE FROM customer_address WHERE address_fk = ?"; //taken from SQL query on phpMyAdmin
         $q = $pdo->prepare($sql);
-        $q->execute(array($address_id));
+        $q->execute(array($addressID));
         Database::disconnect();
         return true;
 
