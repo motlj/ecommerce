@@ -142,6 +142,7 @@ require_once 'includes/crud.php';
             <th>Card Number</th>
             <th>Expiration Date</th>
             <th>CVV Code</th>
+            <th>Address</th>
             <th>Action</th>
             <th>Action</th>
           </tr>
@@ -172,6 +173,23 @@ require_once 'includes/crud.php';
                 echo '<td><input type="text" name="card_number" value="'.$row['card_number'].'"></td>';
                 echo '<td><input type="text" name="expiration" value="'.$row['expiration'].'"></td>';
                 echo '<td><input type="text" name="security" value="'.$row['security'].'"></td>';
+                
+                echo '<td>';
+                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $sql = "SELECT `address`.`id`, `address`.`street1` FROM `address` ORDER BY `street1` ASC";
+                $address = $pdo->query($sql);
+                echo "<select name='address_fk'>";
+
+                foreach ($address as $row1) {
+                  echo "<option value='" . $row1['id'] . "'";
+                  if($row1['id']==$row['address_fk']){
+                    echo " selected ";
+                  }
+                  echo ">" . $row1['street1'] . "</option>";
+                }
+                echo "</select>";
+                echo "</td>";
+
                 echo '<td><input type="submit" value="Update"></td>';
                 echo '</form>';
                 echo '<form method="POST" action="ccDelete.php">';
