@@ -8,7 +8,7 @@ function valid($varname){
 //begin customer class for crud
 class customerAddress {	
 ​
-	public $customer_id = NULL;
+	public $customer_id;
 ​
 	public function __construct($customer_id){
 		$this->customer_id = $customer_id;
