@@ -41,6 +41,7 @@ require_once 'includes/crud.php';
             <th>Email Address</th>
             <th>User Name</th>
             <th>Action</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
