@@ -1,5 +1,5 @@
 <?php
-
+/*
 require_once'database.php';
 
 // helper function for validation
@@ -75,20 +75,8 @@ class customerAddress {
 
 }
 ​
+​*/
 ​
 ​
 ​
 ​
-​
-​
-​
-// Use Case:
-/*	session_start();
-	$myAddresses = new customerAddress($_SESSION['customer_id']);
-​
-	foreach ($myAddresses->read() as $row) {
-		echo '<tr>';
-		echo '<td>' . $row["city"] . '</td>';
-		// and so on... 
-		echo '</tr>';
-	}*/
