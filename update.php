@@ -47,7 +47,7 @@ require_once 'includes/crud.php';
 
           <?php
             $customer = new customer($_SESSION['id']);
-            $customer->read($_SESSION['id']) {
+            $customer->read($_SESSION['id']);
                 echo '<tr>';
                 echo '<form method="POST" action="userUpdate.php">';
                 echo '<input type="hidden" name="id" value="' . $customer['id'] . '">';
