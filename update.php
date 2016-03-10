@@ -1,7 +1,8 @@
 <?php 
 require_once'includes/session.php';
-//require_once'includes/database.php';
-require_once'includes/crud.php';
+require_once'includes/database.php';
+//require_once'includes/crud.php';
+include'includes/crud.php';
 ?>
 
 <!DOCTYPE html>
@@ -118,7 +119,7 @@ require_once'includes/crud.php';
             }
             }
 */  
-        /*    $myAddresses = new customerAddress($_SESSION['id']);
+            $myAddresses = new customerAddress($_SESSION['id']);
 
             foreach ($myAddresses->read() as $row) {
 
@@ -139,11 +140,8 @@ require_once'includes/crud.php';
                 echo '</form>';
                 echo '</tr>';
               }
-          */
-                
-          //Database::disconnect();
-              //print_r($query);
           ?>
+
         </tbody>
       </table>
     </div>
