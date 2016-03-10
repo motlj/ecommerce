@@ -27,7 +27,7 @@ class customer {
 			$sql = 'SELECT * FROM customer WHERE id = ?';
 			$q = $pdo->prepare($sql);
 			$q->execute(array($customer_id));
-			$data = $q->fetchAll(PDO::FETCH_ASSOC);
+			$data = $q->fetch(PDO::FETCH_ASSOC);
 	        Database::disconnect();
 	        return $data;
 		} catch (PDOException $error){
