@@ -1,7 +1,7 @@
 <?php
 //require_once'database.php';
 // helper function for validation
-function valid($varname){
+/*function valid($varname){
 	return ( !empty($varname) && isset($varname) );
 }
 
@@ -9,7 +9,7 @@ function valid($varname){
 class customerAddress {	
 ​
 	public $customer_id;
-​
+​*/
 	/*public function __construct($customer_id){
 		$this->customer_id = $customer_id;
 	}*/
@@ -71,7 +71,7 @@ class customerAddress {
 
 */
 
-}
+//}
 ​
 ​
 ​
