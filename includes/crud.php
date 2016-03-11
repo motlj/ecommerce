@@ -170,7 +170,7 @@ class creditCard {
 		}
     }
 
-	public function update($type, $name, $card_number, $expiration, $security, $addressID){
+	public function update($type, $name, $card_number, $expiration, $security, $address_fk, $addressID){
 		if (!valid($type) || !valid($name) || !valid($card_number) || !valid($expiration) || !valid($security)) {
 			return false;
 		} else {
