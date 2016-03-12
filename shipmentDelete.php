@@ -14,8 +14,7 @@
         header("Location: adminUpdate.php");
       } catch (PDOException $e) { 
         header("Location: adminUpdate.php?error=1");
-      $shipmentID = $_POST['id'];
-
+/*
       $deleteShipmentCenter = new shipmentCenter($_SESSION['id']);
       $response = $deleteShipmentCenter->delete($shipmentID);
 
@@ -23,6 +22,8 @@
         header('Location: adminUpdate.php');
       } else {
         header('Location: adminUpdate.php');
+      }
+*/  
       }
     }
 
