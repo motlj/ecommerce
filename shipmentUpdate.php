@@ -27,7 +27,7 @@
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sql = "UPDATE shipment_center SET name = ?, address_fk = ? WHERE id = ?";
         $q = $pdo->prepare($sql);
-        $q->execute(array($name,$address_fk));
+        $q->execute(array($name,$address_fk,$_POST['id']));
       Database::disconnect();
       header("Location: adminUpdate.php");
     }
