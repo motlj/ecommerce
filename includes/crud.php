@@ -199,7 +199,7 @@ class creditCard {
 //Admin CRUD
 
 //category table crud functions
-class shipmentCenter {	
+/*class shipmentCenter {	
 	public $customer_id;
 	
 	public function __construct($customer_id){
@@ -256,6 +256,7 @@ class shipmentCenter {
         return true;
 	}
 }
+*/
 //end of credit card crud
 
 
