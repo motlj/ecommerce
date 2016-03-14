@@ -61,12 +61,12 @@ require_once'includes/database.php';
 	                echo '<td><input type="text" name="price" value="'.$row['price'].'"></td>';
 	                echo '<td><input type="text" name="quantity" value="1"></td>';
 	                echo '<td><input type="submit" value="Update Quantity"></td>';
-	                foreach ($query2 as $row2) {
-	                	echo '<form method="POST" action="deleteFromCart.php">';
-		                echo '<input type="hidden" name="id" value="' . $row2['id'] . '">';
-		                echo '<td><input type="submit" value="Remove From Cart"></td>';
-		                echo '</form>';
-	                }
+	            }
+	            foreach ($query2 as $row2) {
+	               	echo '<form method="POST" action="deleteFromCart.php">';
+		            echo '<input type="hidden" name="id" value="' . $row2['id'] . '">';
+		            echo '<td><input type="submit" value="Remove From Cart"></td>';
+		            echo '</form>';
 	                echo '</tr>';
 	            }
 	          } 
