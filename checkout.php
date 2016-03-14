@@ -177,16 +177,17 @@ require_once'includes/crud.php';
 	        </tbody>
 	      </table>
 	    </div>
+
+	    <div>
+          <a href="placeOrder.php" input type="submit" value="place_order">Place order</a>
+        </div>
 		
 		<div>
-          <a href="cart.php">Return to Cart</a>
+          <a href="cart.php" input type="submit" value="Cart">Return to Cart</a>
         </div>
         <br>
         <br>
 
-        <div>
-          <a href="index.php">Return to Index</a>
-        </div>
         <br>
         <br>
         <br>
