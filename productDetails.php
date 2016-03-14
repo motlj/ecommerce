@@ -43,7 +43,7 @@ require_once'includes/database.php';
           <?php
           if($loggedin) {
               $pdo = Database::connect();
-              $id = $_GET['id']
+              $id = $_GET['id'];
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               $sql = 'SELECT * FROM product WHERE id = ?';
               $q = $pdo->prepare($sql);
