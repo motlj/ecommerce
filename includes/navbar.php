@@ -13,6 +13,7 @@
       <ul class="nav navbar-nav">
         <li><a href="index.php">Home</a></li>
         <li><a href="productPage.php">Products</a></li>
+        <li><a href="cart.php">Cart</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
         

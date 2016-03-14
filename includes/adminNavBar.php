@@ -14,7 +14,7 @@
         <li><a href="adminUpdate.php">Administrative Functions</a></li>
         <li><a href="update.php">Update Profile</a></li>
         <li><a href="productPage.php">Products</a></li>
-        <li><a href="management.php">Contact Manager</a></li>
+        <li><a href="cart.php">Cart</a></li>
         <li><a href="includes/logout.php">Logout</a></li>
       </ul>
     </div><!--/.nav-collapse -->
