@@ -13,6 +13,7 @@
         Database::disconnect();
         header("Location: cart.php");
       } catch (PDOException $e) { 
-        header("Location: cart.php?error=1");
+        die();
+        //header("Location: cart.php?error=1");
       }
     }
