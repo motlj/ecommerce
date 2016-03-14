@@ -31,7 +31,9 @@ require_once'includes/database.php';
 	      <table class="table table-striped table-bordered">
 	        <thead>
 	          <tr>
-	            <th>product_fk</th>
+	            <th>Name</th>
+	            <th>Price</th>
+	            <th>Quantity</th>
 	            <th>Action</th>
 	            <th>Action</th>
 	          </tr>
@@ -41,7 +43,7 @@ require_once'includes/database.php';
 	          if($loggedin) {
 	          	  $pdo = Database::connect();
 	              $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	              $sql = 'SELECT * FROM cart ORDER BY id';
+	              $sql ='SELECT name, price FROM product WHERE product.id = cart.product_fk'
 	              $q = $pdo->prepare($sql);
 	              $q->execute(array());
 	              $query = $q->fetchAll(PDO::FETCH_ASSOC);
@@ -51,7 +53,9 @@ require_once'includes/database.php';
 	                echo '<tr>';
 	                echo '<form method="GET" action="updateQuantity.php">';
 	                echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
-	                echo '<td><input type="text" name="product_fk" value="'.$row['product_fk'].'"></td>';
+	                echo '<td><input type="text" name="name" value="'.$row['name'].'"></td>';
+	                echo '<td><input type="text" name="price" value="'.$row['price'].'"></td>';
+	                echo '<td><input type="text" name="quantity" value="1"></td>'
 	                echo '<td><input type="submit" value="Update Quantity"></td>';
 	                echo '</form>';
 	                echo '<form method="POST" action="removeFromCart.php">';
