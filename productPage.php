@@ -40,6 +40,7 @@ require_once'includes/database.php';
         <tbody>
           <?php
           if($loggedin) {
+          	  $pdo = Database::connect
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               $sql = 'SELECT * FROM product ORDER BY id';
               $q = $pdo->prepare($sql);
@@ -63,7 +64,7 @@ require_once'includes/database.php';
               }
           }
                 
-          //Database::disconnect();
+          Database::disconnect();
           ?>
         </tbody>
       </table>
