@@ -47,6 +47,10 @@ require_once'includes/database.php';
 	              $q = $pdo->prepare($sql);
 	              $q->execute(array());
 	              $query = $q->fetchAll(PDO::FETCH_ASSOC);
+	              $sql2 = 'SELECT * FROM cart';
+	              $q2 = $pdo->prepare($sql2);
+	              $q2->execute(array());
+	              $query2 = $q2->fetchAll(PDO::FETCH_ASSOC);
 
 	            foreach ($query as $row) {
 
@@ -59,9 +63,12 @@ require_once'includes/database.php';
 	                echo '<td><input type="submit" value="Update Quantity"></td>';
 	                echo '</form>';
 	                echo '<form method="POST" action="deleteFromCart.php">';
-	                echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
-	                echo '<td><input type="submit" value="Remove From Cart"></td>';
-	                echo '</form>';
+	                foreach ($query2 as $row2) {
+	                	echo '<form method="POST" action="deleteFromCart.php">';
+		                echo '<input type="hidden" name="id" value="' . $row2['id'] . '">';
+		                echo '<td><input type="submit" value="Remove From Cart"></td>';
+		                echo '</form>';
+	                }
 	                echo '</tr>';
 	            }
 	          } 
