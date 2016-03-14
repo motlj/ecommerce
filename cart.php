@@ -53,23 +53,22 @@ require_once'includes/database.php';
 	              $query2 = $q2->fetchAll(PDO::FETCH_ASSOC);
 
 	            foreach ($query as $row) {
-
-	                echo '<tr>';
-	                echo '<form method="GET" action="updateQuantity.php">';
-	                echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
-	                echo '<td><input type="text" name="product_name" value="'.$row['product_name'].'"></td>';
-	                echo '<td><input type="text" name="price" value="'.$row['price'].'"></td>';
-	                echo '<td><input type="text" name="quantity" value="1"></td>';
-	                echo '<td><input type="submit" value="Update Quantity"></td>';
-	            }
-	            foreach ($query2 as $row2) {
-	               	echo '<form method="POST" action="deleteFromCart.php">';
-		            echo '<input type="hidden" name="id" value="' . $row2['id'] . '">';
-		            echo '<td><input type="submit" value="Remove From Cart"></td>';
-		            echo '</form>';
-	                echo '</tr>';
-	            }
-	          } 
+		            foreach ($query2 as $row2) {
+		                echo '<tr>';
+		                echo '<form method="GET" action="updateQuantity.php">';
+		                echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
+		                echo '<td><input type="text" name="product_name" value="'.$row['product_name'].'"></td>';
+		                echo '<td><input type="text" name="price" value="'.$row['price'].'"></td>';
+		                echo '<td><input type="text" name="quantity" value="1"></td>';
+		                echo '<td><input type="submit" value="Update Quantity"></td>';
+		               	echo '<form method="POST" action="deleteFromCart.php">';
+			            echo '<input type="hidden" name="id" value="' . $row2['id'] . '">';
+			            echo '<td><input type="submit" value="Remove From Cart"></td>';
+			            echo '</form>';
+		                echo '</tr>';
+		            }
+		        }
+		      } 
 	          Database::disconnect();
 	          ?>
 	         </tbody>
