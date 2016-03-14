@@ -43,7 +43,7 @@ require_once'includes/database.php';
 	          if($loggedin) {
 	          	  $pdo = Database::connect();
 	              $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	              $sql ='SELECT product_name, price FROM product WHERE product.id = cart.product_fk';
+	              $sql ='SELECT product_name, price FROM product WHERE id IN (SELECT product_fk FROM cart)';
 	              $q = $pdo->prepare($sql);
 	              $q->execute(array());
 	              $query = $q->fetchAll(PDO::FETCH_ASSOC);
