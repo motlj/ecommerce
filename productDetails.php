@@ -24,7 +24,7 @@ require_once'includes/database.php';
 	     }
       ?>
 
-    <div class="containter">
+    <div class="container">
       <div class="row">
         <h3>Product Details</h3>
       </div>
