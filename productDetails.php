@@ -12,7 +12,7 @@ require_once'includes/database.php';
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 	  <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
-	  <title>Ecommerce | Products</title>
+	  <title>Ecommerce | Product</title>
  </head>
 
  <body>
@@ -25,8 +25,9 @@ require_once'includes/database.php';
       ?>
 
     <div class="row">
-      <h3>List of all Products</h3>
+      <h3>Product Details</h3>
     </div>
+    
     <div class="row">
       <table class="table table-striped table-bordered">
         <thead>
@@ -35,38 +36,37 @@ require_once'includes/database.php';
             <th>Description</th>
             <th>Price</th>
             <th>Action</th>
+            <th>Action</th>
           </tr>
         </thead>
-         <tbody>
+        <tbody>
           <?php
           if($loggedin) {
-          	  $pdo = Database::connect();
+              $pdo = Database::connect();
+              $id = $_GET['id']
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-              $sql = 'SELECT * FROM product ORDER BY id';
+              $sql = 'SELECT * FROM product WHERE id = ?';
               $q = $pdo->prepare($sql);
-              $q->execute(array());
+              $q->execute(array($id));
               $query = $q->fetchAll(PDO::FETCH_ASSOC);
 
             foreach ($query as $row) {
 
                 echo '<tr>';
-                echo '<form method="GET" action="productDetails.php">';
-                echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
-                echo '<td><input type="text" name="product_name" value="'.$row['product_name'].'"></td>'; 
-                echo '<td><input type="text" name="price" value="'.$row['price'].'"></td>';
-                echo '<td><input type="submit" value="More Details"></td>';
-                echo '</form>';
                 echo '<form method="POST" action="cart.php">';
                 echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
+                echo '<td><input type="text" name="product_name" value="'.$row['product_name'].'"></td>'; 
+                echo '<td><input type="text" name="description" value="'.$row['description'].'"></td>'; 
+                echo '<td><input type="text" name="price" value="'.$row['price'].'"></td>';
                 echo '<td><input type="submit" value="Add to Cart"></td>';
                 echo '</form>';
                 echo '</tr>';
-            }
-          } 
+              }
+          }
           Database::disconnect();
           ?>
         </tbody>
-
+      </table>
     </div>
 
 
