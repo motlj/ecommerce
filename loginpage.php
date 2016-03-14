@@ -23,7 +23,7 @@
       <div>
         <form action="includes/login.php" method="post">
           <input type="text" name="user_name" placeholder="user_name">
-          <input type="text" name="password" placeholder="password">
+          <input type="password" name="password" placeholder="password">
           <input type="submit" value="Login">        
         </form>
       </div>

@@ -70,7 +70,7 @@ require_once'includes/database.php';
       </div>
 
       <div>
-        <a href="index.php">Return to Index</a>
+        <a href="productPage.php">Return to Products</a>
       </div>
       <br>
       <br>

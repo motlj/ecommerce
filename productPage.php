@@ -32,8 +32,8 @@ require_once'includes/database.php';
 	        <thead>
 	          <tr>
 	            <th>Name</th>
-	            <th>Description</th>
 	            <th>Price</th>
+	            <th>Action</th>
 	            <th>Action</th>
 	          </tr>
 	        </thead>
@@ -62,7 +62,9 @@ require_once'includes/database.php';
 	                echo '</form>';
 	                echo '</tr>';
 	            }
-	          } 
+	          } else {
+	          	header('Location: loginpage.php');
+	          }
 	          Database::disconnect();
 	          ?>
 	         </tbody>
