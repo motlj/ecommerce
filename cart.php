@@ -25,7 +25,7 @@ require_once'includes/database.php';
       ?>
     <div class="container">
 	    <div class="row">
-	      <h3>List of all Products</h3>
+	      <h3>Cart</h3>
 	    </div>
 	    <div class="row">
 	      <table class="table table-striped table-bordered">
@@ -43,7 +43,7 @@ require_once'includes/database.php';
 	          if($loggedin) {
 	          	  $pdo = Database::connect();
 	              $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	              $sql ='SELECT name, price FROM product WHERE product.id = cart.product_fk';
+	              $sql ='SELECT product_name, price FROM product WHERE product.id = cart.product_fk';
 	              $q = $pdo->prepare($sql);
 	              $q->execute(array());
 	              $query = $q->fetchAll(PDO::FETCH_ASSOC);
@@ -53,7 +53,7 @@ require_once'includes/database.php';
 	                echo '<tr>';
 	                echo '<form method="GET" action="updateQuantity.php">';
 	                echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
-	                echo '<td><input type="text" name="name" value="'.$row['name'].'"></td>';
+	                echo '<td><input type="text" name="product_name" value="'.$row['product_name'].'"></td>';
 	                echo '<td><input type="text" name="price" value="'.$row['price'].'"></td>';
 	                echo '<td><input type="text" name="quantity" value="1"></td>';
 	                echo '<td><input type="submit" value="Update Quantity"></td>';
@@ -70,9 +70,11 @@ require_once'includes/database.php';
 	         </tbody>
 	      </table>
 	    </div>
-
-	    
-
+        <div>
+          <a href="checkout.php">Checkout</a>
+        </div>
+        <br>
+        <br>
 
         <div>
           <a href="index.php">Return to Index</a>
