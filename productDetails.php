@@ -53,7 +53,7 @@ require_once'includes/database.php';
               foreach ($query as $row) {
 
                   echo '<tr>';
-                  echo '<form method="POST" action="cart.php">';
+                  echo '<form method="POST" action="addToCart.php">';
                   echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
                   echo '<td><input type="text" name="product_name" value="'.$row['product_name'].'"></td>'; 
                   echo '<td><input type="text" name="description" value="'.$row['description'].'"></td>'; 
