@@ -1,6 +1,7 @@
 <?php 
 require_once'includes/session.php';
 require_once'includes/database.php';
+require_once'includes/crud.php';
  error_reporting(E_ALL);
  Database::connect();
 ?>
