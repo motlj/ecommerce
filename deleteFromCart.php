@@ -11,8 +11,8 @@
         $q = $pdo->prepare($sql);
         $q->execute(array($id));
         Database::disconnect();
-        header("Location: adminUpdate.php");
+        header("Location: cart.php");
       } catch (PDOException $e) { 
-        header("Location: adminUpdate.php?error=1");
+        header("Location: cart.php?error=1");
       }
     }
