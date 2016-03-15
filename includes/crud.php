@@ -277,7 +277,7 @@ class cart {
 		Database::disconnect();
 	}
 
-/*	public fetchCart(){
+	public fetchCart(){
 		$products = array();
 
 		$pdo = Database::connect();
@@ -297,7 +297,7 @@ class cart {
 		Database::disconnect();
 	}
 
-	public addToCart($product_fk) {
+/*	public addToCart($product_fk) {
 
 		$pdo = Database::connect();
 		$this->product_fk = $_POST['id']);
@@ -328,8 +328,8 @@ class cart {
         $q->execute(array($this->cart_id));
         Database::disconnect();
         return true;
-	}
-*/
+	}*/
+
 }
 
 
