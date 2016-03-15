@@ -293,7 +293,7 @@ class cart {
 		Database::disconnect();
 	}
 
-/*	public function fetchCart(){
+    public function fetchCart(){
 		$products = array();
 
 		$pdo = Database::connect();
@@ -313,7 +313,7 @@ class cart {
 		return $products;
 	}
 
-	public function addToCart($product_fk) {
+/*	public function addToCart($product_fk) {
 
 		$pdo = Database::connect();
 		$this->product_fk = $_POST['id']);

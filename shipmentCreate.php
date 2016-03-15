@@ -34,6 +34,7 @@ require_once 'includes/session.php';
           header("Location: adminUpdate.php");
         } catch (PDOException $e) {
           echo $e->getMessage();
+          die();
         }
 /*      $createShipmentCenter = new shipmentCenter($_SESSION['id']);
       $response = $createShipmentCenter->create($name,$address_fk);
