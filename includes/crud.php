@@ -291,7 +291,7 @@ class cart {
 			$q = $pdo->prepare($sql);
 			$q->execute(array($item['product_fk']));
 			$product = $q->fetch(PDO::FETCH_ASSOC);
-			array_push(products, array("id"=>$item['product_fk'], "quantity"=>$item['quantity'], "name"=>$product['name'], "price"=>$product['price'], "description"=>$product['description']));
+			array_push(products, array("id"=>$item['product_fk'], "quantity"=>$item['quantity'], "name"=>$product['product_name'], "price"=>$product['price'], "description"=>$product['description']));
 		}
 		return $products;
 		Database::disconnect();
