@@ -16,14 +16,17 @@
        
     $register = new customer();
     $response = $register->create($name,$last_name,$birthdate,$phone_number,$email_address,$user_name,$password);
-
-    if ($response) {
+    
+    $createCart = new cart();
+    $cart = $createCart->createCart();
+    
+    if ($response && $cart) {
       header('Location: loginpage.php');
     } else {
       header('Location: loginpage.php');
     }
-
   }
+
 ?>
 
 <!DOCTYPE html>

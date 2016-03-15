@@ -277,7 +277,15 @@ class cart {
 		Database::disconnect();
 	}
 
-	public function fetchCart(){
+	public function createCart();
+		$pdo = Database::connect();
+		$sql = "INSERT INTO transaction (customer_fk) values(?)";
+		$q = $pdo->prepare($sql);
+		$q->execute(array($this->customer_id));
+		Database::disconnect();
+	}
+
+/*	public function fetchCart(){
 		$products = array();
 
 		$pdo = Database::connect();
@@ -286,18 +294,18 @@ class cart {
 		$q->execute(array($this->cart_id));
 		$product_ids = $q->fetchAll(PDO::FETCH_ASSOC);
 
-/*		foreach ($product_ids as $pid => $item) {
+		foreach ($product_ids as $pid => $item) {
 			$sql = 'SELECT * FROM product WHERE id = ?';
 			$q = $pdo->prepare($sql);
 			$q->execute(array($item['product_fk']));
 			$product = $q->fetch(PDO::FETCH_ASSOC);
 			array_push(products, array("id"=>$item['product_fk'], "quantity"=>$item['quantity'], "product_name"=>$product['product_name'], "price"=>$product['price'], "description"=>$product['description']));
-*/		}
+		}
 		Database::disconnect();
 		return $products;
 	}
-
-/*	public addToCart($product_fk) {
+*/
+/*	public function addToCart($product_fk) {
 
 		$pdo = Database::connect();
 		$this->product_fk = $_POST['id']);
@@ -308,7 +316,7 @@ class cart {
 		return true;
 	}
 
-	public updateQuantity($quantity) {
+	public function updateQuantity($quantity) {
 		if (!valid($quantity)) {
 			return false;
 		} else {
@@ -321,7 +329,7 @@ class cart {
 		}
 	}
 
-	public deleteFromCart() {
+	public function deleteFromCart() {
         $pdo = Database::connect();
         $sql = "DELETE FROM `ecommerce`.`product_transaction` WHERE `transaction_fk` = ?";
         $q = $pdo->prepare($sql);
