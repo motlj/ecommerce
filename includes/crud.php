@@ -264,7 +264,7 @@ class creditCard {
 
 //Beginning of Cart CRUD
 
-class cart {
+/*class cart {
 	public $customer_id;
 	public $cart_id; //aka transaction ID
 	public $product_fk;
@@ -342,7 +342,7 @@ class cart {
 	}
 
 }
-
+*/
 
 
 
