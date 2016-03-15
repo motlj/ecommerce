@@ -263,7 +263,7 @@ class creditCard {
 
 //Beginning of Cart CRUD
 
-/*class cart {
+class cart {
 	public $customer_id;
 	public $cart_id; //aka transaction ID
 	public $product_fk;
@@ -277,7 +277,7 @@ class creditCard {
 		Database::disconnect();
 	}
 
-	public fetchCart(){
+/*	public fetchCart(){
 		$products = array();
 
 		$pdo = Database::connect();
@@ -329,8 +329,8 @@ class creditCard {
         Database::disconnect();
         return true;
 	}
-
-}*/
+*/
+}
 
 
 
