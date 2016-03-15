@@ -16,6 +16,7 @@ class customer {
 			$sql = "INSERT INTO customer (name,last_name,birthdate,phone_number,email_address,user_name,password) values(?, ?, ?, ?, ?, ?, ?)";
 			$q = $pdo->prepare($sql);
 			$q->execute(array($name,$last_name,$birthdate,$phone_number,$email_address,$user_name,$password));
+			$_SESSION['id'] = $pdo->lastInsertId();
 			Database::disconnect();
 			return true;
 		}
@@ -263,7 +264,7 @@ class creditCard {
 
 //Beginning of Cart CRUD
 
-/*class cart {
+class cart {
 	public $customer_id;
 	public $cart_id; //aka transaction ID
 	public $product_fk;
@@ -271,9 +272,11 @@ class creditCard {
 	public function __construct() {
 		$this->customer_id = $_SESSION['id'];
 		$pdo = Database::connect();
-		$sql = 'SELECT * FROM transaction WHERE customer_fk = " . $this->cusomter_id . " AND cart = 1';
-		$query = $pdo->query($sql);
-		$this->cart_id = $query['id'];
+		$sql = 'SELECT * FROM transaction WHERE customer_fk = ? AND cart = ?';
+		$q = $pdo->prepare($sql);
+		$q->execute(array($this->customer_id,1));
+		$cart = $q->fetch(PDO::FETCH_ASSOC);
+		$this->cart_id = $cart['id'];
 		Database::disconnect();
 	}
 
@@ -339,7 +342,7 @@ class creditCard {
 	}
 
 }
-*/
+
 
 
 

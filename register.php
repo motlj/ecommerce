@@ -18,9 +18,9 @@
     $response = $register->create($name,$last_name,$birthdate,$phone_number,$email_address,$user_name,$password);
     
     if ($response) {
-      header('Location: loginpage.php');
+      header('Location: index.php');
     } else {
-      header('Location: loginpage.php');
+      header('Location: index.php');
     }
   }
 
