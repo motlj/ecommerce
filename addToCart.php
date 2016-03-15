@@ -1,8 +1,8 @@
 <?php
 require_once('includes/session.php');
-error_reporting(E_ALL);
 require_once 'includes/database.php';
 require_once 'includes/crud.php'
+error_reporting(E_ALL);
  
     if ( !empty($_POST)) {
         // keep track post values
@@ -10,7 +10,11 @@ require_once 'includes/crud.php'
 
 
       $addToCart = new cart();
-      $addToCart->addToCart()
-      $response = $createAddress->create($street1,$street2,$city,$state,$zip,$country);
-      header('Location: cart.php');
-         ?>
+      $add = $addToCart->addToCart($product_fk);
+      if ($update) {
+        header('Location: cart.php');
+      } else {
+        header('Location: cart.php');
+      }
+    }
+?>

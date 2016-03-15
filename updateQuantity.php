@@ -11,7 +11,7 @@
 
       $updateQuantity = new cart();
       $update = $updateQuantity->updateQuantity($quantity);
-      if ($response) {
+      if ($update) {
         header('Location: cart.php');
       } else {
         header('Location: cart.php');
