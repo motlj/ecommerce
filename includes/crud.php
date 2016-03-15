@@ -280,7 +280,7 @@ class cart {
 	public function fetchCart(){
 		$products = array();
 
-/*		$pdo = Database::connect();
+		$pdo = Database::connect();
 		$sql = 'SELECT * FROM product_transaction WHERE transaction_fk = ?';
 		$q = $pdo->prepare($sql);
 		$q->execute(array($this->cart_id));
@@ -294,7 +294,7 @@ class cart {
 			array_push(products, array("id"=>$item['product_fk'], "quantity"=>$item['quantity'], "product_name"=>$product['product_name'], "price"=>$product['price'], "description"=>$product['description']));
 		}
 		Database::disconnect();
-*/		return $products;
+		return $products;
 	}
 
 /*	public addToCart($product_fk) {
