@@ -1,5 +1,5 @@
 <?php
-require_once('includes/session.php');
+require_once 'includes/session.php' ;
 require_once 'includes/database.php';
 require_once 'includes/crud.php';
 error_reporting(E_ALL);
@@ -17,4 +17,3 @@ error_reporting(E_ALL);
         header('Location: cart.php');
       }
     }
-?>
