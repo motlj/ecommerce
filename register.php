@@ -16,11 +16,15 @@
        
     $register = new customer();
     $response = $register->create($name,$last_name,$birthdate,$phone_number,$email_address,$user_name,$password);
+    $transaction = new cart();
+    $cart = $transaction->createCart();
     
     if ($response) {
-      header('Location: index.php');
-    } else {
-      header('Location: index.php');
+      if ($cart) {
+        header('Location: index.php');
+      } else {
+        header('Location: index.php');
+      }    
     }
   }
 
