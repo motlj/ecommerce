@@ -268,7 +268,7 @@ class cart {
 	public $cart_id; //aka transaction ID
 	public $product_fk;
 		
-	public function __construct() {
+/*	public function __construct() {
 		$this->customer_id = $_SESSION['id'];
 		$pdo = Database::connect();
 		$sql = 'SELECT * FROM transaction WHERE customer_fk = " . $this->cusomter_id . " AND cart = 1';
@@ -276,7 +276,7 @@ class cart {
 		$this->cart_id = $query['id'];
 		Database::disconnect();
 	}
-
+*/
 /*	public function createCart() {
 		$pdo = Database::connect();
 		$sql = "INSERT INTO transaction (customer_fk) values(?)";
