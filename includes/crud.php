@@ -277,24 +277,24 @@ class cart {
 		Database::disconnect();
 	}
 
-	public fetchCart(){
+	public function fetchCart(){
 		$products = array();
 
-		$pdo = Database::connect();
+/*		$pdo = Database::connect();
 		$sql = 'SELECT * FROM product_transaction WHERE transaction_fk = ?';
 		$q = $pdo->prepare($sql);
 		$q->execute(array($this->cart_id));
 		$product_ids = $q->fetchAll(PDO::FETCH_ASSOC);
 
-/*		foreach ($product_ids as $pid => $item) {
+		foreach ($product_ids as $pid => $item) {
 			$sql = 'SELECT * FROM product WHERE id = ?';
 			$q = $pdo->prepare($sql);
 			$q->execute(array($item['product_fk']));
 			$product = $q->fetch(PDO::FETCH_ASSOC);
 			array_push(products, array("id"=>$item['product_fk'], "quantity"=>$item['quantity'], "product_name"=>$product['product_name'], "price"=>$product['price'], "description"=>$product['description']));
 		}
-*/		Database::disconnect();
-		return $products;
+		Database::disconnect();
+*/		return $products;
 	}
 
 /*	public addToCart($product_fk) {
