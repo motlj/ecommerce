@@ -1,6 +1,7 @@
 <?php 
 require_once'includes/session.php';
 require_once'includes/database.php';
+require_once'includescrud.php';
  error_reporting(E_ALL);
  Database::connect();
 ?>
@@ -12,7 +13,7 @@ require_once'includes/database.php';
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 	  <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
-	  <title>Ecommerce | Products</title>
+	  <title>Ecommerce | Cart</title>
  </head>
 
  <body>
@@ -43,31 +44,25 @@ require_once'includes/database.php';
 	          if($loggedin) {
 	          	  $pdo = Database::connect();
 	              $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	              $sql ='SELECT product_name, price FROM product WHERE id IN (SELECT product_fk FROM cart)';
+	              $sql ='SELECT * FROM product_transaction WHERE transaction_fk IN (SELECT id FROM transaction)';
 	              $q = $pdo->prepare($sql);
 	              $q->execute(array());
 	              $query = $q->fetchAll(PDO::FETCH_ASSOC);
-	              $sql2 = 'SELECT * FROM cart';
-	              $q2 = $pdo->prepare($sql2);
-	              $q2->execute(array());
-	              $query2 = $q2->fetchAll(PDO::FETCH_ASSOC);
 
 	            foreach ($query as $row) {
-		            foreach ($query2 as $row2) {
-		                echo '<tr>';
-		                echo '<form method="GET" action="updateQuantity.php">';
-		                echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
-		                echo '<td><input type="text" name="product_name" value="'.$row['product_name'].'"></td>';
-		                echo '<td><input type="text" name="price" value="'.$row['price'].'"></td>';
-		                echo '<td><input type="text" name="quantity" value="1"></td>';
-		                echo '<td><input type="submit" value="Update Quantity"></td>';
-		                echo '</form>';
-		               	echo '<form method="POST" action="deleteFromCart.php">';
-			            echo '<input type="hidden" name="id" value="' . $row2['id'] . '">';
-			            echo '<td><input type="submit" value="Remove From Cart"></td>';
-			            echo '</form>';
-		                echo '</tr>';
-		            }
+	                echo '<tr>';
+	                echo '<form method="POST" action="updateQuantity.php">';
+	                echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
+	                echo '<td><input type="text" name="product_fk" value="'.$row['product_fk']. '"></td>';
+	                echo '<td><input type="text" name="transaction_fk" value="'.$row['transaction_fk']. '"></td>';
+	                echo '<td><input type="text" name="quantity" value="' .$row['quantity']. '"></td>';
+	                echo '<td><input type="submit" value="Update Quantity"></td>';
+	                echo '</form>';
+	               	echo '<form method="POST" action="deleteFromCart.php">';
+		            echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
+		            echo '<td><input type="submit" value="Remove From Cart"></td>';
+		            echo '</form>';
+	                echo '</tr>';
 		        }
 		      } 
 	          Database::disconnect();

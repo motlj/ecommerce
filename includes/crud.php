@@ -259,7 +259,78 @@ class creditCard {
 */
 //end of credit card crud
 
+//-----------------------------------------------------------------------------------
 
+//Beginning of Cart CRUD
+
+class cart {
+	public $customer_id;
+	public $cart_id; //aka transaction ID
+	public $product_fk;
+		
+	public function __construct() {
+		$this->customer_id = $_SESSION['id'];
+		$pdo = Database::connect();
+		$sql = 'SELECT * FROM transaction WHERE customer_fk = " . $this->cusomter_id . " AND cart = 1';
+		$query = $pdo->query($sql);
+		$this->cart_id = $query['id'];
+		Database::disconnect();
+	}
+
+	public fetchCart(){
+		$products = array();
+
+		$pdo = Database::connect();
+		$sql = 'SELECT * FROM product_transaction WHERE transaction_fk = ?';
+		$q = $pdo->prepare($sql);
+		$q->execute(array($this->cart_id));
+		$product_ids = $q->fetchAll(PDO::FETCH_ASSOC);
+
+		foreach ($product_ids as $pid => $item) {
+			$sql = 'SELECT * FROM product WHERE id = ?';
+			$q = $pdo->prepare($sql);
+			$q->execute(array($item['product_fk']));
+			$product = $q->fetch(PDO::FETCH_ASSOC);
+			array_push(products, array("id"=>$item['product_fk'], "quantity"=>$item['quantity'], "name"=>$product['name'], "price"=>$product['price'], "description"=>$product['description']));
+		}
+		return $products;
+		Database::disconnect();
+	}
+
+	public addToCart($product_fk) {
+
+		$pdo = Database::connect();
+		$this->product_fk = $_POST['id']);
+		$sql = "INSERT INTO product_transaction (transaction_fk, product_fk) values(?, ?)";
+		$q = $pdo->prepare($sql);
+		$q->execute(array($cart_id,$product_fk));
+		Database::disconnect();
+		return true;
+	}
+
+	public updateQuantity($quantity) {
+		if (!valid($quantity)) {
+			return false;
+		} else {
+			$pdo = Database::connect();
+			$sql = "UPDATE product_transaction SET quantity = ?";
+			$q = $pdo->prepare($sql);
+        	$q->execute(array($quantity));
+			Database::disconnect();
+			return true;
+		}
+	}
+
+	public deleteFromCart() {
+        $pdo = Database::connect();
+        $sql = "DELETE FROM `ecommerce`.`product_transaction` WHERE `transaction_fk` = ?";
+        $q = $pdo->prepare($sql);
+        $q->execute(array($this->cart_id));
+        Database::disconnect();
+        return true;
+	}
+
+}
 
 
 
