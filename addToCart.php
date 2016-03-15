@@ -11,7 +11,7 @@ error_reporting(E_ALL);
 
       $addToCart = new cart();
       $add = $addToCart->addToCart($product_fk);
-      if ($update) {
+      if ($add) {
         header('Location: cart.php');
       } else {
         header('Location: cart.php');
