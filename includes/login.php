@@ -15,9 +15,6 @@ require_once('database.php');
 		    $q = $pdo->prepare($sql);
        		$q->execute(array($username,$loginpassword));
        		$query = $q->fetch(PDO::FETCH_ASSOC);
-       		$sql2 = 'INSERT INTO transaction (customer_fk) values (?)';
-       		$q2 = $pdo->prepare($sql2);
-       		$q2->execute(array($query['id']));
 		    Database::disconnect();
 
        		$name = $query['name'];

@@ -1,4 +1,5 @@
 <?php
+require_once 'includes/session.php';
 
 // helper function for validation
 function valid($varname){
