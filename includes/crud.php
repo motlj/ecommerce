@@ -282,7 +282,7 @@ class cart {
 
 		$pdo = Database::connect();
 		$sql = 'SELECT * FROM product_transaction WHERE transaction_fk = ?';
-		$q = $pdo->prepare($sql);
+/*		$q = $pdo->prepare($sql);
 		$q->execute(array($this->cart_id));
 		$product_ids = $q->fetchAll(PDO::FETCH_ASSOC);
 
@@ -292,7 +292,7 @@ class cart {
 			$q->execute(array($item['product_fk']));
 			$product = $q->fetch(PDO::FETCH_ASSOC);
 			array_push(products, array("id"=>$item['product_fk'], "quantity"=>$item['quantity'], "product_name"=>$product['product_name'], "price"=>$product['price'], "description"=>$product['description']));
-		}
+*/		}
 		Database::disconnect();
 		return $products;
 	}
