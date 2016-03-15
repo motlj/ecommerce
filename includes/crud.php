@@ -18,6 +18,10 @@ class customer {
 			$q = $pdo->prepare($sql);
 			$q->execute(array($name,$last_name,$birthdate,$phone_number,$email_address,$user_name,$password));
 			$_SESSION['id'] = $pdo->lastInsertId();
+			$_SESSION['name'] = $name;
+			$_SESSION['user_name'] = $user_name;
+			$_SESSION['permission'] = $permission;
+
 			Database::disconnect();
 			return true;
 		}
