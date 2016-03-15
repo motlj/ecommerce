@@ -277,7 +277,7 @@ class cart {
 		Database::disconnect();
 	}
 
-	public function createCart();
+	public function createCart() {
 		$pdo = Database::connect();
 		$sql = "INSERT INTO transaction (customer_fk) values(?)";
 		$q = $pdo->prepare($sql);
