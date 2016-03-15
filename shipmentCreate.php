@@ -1,5 +1,5 @@
 <?php
-require_once('includes/session.php');
+require_once 'includes/session.php';
 error_reporting(E_ALL);
 require_once 'includes/database.php';
 //require_once 'includes/crud.php';
@@ -45,7 +45,7 @@ require_once 'includes/session.php';
         header('Location: adminUpdate.php');
       }
 */    }
-
+    }
 //need to debug, not redirecting to update, not showing query row on update.
 
 ?>
