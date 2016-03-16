@@ -26,6 +26,7 @@
                 echo ' ' . $category['name'] . ' ';
               echo '</a>';
             echo '</li>';
+            
           }
           echo '</ul>';
           echo '</li>';
