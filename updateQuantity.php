@@ -8,7 +8,7 @@
 
       // keep track post values
       $quantity = $_POST['quantity'];
-      $productTransactionID = $_POST['id']
+      $productTransactionID = $_POST['id'];
 
       $updateQuantity = new cart();
       $update = $updateQuantity->updateQuantity($quantity,$productTransactionID);
