@@ -57,7 +57,7 @@ require_once'includes/crud.php';
 
 				print_r($products);
 
-/*				foreach ($products as $row) {
+				foreach ($products as $row) {
 	                echo '<tr>';
 	                echo '<form method="POST" action="updateQuantity.php">';
 	                echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
@@ -72,7 +72,7 @@ require_once'includes/crud.php';
 		            echo '</form>';
 	                echo '</tr>';
 		        }
-*/		      } 
+		      } 
 	          //Database::disconnect();
 	          ?>
 	         </tbody>
