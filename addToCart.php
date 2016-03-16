@@ -6,7 +6,7 @@ error_reporting(E_ALL);
  
     if ( !empty($_POST)) {
         // keep track post values
-      $product_fk = $_POST['id'];
+      $product_fk = $_POST['product_fk'];
 
       $addToCart = new cart();
       $add = $addToCart->addToCart($product_fk);
