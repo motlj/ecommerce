@@ -20,10 +20,10 @@
         $q = $pdo->prepare($sql);
         $category = $q->fetchAll();
         Database::disconnect();
-        echo '<li class="dropdown"><aclass="dropdown-toggle" data-toggle="dropdown" href="categories.php">Categories<span class="caret"></span></a>';
+        echo '<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="categories.php">Categories<span class="caret"></span></a>';
           echo '<ul class="dropdown-menu">';
           foreach ($catgory as $row {
-            echo '<li id="' . $row['name'] . '"><a href="category.php?id="' . $row['id'] . '">"'. $row['name'] .'"</a></li>';
+            echo '<li id="' . $row['name'] . '"><a href="categories.php?id="' . $row['id'] . '">"'. $row['name'] .'"</a></li>';
           }
           echo '</ul>';
         echo '</li>';
