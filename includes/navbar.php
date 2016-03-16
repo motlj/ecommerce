@@ -23,7 +23,7 @@
             echo '<ul class="dropdown-menu">';
               echo '<li id="' . $category['name'] . '">';
                 echo '<a href="categories.php?id="' . $category['id'] . '">';
-                  echo '" ' . $category['name'] . ' "';
+                  echo ' ' . $category['name'] . ' ';
                 echo '</a>';
               echo '</li>';
             echo '</ul>';
