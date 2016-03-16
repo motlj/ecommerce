@@ -23,7 +23,11 @@
         foreach ($catgory as $row {
           echo '<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="categories.php">Categories<span class="caret"></span></a>';
             echo '<ul class="dropdown-menu">';
-              echo '<li id="' . $row['name'] . '"><a href="categories.php?id="' . $row['id'] . '">"'. $row['name'] .'"</a></li>';
+              echo '<li id="' . $row['name'] . '">';
+                echo '<a href="categories.php?id="' . $row['id'] . '">';
+                  echo '" ' . $row['name'] . ' "';
+                echo '</a>';
+              echo '</li>';
             echo '</ul>';
           echo '</li>';
         }
