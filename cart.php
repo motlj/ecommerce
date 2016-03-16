@@ -53,7 +53,7 @@ require_once'includes/crud.php';
 
 				$fetchCart = new cart();
 				$fetchCart->fetchCart();
-				
+
 				print_r($products);
 
 /*				foreach ($products as $row) {
@@ -94,7 +94,7 @@ require_once'includes/crud.php';
 
   <?php 
    require_once('includes/footer.php');
-   Database::disconnect();
+   //Database::disconnect();
   ?>
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
