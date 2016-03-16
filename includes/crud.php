@@ -337,11 +337,11 @@ class cart {
 		}
 	}
 
-	public function deleteFromCart($id) {
+	public function deleteFromCart($product_fk) {
         $pdo = Database::connect();
-        $sql = "DELETE FROM `ecommerce`.`product_transaction` WHERE `id` = ?";
+        $sql = "DELETE FROM `ecommerce`.`product_transaction` WHERE `product_fk` = ?";
         $q = $pdo->prepare($sql);
-        $q->execute(array($id));
+        $q->execute(array($product_fk));
         Database::disconnect();
         return true;
 	}
