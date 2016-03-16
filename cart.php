@@ -52,8 +52,8 @@ require_once'includes/crud.php';
 	            foreach ($query as $row) { */
 
 				$fetchCart = new cart();
-				$cart = $fetchCart->fetchCart();
-				
+				$fetchCart->fetchCart();
+
 				foreach ($products as $row) {
 	                echo '<tr>';
 	                echo '<form method="POST" action="updateQuantity.php">';
