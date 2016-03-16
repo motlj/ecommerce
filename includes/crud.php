@@ -317,9 +317,9 @@ class cart {
 		echo $product_fk;
 		echo $this->cart_id;
 		$pdo = Database::connect();
-		$sql = "INSERT INTO product_transaction (transaction_fk, product_fk) values(?, ?)";
+		$sql = "INSERT INTO product_transaction (transaction_fk, product_fk, quantity) values(?, ?, ?)";
 		$q = $pdo->prepare($sql);
-		$q->execute(array($this->cart_id,$product_fk));
+		$q->execute(array($this->cart_id,$product_fk, 1));
 		Database::disconnect();
 		return true;
 	}
