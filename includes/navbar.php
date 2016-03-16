@@ -12,6 +12,21 @@
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li><a href="index.php">Home</a></li>
+        <?php
+        $pdo = Database::connect();
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $sql = 'SELECT id, name FROM category ORDER BY name ASC';
+        $q = $pdo->prepare($sql);
+        $category = $q->fetchAll();
+        Database::disconnect();
+        echo '<li class="dropdown"><aclass="dropdown-toggle" data-toggle="dropdown" href="categories.php">Categories<span class="caret"></span></a>';
+          echo '<ul class="dropdown-menu">';
+          foreach ($catgory as $row {
+            echo '<li id="' . $row['name'] . '"><a href="category.php?id="' . $row['id'] . '">"'. $row['name'] .'"</a></li>';
+          }
+          echo '</ul>';
+        echo '</li>';
+        ?>
         <li><a href="productPage.php">Products</a></li>
         <li><a href="cart.php">Cart</a></li>
         <li><a href="#about">About</a></li>
