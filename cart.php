@@ -50,10 +50,10 @@ require_once'includes/crud.php';
 	              $query = $q->fetchAll(PDO::FETCH_ASSOC);
 
 	            foreach ($query as $row) { */
-	            	print_r($products);
+
 				$fetchCart = new cart();
 				$cart = $fetchCart->fetchCart();
-
+	            	print_r($products);
 				foreach ($products as $row) {
 	                echo '<tr>';
 	                echo '<form method="POST" action="updateQuantity.php">';
