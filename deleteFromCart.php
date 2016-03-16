@@ -7,7 +7,7 @@
       $addressID = $_POST['id'];
 
       $deleteFromCart = new cart();
-      $delete = $deleteFromCart->deleteFromCart();
+      $delete = $deleteFromCart->deleteFromCart($id);
 
       if ($delete) {
         header('Location: cart.php');
