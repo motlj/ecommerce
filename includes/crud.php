@@ -313,7 +313,7 @@ class cart {
 		return $products;
 	}
 
-/*	public function addToCart($product_fk) {
+	public function addToCart($product_fk) {
 
 		$pdo = Database::connect();
 		$this->product_fk = $_POST['id']);
@@ -324,7 +324,7 @@ class cart {
 		return true;
 	}
 
-	public function updateQuantity($quantity) {
+/*	public function updateQuantity($quantity) {
 		if (!valid($quantity)) {
 			return false;
 		} else {

@@ -42,19 +42,24 @@ require_once'includes/crud.php';
 	         <tbody>
 	          <?php
 	          if($loggedin) {
-	          	  $pdo = Database::connect();
+/*	          	  $pdo = Database::connect();
 	              $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	              $sql ='SELECT * FROM product_transaction WHERE transaction_fk IN (SELECT id FROM transaction)';
 	              $q = $pdo->prepare($sql);
 	              $q->execute(array());
 	              $query = $q->fetchAll(PDO::FETCH_ASSOC);
 
-	            foreach ($query as $row) {
+	            foreach ($query as $row) { */
+
+				$fetchCart = new cart();
+				$cart = $fetchCart->fetchCart();
+
+				foreach ($products as $row) {
 	                echo '<tr>';
 	                echo '<form method="POST" action="updateQuantity.php">';
 	                echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
-	                echo '<td><input type="text" name="product_fk" value="'.$row['product_fk']. '"></td>';
-	                echo '<td><input type="text" name="transaction_fk" value="'.$row['transaction_fk']. '"></td>';
+	                echo '<td><input type="text" name="product_name" value="'.$row['product_name']. '"></td>';
+	                echo '<td><input type="text" name="price" value="'.$row['price']. '"></td>';
 	                echo '<td><input type="text" name="quantity" value="' .$row['quantity']. '"></td>';
 	                echo '<td><input type="submit" value="Update Quantity"></td>';
 	                echo '</form>';
