@@ -52,7 +52,8 @@ require_once'includes/crud.php';
 	            foreach ($query as $row) { */
 
 				$fetchCart = new cart();
-				$fetchCart->fetchCart();
+				
+				$products = $fetchCart->fetchCart();
 
 				print_r($products);
 
