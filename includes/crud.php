@@ -272,7 +272,6 @@ class creditCard {
 class cart {
 	public $customer_id;
 	public $cart_id; //aka transaction ID
-	public $product_fk;
 		
 	public function __construct() {
 		$this->customer_id = $_SESSION['id'];
@@ -315,6 +314,8 @@ class cart {
 
 	public function addToCart($product_fk) {
 
+		echo $product_fk;
+		echo $this->cart_id;
 		$pdo = Database::connect();
 		$sql = "INSERT INTO product_transaction (transaction_fk, product_fk) values(?, ?)";
 		$q = $pdo->prepare($sql);
