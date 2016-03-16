@@ -316,12 +316,12 @@ class cart {
 
 		echo $product_fk;
 		echo $this->cart_id;
-/*		$pdo = Database::connect();
+		$pdo = Database::connect();
 		$sql = "INSERT INTO product_transaction (transaction_fk, product_fk) values(?, ?)";
 		$q = $pdo->prepare($sql);
 		$q->execute(array($this->cart_id,$product_fk));
 		Database::disconnect();
-*/		return true;
+		return true;
 	}
 
 /*	public function updateQuantity($quantity) {
