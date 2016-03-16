@@ -42,14 +42,6 @@ require_once'includes/crud.php';
 	         <tbody>
 	          <?php
 	          if($loggedin) {
-/*	          	  $pdo = Database::connect();
-	              $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	              $sql ='SELECT * FROM product_transaction WHERE transaction_fk IN (SELECT id FROM transaction)';
-	              $q = $pdo->prepare($sql);
-	              $q->execute(array());
-	              $query = $q->fetchAll(PDO::FETCH_ASSOC);
-
-	            foreach ($query as $row) { */
 
 				$fetchCart = new cart();				
 				$products = $fetchCart->fetchCart();
@@ -70,7 +62,6 @@ require_once'includes/crud.php';
 	                echo '</tr>';
 		        }
 		      } 
-	          //Database::disconnect();
 	          ?>
 	         </tbody>
 	      </table>
