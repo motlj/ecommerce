@@ -21,7 +21,7 @@
           echo '<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="categories.php">Categories<span class="caret"></span></a>';
           echo '<ul class="dropdown-menu">';
           foreach ($pdo->query($sql) as $category) {
-            echo '<li id="' . $category['name'] . '">';
+            echo '<li method="GET" id="' . $category['name'] . '">';
               echo '<a href="categories.php?id="' . $category['id'] . '">';
                 echo ' ' . $category['name'] . ' ';
               echo '</a>';
