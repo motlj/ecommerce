@@ -324,7 +324,7 @@ class cart {
 		return true;
 	}
 
-/*	public function updateQuantity($quantity) {
+	public function updateQuantity($quantity) {
 		if (!valid($quantity)) {
 			return false;
 		} else {
@@ -337,7 +337,7 @@ class cart {
 		}
 	}
 
-	public function deleteFromCart() {
+/*	public function deleteFromCart() {
         $pdo = Database::connect();
         $sql = "DELETE FROM `ecommerce`.`product_transaction` WHERE `transaction_fk` = ?";
         $q = $pdo->prepare($sql);
