@@ -292,7 +292,7 @@ class cart {
 		Database::disconnect();
 	}
 
-    public function fetchCart(){
+    public function fetchCart() {
 		$products = array();
 
 		$pdo = Database::connect();
@@ -306,11 +306,10 @@ class cart {
 			$q = $pdo->prepare($sql);
 			$q->execute(array($item['product_fk']));
 			$product = $q->fetch(PDO::FETCH_ASSOC);
-			array_push($products, array("id"=>$item['product_fk'], "quantity"=>$item['quantity'], "product_name"=>$product['product_name'], "price"=>$product['price'], "description"=>$product['description']));
+			array_push($products, array("id"=>$item['id'], "product_fk" $item['product_fk'], "quantity"=>$item['quantity'], "product_name"=>$product['product_name'], "price"=>$product['price'], "description"=>$product['description']));
 		}
 		Database::disconnect();
 		return $products;
-		print_r($products);
 	}
 
 	public function addToCart($product_fk) {
