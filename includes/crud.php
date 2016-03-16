@@ -316,10 +316,9 @@ class cart {
 	public function addToCart($product_fk) {
 
 		$pdo = Database::connect();
-		$this->product_fk = $_POST['id']);
 		$sql = "INSERT INTO product_transaction (transaction_fk, product_fk) values(?, ?)";
 		$q = $pdo->prepare($sql);
-		$q->execute(array($cart_id,$product_fk));
+		$q->execute(array($this->cart_id,$product_fk));
 		Database::disconnect();
 		return true;
 	}
