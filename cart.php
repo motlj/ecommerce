@@ -53,7 +53,7 @@ require_once'includes/crud.php';
 
 				$fetchCart = new cart();
 				$cart = $fetchCart->fetchCart();
-	            	print_r($products);
+				
 				foreach ($products as $row) {
 	                echo '<tr>';
 	                echo '<form method="POST" action="updateQuantity.php">';

@@ -310,6 +310,7 @@ class cart {
 		}
 		Database::disconnect();
 		return $products;
+		print_r($products);
 	}
 
 	public function addToCart($product_fk) {
