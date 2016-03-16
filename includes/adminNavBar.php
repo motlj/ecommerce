@@ -33,7 +33,7 @@
 
         Database::disconnect();
         ?>
-        <li><a href="productPage.php">Products</a></li>
+        <!-- <li><a href="productPage.php">Products</a></li> -->
         <li><a href="cart.php">Cart</a></li>
         <li><a href="includes/logout.php">Logout</a></li>
       </ul>
