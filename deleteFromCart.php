@@ -4,10 +4,10 @@
     require_once 'includes/crud.php';
  
     if ( !empty($_POST['id']) && isset($_POST['id'])) {
-      $addressID = $_POST['id'];
+      $productTransactionID = $_POST['id'];
 
       $deleteFromCart = new cart();
-      $delete = $deleteFromCart->deleteFromCart($product_fk);
+      $delete = $deleteFromCart->deleteFromCart($productTransactionID);
 
       if ($delete) {
         header('Location: cart.php');
