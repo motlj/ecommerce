@@ -8,9 +8,10 @@
 
       // keep track post values
       $quantity = $_POST['quantity'];
+      $productTransactionID = $_POST['id']
 
       $updateQuantity = new cart();
-      $update = $updateQuantity->updateQuantity($quantity);
+      $update = $updateQuantity->updateQuantity($quantity,$productTransactionID);
       if ($update) {
         header('Location: cart.php');
       } else {

@@ -324,14 +324,14 @@ class cart {
 		return true;
 	}
 
-	public function updateQuantity($quantity) {
+	public function updateQuantity($quantity,$productTransactionID) {
 		if (!valid($quantity)) {
 			return false;
 		} else {
 			$pdo = Database::connect();
-			$sql = "UPDATE product_transaction SET quantity = ?";
+			$sql = "UPDATE product_transaction SET quantity = ? WHERE id = ?";
 			$q = $pdo->prepare($sql);
-        	$q->execute(array($quantity));
+        	$q->execute(array($quantity,$productTransactionID));
 			Database::disconnect();
 			return true;
 		}
