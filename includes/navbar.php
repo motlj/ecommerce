@@ -17,21 +17,19 @@
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sql = 'SELECT id, name FROM category ORDER BY name ASC';
-        $q = $pdo->prepare($sql);
-        $category = $q->fetchAll();
-        Database::disconnect();
-        print_r($category);
-/*        foreach ($category as $row) {
+
+        foreach ($pdo->query($sql) as $category) {
           echo '<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="categories.php">Categories<span class="caret"></span></a>';
             echo '<ul class="dropdown-menu">';
-              echo '<li id="' . $row['name'] . '">';
-                echo '<a href="categories.php?id="' . $row['id'] . '">';
-                  echo '" ' . $row['name'] . ' "';
+              echo '<li id="' . $category['name'] . '">';
+                echo '<a href="categories.php?id="' . $category['id'] . '">';
+                  echo '" ' . $category['name'] . ' "';
                 echo '</a>';
               echo '</li>';
             echo '</ul>';
           echo '</li>';
-        }*/
+        }
+        Database::disconnect();
         ?>
         <li><a href="productPage.php">Products</a></li>
         <li><a href="cart.php">Cart</a></li>
