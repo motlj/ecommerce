@@ -301,12 +301,12 @@ class cart {
 		$q->execute(array($this->cart_id));
 		$product_ids = $q->fetchAll(PDO::FETCH_ASSOC);
 
-		foreach ($product_ids as $item) {
+		foreach ($product_ids as $pid => $item) {
 			$sql = 'SELECT * FROM product WHERE id = ?';
 			$q = $pdo->prepare($sql);
-			$q->execute(array($product_ids['product_fk']));
+			$q->execute(array($item['product_fk']));
 			$product = $q->fetch(PDO::FETCH_ASSOC);
-			array_push(products, array("id"=>$item['product_fk'], "quantity"=>$item['quantity'], "product_name"=>$product['product_name'], "price"=>$product['price'], "description"=>$product['description']));
+			array_push($products, array("id"=>$item['product_fk'], "quantity"=>$item['quantity'], "product_name"=>$product['product_name'], "price"=>$product['price'], "description"=>$product['description']));
 		}
 		Database::disconnect();
 		return $products;
