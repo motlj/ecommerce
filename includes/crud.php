@@ -301,7 +301,7 @@ class cart {
 		$q->execute(array($this->cart_id));
 		$product_ids = $q->fetchAll(PDO::FETCH_ASSOC);
 
-		foreach ($product_ids as $pid => $item) {
+		foreach ($product_ids as $item) {
 			$sql = 'SELECT * FROM product WHERE id = ?';
 			$q = $pdo->prepare($sql);
 			$q->execute(array($product_ids['product_fk']));
