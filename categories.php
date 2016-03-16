@@ -27,7 +27,7 @@ require_once 'includes/database.php';
     $category_id = $_GET['id'];
     $pdo = Database::connect();
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = 'SELECT * FROM products WHERE category_fk = ?';
+    $sql = 'SELECT * FROM product WHERE category_fk = ?';
     $q = $pdo->prepare($sql);
     $q->execute(array($category_id));
     $products = $q->fetchAll();
