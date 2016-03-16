@@ -50,7 +50,7 @@ require_once'includes/database.php';
                 $sql = 'SELECT * FROM product WHERE id = ?';
                 $q = $pdo->prepare($sql);
                 $q->execute(array($id));
-                $query = $q->fetchAll(PDO::FETCH_ASSOC);
+                $query = $q->fetch(PDO::FETCH_ASSOC);
 
               foreach ($query as $row) {
 
