@@ -50,7 +50,7 @@ require_once'includes/crud.php';
 	              $query = $q->fetchAll(PDO::FETCH_ASSOC);
 
 	            foreach ($query as $row) { */
-
+	            	echo $products;
 				$fetchCart = new cart();
 				$cart = $fetchCart->fetchCart();
 
