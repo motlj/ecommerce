@@ -1,3 +1,8 @@
 #background {
 	background-color: #3C2600;
 }
+
+
+.navbar-default .navbar-brand {
+	color: #D0C3AC;
+}
