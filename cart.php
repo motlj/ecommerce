@@ -16,7 +16,7 @@ require_once'includes/crud.php';
 	  <title>Ecommerce | Cart</title>
  </head>
 
- <body>
+ <body id="background">
 	  <?php 
 	     if ($admin) {
 	       require_once'includes/adminNavBar.php';

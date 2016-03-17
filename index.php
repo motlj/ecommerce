@@ -12,7 +12,7 @@
     <title>Ecommerce</title>
  </head>
 
-  <body>
+  <body id="background">
     <?php 
     if ($admin) {
       require_once'includes/adminNavBar.php';
