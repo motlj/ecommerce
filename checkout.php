@@ -70,7 +70,7 @@ require_once'includes/crud.php';
                //$pdo = Database::connect();
                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                $sql = "SELECT `address`.`id`, `address`.`street1` FROM `address` WHERE `address`.`id` IN (SELECT `customer_address`.`address_fk` FROM `customer_address` WHERE `customer_address`.`customer_fk` = ?) ORDER BY `address`.`street1`";
-               $address = $pdo->query($sql);
+               $address = $pdo->fetchAll($sql);
                $address->execute(array($_SESSION['id']));
                //echo "Please Select an Address";
                echo "<br>";
