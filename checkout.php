@@ -49,8 +49,9 @@ require_once'includes/crud.php';
 			    echo '<br>';
 			?>
 	    </div>
-
-
+		<br>
+		<br>
+		<br>
 	    <div class="row">
 	      <h4>Select Shipping Address</h4>
 	    </div>
@@ -62,7 +63,6 @@ require_once'includes/crud.php';
 				$q = $pdo->prepare($sql);
 				$q->execute(array($_SESSION['id']));
 				$address = $q->fetchAll(PDO::FETCH_ASSOC);
-				echo "<br>";
 				echo "<select name='address_fk'>";
 				foreach ($address as $row) {
 				 echo "<option value='" . $row['id'] . "'>" . $row['street1'] . "</option>";
@@ -70,7 +70,9 @@ require_once'includes/crud.php';
 				echo "</select>";
 	        ?>
 		</div>
-
+		<br>
+		<br>
+		<br>
 	    <div class="row">
 	      <h4>Select Credit Card</h4>
 	    </div>
@@ -82,7 +84,6 @@ require_once'includes/crud.php';
 				$q = $pdo->prepare($sql);
 				$q->execute(array($_SESSION['id']));
 				$address = $q->fetchAll(PDO::FETCH_ASSOC);
-				echo "<br>";
 				echo "<select name='creditcard_fk'>";
 				foreach ($address as $row) {
 				 echo "<option value='" . $row['id'] . "'>" . $row['card_number'] . "</option>";
