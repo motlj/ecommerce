@@ -32,7 +32,7 @@ require_once'includes/crud.php';
 					$customer = new customer();
 					$cust = $customer->read($_SESSION['id']);
 				    
-				    echo '<form method="POST" action="placeOrder.php">';
+				    echo '<form method="POST" action="placeOrderFunction.php">';
 				    echo '<input type="hidden" name="id" value="' . $cust['id'] . '">';
 				    echo ''.$cust['name'].'';
 				    echo '&nbsp;'; 
