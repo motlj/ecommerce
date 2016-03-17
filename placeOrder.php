@@ -35,13 +35,14 @@ require_once'includes/crud.php';
     ?>
 
     <div class="container">
-    	<h3>Success!</h3>
-    	<h4>Thank you for your order.</h4>
-		<p>Your confirmation number is BLAHBLAH. An email will be sent to you shortly containing this confirmation number and receipt. You will be emailed again once your purchase has shipped.</p>
-		
-		<div>
-          <a href="index.php">Return to Home Page</a>
-        </div>
+      <div class="row">
+      	<h3>Success!</h3>
+        <br>
+      	<h4>Thank you for your order.</h4>
+        <br>
+  		  <p>Your confirmation number is BLAHBLAH. An email will be sent to you shortly containing this confirmation number and receipt. You will be emailed again once your purchase has shipped.</p>
+        <br>
+        <a href="index.php">Return to Home Page</a>
         <br>
         <br>
 
@@ -49,6 +50,7 @@ require_once'includes/crud.php';
         <br>
         <br>
         <br>
+      </div> <!-- /row -->
     </div> <!-- /container -->
 
   <?php 

@@ -286,9 +286,9 @@ class cart {
 
 	public function createCart() {
 		$pdo = Database::connect();
-		$sql = "INSERT INTO transaction (customer_fk) values(?)";
+		$sql = "INSERT INTO transaction (customer_fk, cart) values(?,?)";
 		$q = $pdo->prepare($sql);
-		$q->execute(array($this->customer_id));
+		$q->execute(array($this->customer_id,1));
 		Database::disconnect();
 	}
 
@@ -345,6 +345,24 @@ class cart {
         Database::disconnect();
         return true;
 	}
+
+	public function checkout($address_fk,$creditcard_fk) {
+		if (!valid($address_fk)) || !valid($creditcard_fk)) {
+			return false;
+		} else {
+			$pdo = Database::connect();
+			$sql = "UPDATE transaction SET cart = ? WHERE id = ?";
+			$q = $pdo->prepare($sql);
+			$q->execute(array(0,$this->cart_id));
+
+			$sql2 = "INSERT INTO transaction (customer_fk, cart) values(?,?)";
+			$q2 = $pdo->prepare($sql2);
+			$q2->execute(array($this->customer_id,1));
+			Database::disconnect();
+		}
+	}
+
+
 }
 
 
