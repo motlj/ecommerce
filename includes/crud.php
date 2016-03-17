@@ -352,13 +352,13 @@ class cart {
 	}
 
 	public function checkout() {
-			try {
+		try {
 			$pdo = Database::connect();
 			$sql = "UPDATE transaction SET cart = ? WHERE id = ?";
 			$q = $pdo->prepare($sql);
 			$q->execute(array(0,$this->cart_id));
 			Database::disconnect();
-		} catch catch (PDOException $error) {
+		} catch (PDOException $error) {
 			die();
 		}
 			return $this->createCart();
