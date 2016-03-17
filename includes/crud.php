@@ -354,11 +354,7 @@ class cart {
 			$sql = "UPDATE transaction SET cart = ? WHERE id = ?";
 			$q = $pdo->prepare($sql);
 			$q->execute(array(0,$this->cart_id));
-
-			$sql2 = "INSERT INTO transaction (customer_fk, cart) values(?,?)";
-			$q2 = $pdo->prepare($sql2);
-			$q2->execute(array($this->customer_id,1));
-			Database::disconnect();
+			$this->createCart();
 		}
 	}
 
