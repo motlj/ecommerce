@@ -67,7 +67,7 @@ require_once'includes/crud.php';
 	    </div>
 	    <div class="row">
 	    	<?php
-               $pdo = Database::connect();
+               //$pdo = Database::connect();
                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                $sql = "SELECT `address`.`id`, `address`.`street1` FROM `address` WHERE `address`.`id` IN (SELECT `customer_address`.`address_fk` FROM `customer_address` WHERE `customer_address`.`customer_fk` = ?) ORDER BY `address`.`street1`";
                $address = $pdo->query($sql);
@@ -79,9 +79,9 @@ require_once'includes/crud.php';
                  echo "<option value='" . $row['id'] . "'>" . $row['street1'] . "</option>";
                }
                echo "</select>";
-               Database::disconnect();
+               //Database::disconnect();
             ?>
-
+		</div>
 
 
 
@@ -122,7 +122,7 @@ require_once'includes/crud.php';
 
 	        </tbody>
 	      </table>
- -->	    </div>
+ -->	
 
 
 	    <div class="row">
