@@ -61,6 +61,7 @@ require_once'includes/crud.php';
 		            echo '</form>';
 	                echo '</tr>';
 	            }
+	            echo '<br>';
                 echo '<tr>';
                 echo '<th>Subtotal</th>';
                 echo '<th>Tax</th>';
@@ -71,6 +72,7 @@ require_once'includes/crud.php';
                 $tax = ($cost * .056);
                 echo '<td>' . $tax . '</td>';
                 echo '</tr>';
+                echo '<br>';
                 echo '<tr>';
                 echo '<th>Total:</th>';
                 echo '<th>' . ($cost + $tax) . '</th>';
