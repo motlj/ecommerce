@@ -6,13 +6,9 @@ require_once'includes/crud.php';
  Database::connect();
 
 
-if ( !empty($_POST)) {
-	$address_fk = $_POST['address_fk'];
-	$creditcard_fk = $_POST['creditcard_fk'];
-
 	$checkout = new cart();
-	$verify = $checkout->checkout($address_fk, $creditcard_fk);
-	
+	$verify = $checkout->checkout();
+
 	if ($verify) {
 		header('Location: placeOrder.php');
 	} else {

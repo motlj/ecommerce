@@ -346,17 +346,15 @@ class cart {
         return true;
 	}
 
-	public function checkout($address_fk,$creditcard_fk) {
-		if (!valid($address_fk) || !valid($creditcard_fk)) {
-			return false;
-		} else {
+	public function checkout() {
 			$pdo = Database::connect();
 			$sql = "UPDATE transaction SET cart = ? WHERE id = ?";
 			$q = $pdo->prepare($sql);
 			$q->execute(array(0,$this->cart_id));
+			Database::disconnect();
 			$this->createCart();
+			return true;
 		}
-	}
 
 
 }
