@@ -7,6 +7,6 @@ html {
 }
 
 
-.navbar-default .navbar-brand {
-	color: #D0C3AC;
+.navbar {
+	background-color: #D0C3AC;
 }
