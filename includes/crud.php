@@ -347,7 +347,7 @@ class cart {
 	}
 
 	public function checkout($address_fk,$creditcard_fk) {
-		if (!valid($address_fk)) || !valid($creditcard_fk)) {
+		if (!valid($address_fk) || !valid($creditcard_fk)) {
 			return false;
 		} else {
 			$pdo = Database::connect();
