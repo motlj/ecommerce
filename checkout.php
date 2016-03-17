@@ -56,8 +56,6 @@ require_once'includes/crud.php';
 	    </div>
 	    <div>
 	      <p>If you need to add a new address, please do so <a href="addressCreate.php">here</a>.</p>
-	    </div>
-	    <div class="row">
 	    	<?php
 				$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				$sql = "SELECT `address`.`id`, `address`.`street1` FROM `address` WHERE `address`.`id` IN (SELECT `customer_address`.`address_fk` FROM `customer_address` WHERE `customer_address`.`customer_fk` = ?) ORDER BY `address`.`street1`";
@@ -78,8 +76,6 @@ require_once'includes/crud.php';
 	    </div>
 	    <div>
 	      <p>If you need to add a new address, please do so <a href="ccCreate.php">here</a>.</p>
-	    </div>
-	    <div class="row">
 	    	<?php
 				$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				$sql = "SELECT `credit_card`.`id`, `credit_card`.`card_number` FROM `credit_card` WHERE `credit_card`.`id` IN (SELECT `customer_credit_card`.`creditcard_fk` FROM `customer_credit_card` WHERE `customer_credit_card`.`customer_fk` = ?) ORDER BY `credit_card`.`card_number`";
