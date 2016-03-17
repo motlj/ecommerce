@@ -24,21 +24,13 @@ require_once'includes/crud.php';
        require_once'includes/navbar.php';
       }
 
-      $address = $_POST['street1'];
-      $city = $_POST['city'];
-      $state = $_POST['state'];
+      $address = $_POST['address_fk'];
 
-      $cc = $_POST['card_number'];
-      $name = $_POST['name'];
-      $type = $_POST['type'];
+      $cc = $_POST['creditcard_fk'];
 
       echo $address;
-      echo $city;
-      echo $state;
 
       echo $cc;
-      echo $name;
-      echo $type;
 
     ?>
 
