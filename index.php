@@ -20,7 +20,7 @@
     }
     ?>
 
-    <div class="container">
+    <div id="background" class="container">
       <?php
       if ($loggedin) {
         echo "Welcome Back, ";
