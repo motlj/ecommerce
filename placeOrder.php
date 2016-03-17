@@ -25,12 +25,8 @@ require_once'includes/crud.php';
       }
 
       $address = $_POST['address_fk'];
-
       $cc = $_POST['creditcard_fk'];
 
-      echo $address;
-
-      echo $cc;
 
     ?>
 
@@ -40,7 +36,15 @@ require_once'includes/crud.php';
         <br>
       	<h4>Thank you for your order.</h4>
         <br>
-  		  <p>Your confirmation number is BLAHBLAH. An email will be sent to you shortly containing this confirmation number and receipt. You will be emailed again once your purchase has shipped.</p>
+        
+        <?php
+          $sql = 'SELECT id FROM transaction WHERE customer_fk = ? AND cart = ?';
+          $q = $pdo->prepare($sql);
+          $q->execute(array($_SESSION['id'],1));
+          $transactionID = $q->fetch(PDO::FETCH_ASSOC);
+        ?>
+
+  		  <p>Your confirmation number is <?php echo ' . $transactionID . ' ?>. An email will be sent to you shortly containing this confirmation number and receipt. You will be emailed again once your purchase has shipped.</p>
         <br>
         <a href="index.php">Return to Home Page</a>
         <br>
