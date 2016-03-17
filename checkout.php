@@ -27,107 +27,50 @@ require_once'includes/crud.php';
     <div class="container">
 	    <div class="row">
 	      <h3>Verify Shipping Information</h3>
+	      <h4>Personal Information:</h4>
 	    </div>
 	    <div class="row">
-	      <table class="table table-striped table-bordered">
-	        <thead>
-	          <tr>
-	            <th>First Name</th>
-	            <th>Last Name</th>
-	            <th>Phone Number</th>
-	            <th>Email Address</th>
-	            <th>Action</th>
-	          </tr>
-	        </thead>
-	        <tbody>
-
-	          <?php
-	            $customer = new customer();
-	            $cust = $customer->read($_SESSION['id']);
-	                echo '<tr>';
-	                echo '<form method="POST" action="userUpdate.php">';
-	                echo '<input type="hidden" name="id" value="' . $cust['id'] . '">';
-	                echo '<td><input type="text" name="first_name" value="'.$cust['name'].'"></td>'; 
-	                echo '<td><input type="text" name="last_name" value="'.$cust['last_name'].'"></td>';
-	                echo '<td><input type="text" name="phone" value="'.$cust['phone_number'].'"></td>';
-	                echo '<td><input type="text" name="email" value="'.$cust['email_address'].'"></td>';
-	                echo '<td><input type="submit" value="Update"></td>';
-	                echo '</tr>';
-	          ?>
-
-	        </tbody>
-	      </table>
+			<?php
+				$customer = new customer();
+				$cust = $customer->read($_SESSION['id']);
+			    
+			    echo '<form method="POST" action="placeOrder.php">';
+			    echo '<input type="hidden" name="id" value="' . $cust['id'] . '">';
+			    echo ''.$cust['name'].'';
+			    echo '&nbsp;'; 
+			    echo ''.$cust['last_name'].'';
+			    echo '<br>';
+			    echo ''.$cust['phone_number'].'';
+			    echo '<br>';
+			    echo ''.$cust['email_address'].'';
+			    echo '<br>';
+			    echo '<br>';
+			?>
 	    </div>
 
-	    <br>
-	    <br>
 
 	    <div class="row">
-	      <h3>Select Shipping Address</h3>
+	      <h4>Select Shipping Address</h4>
+	      <p>If you need to add a new address, please do so <a href="addressCreate.php">here</a>.</p>
 	    </div>
 	    <div class="row">
 	    	<?php
-               //$pdo = Database::connect();
-               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-               $sql = "SELECT `address`.`id`, `address`.`street1` FROM `address` WHERE `address`.`id` IN (SELECT `customer_address`.`address_fk` FROM `customer_address` WHERE `customer_address`.`customer_fk` = ?) ORDER BY `address`.`street1`";
-               $q = $pdo->prepare($sql);
-               $q->execute(array($_SESSION['id']));
-               $address = $q->fetchAll(PDO::FETCH_ASSOC);
-               //echo "Please Select an Address";
-               echo "<br>";
-               echo "<select name='address_fk'>";
-               foreach ($address as $row) {
-                 echo "<option value='" . $row['id'] . "'>" . $row['street1'] . "</option>";
-               }
-               echo "</select>";
-               //Database::disconnect();
-            ?>
+				$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+				$sql = "SELECT `address`.`id`, `address`.`street1` FROM `address` WHERE `address`.`id` IN (SELECT `customer_address`.`address_fk` FROM `customer_address` WHERE `customer_address`.`customer_fk` = ?) ORDER BY `address`.`street1`";
+				$q = $pdo->prepare($sql);
+				$q->execute(array($_SESSION['id']));
+				$address = $q->fetchAll(PDO::FETCH_ASSOC);
+				echo "<br>";
+				echo "<select name='address_fk'>";
+				foreach ($address as $row) {
+				 echo "<option value='" . $row['id'] . "'>" . $row['street1'] . "</option>";
+				}
+				echo "</select>";
+	        ?>
 		</div>
 
-
-
-
-
-
-<!-- 	      <table class="table table-striped table-bordered">
-	        <thead>
-	          <tr>
-	            <th>Street Number</th>
-	            <th>Street Number (continued)</th>
-	            <th>City</th>
-	            <th>State</th>
-	            <th>Zip Code</th>
-	            <th>Country</th>
-	            <th>Action</th>
-	          </tr>
-	        </thead>
-	        <tbody>
-
-	          *********opening php tag removed for commenting
-	            $myAddresses = new customerAddress($_SESSION['id']);
-
-	            foreach ($myAddresses->read() as $row) {
-		                echo '<tr>';
-		                echo '<form method="POST" action="addressUpdate.php">';
-		                echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
-		                echo '<td><input type="text" name="street1" value="'.$row['street1'].'"></td>'; 
-		                echo '<td><input type="text" name="street2" value="'.$row['street2'].'"></td>';
-		                echo '<td><input type="text" name="city" value="'.$row['city'].'"></td>';
-		                echo '<td><input type="text" name="state" value="'.$row['state'].'"></td>';
-		                echo '<td><input type="text" name="zip" value="'.$row['zip'].'"></td>';
-		                echo '<td><input type="text" name="country" value="'.$row['country'].'"></td>';
-		                echo '<td><input type="submit" value="Update"></td>';
-		                echo '</tr>';
-	              }
-	          ?>
-
-	        </tbody>
-	      </table>
- -->	
-
-
 	    <div class="row">
-	      <h3>Verify Credit Card Information</h3>
+	      <h4>Verify Credit Card Information</h4>
 	    </div>
 	    <div>
 	      <p>If you have not registered a credit card with your account, please <a href="ccCreate.php">add a credit card</a>.</p>
