@@ -293,7 +293,7 @@ class cart {
 		Database::disconnect();
 		return true;
 	  } catch (PDOException $error){
-	  	die;
+	  	die();
 	  }
 	}
 
