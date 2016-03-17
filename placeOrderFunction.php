@@ -11,9 +11,8 @@ require_once'includes/crud.php';
 
 	$verify = $checkout->checkout();
 
-	if ($verify) {
+/*	if ($verify) {
 		header('Location: placeOrder.php');
 	} else {
 		header('Location: cart.php');
-	}
-}
+	}*/
