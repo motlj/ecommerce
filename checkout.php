@@ -63,10 +63,32 @@ require_once'includes/crud.php';
 	    <br>
 
 	    <div class="row">
-	      <h3>Verify Shipping Address</h3>
+	      <h3>Select Shipping Address</h3>
 	    </div>
 	    <div class="row">
-	      <table class="table table-striped table-bordered">
+	    	<?php
+               $pdo = Database::connect();
+               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+               $sql = "SELECT `address`.`id`, `address`.`street1` FROM `address` WHERE `address`.`id` IN (SELECT `customer_address`.`address_fk` FROM `customer_address` WHERE `customer_address`.`customer_fk` = ?) ORDER BY `address`.`street1`";
+               $address = $pdo->query($sql);
+               $address->execute(array($_SESSION['id']));
+               //echo "Please Select an Address";
+               echo "<br>";
+               echo "<select name='address_fk'>";
+               foreach ($address as $row) {
+                 echo "<option value='" . $row['id'] . "'>" . $row['street1'] . "</option>";
+               }
+               echo "</select>";
+               Database::disconnect();
+            ?>
+
+
+
+
+
+
+
+<!-- 	      <table class="table table-striped table-bordered">
 	        <thead>
 	          <tr>
 	            <th>Street Number</th>
@@ -80,13 +102,10 @@ require_once'includes/crud.php';
 	        </thead>
 	        <tbody>
 
-	          <?php
+	          *********opening php tag removed for commenting
 	            $myAddresses = new customerAddress($_SESSION['id']);
 
 	            foreach ($myAddresses->read() as $row) {
-	            	//attempting to put checkboxes next to all of user's addresses.
-	            	//echo '<form>';
-	            	//echo '<input type="checkbox" name="Address" value='
 		                echo '<tr>';
 		                echo '<form method="POST" action="addressUpdate.php">';
 		                echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
@@ -103,7 +122,7 @@ require_once'includes/crud.php';
 
 	        </tbody>
 	      </table>
-	    </div>
+ -->	    </div>
 
 
 	    <div class="row">
