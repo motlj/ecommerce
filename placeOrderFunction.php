@@ -5,10 +5,6 @@ require_once'includes/crud.php';
  error_reporting(E_ALL);
 
 	$checkout = new cart();
-	echo $checkout->customer_id;
-	echo $checkout->cart_id;
-	//die();
-
 	$verify = $checkout->checkout();
 
 	if ($verify) {

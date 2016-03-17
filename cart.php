@@ -50,9 +50,9 @@ require_once'includes/crud.php';
 	                echo '<tr>';
 	                echo '<form method="POST" action="updateQuantity.php">';
 	                echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
-	                echo '<td>'.$row['product_name']. '</td>';
-	                echo '<td>'.$row['price']. '</td>';
-	                echo '<td><input type="text" name="quantity" value="' .$row['quantity']. '"></td>';
+	                echo '<td>' . $row['product_name'] . '</td>';
+	                echo '<td>' . $row['price'] . '</td>';
+	                echo '<td><input type="text" name="quantity" value="' . $row['quantity'] . '"></td>';
 	                echo '<td><input type="submit" value="Update Quantity"></td>';
 	                echo '</form>';
 	               	echo '<form method="POST" action="deleteFromCart.php">';
@@ -60,11 +60,33 @@ require_once'includes/crud.php';
 		            echo '<td><input type="submit" value="Remove From Cart"></td>';
 		            echo '</form>';
 	                echo '</tr>';
+	                echo '<tr>';
+	                echo '<th>Subtotal</th>';
+	                echo '<th>Tax</th>';
+	                echo '</tr>';
+	                echo '<tr>';
+	                $cost = $cost + (($row['price']) * ($row['quantity']));
+	                echo '<td>' . $cost . '</td>';
+	                $tax = ($cost * .056);
+	                echo '<td>' . $tax . '</td>';
+	                echo '</tr>';
+	                echo '<tr>';
+	                echo '<th>Total</th>';
+	                echo '</tr>';
+	                echo '<tr>';
+	                echo '<td>' . ($cost + $tax) . '<td>';
+	                echo '</tr>';
 		        }
 		      } 
 	          ?>
 	         </tbody>
 	      </table>
+	      <br>
+	      <?php
+
+
+
+	      ?>
 	    </div>
         <div>
           <a href="checkout.php">Checkout</a>
