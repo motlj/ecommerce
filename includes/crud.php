@@ -285,15 +285,16 @@ class cart {
 	}
 
 	public function createCart() {
-	  try {
-		$pdo = Database::connect();
-		$sql = "INSERT INTO transaction (customer_fk, cart) values(?,?)";
-		$q = $pdo->prepare($sql);
-		$q->execute(array($this->customer_id,1));
-		Database::disconnect();
-		return true;
-	  } catch (PDOException $error){
-	  	die();
+	    try {
+			$pdo = Database::connect();
+			$sql = "INSERT INTO transaction (customer_fk, cart) values(?,?)";
+			$q = $pdo->prepare($sql);
+			$q->execute(array($this->customer_id,1));
+			Database::disconnect();
+		 	return true;
+	    } catch (PDOException $error){
+	    	echo $error->getMessage();
+	  	    die();
 	  }
 	}
 
@@ -359,11 +360,11 @@ class cart {
 			$q->execute(array(0,$this->cart_id));
 			Database::disconnect();
 		} catch (PDOException $error) {
+			echo $error->getMessage();
 			die();
 		}
-			return $this->createCart();
-			return true;
-		}
+		return $this->createCart();
+	}
 
 
 }
