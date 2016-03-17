@@ -7,12 +7,12 @@ require_once'includes/crud.php';
 	$checkout = new cart();
 	echo $checkout->customer_id;
 	echo $checkout->cart_id;
-	die();
+	//die();
 
 	$verify = $checkout->checkout();
 
-/*	if ($verify) {
+	if ($verify) {
 		header('Location: placeOrder.php');
 	} else {
 		header('Location: cart.php');
-	}*/
+	}
