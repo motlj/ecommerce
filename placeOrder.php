@@ -38,13 +38,12 @@ require_once'includes/crud.php';
         <br>
 
         <?php
-          $sql = 'SELECT id FROM transaction WHERE customer_fk = ? AND cart = ?';
-          $q = $pdo->prepare($sql);
-          $transactionID = $q->execute(array($_SESSION['id'],1));
-          //$transactionID = $q->fetch(PDO::FETCH_ASSOC);
+          //$sql = 'SELECT id FROM transaction WHERE id = (SELECT transaction_fk FROM product_transaction)';
+          //$q = $pdo->prepare($sql);
+          //$transactionID = $q->execute(array($_SESSION['id'],1));
         ?>
 
-  		  <p>Your confirmation number is <?php echo $transactionID ?>. An email will be sent to you shortly containing this confirmation number and receipt. You will be emailed again once your purchase has shipped.</p>
+  		  <p>Your confirmation number is <?php //echo $transactionID ?>. An email will be sent to you shortly containing this confirmation number and receipt. You will be emailed again once your purchase has shipped.</p>
         <br>
         <a href="index.php">Return to Home Page</a>
         <br>
