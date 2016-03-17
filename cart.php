@@ -6,7 +6,7 @@ require_once'includes/crud.php';
  //Database::connect();
 ?>
 <!DOCTYPE html>
-<html id="background" lang="en">
+<html lang="en">
  <head>
 	  <meta charset="utf-8">
 	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,7 +16,7 @@ require_once'includes/crud.php';
 	  <title>Ecommerce | Cart</title>
  </head>
 
- <body id="background">
+ <body>
 	  <?php 
 	     if ($admin) {
 	       require_once'includes/adminNavBar.php';
