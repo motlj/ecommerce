@@ -27,6 +27,8 @@ require_once'includes/crud.php';
     <div class="container">
 	    <div class="row">
 	      <h3>Verify Shipping Information</h3>
+	    </div>
+	    <div>
 	      <h4>Personal Information:</h4>
 	    </div>
 	    <div class="row">
@@ -51,6 +53,8 @@ require_once'includes/crud.php';
 
 	    <div class="row">
 	      <h4>Select Shipping Address</h4>
+	    </div>
+	    <div>
 	      <p>If you need to add a new address, please do so <a href="addressCreate.php">here</a>.</p>
 	    </div>
 	    <div class="row">
@@ -70,14 +74,28 @@ require_once'includes/crud.php';
 		</div>
 
 	    <div class="row">
-	      <h4>Verify Credit Card Information</h4>
+	      <h4>Select Credit Card</h4>
 	    </div>
 	    <div>
-	      <p>If you have not registered a credit card with your account, please <a href="ccCreate.php">add a credit card</a>.</p>
-	      <p>Please make updates to your existing credit cards below.</p>
+	      <p>If you need to add a new address, please do so <a href="ccCreate.php">here</a>.</p>
 	    </div>
 	    <div class="row">
-	      <table class="table table-striped table-bordered">
+	    	<?php
+				$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+				$sql = "SELECT `credit_card`.`id`, `credit_card`.`card_number` FROM `credit_card` WHERE `credit_card`.`id` IN (SELECT `customer_credit_card`.`creditcard_fk` FROM `customer_credit_card` WHERE `customer_credit_card`.`customer_fk` = ?) ORDER BY `credit_card`.`card_number`";
+				$q = $pdo->prepare($sql);
+				$q->execute(array($_SESSION['id']));
+				$address = $q->fetchAll(PDO::FETCH_ASSOC);
+				echo "<br>";
+				echo "<select name='creditcard_fk'>";
+				foreach ($address as $row) {
+				 echo "<option value='" . $row['id'] . "'>" . $row['card_number'] . "</option>";
+				}
+				echo "</select>";
+	        ?>
+	    </div>
+
+<!-- 	      <table class="table table-striped table-bordered">
 	        <thead>
 	          <tr>
 	            <th>Type</th>
@@ -90,7 +108,7 @@ require_once'includes/crud.php';
 	          </tr>
 	        </thead>
 	        <tbody>
-	          <?php
+	         *****removed opening php tag to comment section out.
 	          if($loggedin) {
 	            //try {
 	              $pdo = Database::connect();
@@ -138,8 +156,7 @@ require_once'includes/crud.php';
 	          Database::disconnect();
 	          ?>
 	        </tbody>
-	      </table>
-	    </div>
+	      </table> -->
 
 	    <div>
           <a href="placeOrder.php" input type="submit" value="place_order">Place order</a>
