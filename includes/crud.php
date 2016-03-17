@@ -285,11 +285,16 @@ class cart {
 	}
 
 	public function createCart() {
+	  try {
 		$pdo = Database::connect();
 		$sql = "INSERT INTO transaction (customer_fk, cart) values(?,?)";
 		$q = $pdo->prepare($sql);
 		$q->execute(array($this->customer_id,1));
 		Database::disconnect();
+		return true;
+	  } catch (PDOException $error){
+	  	die;
+	  }
 	}
 
     public function fetchCart() {
@@ -347,12 +352,16 @@ class cart {
 	}
 
 	public function checkout() {
+			try {
 			$pdo = Database::connect();
 			$sql = "UPDATE transaction SET cart = ? WHERE id = ?";
 			$q = $pdo->prepare($sql);
 			$q->execute(array(0,$this->cart_id));
 			Database::disconnect();
-			$this->createCart();
+		} catch catch (PDOException $error) {
+			die();
+		}
+			return $this->createCart();
 			return true;
 		}
 
