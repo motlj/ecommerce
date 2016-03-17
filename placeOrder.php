@@ -18,12 +18,30 @@ require_once'includes/crud.php';
 
  <body>
 	  <?php 
-	     if ($admin) {
-	       require_once'includes/adminNavBar.php';
-	     } else {
-	       require_once'includes/navbar.php';
-	     }
-      ?>
+      if ($admin) {
+       require_once'includes/adminNavBar.php';
+      } else {
+       require_once'includes/navbar.php';
+      }
+
+      $address = $_POST['street1'];
+      $city = $_POST['city'];
+      $state = $_POST['state'];
+
+      $cc = $_POST['card_number'];
+      $name = $_POST['name'];
+      $type = $_POST['type'];
+
+      echo $address;
+      echo $city;
+      echo $state;
+
+      echo $cc;
+      echo $name;
+      echo $type;
+
+    ?>
+
     <div class="container">
     	<h3>Success!</h3>
     	<h4>Thank you for your order.</h4>
