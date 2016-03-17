@@ -1,7 +1,7 @@
 <?php require_once('includes/session.php');?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html id="background" lang="en">
  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +20,7 @@
     }
     ?>
 
-    <div id="background" class="container">
+    <div class="container">
       <?php
       if ($loggedin) {
         echo "Welcome Back, ";
