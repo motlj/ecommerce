@@ -16,34 +16,34 @@ html {
 }
 
 .navbar-inverse {
-    background-color: #3c2600; /*dark green*/
-    border-color: #d0c3ac; /*light green*/
+    background-color: #3C2600; /*dark green*/
+    border-color: #D0C3AC; /*light green*/
     border-width: 4px;
 }
 
 .navbar-inverse .navbar-nav > li > a {
-    color: #d0c3ac; /*black*/
+    color: #D0C3AC; /*black*/
 }
 
 .navbar-inverse .navbar-brand {
-    color: #d0c3ac;
+    color: #D0C3AC;
     font-weight: bolder;
     font-size: 28pt;
 }
 
 .active {     /*not working*/
-    background-color: #d0c3ac;
-    color: #3c2600;
+    background-color: #D0C3AC;
+    color: #3C2600;
     font-weight: bold;
 }
 
 a:hover {
-    color: #d0c3ac;
+    color: #D0C3AC;
     font-style: italic;
 }
 
 .hover {
-    color: #d0c3ac;
+    color: #D0C3AC;
     font-style: italic;
     margin-left: 15px;
 }
