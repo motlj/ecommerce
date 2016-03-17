@@ -12,7 +12,7 @@
     <title>Ecommerce</title>
  </head>
 
-  <body id="background">
+  <body>
     <?php 
     if ($admin) {
       require_once'includes/adminNavBar.php';
@@ -21,7 +21,7 @@
     }
     ?>
 
-    <div class="container">
+    <div id="background" class="container">
       <?php
       if ($loggedin) {
         echo "Welcome Back, ";
