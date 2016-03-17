@@ -40,7 +40,7 @@ require_once'includes/crud.php';
         <?php
           $sql = 'SELECT id FROM transaction WHERE customer_fk = ? AND cart = ?';
           $q = $pdo->prepare($sql);
-          $transaction = $q->execute(array($_SESSION['id'],1));
+          $transactionID = $q->execute(array($_SESSION['id'],1));
           //$transactionID = $q->fetch(PDO::FETCH_ASSOC);
         ?>
 
