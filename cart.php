@@ -72,10 +72,8 @@ require_once'includes/crud.php';
                 echo '<td>' . $tax . '</td>';
                 echo '</tr>';
                 echo '<tr>';
-                echo '<th>Total</th>';
-                echo '</tr>';
-                echo '<tr>';
-                echo '<td>' . ($cost + $tax) . '<td>';
+                echo '<th>Total:</th>';
+                echo '<th>' . ($cost + $tax) . '</th>';
                 echo '</tr>';
 
 		      } 
