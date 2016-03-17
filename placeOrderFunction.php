@@ -3,10 +3,11 @@ require_once'includes/session.php';
 require_once'includes/database.php';
 require_once'includes/crud.php';
  error_reporting(E_ALL);
- Database::connect();
-
 
 	$checkout = new cart();
+	echo $checkout->customer_id;
+	echo $checkout->cart_id;
+	
 	$verify = $checkout->checkout();
 
 	if ($verify) {
