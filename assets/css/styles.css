@@ -6,6 +6,10 @@ body {
 }
 
 html {
+    margin-top: 0px;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-bottom: 0px;
 	background-color: #d0c3ac;
 }
 
