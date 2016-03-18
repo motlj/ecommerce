@@ -41,7 +41,7 @@ require_once('includes/database.php');
 
       <table id="border" class="table table-striped table-bordered">
         <thead>
-          <tr id="tablehead">
+          <tr class="tablehead">
             <th>
               <h3>Sale of the Week:</h3>
             </th>
@@ -62,7 +62,7 @@ require_once('includes/database.php');
               <p>Shape of wisconsin made out of distressed wood.</p>
             </td>
           </tr>
-          <tr id="tablehead">
+          <tr class="tablehead">
             <th colspan=3>
               <a href="productDetails.php?id=14">Product Details</a>
             </th>
