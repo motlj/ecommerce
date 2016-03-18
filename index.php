@@ -33,7 +33,7 @@ require_once('includes/database.php');
         }
         ?>
       </div>
-      
+
       <div id="banner">
         <a href="categories.php?id=10"><img id="banner" src="assets/img/americabanner.jpg" alt="Wooden American Flag Map"></a>
       </div>
@@ -45,10 +45,10 @@ require_once('includes/database.php');
         <thead>
           <tr class="tablehead">
             <th>
-              <h3>Sale of the Week:</h3>
+              <h3 class="tantext">Sale of the Week:</h3>
             </th>
             <th colspan=2>
-              <h3> ***INSERT NAME OF PRODUCT HERE*** </h3>
+              <h3 class="tantext"> ***INSERT NAME OF PRODUCT HERE*** </h3>
             </th>
           </tr>
         </thead>
