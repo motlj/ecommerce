@@ -31,6 +31,21 @@ require_once'includes/database.php';
         <h3>Product Details</h3>
       </div>
       
+      <?php
+        $pdo = Database::connect();
+        $id = $_GET['id'];
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $sql = 'SELECT * FROM image WHERE product_fk = ?';
+        $q = $pdo->prepare($sql);
+        $q->execute(array($id));
+        $query = $q->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($query as $image) {
+          echo $image['image_link'];
+        }
+      ?>
+
+
       <div class="row">
         <table class="table table-striped table-bordered">
           <thead>
