@@ -44,7 +44,7 @@ require_once('includes/database.php');
             echo '<tr>';
               echo '<th><h3>Sale of the Week:</h3></th>';
 
-                    $pdo = Database::connect9();
+                    $pdo = Database::connect();
                     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                     $sql = 'SELECT * FROM product ORDER BY RAND() LIMIT 1';
                     $q = $pdo->prepare($sql);
