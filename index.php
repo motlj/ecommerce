@@ -29,6 +29,14 @@
       }
       ?>
 
+      <div class="jumbotron">
+        <div class="container">
+          <img id="banner" src="assets/img/americabanner.jpg" alt="Wooden American Flag Map">
+        </div>
+      </div>
+
+      
+
     </div><!-- /.container -->
 
     <?php require_once('includes/footer.php');?>
