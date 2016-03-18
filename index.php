@@ -63,9 +63,9 @@ require_once('includes/database.php');
           echo '</thead>';
           echo '<tbody>';
             echo '<tr>';
-              echo '<td>'
+              /*echo '<td>'
                 echo '<img src="' . $query2['image_link'] . '">';
-                echo '</td>';
+                echo '</td>';*/
               echo '<td>' . $query['description'] . ' </td>';
               echo '<td>' . $query['price'] . '</td>';
             echo '</tr>'
