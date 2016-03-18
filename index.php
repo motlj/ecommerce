@@ -35,7 +35,7 @@ require_once('includes/database.php');
       </div>
 
       <div id="banner">
-        <a href="categories.php?id=10"><img id="banner" src="assets/img/americabanner.jpg" alt="Wooden American Flag Map"></a>
+        <a href="categories.php?id=11"><img id="banner" src="assets/img/americabanner.jpg" alt="Wooden American Flag Map"></a>
       </div>
       <br>
       <br>
@@ -48,25 +48,25 @@ require_once('includes/database.php');
               <h3 class="tantext">Sale of the Week:</h3>
             </th>
             <th colspan=2>
-              <h3 class="tantext"> ***INSERT NAME OF PRODUCT HERE*** </h3>
+              <h3 class="tantext"> Wisconsin Home - Bold </h3>
             </th>
           </tr>
         </thead>
         <tbody>
           <tr id="tablebody">
             <td>
-              <img src="assets/img/woodwisconsinlow.png">
+              <img src="assets/img/redhome/red1.jpeg">
             </td>
             <td>
               <h2>$100.00</h2>
             </td>
             <td>
-              <p>Shape of wisconsin made out of distressed wood.</p>
+              <p>Our signature Wisconsin Home sign. This sign is finished with a solid black background, a bold red Wisconsin and bright white lettering.</p>
             </td>
           </tr>
           <tr class="tablehead">
             <th colspan=3>
-              <a href="productDetails.php?id=14">Product Details</a>
+              <a href="productDetails.php?id=17">Product Details</a>
             </th>
           </tr>
         </tbody>
