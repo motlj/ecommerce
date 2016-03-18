@@ -25,13 +25,15 @@ require_once('includes/database.php');
     ?>
 
     <div class="container">
-      <?php
-      if ($loggedin) {
-        echo "Welcome Back, ";
-        echo $_SESSION['name'];
-      }
-      ?>
-
+      <div class="browntext">
+        <?php
+        if ($loggedin) {
+          echo "Welcome Back, ";
+          echo $_SESSION['name'];
+        }
+        ?>
+      </div>
+      
       <div id="banner">
         <a href="categories.php?id=10"><img id="banner" src="assets/img/americabanner.jpg" alt="Wooden American Flag Map"></a>
       </div>
