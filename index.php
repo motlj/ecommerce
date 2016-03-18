@@ -50,14 +50,16 @@ require_once('includes/database.php');
                     //$q = $pdo->prepare($sql);
                     //$q->execute(array());
                     //$query = $q->fetch(PDO::FETCH_ASSOC);
-                    $query = $pdo->query($sql);
+                    $q->query($sql);
+                    $query = $q->fetch(PDO::FETCH_ASSOC);
                     print_r($query);
 
                     $sql2 = 'SELECT * FROM image WHERE product_fk = 14 /*LIMIT 1*/';
                     //$q2 = $pdo->prepare($sql2);
                     //$q2->execute(array(/*$query['id']*/));
                     //$query2 = $q2->fetch(PDO::FETCH_ASSOC);
-                    $query2 = $pdo->query($sql2);
+                    $q2->query($sql2);
+                    $query2 = $q2->fetch(PDO::FETCH_ASSOC);
                     print_r($query2);
                     
                     Database::disconnect();
