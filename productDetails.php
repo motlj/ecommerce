@@ -26,13 +26,8 @@ require_once'includes/database.php';
 	     }
       ?>
 
-    <div class="container">
-      <div class="row">
-        <h3>Product Details</h3>
-      </div>
       
       <?php
-        $pdo = Database::connect();
         $id = $_GET['id'];
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sql = 'SELECT * FROM image WHERE product_fk = ?';
@@ -45,6 +40,19 @@ require_once'includes/database.php';
         }
       ?>
 
+    <div class="container">
+      <div class="row">
+        <?php
+          $id = $_GET['id'];
+          $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+          $sql = 'SELECT product_name FROM product WHERE id = ?';
+          $q = $pdo->prepare($sql);
+          $q->execute(array($id));
+          $query = $q->fetch(PDO::FETCH_ASSOC);
+
+          echo '<h3>' . $query['product_name'] . '</h3>';
+        ?>
+      </div>
 
       <div class="row">
         <table class="table table-striped table-bordered">
