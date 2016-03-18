@@ -46,14 +46,14 @@ require_once('includes/database.php');
 
                     $pdo = Database::connect();
                     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    $sql = 'SELECT * FROM product ORDER BY RAND() LIMIT 1';
+                    $sql = 'SELECT * FROM product WHERE id = 14 /*ORDER BY RAND() LIMIT 1*/';
                     $q = $pdo->prepare($sql);
                     $q->execute(array();
                     $query = $q->fetchAll(PDO::FETCH_ASSOC);
 
-                    $sql2 = 'SELECT * FROM image WHERE product_fk = ? LIMIT 1';
+                    $sql2 = 'SELECT * FROM image WHERE product_fk = 14 /*LIMIT 1*/';
                     $q2 = $pdo->prepare($sql2);
-                    $q2->execute(array($query['id']));
+                    $q2->execute(array(/*$query['id']*/));
                     $query2 = $q2->fetchAll(PDO::FETCH_ASSOC);
                     
                     Database::disconnect();
@@ -63,9 +63,9 @@ require_once('includes/database.php');
           echo '</thead>';
           echo '<tbody>';
             echo '<tr>';
-              /*echo '<td>'
+              echo '<td>'
                 echo '<img src="' . $query2['image_link'] . '">';
-                echo '</td>';*/
+                echo '</td>';
               echo '<td>' . $query['description'] . ' </td>';
               echo '<td>' . $query['price'] . '</td>';
             echo '</tr>'
