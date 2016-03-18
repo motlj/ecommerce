@@ -10,6 +10,9 @@ html, body {
 	background-color: #D0C3AC;
 }
 
+h3 {
+    color: #3C2600;
+}
 
 /* navbar */
 .navbar-fixed-top {

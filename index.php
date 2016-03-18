@@ -32,6 +32,43 @@
       <div id="banner">
         <a href="categories.php?id=10"><img id="banner" src="assets/img/americabanner.jpg" alt="Wooden American Flag Map"></a>
       </div>
+      <br>
+      <br>
+
+      <?php
+        echo '<table class="table table-striped table-bordered">';
+          echo '<thead>';
+            echo '<tr>';
+              echo '<th><h3>Sale of the Week:</h3></th>';
+                
+                    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    $sql = 'SELECT * FROM product ORDER BY RAND() LIMIT 1';
+                    $q = $pdo->prepare($sql);
+                    $q->execute(array();
+                    $query = $q->fetchAll(PDO::FETCH_ASSOC);
+
+                    foreach ($query as $product) {
+                      $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                      $sql2 = 'SELECT * FROM image WHERE product_fk = ?';
+                      $q2 = $pdo->prepare($sql2);
+                      $q2->execute(array($product['id']));
+                      $query2 = $q->fetchAll(PDO::FETCH_ASSOC);
+                    }
+              echo '<th><h3>' . $query['product_name'] . '</h3></th>';
+            echo '</tr>';
+          echo '</thead>';
+          echo '<tbody>';
+            echo '<tr>';
+              echo '<td>'
+                echo '<img src="' . $query2['image_link'] . '" alt="'. $query2['description'] .'">';
+                echo '</td>';
+              echo '<td>' . $query['description'] . ' </td>';
+              echo '<td>' . $query['price'] . '</td>';
+            echo '</tr>'
+          echo '</tbody>';
+        echo '</table>';
+      ?>
+
 
       
 
