@@ -40,7 +40,8 @@
           echo '<thead>';
             echo '<tr>';
               echo '<th><h3>Sale of the Week:</h3></th>';
-                
+              
+                    $pdo = Database::connect9();
                     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                     $sql = 'SELECT * FROM product ORDER BY RAND() LIMIT 1';
                     $q = $pdo->prepare($sql);
@@ -54,6 +55,8 @@
                       $q2->execute(array($product['id']));
                       $query2 = $q->fetchAll(PDO::FETCH_ASSOC);
                     }
+                    Database::disconnect();
+
               echo '<th><h3>' . $query['product_name'] . '</h3></th>';
             echo '</tr>';
           echo '</thead>';
