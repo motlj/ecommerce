@@ -58,7 +58,7 @@ require_once('includes/database.php');
                     //$q2->execute(array(/*$query['id']*/));
                     //$query2 = $q2->fetch(PDO::FETCH_ASSOC);
                     $query2 = $pdo->query($sql2);
-
+                    print_r($query2);
                     
                     Database::disconnect();
 
@@ -67,12 +67,12 @@ require_once('includes/database.php');
           echo '</thead>';
           echo '<tbody>';
             echo '<tr>';
-              echo '<td>'
+              echo '<td>';
                 echo '<img src="' . $query2['image_link'] . '">';
                 echo '</td>';
               echo '<td>' . $query['description'] . ' </td>';
               echo '<td>' . $query['price'] . '</td>';
-            echo '</tr>'
+            echo '</tr>';
           echo '</tbody>';
         echo '</table>';
       ?>
