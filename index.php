@@ -48,7 +48,7 @@ require_once('includes/database.php');
                     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                     $sql = 'SELECT * FROM product WHERE id = 14 /*ORDER BY RAND() LIMIT 1*/';
                     $q = $pdo->prepare($sql);
-                    $q->execute(array();
+                    $q->execute(array());
                     $query = $q->fetch(PDO::FETCH_ASSOC);
 
                     $sql2 = 'SELECT * FROM image WHERE product_fk = 14 /*LIMIT 1*/';
