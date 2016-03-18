@@ -29,8 +29,8 @@
       }
       ?>
 
-      <div>
-        <img id="banner" src="assets/img/americabanner.jpg" alt="Wooden American Flag Map">
+      <div id="banner">
+        <img src="assets/img/americabanner.jpg" alt="Wooden American Flag Map">
       </div>
 
       
