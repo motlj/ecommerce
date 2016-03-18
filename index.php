@@ -45,7 +45,7 @@ require_once('includes/database.php');
             <th>
               <h3>Sale of the Week:</h3>
             </th>
-            <th>
+            <th colspan=2>
               <h3> ***INSERT NAME OF PRODUCT HERE*** </h3>
             </th>
           </tr>
@@ -63,7 +63,7 @@ require_once('includes/database.php');
             </td>
           </tr>
           <tr>
-            <th>
+            <th colspan=3>
               <a href="productDetails.php?id=14">Product Details</a>
             </th>
           </tr>
