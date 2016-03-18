@@ -41,7 +41,7 @@ require_once('includes/database.php');
 
       <table id="border" class="table table-striped table-bordered">
         <thead>
-          <tr>
+          <tr id="tablehead">
             <th>
               <h3>Sale of the Week:</h3>
             </th>
@@ -51,7 +51,7 @@ require_once('includes/database.php');
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr id="tablebody">
             <td>
               <img src="assets/img/woodwisconsinlow.png">
             </td>
@@ -59,10 +59,10 @@ require_once('includes/database.php');
               <h2>$100.00</h2>
             </td>
             <td>
-              <p>SHape of wisconsin made out of distressed wood.</p>
+              <p>Shape of wisconsin made out of distressed wood.</p>
             </td>
           </tr>
-          <tr>
+          <tr id="tablehead">
             <th colspan=3>
               <a href="productDetails.php?id=14">Product Details</a>
             </th>

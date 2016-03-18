@@ -8,6 +8,7 @@ html, body {
     margin-left: 0px;
     margin-bottom: 0px;
 	background-color: #D0C3AC;
+    color: #3C2600;
 }
 
 h3 {
@@ -58,9 +59,21 @@ a:hover {
 
 }
 
+
+
 #banner {
     width: 100%;
     height: auto;
     margin-left: 0px;
     margin-top: 0px;
+}
+
+#tablehead {
+    background-color: #3C2600;
+    color: #D0C3AC;
+}
+
+#tablebody {
+    background-color: #D0C3AC;
+    color: #3C2600;
 }
