@@ -56,7 +56,7 @@ require_once('includes/database.php');
                       $sql2 = 'SELECT * FROM image WHERE product_fk = ?';
                       $q2 = $pdo->prepare($sql2);
                       $q2->execute(array($product['id']));
-                      $query2 = $q->fetch(PDO::FETCH_ASSOC);
+                      $query2 = $q2->fetch(PDO::FETCH_ASSOC);
                     }
                     Database::disconnect();
 
