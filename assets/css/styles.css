@@ -77,3 +77,7 @@ a:hover {
     background-color: #D0C3AC;
     color: #3C2600;
 }
+
+#productImageSize {
+    width: 30%;
+}
