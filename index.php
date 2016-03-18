@@ -30,7 +30,7 @@
       ?>
 
       <div id="banner">
-        <img id="banner" src="assets/img/americabanner.jpg" alt="Wooden American Flag Map">
+        <a href="categories.php?id=10"><img id="banner" src="assets/img/americabanner.jpg" alt="Wooden American Flag Map"></a>
       </div>
 
       
