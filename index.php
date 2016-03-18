@@ -38,45 +38,6 @@ require_once('includes/database.php');
       <br>
       <br>
 
-      <?php/*
-        echo '<table class="table table-striped table-bordered">';
-          echo '<thead>';
-            echo '<tr>';
-              echo '<th><h3>Sale of the Week:</h3></th>';
-
-                    $pdo = Database::connect();
-                    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    $sql = 'SELECT * FROM product WHERE id = 14      //ORDER BY RAND() LIMIT 1';
-                    //$q = $pdo->prepare($sql);
-                    //$q->execute(array());
-                    //$query = $q->fetch(PDO::FETCH_ASSOC);
-                    $query = $pdo->query($sql);
-                    print_r($query);
-
-                    $sql2 = 'SELECT * FROM image WHERE product_fk = 14      //LIMIT 1';
-                    //$q2 = $pdo->prepare($sql2);
-                    //$q2->execute(array(      //$query['id']));
-                    //$query2 = $q2->fetch(PDO::FETCH_ASSOC);
-                    $query2 = $pdo->query($sql2);
-                    print_r($query2);
-                    
-                    Database::disconnect();
-
-              echo '<th><h3>' . $query['product_name'] . '</h3></th>';
-            echo '</tr>';
-          echo '</thead>';
-          echo '<tbody>';
-            echo '<tr>';
-              echo '<td>';
-                echo '<img src="' . $query2['image_link'] . '">';
-                echo '</td>';
-              echo '<td>' . $query['description'] . ' </td>';
-              echo '<td>' . $query['price'] . '</td>';
-            echo '</tr>';
-          echo '</tbody>';
-        echo '</table>';*/
-      ?>
-
 
       <table class="table table-striped table-bordered">
         <thead>
