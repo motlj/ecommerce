@@ -69,6 +69,9 @@ require_once('includes/database.php');
           </tr>
         </tbody>
       </table>
+      <br>
+      <br>
+      <br>
 
 
 
