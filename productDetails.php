@@ -49,7 +49,7 @@ require_once'includes/database.php';
         $query = $q->fetchAll(PDO::FETCH_ASSOC);
 
         foreach ($query as $image) {
-          echo '<img src="' . $image['image_link'] . '" alt="'. $image['description'] .'">';
+          echo '<img src="' . $image['image_link'] . '">';
         }
       ?>
 
