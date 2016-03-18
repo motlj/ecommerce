@@ -1,11 +1,7 @@
 class . 
 id #
 
-body {
-	background-color: #d0c3ac;
-}
-
-html {
+html, body {
     margin-top: 0px;
     margin-right: 5px;
     margin-left: 5px;
