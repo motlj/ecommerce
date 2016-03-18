@@ -39,7 +39,7 @@ require_once('includes/database.php');
       <br>
 
 
-      <table class="table table-striped table-bordered">
+      <table id="border" class="table table-striped table-bordered">
         <thead>
           <tr>
             <th>
