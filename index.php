@@ -1,4 +1,7 @@
-<?php require_once('includes/session.php');?>
+<?php 
+require_once('includes/session.php');
+require_once('includes/database.php');
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +43,7 @@
           echo '<thead>';
             echo '<tr>';
               echo '<th><h3>Sale of the Week:</h3></th>';
-              
+
                     $pdo = Database::connect9();
                     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                     $sql = 'SELECT * FROM product ORDER BY RAND() LIMIT 1';
