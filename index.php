@@ -49,14 +49,14 @@ require_once('includes/database.php');
                     $sql = 'SELECT * FROM product ORDER BY RAND() LIMIT 1';
                     $q = $pdo->prepare($sql);
                     $q->execute(array();
-                    $query = $q->fetchAll(PDO::FETCH_ASSOC);
+                    $query = $q->fetch(PDO::FETCH_ASSOC);
 
                     foreach ($query as $product) {
                       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                       $sql2 = 'SELECT * FROM image WHERE product_fk = ?';
                       $q2 = $pdo->prepare($sql2);
                       $q2->execute(array($product['id']));
-                      $query2 = $q->fetchAll(PDO::FETCH_ASSOC);
+                      $query2 = $q->fetch(PDO::FETCH_ASSOC);
                     }
                     Database::disconnect();
 
