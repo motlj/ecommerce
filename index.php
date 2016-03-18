@@ -29,10 +29,8 @@
       }
       ?>
 
-      <div class="jumbotron">
-        <div class="container">
-          <img id="banner" src="assets/img/americabanner.jpg" alt="Wooden American Flag Map">
-        </div>
+      <div>
+        <img id="banner" src="assets/img/americabanner.jpg" alt="Wooden American Flag Map">
       </div>
 
       
