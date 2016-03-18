@@ -51,13 +51,11 @@ require_once('includes/database.php');
                     $q->execute(array();
                     $query = $q->fetch(PDO::FETCH_ASSOC);
 
-                    foreach ($query as $product) {
-                      $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                      $sql2 = 'SELECT * FROM image WHERE product_fk = ?';
+                      $sql2 = 'SELECT * FROM image WHERE product_fk = ? LIMIT 1';
                       $q2 = $pdo->prepare($sql2);
-                      $q2->execute(array($product['id']));
+                      $q2->execute(array($query['id']));
                       $query2 = $q2->fetch(PDO::FETCH_ASSOC);
-                    }
+                    
                     Database::disconnect();
 
               echo '<th><h3>' . $query['product_name'] . '</h3></th>';
@@ -66,7 +64,7 @@ require_once('includes/database.php');
           echo '<tbody>';
             echo '<tr>';
               echo '<td>'
-                echo '<img src="' . $query2['image_link'] . '" alt="'. $query2['description'] .'">';
+                echo '<img src="' . $query2['image_link'] . '">';
                 echo '</td>';
               echo '<td>' . $query['description'] . ' </td>';
               echo '<td>' . $query['price'] . '</td>';
