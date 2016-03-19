@@ -46,6 +46,7 @@ require_once 'includes/database.php';
     
             <?php
               $search = $_POST['search'];
+              echo $search;
               //$sqlSearch = '%' . $search . '%';
             try {
               $pdo = Database::connect();
