@@ -113,7 +113,7 @@ require_once'includes/database.php';
                       echo '</tr>';
                     } else {
                       echo '<tr>';
-                      echo '<td colspan="2"><a href="loginpage.php>Login</a></td>';
+                      echo '<td colspan="2"><a href="loginpage.php">Login</a></td>';
                       echo '</tr>';
                     }
                   }
