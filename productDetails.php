@@ -73,7 +73,7 @@ require_once'includes/database.php';
                 foreach ($query2 as $image2) {
                   //echo '<td>';
                   echo '<div id="thumbwrap">';
-                  echo '<a class="thumb" href="#"><img class="img-thumbnail thumbnail" src="' . $image2['image_link'] . '"><span><img src="' . $image2['image_link'] . '"></span></a>';
+                  echo '<a class="thumb" href="#"><img class="img-thumbnail thumbnail" src="' . $image2['image_link'] . '"><span><img id="popup" src="' . $image2['image_link'] . '"></span></a>';
                   echo '</div>';
                   //echo '</td>';
                 }
