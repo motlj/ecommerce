@@ -38,10 +38,35 @@ require_once('includes/database.php');
         <img id="banner" src="assets/img/americanflagbanner.jpg" alt="Wooden American Flag Map">
       </div>
       <br>
-      <br>
-    </div>
+      <hr>
+      <h2 class="center">Featured Categories</h2>
+      <hr>
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+          <a href="categories.php?id=12"><img alt="Bottle Opener" title="Bottle Opener" src="assets/img/bottleopener.png"></a>
+          <br>
+          <a href="categories.php?id=12"><h5>Bottle Openers</h5></a>
+          <br>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+          <a href="categories.php?id=14"><img alt="Pipe Decorations" title="Pipe Decorations" src="assets/img/pipelamp.png"></a>
+          <br>
+          <a href="categories.php?id=14"><h5>Decorative Pipe Creations</h5></a>
+          <br>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+          <a href="categories.php?id=11"><img alt="Wooden Signs Wisconsin Home" title="Wooden Signs Wisconsin Home" src="assets/img/home.png"></a>
+          <br>
+          <a href="categories.php?id=11"><h5>Wooden Signs</h5></a>
+          <br>
+        </div>
+      </div>
 
-    <div class="row">
+
+
+    </div> <!-- /container-->
+
+    <!-- <div class="row">
       <table id="border" class="table table-striped table-bordered">
         <thead>
           <tr>
@@ -75,13 +100,7 @@ require_once('includes/database.php');
       <br>
       <br>
       <br>
-
-
-
-
-      
-
-    </div><!-- /.container -->
+    </div> --><!-- /.container -->
 
     <?php require_once('includes/footer.php');?>
 

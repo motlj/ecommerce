@@ -102,3 +102,7 @@ a:hover {
 #welcome {
     text-align: right;
 }
+
+.center {
+    text-align: center;
+}
