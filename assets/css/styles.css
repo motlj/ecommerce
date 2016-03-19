@@ -125,7 +125,7 @@ a:hover {
 .thumb img { 
     border:1px solid #000;
     margin:3px;
-    float:left;
+    float:top;
 }
 .thumb span { 
     position:absolute;
