@@ -54,6 +54,7 @@ require_once 'includes/database.php';
               $q->execute(array($sqlSearch));
               $products = $q->fetchAll(FETCH_ASSOC);
               print_r($products);
+              echo $products;
 
               foreach ($products as $row) {
                 echo '<tr>';
