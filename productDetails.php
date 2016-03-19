@@ -43,7 +43,7 @@ require_once'includes/database.php';
       <?php
         $id = $_GET['id'];
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = 'SELECT * FROM image WHERE product_fk = ? AND feature = 1';
+        $sql = 'SELECT * FROM image WHERE product_fk = ? AND featured = 1';
         $q = $pdo->prepare($sql);
         $q->execute(array($id));
         $query = $q->fetchAll(PDO::FETCH_ASSOC);
