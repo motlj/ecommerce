@@ -61,6 +61,7 @@ require_once 'includes/database.php';
                 echo '</form>';
                 echo '</tr>';
               }
+              Database::disconnect();
               ?>
            </tbody>
         </table>
