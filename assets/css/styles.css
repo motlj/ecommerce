@@ -106,3 +106,7 @@ a:hover {
 .center {
     text-align: center;
 }
+
+.imagecenter {
+    vertical-align: middle;
+}
