@@ -53,10 +53,15 @@ require_once'includes/database.php';
                 $q->execute(array($id));
                 $query = $q->fetchAll(PDO::FETCH_ASSOC);
 
+                $sql3 = 'SELECT product_name FROM product WHERE id = ?';
+                $q3 = $pdo->prepare($sql3);
+                $q3->execute(array($id));
+                $query3 = $q3->fetch(PDO::FETCH_ASSOC);
+
                 foreach ($query as $image) {
                   echo '<tr>';
                   echo '<th colspan="2">';
-                  echo '<img id="productImageSize" src="' . $image['image_link'] . '"><br>';
+                  echo '<img id="productImageSize" title="' . $query3['product_name'] . '" alt="' . $query3['product_name'] . '" src="' . $image['image_link'] . '"><br>';
                   echo '</th>';
                   echo '</tr>';
                 }
@@ -70,7 +75,7 @@ require_once'includes/database.php';
 
                 foreach ($query2 as $image2) {
                   echo '<div id="thumbwrap">';
-                  echo '<a class="thumb" href="#"><img class="img-thumbnail thumbnail" src="' . $image2['image_link'] . '"><span><img id="popup" src="' . $image2['image_link'] . '"></span></a>';
+                  echo '<a class="thumb" href="#"><img class="img-thumbnail thumbnail" title="' . $query3['product_name'] . '" alt="' . $query3['product_name'] . '" src="' . $image2['image_link'] . '"><span><img id="popup" title="' . $query3['product_name'] . '" alt="' . $query3['product_name'] . '" src="' . $image2['image_link'] . '"></span></a>';
                   echo '</div>';
                 }
               ?>
