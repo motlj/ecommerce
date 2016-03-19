@@ -60,8 +60,9 @@ require_once'includes/database.php';
                   echo '</th>';
                   echo '</tr>';
                 }
-            echo '</thead>';
-            echo '<tbody>';
+                echo '</thead>';
+                echo '<tbody>';
+                echo '<tr>';
 
                 $sql2 = 'SELECT * FROM image WHERE product_fk = ? AND featured = 0';
                 $q2 = $pdo->prepare($sql2);
@@ -69,12 +70,11 @@ require_once'includes/database.php';
                 $query2 = $q2->fetchAll(PDO::FETCH_ASSOC);
 
                 foreach ($query2 as $image2) {
-                  echo '<tr>';
                   echo '<td>';
                   echo '<img class="img-thumbnail thumbnail" src="' . $image2['image_link'] . '">';
                   echo '</td>';
-                  echo '</tr>';
                 }
+                echo '</tr>';
               ?>
             </tbody>
           </table>
