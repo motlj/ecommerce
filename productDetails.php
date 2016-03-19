@@ -110,10 +110,11 @@ require_once'includes/database.php';
               ?>
             </tbody>
           </table>
-      </div>
+        </div> <!-- end col-->
+      </div> <!-- end row-->
 
       <div>
-        <a href="productPage.php">Return to Products</a>
+        <a href="index.php">Return to Homepage</a>
       </div>
       <br>
       <br>
