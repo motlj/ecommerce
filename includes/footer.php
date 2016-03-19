@@ -17,7 +17,5 @@
     </div>
   </nav>
 
-  <link rel="shortcut icon" href="../assets/img/jmfav.png">
-
   <script src="../assets/js/jquery.min.js"></script>
   <script src="../assets/js/bootstrap.min.js"></script>
