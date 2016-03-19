@@ -59,7 +59,7 @@ require_once'includes/database.php';
         $query2 = $q2->fetchAll(PDO::FETCH_ASSOC);
 
         foreach ($query2 as $image2) {
-          echo '<img class="img-thumbnail" src="' . $image2['image_link'] . '">';
+          echo '<img class="img-thumbnail thumbnail" src="' . $image2['image_link'] . '">';
         }
 
       ?>
