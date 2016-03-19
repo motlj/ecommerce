@@ -48,9 +48,9 @@ require_once 'includes/database.php';
               $search = $_POST['search'];
               $pdo = Database::connect();
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-              $sql = 'SELECT * FROM product WHERE name LIKE CONCAT('%',?,'%') OR description LIKE CONCAT('%',?,'%')';
+              $sql = 'SELECT * FROM product WHERE name LIKE CONCAT('%',?,'%')';
               $q = $pdo->prepare($sql);
-              $q->execute(array($search, $search));
+              $q->execute(array($search));
               $products = $q->fetchAll();
 
               foreach ($products as $row) {
