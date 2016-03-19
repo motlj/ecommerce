@@ -141,3 +141,7 @@ a:hover {
 #popup {
     width: 350px;
 }
+
+#rowHeight {
+    height: 75px;
+}
