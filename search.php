@@ -87,6 +87,49 @@ require_once 'includes/database.php';
               ?>
            </tbody>
         </table>
+        <hr>
+        <h3>Categories</h3>
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+           <tbody>
+    
+            <?php
+              $search = $_POST['srch-term'];
+              //$sqlSearch = '%' . $search . '%';
+            try {
+              $pdo = Database::connect();
+              $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+              $sql = "SELECT * FROM `category` WHERE `category`.`name` LIKE :search OR `category`.`description` LIKE :search";
+              $q = $pdo->prepare($sql);
+              $q->bindValue(':search', '%' . $search . '%');
+              $q->execute();
+              $category = $q->fetchAll(PDO::FETCH_ASSOC);
+            } catch (PDOException $error) {
+              echo $error->getMessage();
+              die();
+            }
+              foreach ($category as $row) {
+                echo '<tr>';
+                echo '<form method="GET" action="categories.php">';
+                echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
+                echo '<td>'.$row['name'].'</td>'; 
+                echo '<td>'.$row['description'].'</td>';
+                echo '<td><input type="submit" value="More Details"></td>';
+                echo '</form>';
+                echo '</tr>';
+              }
+              Database::disconnect();
+              ?>
+           </tbody>
+        </table>
+ 
+
       </div>
       <div>
         <a href="index.php">Return to Index</a>
