@@ -51,6 +51,16 @@ require_once'includes/database.php';
         foreach ($query as $image) {
           echo '<img id="productImageSize" src="' . $image['image_link'] . '">';
         }
+
+        $sql2 = 'SELECT * FROM image WHERE product_fk = ? AND featured = 0';
+        $q2 = $pdo->prepare($sq2l);
+        $q2->execute(array($id));
+        $query2 = $q2->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($query2 as $image2) {
+          echo '<img class="img-thumbnail" src="' . $image2['image_link'] . '">';
+        }
+
       ?>
 
 
