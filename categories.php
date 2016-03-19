@@ -54,16 +54,15 @@ require_once 'includes/database.php';
                 echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
                 echo '<td>'.$row['product_name'].'</td>'; 
 
-                $sql2 = 'SELECT * FROM image WHERE product_fk = ? AND featured = 1';
+                $sql2 = 'SELECT image_link FROM image WHERE product_fk = ? AND featured = 1';
                 $q2 = $pdo->prepare($sql2);
                 $q2->execute(array($row['id']));
                 $thumbnail = $q2->fetch();
 
-                foreach ($thumbnail as $pic) {                
-                  echo '<td>';
-                  echo '<img id="tiny" src=" ' . $pic['image_link'] . ' ">';
-                  echo '</td>';
-                }
+                echo '<td>';
+                echo '<img id="tiny" src=" ' . $thumbnail['image_link'] . ' ">';
+                echo '</td>';
+
                 echo '<td>'.$row['price'].'</td>';
                 echo '<td><input type="submit" value="More Details"></td>';
                 echo '</form>';
