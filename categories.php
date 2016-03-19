@@ -25,6 +25,7 @@ require_once 'includes/database.php';
           <thead>
             <tr>
               <th>Name</th>
+              <th>Image</th>
               <th>Price</th>
               <th>Action</th>
               <th>Action</th>
@@ -52,6 +53,17 @@ require_once 'includes/database.php';
                 echo '<form method="GET" action="productDetails.php">';
                 echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
                 echo '<td>'.$row['product_name'].'</td>'; 
+
+                $sql2 = 'SELECT * FROM image WHERE product_fk = ? AND featured = 1';
+                $q2 = $pdo->prepare($sql2);
+                $q2->execute(array($row['id']));
+                $thumbnail = $q2->fetch();
+
+                foreach ($thumbnail as $pic) {                
+                  echo '<td>';
+                  echo '<img id="tiny" src=" ' . $pic['image_link'] . ' ">';
+                  echo '</td>';
+                }
                 echo '<td>'.$row['price'].'</td>';
                 echo '<td><input type="submit" value="More Details"></td>';
                 echo '</form>';

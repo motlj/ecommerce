@@ -110,3 +110,7 @@ a:hover {
 .imagewidth {
     width: 350px;
 }
+
+#tiny {
+    height: 35px;
+}
