@@ -45,7 +45,7 @@ require_once 'includes/database.php';
            <tbody>
     
             <?php
-              $search = $_POST['search'];
+              $search = $_POST['srch-term'];
               echo $search;
               //$sqlSearch = '%' . $search . '%';
             try {
@@ -55,7 +55,7 @@ require_once 'includes/database.php';
               $q = $pdo->prepare($sql);
               $q->bindValue(':search', '%' . $search . '%');
               $q->execute();
-              $products = $q->fetchAll(FETCH_ASSOC);
+              $products = $q->fetchAll(PDO::FETCH_ASSOC);
               print_r($products);
             } catch (PDOException $error) {
               echo $error->getMessage();
