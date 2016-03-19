@@ -24,7 +24,7 @@ require_once('database.php');
       <br>
       <a alt="Update User Information" title="Update User Information" href="../update.php">Update User Information</a>
       <br>
-      <p>Categories</p> <!-- create a page that lists all categories with links to all products in said cateogry -->
+      <a alt="Category List" title="Category List" href="../categoryList.php">List of Categories</a>
       <br>
       <a alt="Product List" title="Product List" href="../productList.php">List of Products</a>
       <br>
