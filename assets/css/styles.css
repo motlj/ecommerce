@@ -93,3 +93,7 @@ a:hover {
 #homepageImage {
     width: 100%;
 }
+
+#logo {
+    margin-top: -10px;
+}
