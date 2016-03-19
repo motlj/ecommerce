@@ -7,13 +7,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.php">Ecommerce</a>
+      <a class="navbar-brand" href="index.php"><img src="../assets/img/jmarie.png"></a>
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li><a href="adminUpdate.php">Administrative Functions</a></li>
         <li><a href="update.php">Update Profile</a></li>
-        <?php
+        <?php /*
         require_once 'database.php';
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -31,10 +31,10 @@
           echo '</ul>';
           echo '</li>';
 
-        Database::disconnect();
+        Database::disconnect();*/
         ?>
         <!-- <li><a href="productPage.php">Products</a></li> -->
-        <li><a href="cart.php">Cart</a></li>
+        <!--<li><a href="cart.php">Cart</a></li> -->
         <li><a href="includes/logout.php">Logout</a></li>
       </ul>
     </div><!--/.nav-collapse -->
