@@ -13,7 +13,7 @@ require_once'includes/crud.php';
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 	  <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
-	  <title>Ecommerce | Cart</title>
+	  <title>J. Marie Sign &amp; Design | Cart</title>
  </head>
 
  <body>
@@ -34,6 +34,7 @@ require_once'includes/crud.php';
 	          <tr>
 	            <th>Name</th>
 	            <th>Price</th>
+	            <th>Image</th>
 	            <th>Quantity</th>
 	            <th>Action</th>
 	            <th>Action</th>
@@ -53,6 +54,20 @@ require_once'includes/crud.php';
 	                echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
 	                echo '<td>' . $row['product_name'] . '</td>';
 	                echo '<td>' . $row['price'] . '</td>';
+                	
+                	$pdo = Database::connect();
+	                $sql = 'SELECT image_link FROM image WHERE product_fk = ? AND featured = 1';
+	                $q = $pdo->prepare($sql);
+	                $q->execute(array($row['id']));
+	                $thumbnail = $q->fetch();
+
+	                echo '<td>';
+	                echo '<img id="tiny" src=" ' . $thumbnail['image_link'] . ' ">';
+	                echo '</td>';
+	                
+	                Database::disconnect();
+
+
 	                echo '<td><input type="text" name="quantity" value="' . $row['quantity'] . '"></td>';
 	                echo '<td><input type="submit" value="Update Quantity"></td>';
 		            $cost = $cost + (($row['price']) * ($row['quantity']));
