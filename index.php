@@ -25,7 +25,7 @@ require_once('includes/database.php');
     ?>
 
     <div class="container">
-      <div class="browntext">
+      <div id="welcome" class="browntext">
         <?php
         if ($loggedin) {
           echo "Welcome Back, ";
