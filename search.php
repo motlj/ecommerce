@@ -50,17 +50,16 @@ require_once 'includes/database.php';
             try {
               $pdo = Database::connect();
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-              $sql = 'SELECT * FROM product WHERE product_name LIKE ?';
+              $sql = "SELECT * FROM product WHERE product_name LIKE '?'";
               $q = $pdo->prepare($sql);
               $q->execute(array($sqlSearch));
               $products = $q->fetchAll(FETCH_ASSOC);
               print_r($products);
-              echo $products;
             } catch (PDOException $error) {
-            echo $error->getMessage();
+              echo $error->getMessage();
               print_r($products);
               echo $products;
-                die();
+              die();
             }
               foreach ($products as $row) {
                 echo '<tr>';
