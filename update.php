@@ -13,7 +13,7 @@ require_once 'includes/crud.php';
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">  
 
-    <title>Ecommerce</title>
+    <title>J. Marie Sign &amp; Design | Update Profile</title>
   </head>
   <body>
 

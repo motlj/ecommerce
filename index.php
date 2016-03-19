@@ -12,7 +12,7 @@ require_once('includes/database.php');
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 
-    <title>J. Marie Sign & Design</title>
+    <title>J. Marie Sign &amp; Design</title>
  </head>
 
   <body>

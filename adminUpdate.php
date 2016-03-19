@@ -13,7 +13,7 @@ require_once'includes/database.php';
   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 
-  <title>Ecommerce | Admin</title>
+  <title>J. Marie Sign &amp; Design | Admin</title>
  </head>
 
  <body>

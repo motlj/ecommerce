@@ -34,7 +34,7 @@ $response = $createAddress->create($street1,$street2,$city,$state,$zip,$country)
     <link rel="stylesheet" type="text/css" href="../assets/css/styles.css">
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 
-    <title>Register</title>
+    <title>J. Marie Sign &amp; Design | Register</title>
  </head>
   
   <body>

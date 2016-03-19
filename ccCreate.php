@@ -34,7 +34,7 @@ require_once 'includes/session.php';
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">  
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 
-    <title>Add a Credit Card</title>
+    <title>J. Marie Sign &amp; Design | Add a Credit Card</title>
  </head>
   
   <body>

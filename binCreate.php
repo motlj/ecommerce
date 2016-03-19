@@ -51,7 +51,7 @@ require_once 'includes/database.php';
     <link rel="stylesheet" type="text/css" href="../assets/css/styles.css">
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 
-    <title>Create Bin</title>
+    <title>J. Marie Sign &amp; Design | Create Bin</title>
  </head>
   
   <body>

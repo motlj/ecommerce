@@ -60,13 +60,10 @@ require_once'includes/crud.php';
 	                $q = $pdo->prepare($sql);
 	                $q->execute(array($row['id']));
 	                $thumbnail = $q->fetch();
-
 	                echo '<td>';
 	                echo '<img id="tiny" src=" ' . $thumbnail['image_link'] . ' ">';
 	                echo '</td>';
-	                
 	                Database::disconnect();
-
 
 	                echo '<td><input type="text" name="quantity" value="' . $row['quantity'] . '"></td>';
 	                echo '<td><input type="submit" value="Update Quantity"></td>';
@@ -84,7 +81,6 @@ require_once'includes/crud.php';
                 echo '<th>Tax</th>';
                 echo '</tr>';
                 echo '<tr>';
-                // $cost = $cost + (($row['price']) * ($row['quantity']));
                 echo '<td>' . $cost . '</td>';
                 $tax = ($cost * .056);
                 echo '<td>' . $tax . '</td>';

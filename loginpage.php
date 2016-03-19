@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">  
-    <title>Login</title>
+    <title>J. Marie Sign &amp; Design | Login</title>
  </head>
   
   <body>

@@ -13,7 +13,7 @@ require_once'includes/crud.php';
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 	  <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
-	  <title>Ecommerce | Confirmation</title>
+	  <title>J. Marie Sign &amp; Design | Confirmation</title>
  </head>
 
  <body>

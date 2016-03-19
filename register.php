@@ -39,7 +39,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 
-    <title>Register</title>
+    <title>J. Marie Sign &amp; Design | Register</title>
  </head>
   
   <body>

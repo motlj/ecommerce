@@ -52,7 +52,7 @@ require_once 'includes/session.php';
      <link rel="stylesheet" type="text/css" href="../assets/css/styles.css">
      <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
  
-     <title>Register</title>
+     <title>J. Marie Sign &amp; Design | Create Shipment Center</title>
   </head>
    
    <body>
