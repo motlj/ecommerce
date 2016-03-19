@@ -39,21 +39,22 @@ require_once('includes/database.php');
       </div>
       <br>
       <br>
+    </div>
 
-
+    <div class="row">
       <table id="border" class="table table-striped table-bordered">
         <thead>
-          <tr class="tablehead">
+          <tr>
             <th>
-              <h3 class="tantext">Sale of the Week:</h3>
+              <h3>Sale of the Week:</h3>
             </th>
             <th colspan=2>
-              <h3 class="tantext"> Wisconsin Home - Bold </h3>
+              <h3> Wisconsin Home - Bold </h3>
             </th>
           </tr>
         </thead>
         <tbody>
-          <tr id="tablebody">
+          <tr>
             <td>
               <img id="homepageImage" src="assets/img/redhome/red1.JPG">
             </td>
@@ -64,7 +65,7 @@ require_once('includes/database.php');
               <p>Our signature Wisconsin Home sign. This sign is finished with a solid black background, a bold red Wisconsin and bright white lettering.</p>
             </td>
           </tr>
-          <tr class="tablehead">
+          <tr>
             <th colspan=3>
               <a href="productDetails.php?id=17">Product Details</a>
             </th>
