@@ -7,7 +7,7 @@
         </div>
 
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-          <a href="sitemap.php"><center class="bold">Sitemap</center></a>
+          <a href="includes/sitemap.php"><center class="bold">Sitemap</center></a>
         </div>
 
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
