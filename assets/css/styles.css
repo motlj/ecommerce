@@ -95,3 +95,7 @@ a:hover {
 .thumbnail {
     width: 15%;
 }
+
+#homepageImage {
+    width: 100%;
+}
