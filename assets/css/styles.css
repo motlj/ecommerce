@@ -23,7 +23,8 @@ h3 {
 
 /* navbar */
 .navbar-inverse {
-    border-color: #000000; /*tan*/
+    background-color: #FFFFFF;
+    border-color: #000000; /*black*/
     border-width: 4px;
 }
 

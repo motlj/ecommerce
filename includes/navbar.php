@@ -11,7 +11,6 @@
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li><a href="index.php">Home</a></li>
         <?php
         require_once 'database.php';
         $pdo = Database::connect();
