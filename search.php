@@ -50,7 +50,7 @@ require_once 'includes/database.php';
             try {
               $pdo = Database::connect();
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-              $sql = "SELECT * FROM product WHERE product_name LIKE :search";
+              $sql = "SELECT * FROM `product` WHERE `product`.`product_name` LIKE :search";
               $q = $pdo->prepare($sql);
               $q->bindValue(':search', '%' . $search . '%', PDO::PARAM_INT);
               $q->execute();
