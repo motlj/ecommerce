@@ -45,6 +45,7 @@ require_once'includes/crud.php';
 
 				$fetchCart = new cart();				
 				$products = $fetchCart->fetchCart();
+				$cost = 0;
 
 				foreach ($products as $row) {
 	                echo '<tr>';
@@ -54,6 +55,7 @@ require_once'includes/crud.php';
 	                echo '<td>' . $row['price'] . '</td>';
 	                echo '<td><input type="text" name="quantity" value="' . $row['quantity'] . '"></td>';
 	                echo '<td><input type="submit" value="Update Quantity"></td>';
+		            $cost = $cost + (($row['price']) * ($row['quantity']));
 	                echo '</form>';
 	               	echo '<form method="POST" action="deleteFromCart.php">';
 		            echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
@@ -67,7 +69,7 @@ require_once'includes/crud.php';
                 echo '<th>Tax</th>';
                 echo '</tr>';
                 echo '<tr>';
-                $cost = $cost + (($row['price']) * ($row['quantity']));
+                // $cost = $cost + (($row['price']) * ($row['quantity']));
                 echo '<td>' . $cost . '</td>';
                 $tax = ($cost * .056);
                 echo '<td>' . $tax . '</td>';
