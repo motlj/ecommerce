@@ -79,7 +79,6 @@ require_once'includes/database.php';
             </thead>
             <tbody>
               <?php
-              if($loggedin) {
                   $pdo = Database::connect();
                   $id = $_GET['id'];
                   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -102,17 +101,22 @@ require_once'includes/database.php';
                     echo '<td>Price:</td>';
                     echo '<td>'.$row['price'].'</td>';
                     echo '</tr>';
-                    echo '<tr>';
-                    echo '<form method="POST" action="addToCart.php">';
-                    echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
-                    echo '<input type="hidden" name="product_name" value="' . $row['product_name'] . '">';
-                    echo '<input type="hidden" name="description" value="' . $row['description'] . '">';
-                    echo '<input type="hidden" name="price" value="' . $row['price'] . '">';
-                    echo '<td colspan="2"><input type="submit" value="Add to Cart"></td>';
-                    echo '</form>';
-                    echo '</tr>';
+                    if($loggedin) {
+                      echo '<tr>';
+                      echo '<form method="POST" action="addToCart.php">';
+                      echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
+                      echo '<input type="hidden" name="product_name" value="' . $row['product_name'] . '">';
+                      echo '<input type="hidden" name="description" value="' . $row['description'] . '">';
+                      echo '<input type="hidden" name="price" value="' . $row['price'] . '">';
+                      echo '<td colspan="2"><input type="submit" value="Add to Cart"></td>';
+                      echo '</form>';
+                      echo '</tr>';
+                    } else {
+                      echo '<tr>';
+                      echo '<td colspan="2"><a href="loginpage.php>Login</a></td>';
+                      echo '</tr>';
+                    }
                   }
-              }
               Database::disconnect();
               ?>
             </tbody>
