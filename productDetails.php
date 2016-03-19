@@ -91,7 +91,6 @@ require_once'includes/database.php';
                 foreach ($query as $row) {
 
                     echo '<tr>';
-                    echo '<form method="POST" action="addToCart.php">';
                     echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
                     echo '<td>Product:</td>';
                     echo '<td>'.$row['product_name'].'</td>';
@@ -101,10 +100,15 @@ require_once'includes/database.php';
                     echo '<td>'.$row['description'].'</td>'; 
                     echo '</tr>';
                     echo '<tr>';
-                    echo '<td>Description:</td>';
+                    echo '<td>Price:</td>';
                     echo '<td>'.$row['price'].'</td>';
                     echo '</tr>';
                     echo '<tr>';
+                    echo '<form method="POST" action="addToCart.php">';
+                    echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
+                    echo '<input type="hidden" name="product_name" value="' . $row['product_name'] . '">';
+                    echo '<input type="hidden" name="description" value="' . $row['description'] . '">';
+                    echo '<input type="hidden" name="price" value="' . $row['price'] . '">';
                     echo '<td colspan="2"><input type="submit" value="Add to Cart"></td>';
                     echo '</form>';
                     echo '</tr>';
