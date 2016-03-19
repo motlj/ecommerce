@@ -46,17 +46,15 @@ require_once 'includes/database.php';
     
             <?php
               $search = $_POST['srch-term'];
-              echo $search;
               //$sqlSearch = '%' . $search . '%';
             try {
               $pdo = Database::connect();
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-              $sql = "SELECT * FROM `product` WHERE `product`.`product_name` LIKE :search";
+              $sql = "SELECT * FROM `product` WHERE `product`.`product_name` LIKE :search OR `product`.`description` LIKE :search";
               $q = $pdo->prepare($sql);
               $q->bindValue(':search', '%' . $search . '%');
               $q->execute();
               $products = $q->fetchAll(PDO::FETCH_ASSOC);
-              print_r($products);
             } catch (PDOException $error) {
               echo $error->getMessage();
               die();
