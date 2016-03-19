@@ -133,7 +133,7 @@ a:hover {
 }
 .thumb:hover, .thumb:hover span { 
     visibility:visible;
-    bottom:250px; left:0px; 
+    bottom:0px; left:0px; 
     z-index:1;
 }
 
