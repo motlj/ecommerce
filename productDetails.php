@@ -13,6 +13,7 @@ require_once'includes/database.php';
 	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"> <!--thumbnail popup-->
 	  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 	  <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 	  <title>Ecommerce | Product</title>
@@ -91,7 +92,6 @@ require_once'includes/database.php';
                 foreach ($query as $row) {
 
                     echo '<tr>';
-                    echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
                     echo '<td>Product:</td>';
                     echo '<td>'.$row['product_name'].'</td>';
                     echo '</tr>';
@@ -134,6 +134,12 @@ require_once'includes/database.php';
    require_once('includes/footer.php');
    Database::disconnect();
   ?>
+
+
+  <!-- attempting to make thumbnails popup-->
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src="assets/js/jquery.min.js"></script>
