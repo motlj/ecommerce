@@ -54,7 +54,7 @@ require_once'includes/database.php';
         }
 
         $sql2 = 'SELECT * FROM image WHERE product_fk = ? AND featured = 0';
-        $q2 = $pdo->prepare($sq2l);
+        $q2 = $pdo->prepare($sql2);
         $q2->execute(array($id));
         $query2 = $q2->fetchAll(PDO::FETCH_ASSOC);
 
