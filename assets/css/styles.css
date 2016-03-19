@@ -121,7 +121,6 @@ a:hover {
 #thumbwrap {
     position:relative;
     margin:75px auto;
-    width:252px; height:252px;
 }
 .thumb img { 
     border:1px solid #000;
