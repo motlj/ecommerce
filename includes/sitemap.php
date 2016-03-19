@@ -26,7 +26,7 @@ require_once('database.php');
       <br>
       <p>Categories</p> <!-- create a page that lists all categories with links to all products in said cateogry -->
       <br>
-      <p>Products</p> <!-- Create a page that lists all products and sends them to URL using GET -->
+      <a alt="Product List" title="Product List" href="../productList.php">List of Products</a>
       <br>
       <a alt="Cart" title="Cart" href="../cart.php">Cart</a>
       <br>

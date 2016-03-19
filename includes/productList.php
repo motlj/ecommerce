@@ -12,13 +12,13 @@ require_once 'includes/database.php';
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 
-    <title>J. Marie Sign & Design</title>
+    <title>J. Marie Sign & Design | Products</title>
  </head>
 
   <body>
     <div class="container">
       <div class="row">
-        <h3>List of Products</h3>
+        <h3>List of all Products</h3>
       </div>
       <div class="row">
         <table class="table table-striped table-bordered">
@@ -43,9 +43,9 @@ require_once 'includes/database.php';
               $category_id = $_GET['id'];
               $pdo = Database::connect();
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-              $sql = 'SELECT * FROM product WHERE category_fk = ?';
+              $sql = 'SELECT * FROM product';
               $q = $pdo->prepare($sql);
-              $q->execute(array($category_id));
+              $q->execute(array());
               $products = $q->fetchAll();
 
               foreach ($products as $row) {
