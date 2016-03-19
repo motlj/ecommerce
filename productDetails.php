@@ -29,7 +29,6 @@ require_once'includes/database.php';
 
     <div class="container">
       <div class="row">
-        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
           <?php
             $id = $_GET['id'];
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -41,7 +40,7 @@ require_once'includes/database.php';
             echo '<h3>' . $query['product_name'] . '</h3>';
           ?>
           
-        
+        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
           <?php
             $id = $_GET['id'];
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
