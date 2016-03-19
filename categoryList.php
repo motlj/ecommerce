@@ -46,7 +46,7 @@ require_once 'includes/database.php';
               $q->execute(array());
               $category = $q->fetchAll();
 
-              foreach ($categ0ry as $row) {
+              foreach ($category as $row) {
                 echo '<tr>';
                 echo '<form method="GET" action="categories.php">';
                 echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
