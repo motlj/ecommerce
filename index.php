@@ -35,7 +35,7 @@ require_once('includes/database.php');
       </div>
 
       <div id="banner">
-        <a href="categories.php?id=11"><img id="banner" src="assets/img/americabanner.jpg" alt="Wooden American Flag Map"></a>
+        <a href="categories.php?id=11"><img id="banner" src="assets/img/americanflagbanner.jpg" alt="Wooden American Flag Map"></a>
       </div>
       <br>
       <br>
