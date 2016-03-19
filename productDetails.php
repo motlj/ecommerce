@@ -39,34 +39,45 @@ require_once'includes/database.php';
 
             echo '<h3>' . $query['product_name'] . '</h3>';
           ?>
+
+
           
         <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
-          <?php
-            $id = $_GET['id'];
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = 'SELECT * FROM image WHERE product_fk = ? AND featured = 1';
-            $q = $pdo->prepare($sql);
-            $q->execute(array($id));
-            $query = $q->fetchAll(PDO::FETCH_ASSOC);
+          <table class="table table-striped table-bordered">  
+            <thead>
+              <?php
+                $id = $_GET['id'];
+                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $sql = 'SELECT * FROM image WHERE product_fk = ? AND featured = 1';
+                $q = $pdo->prepare($sql);
+                $q->execute(array($id));
+                $query = $q->fetchAll(PDO::FETCH_ASSOC);
 
-            foreach ($query as $image) {
-              echo '<img id="productImageSize" src="' . $image['image_link'] . '"><br>';
-            }
+                foreach ($query as $image) {
+                  echo '<tr>';
+                  echo '<th colspan="2">';
+                  echo '<img id="productImageSize" src="' . $image['image_link'] . '"><br>';
+                  echo '</th>';
+                  echo '</tr>';
+                }
+            echo '</thead>';
+            echo '<tbody>';
 
-            $sql2 = 'SELECT * FROM image WHERE product_fk = ? AND featured = 0';
-            $q2 = $pdo->prepare($sql2);
-            $q2->execute(array($id));
-            $query2 = $q2->fetchAll(PDO::FETCH_ASSOC);
+                $sql2 = 'SELECT * FROM image WHERE product_fk = ? AND featured = 0';
+                $q2 = $pdo->prepare($sql2);
+                $q2->execute(array($id));
+                $query2 = $q2->fetchAll(PDO::FETCH_ASSOC);
 
-            foreach ($query2 as $image2) {
-              echo '<img class="img-thumbnail thumbnail" src="' . $image2['image_link'] . '">';
-            }
-          ?>
-
-<!-- <a href="#myPopup" data-rel="popup" data-position-to="window">
-    <img src="skaret.jpg" alt="Skaret View" style="width:200px;"></a>
- -->
-
+                foreach ($query2 as $image2) {
+                  echo '<tr>';
+                  echo '<td>';
+                  echo '<img class="img-thumbnail thumbnail" src="' . $image2['image_link'] . '">';
+                  echo '</td>';
+                  echo '</tr>';
+                }
+              ?>
+            </tbody>
+          </table>
 
         </div>
 

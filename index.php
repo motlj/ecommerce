@@ -62,45 +62,7 @@ require_once('includes/database.php');
         </div>
       </div>
 
-
-
-    </div> <!-- /container-->
-
-    <!-- <div class="row">
-      <table id="border" class="table table-striped table-bordered">
-        <thead>
-          <tr>
-            <th>
-              <h3>Sale of the Week:</h3>
-            </th>
-            <th colspan=2>
-              <h3> Wisconsin Home - Bold </h3>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <img id="homepageImage" src="assets/img/redhome/red1.JPG">
-            </td>
-            <td>
-              <h2>$100.00</h2>
-            </td>
-            <td>
-              <p>Our signature Wisconsin Home sign. This sign is finished with a solid black background, a bold red Wisconsin and bright white lettering.</p>
-            </td>
-          </tr>
-          <tr>
-            <th colspan=3>
-              <a href="productDetails.php?id=17">Product Details</a>
-            </th>
-          </tr>
-        </tbody>
-      </table>
-      <br>
-      <br>
-      <br>
-    </div> --><!-- /.container -->
+    </div>
 
     <?php require_once('includes/footer.php');?>
 
