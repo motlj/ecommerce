@@ -32,7 +32,7 @@
 
         Database::disconnect();
         ?>
-        <li><a href="cart.php">Cart</a></li>
+        <li class="navbar-right"><a href="cart.php">Cart</a></li>
         <!-- <li><a href="productPage.php">Products</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li> -->
