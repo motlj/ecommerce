@@ -59,9 +59,15 @@ require_once'includes/database.php';
             $query2 = $q2->fetchAll(PDO::FETCH_ASSOC);
 
             foreach ($query2 as $image2) {
-              echo '<img class="img-thumbnail thumbnail" src="' . $image2['image_link'] . '">';
+              echo '<a href="#myPopup" data-rel="popup" data-position-to="window"><img class="img-thumbnail thumbnail" src="' . $image2['image_link'] . '">';
             }
           ?>
+
+<!-- <a href="#myPopup" data-rel="popup" data-position-to="window">
+    <img src="skaret.jpg" alt="Skaret View" style="width:200px;"></a>
+ -->
+
+
         </div>
 
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
