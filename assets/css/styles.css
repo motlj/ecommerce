@@ -79,7 +79,7 @@ a:hover {
 }
 
 #productImageSize {
-    width: 50%;
+    width: auto;
 }
 
 .bold {
