@@ -55,7 +55,7 @@ require_once('includes/database.php');
         <tbody>
           <tr id="tablebody">
             <td>
-              <img src="assets/img/woodwisconsinlow.png">
+              <img src="assets/img/redhome/red1.jpg">
             </td>
             <td>
               <h2>$100.00</h2>
