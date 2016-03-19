@@ -43,7 +43,7 @@ require_once'includes/crud.php';
           //$transactionID = $q->execute(array($_SESSION['id'],1));
         ?>
 
-  		  <p>Your confirmation number is <?php //echo $transactionID ?>. An email will be sent to you shortly containing this confirmation number and receipt. You will be emailed again once your purchase has shipped.</p>
+  		  <p>Your confirmation number is 5461684. An email will be sent to you shortly containing this confirmation number and receipt. You will be emailed again once your purchase has shipped.</p>
         <br>
         <a href="index.php">Return to Home Page</a>
         <br>
