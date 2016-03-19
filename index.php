@@ -35,7 +35,7 @@ require_once('includes/database.php');
       </div>
 
       <div id="banner">
-        <img id="banner" src="assets/img/americanflagbanner.jpg" alt="Wooden American Flag Map">
+        <img id="banner" alt="Hand Crafted Wooden Signs" title="Hand Crafted Wooden Signs" src="assets/img/americanflagbanner.jpg" alt="Wooden American Flag Map">
       </div>
       <br>
       <hr>
@@ -55,7 +55,7 @@ require_once('includes/database.php');
           <br>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-          <a href="categories.php?id=11"><img class="imagewidth" alt="Wooden Signs Wisconsin Home" title="Wooden Signs Wisconsin Home" src="assets/img/home.png"></a>
+          <a href="categories.php?id=11"><img class="imagewidth" alt="Wooden Signs - Wisconsin Home" title="Wooden Signs - Wisconsin Home" src="assets/img/home.png"></a>
           <br>
           <a href="categories.php?id=11"><h5 class="center">Wooden Signs</h5></a>
           <br>
