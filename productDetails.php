@@ -61,8 +61,9 @@ require_once'includes/database.php';
                   echo '</tr>';
                 }
                 echo '</thead>';
-                echo '<tbody>';
-                echo '<tr>';
+                echo '</table>';
+                //echo '<tbody>';
+                //echo '<tr>';
 
                 $sql2 = 'SELECT * FROM image WHERE product_fk = ? AND featured = 0';
                 $q2 = $pdo->prepare($sql2);
@@ -70,17 +71,17 @@ require_once'includes/database.php';
                 $query2 = $q2->fetchAll(PDO::FETCH_ASSOC);
 
                 foreach ($query2 as $image2) {
-                  echo '<td>';
+                  //echo '<td>';
                   echo '<div id="thumbwrap">';
                   echo '<a class="thumb" href="#"><img class="img-thumbnail thumbnail" src="' . $image2['image_link'] . '"><span><img src="' . $image2['image_link'] . '"></span></a>';
                   echo '</div>';
-                  echo '</td>';
+                  //echo '</td>';
                 }
-                echo '</tr>';
+                //echo '</tr>';
               ?>
-            </tbody>
+<!--             </tbody>
           </table>
-        </div>
+ -->        </div>
 
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
           <table class="table table-striped table-bordered">
