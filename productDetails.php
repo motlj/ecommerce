@@ -15,7 +15,7 @@ require_once'includes/database.php';
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 	  <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
-	  <title>Ecommerce | Product</title>
+	  <title>J. Marie Sign &amp; Design | Product</title>
  </head>
 
  <body>

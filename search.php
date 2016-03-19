@@ -120,7 +120,7 @@ require_once 'includes/database.php';
                 echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
                 echo '<td>'.$row['name'].'</td>'; 
                 echo '<td>'.$row['description'].'</td>';
-                echo '<td><input type="submit" value="More Details"></td>';
+                echo '<td><input type="submit" value="See Products"></td>';
                 echo '</form>';
                 echo '</tr>';
               }
