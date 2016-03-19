@@ -49,18 +49,7 @@
                 echo "Logout";
               echo '</a>';
             echo '</li>';
-
-/*            echo '<li>';
-            echo '<form action="update.php" method="post">';
-              echo '<input type="submit" value="Update Profile">';
-            echo '</form>';
-            echo '</li>';
-            echo '<li>';
-            echo '<form action="includes/logout.php" method="post">';
-              echo '<input type="submit" value="Logout">';
-            echo '</form>';
-            echo '</li>';
-*/          } else {
+          } else {
             echo '<li>';
               echo '<a href="loginpage.php">';
                 echo "Login";
@@ -71,21 +60,19 @@
                 echo "Register";
               echo '</a>';
             echo '</li>';
-
-/*            echo '<li>';
-            echo '<form action="loginpage.php" method="post">';
-              echo '<input type="submit" value="Login">';
-            echo '</form>';
-            echo '</li>';
-            echo '<li>';
-            echo '<form action="register.php" method="post">';
-              echo '<input type="submit" value="Register">';
-            echo '</form>';
-            echo '</li>';
-*/          }
+          }
           ?>
-        
       </ul>
+        <div class="col-sm-3 col-md-3 pull-right">
+        <form class="navbar-form" role="search">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+        </div>
+        </form>
+        </div>
     </div><!--/.nav-collapse -->
   </div>
 </nav>
