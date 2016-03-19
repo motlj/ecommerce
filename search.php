@@ -47,6 +47,7 @@ require_once 'includes/database.php';
             <?php
               $search = $_POST['search'];
               $sqlSearch = '%' . $search . '%';
+            try {
               $pdo = Database::connect();
               $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               $sql = 'SELECT * FROM product WHERE product_name LIKE ?';
@@ -55,7 +56,12 @@ require_once 'includes/database.php';
               $products = $q->fetchAll(FETCH_ASSOC);
               print_r($products);
               echo $products;
-
+            } catch (PDOException $error) {
+            echo $error->getMessage();
+              print_r($products);
+              echo $products;
+                die();
+            }
               foreach ($products as $row) {
                 echo '<tr>';
                 echo '<form method="GET" action="productDetails.php">';
