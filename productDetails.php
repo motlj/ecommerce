@@ -41,7 +41,6 @@ require_once'includes/database.php';
             echo '<h3>' . $query['product_name'] . '</h3>';
           ?>
           
-          <hr>
         
           <?php
             $id = $_GET['id'];
