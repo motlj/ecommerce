@@ -125,7 +125,7 @@ a:hover {
 .thumb img { 
     border:1px solid #000;
     margin:3px;
-    float:top;
+    float:left;
 }
 .thumb span { 
     position:absolute;
@@ -133,7 +133,7 @@ a:hover {
 }
 .thumb:hover, .thumb:hover span { 
     visibility:visible;
-    top:0; left:250px; 
+    top:250px; left:0px; 
     z-index:1;
 }
 
