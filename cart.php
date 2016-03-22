@@ -59,7 +59,6 @@ require_once'includes/crud.php';
 	                $q = $pdo->prepare($sql);
 	                $q->execute(array($row['id']));
 	                $thumbnail = $q->fetch();
-          	        Database::disconnect();
 
 	                echo '<td>';
 	                echo '<img id="tiny" src=" ' . $thumbnail['image_link'] . ' ">';
@@ -75,6 +74,7 @@ require_once'includes/crud.php';
 		            echo '</form>';
 	                echo '</tr>';
 	            }
+          	    Database::disconnect();
 	            echo '<br>';
                 echo '<tr>';
                 echo '<th>Subtotal</th>';
