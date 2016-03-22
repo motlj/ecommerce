@@ -33,8 +33,8 @@ require_once'includes/crud.php';
 	        <thead>
 	          <tr>
 	            <th>Name</th>
-	            <th>Price</th>
 	            <th>Image</th>
+	            <th>Price</th>
 	            <th>Quantity</th>
 	            <th>Action</th>
 	            <th>Action</th>
@@ -53,18 +53,18 @@ require_once'includes/crud.php';
 	                echo '<form method="POST" action="updateQuantity.php">';
 	                echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
 	                echo '<td>' . $row['product_name'] . '</td>';
-	                echo '<td>' . $row['price'] . '</td>';
                 	
                 	$pdo = Database::connect();
 	                $sql = 'SELECT image_link FROM image WHERE product_fk = ? AND featured = 1';
 	                $q = $pdo->prepare($sql);
 	                $q->execute(array($row['id']));
 	                $thumbnail = $q->fetch();
+          	        Database::disconnect();
+
 	                echo '<td>';
 	                echo '<img id="tiny" src=" ' . $thumbnail['image_link'] . ' ">';
 	                echo '</td>';
-	                Database::disconnect();
-
+	                echo '<td>' . $row['price'] . '</td>';
 	                echo '<td><input type="text" name="quantity" value="' . $row['quantity'] . '"></td>';
 	                echo '<td><input type="submit" value="Update Quantity"></td>';
 		            $cost = $cost + (($row['price']) * ($row['quantity']));
