@@ -55,10 +55,11 @@ require_once'includes/crud.php';
 	                echo '<td>' . $row['product_name'] . '</td>';
                 	
                 	$pdo = Database::connect();
-	                $sql = 'SELECT image_link FROM image WHERE product_fk = ? AND featured = 1';
-	                $q = $pdo->prepare($sql);
-	                $q->execute(array($row['id']));
-	                $thumbnail = $q->fetch();
+                    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	                $sql2 = 'SELECT image_link FROM image WHERE product_fk = ? AND featured = 1';
+	                $q2 = $pdo->prepare($sql2);
+	                $q2->execute(array($row['id']));
+	                $thumbnail = $q2->fetch();
 
 	                echo '<td>';
 	                echo '<img id="tiny" src=" ' . $thumbnail['image_link'] . ' ">';
@@ -74,7 +75,7 @@ require_once'includes/crud.php';
 		            echo '</form>';
 	                echo '</tr>';
 	            }
-          	    Database::disconnect();
+
 	            echo '<br>';
                 echo '<tr>';
                 echo '<th>Subtotal</th>';
@@ -90,8 +91,8 @@ require_once'includes/crud.php';
                 echo '<th>Total:</th>';
                 echo '<th>' . ($cost + $tax) . '</th>';
                 echo '</tr>';
-
-		      } 
+              }
+          	  Database::disconnect();		       
 	          ?>
 	         </tbody>
 	      </table>
