@@ -58,7 +58,7 @@ require_once'includes/crud.php';
                 	$pdo = Database::connect();
 	                $sql = 'SELECT image_link FROM image WHERE product_fk = ? AND featured = 1';
 	                $q = $pdo->prepare($sql);
-	                $q->execute(array($row['id']));
+	                $q->execute(array($products['id']));
 	                $thumbnail = $q->fetch();
 	                echo '<td>';
 	                echo '<img id="tiny" src=" ' . $thumbnail['image_link'] . ' ">';
