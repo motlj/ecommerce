@@ -1,6 +1,5 @@
 
   <nav class="navbar navbar-default navbar-bottom">
-    <link rel="icon" type="image/png" href="../assets/img/wisconsin.jpg">
   <div class="row">
       <div class="container">
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -17,7 +16,8 @@
       </div>
     </div>
   </nav>
-
+   
+    <link rel="icon" type="image/png" href="assets/img/wisconsin.jpg">
 
   <script src="../assets/js/jquery.min.js"></script>
   <script src="../assets/js/bootstrap.min.js"></script>
