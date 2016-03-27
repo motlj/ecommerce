@@ -17,7 +17,7 @@
     </div>
   </nav>
    
-    <link rel="icon" type="image/png" href="assets/img/wisconsin.jpg">
+    <link rel="icon" type="image/png" href="assets/img/wisco.ico">
 
   <script src="../assets/js/jquery.min.js"></script>
   <script src="../assets/js/bootstrap.min.js"></script>
