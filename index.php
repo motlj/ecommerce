@@ -66,7 +66,7 @@ require_once('includes/database.php');
 
     <?php require_once('includes/footer.php');?>
 
-  <link rel="icon" type="image/png" href="assets/img/wisconsin.JPG">
+  <link rel="shortcut icon" type="image/png" href="assets/img/wisconsin.ico">
 
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
