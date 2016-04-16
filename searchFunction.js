@@ -12,6 +12,7 @@ $(document).ready(function(){
 			data: { terms: $("#srch-term").val() },
 			success : function(results){
 				console.log(results);
+				document.write(results);
 				//return results from json file using php
 				//using post send input to search.php
 				//search.php will take the input and use pdo to fetchAll
