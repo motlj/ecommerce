@@ -11,7 +11,7 @@
 	  $q->execute();
 	  $products = $q->fetchAll(PDO::FETCH_ASSOC);
 	  $json=json_encode($products);
-	  return $json;
+	  echo $json;
 	  //echo $search;
 	} catch (PDOException $error) {
 	  echo $error->getMessage();
