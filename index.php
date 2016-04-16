@@ -36,8 +36,7 @@ require_once('includes/database.php');
         ?>
       </div>
 
-      <div class="row">
-        <div id="searchResults"></div>
+      <div id="searchResults" class="row">
       </div>
 
 
