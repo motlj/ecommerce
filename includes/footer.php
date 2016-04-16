@@ -18,6 +18,6 @@
   </nav>
    
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/jmfav.png">
-  <script src="search.js"></script>
+  <script src="searchFunction.js"></script>
   <script type="text/javascript" src="assets/js/jquery.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
