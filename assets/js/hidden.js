@@ -1,5 +1,7 @@
-$(document).ready(function(){
-    $("#srch-term").on('input', function(){
+$("#srch-term").keyup(function(){
+    if($(this).val()) {
         $("#hidden").hide();
-    });
+    } else {
+        $("#hidden").show();
+    }   
 });
