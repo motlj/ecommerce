@@ -10,8 +10,7 @@ $(document).ready(function(){
 				
 			
 				$.each($.parseJSON(results), function(key, value){
-					$('#searchResults').append('<div class="col-xs-12 col-md-12 col-lg-12"><h1>' + value.product_name + '</h1><p>' + value['description'] + '</p><h2>' + value.price + '</h2></div>');
-					console.log(value);
+					$('#searchResults').append('<div class="col-xs-12 col-md-12 col-lg-12"><h1>' + value.product_name + '</h1><p>' + value['description'] + '</p><h3>' + value.price + '</h3></div>');
 				});
 
 				//return results from json file using php
