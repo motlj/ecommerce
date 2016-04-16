@@ -2,8 +2,10 @@ $(document).ready(function(){
 	$("#srch-term").on('input', function(){			
 		$('#searchResults').html("");
 		var searchTerm = $("#searchResults").val();
+		console.log(searchTerm);
 		if (searchTerm != null && searchTerm != "") {
 			return $.ajax({
+				console.log(searchTerm);
 				type: "POST",
 				datatype : "json",
 				url: "liveSearch.php",
