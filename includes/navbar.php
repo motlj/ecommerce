@@ -60,15 +60,25 @@
           }
           ?>
       </ul>
-        <div class="col-sm-3 col-md-3 pull-right">
-        <form method="POST" name="search" class="navbar-form" role="search" action="search.php">
+        <!--<div class="col-sm-3 col-md-3 pull-right">
+         <form method="POST" name="search" class="navbar-form" role="search" action="search.php">
         <div class="input-group">
             <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
             <div class="input-group-btn">
                 <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-            </div>
+            </div> $(Selection).on(Event,handler);
+                        
+                        $.AJAX(object);
+                        $(document).ready(function name); - at the end of page
+                        url: search.php
+                        the php should echo JSON     
+                        create json file on the fly using php 
+                        google pdo to json
+                       
         </div>
-        </form>
+        </form> -->
+        <div class="col-sm-3 col-md-3 pull-right">
+          <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
         </div>
     </div><!--/.nav-collapse -->
   </div>
@@ -76,3 +86,5 @@
 <br>
 <br>
 <br>
+
+
