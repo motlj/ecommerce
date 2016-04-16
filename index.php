@@ -40,7 +40,7 @@ require_once('includes/database.php');
       </div>
 
 
-      <!-- <div id="banner">
+      <div id="banner">
         <img id="banner" alt="Hand Crafted Wooden Signs" title="Hand Crafted Wooden Signs" src="assets/img/americanflagbanner.jpg" alt="Wooden American Flag Map">
       </div>
       <br>
@@ -66,7 +66,7 @@ require_once('includes/database.php');
           <a href="categories.php?id=11"><h5 class="center">Wooden Signs</h5></a>
           <br>
         </div>
-      </div> -->
+      </div>
 
     </div>
 
