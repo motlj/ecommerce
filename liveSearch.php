@@ -5,7 +5,7 @@
 	try {
 	  $pdo = Database::connect();
 	  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	  $sql = "SELECT `product`.`product_name`, `product`.`description`, `product`.`price`, `image`.`featured` FROM `product` LEFT JOIN `image` ON (`product`.`id` = `image`.`product_fk`) WHERE `product`.`product_name` LIKE :search OR `product`.`description` LIKE :search";
+	  $sql = "SELECT `product`.`product_name`, `product`.`description`, `product`.`price`, `image`.`image_link` FROM `product` LEFT JOIN `image` ON (`product`.`id` = `image`.`product_fk`) WHERE `image`.`featured` = 1 AND `product`.`product_name` LIKE :search OR `product`.`description` LIKE :search";
 	  $q = $pdo->prepare($sql);
 	  $q->bindValue(':search', '%' . $search . '%');
 	  $q->execute();
