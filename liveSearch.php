@@ -2,7 +2,7 @@
  require_once 'includes/database.php';
  $search = $_POST['srch-term'];
 
- try {
+	try {
 	  $pdo = Database::connect();
 	  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	  $sql = "SELECT * FROM `product` WHERE `product`.`product_name` LIKE :search OR `product`.`description` LIKE :search";
@@ -17,4 +17,5 @@
 	  echo $error->getMessage();
 	  die();
 	}
+
 ?>

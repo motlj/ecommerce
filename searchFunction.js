@@ -4,7 +4,7 @@ var search = $("#srch-term").val();
 
 
 $(document).ready(function(){
-	$("#srch-term").on('input', function(){
+	$("#srch-term").on('searchInput', function(){
 		$.ajax({
 			method: "POST",
 			datatype : "json",
