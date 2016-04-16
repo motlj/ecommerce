@@ -1,10 +1,5 @@
-var searchInput = document.getElementById("srch-term").innerHTML;
-console.log(searchInput);
-var search = $("#srch-term").val();
-
-
 $(document).ready(function(){
-	$("#srch-term").on('srch-term', function(){
+	$("#srch-term").on('input', function(){
 		$.ajax({
 			method: "POST",
 			datatype : "json",
