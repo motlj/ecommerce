@@ -39,8 +39,6 @@ require_once('includes/database.php');
         } else {
           require_once ('includes/searchResults.php');
         }
-          # code...
-        }
         ?>
       </div>
 
