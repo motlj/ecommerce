@@ -33,16 +33,15 @@ require_once('includes/database.php');
           echo "Welcome Back, ";
           echo $_SESSION['name'];
         }
-
-        if (input = "") {
-          require_once ('includes/homePage.php');
-        } else {
-          require_once ('includes/searchResults.php');
-        }
         ?>
       </div>
 
-<!--       <div id="banner">
+      <div class="row">
+        <div id="searchResults"></div>
+      </div>
+
+
+      <div id="banner">
         <img id="banner" alt="Hand Crafted Wooden Signs" title="Hand Crafted Wooden Signs" src="assets/img/americanflagbanner.jpg" alt="Wooden American Flag Map">
       </div>
       <br>
@@ -69,7 +68,7 @@ require_once('includes/database.php');
           <br>
         </div>
       </div>
- -->
+
     </div>
 
     <?php require_once('includes/footer.php');?>
