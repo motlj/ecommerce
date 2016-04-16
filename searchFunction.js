@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	$("#srch-term").on('input', function(){			
 		$('#searchResults').html("");
-		var searchTerm = $("#searchResults").val();
+		var searchTerm = $("#srch-term").val();
 		console.log(searchTerm);
 		if (searchTerm != null && searchTerm != "") {
 			console.log(searchTerm);
