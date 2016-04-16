@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	$("#srch-term").on('input', function(){
 		return $.ajax({
-			method: "POST",
+			type: "POST",
 			datatype : "json",
 			url: "liveSearch.php",
 			data: { terms: $("#srch-term").val() },
