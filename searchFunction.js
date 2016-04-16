@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$.each($.parseJSON(("#srch-term")).on('input', function(){
+	$.each($.parseJSON("#srch-term")).on('input', function(){
 		return $.ajax({
 			type: "POST",
 			datatype : "json",
