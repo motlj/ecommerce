@@ -8,7 +8,7 @@ $(document).ready(function(){
 		$.ajax({
 			method: "POST",
 			datatype : "json",
-			url: 'liveSearch.php?srch-term=' + this.val,
+			url: 'liveSearch.php?srch-term=' + this.val(),
 			data: { terms: $("#srch-term").val() },
 			success : function(results){
 				console.log(results);
