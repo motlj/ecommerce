@@ -1,6 +1,6 @@
 <?php
  require_once 'includes/database.php';
- $search = $_POST['srch-term'];
+ $search = $_POST['terms'];
 
 	try {
 	  $pdo = Database::connect();
