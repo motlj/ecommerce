@@ -14,7 +14,7 @@ $(document).ready(function(){
 					//console.log(results);
 					var items = $.parseJSON(results);
 					console.log(items);
-					if (index < items.length) {
+					if (items.length > 0) {
 						$.each(items, function(key, value){
 							$('#searchResults').append('<div class="col-xs-12 col-md-12 col-lg-12"><h1>' + value.product_name + '</h1><p>' + value['description'] + '</p><h3>' + value.price + '</h3><form method="GET" action="productDetails.php"><input type="hidden" name="id" value="' + value['id'] + '"><input type="submit" value="More Details"></form><hr></div>');
 						});						
