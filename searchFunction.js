@@ -1,5 +1,6 @@
 var searchInput = document.getElementById("srch-term").innerHTML;
 console.log(searchInput);
+var search = $("#srch-term").val();
 
 
 $(document).ready(function(){
@@ -7,7 +8,7 @@ $(document).ready(function(){
 		$.ajax({
 			method: "POST",
 			datatype : "json",
-			url: 'liveSearch.php?srch-term=' + this.searchInput,
+			url: 'liveSearch.php?srch-term=' + this.search,
 			data: { terms: $("#srch-term").val() },
 			success : function(results){
 				console.log(results);
