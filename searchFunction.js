@@ -4,7 +4,7 @@ console.log(searchInput);
 
 $(document).ready(function(){
 	$("#srch-term").on('input', function(){
-		$.AJAX({
+		$.ajax({
 			method: "POST",
 			datatype : "json",
 			url: 'liveSearch.php?srch-term=' + this.val,
