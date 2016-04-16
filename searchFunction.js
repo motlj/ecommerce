@@ -8,7 +8,7 @@ $(document).ready(function(){
 			success : function(results){
 				//console.log(results);
 				
-			
+			$('#searchResults').html("");
 				$.each($.parseJSON(results), function(key, value){
 					$('#searchResults').append('<div class="col-xs-12 col-md-12 col-lg-12"><h1>' + value.product_name + '</h1><p>' + value['description'] + '</p><h3>' + value.price + '</h3></div>');
 				});
