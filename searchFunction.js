@@ -8,7 +8,7 @@ $(document).ready(function(){
 			method: "POST",
 			datatype : "json",
 			url: 'liveSearch.php?srch-term=' + this.searchInput,
-			data: { terms: $("#srch-term").searchInput() },
+			data: { terms: $("#srch-term").val() },
 			success : function(results){
 				console.log(results);
 				//return results from json file using php
