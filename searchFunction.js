@@ -1,9 +1,9 @@
 $(document).ready(function(){
 	$("#srch-term").on('input', function(){
-		$.ajax({
+		return $.ajax({
 			method: "POST",
 			datatype : "json",
-			url: 'liveSearch.php',
+			url: "liveSearch.php",
 			data: { terms: $("#srch-term").val() },
 			success : function(results){
 				console.log(results);
