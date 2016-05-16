@@ -1,8 +1,6 @@
 <?php
 require_once 'includes/session.php';
-error_reporting(E_ALL);
 require_once 'includes/database.php';
-//require_once 'includes/crud.php';
 require_once 'includes/session.php';
  
     if ( !empty($_POST)) {
@@ -115,9 +113,6 @@ require_once 'includes/session.php';
      </div>
  
      <?php require_once('includes/footer.php');?>
- 
-   <script src="assets/js/jquery.min.js"></script>
-   <script src="assets/js/bootstrap.min.js"></script>
  
   </body>
  </html>

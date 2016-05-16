@@ -133,8 +133,6 @@ require_once 'includes/session.php';
 
     <?php require_once('includes/footer.php');?>
 
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/bootstrap.min.js"></script>
 
  </body>
 </html>
