@@ -1,8 +1,6 @@
 <?php 
 require_once'includes/session.php';
 require_once'includes/database.php';
- error_reporting(E_ALL);
- Database::connect();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -314,10 +312,7 @@ require_once'includes/database.php';
 
   <?php 
    require_once('includes/footer.php');
-   Database::disconnect();
   ?>
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/bootstrap.min.js"></script>
   </body>
 </html>
 
