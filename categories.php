@@ -41,7 +41,7 @@ require_once 'includes/database.php';
             $q2->execute(array($row['id']));
             $thumbnail = $q2->fetch();
             
-            echo '<div class="row">'
+            echo '<div class="row">';
             echo '<div class="col-lg-3 col-md-3 col-sm-12><img id="tiny" src=" ' . $thumbnail['image_link'] . ' "></div>';
             echo '<div class="col-lg-9 col-md-9 col-sm-12>'
             echo '<form method="GET" action="productDetails.php">';
