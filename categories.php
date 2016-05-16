@@ -55,7 +55,7 @@ require_once 'includes/database.php';
             echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
             echo '<input type="submit" value="Add to Cart">';
             echo '</form>';
-            echo '<hr>';
+            echo '<br>';
             echo '</div>';
             echo '</div>';
           }
