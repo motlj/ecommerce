@@ -42,13 +42,12 @@ require_once 'includes/database.php';
             $thumbnail = $q2->fetch();
             
             echo '<div class="row">';
-            echo '<div class="col-lg-3 col-md-3 col-sm-12"><img id="categoryImage" src="'.$thumbnail['image_link'].'"></div>';
+            echo '<div class="col-lg-3 col-md-3 col-sm-12"><center><img id="categoryImage" src="'.$thumbnail['image_link'].'"></center></div>';
             echo '<div class="col-lg-9 col-md-9 col-sm-12>';
             echo '<form method="GET" action="productDetails.php">';
             echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
             echo '<h1>' . $row['product_name'] . '</h1>';
             echo '<p>'. $row['description'].'</p>';
-            echo '<div class="row">';
             echo '<h3>Price: $' . $row['price'] . '</h3>';
             echo '<input type="submit" value="More Details">';
             echo '</form>';
@@ -56,7 +55,6 @@ require_once 'includes/database.php';
             echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
             echo '<input type="submit" value="Add to Cart">';
             echo '</form>';
-            echo '</div>';
             echo '</div>';
             echo '</div>';
           }
@@ -73,5 +71,7 @@ require_once 'includes/database.php';
 
     <?php require_once('includes/footer.php');?>
 
+   <script src="assets/js/jquery.min.js"></script>
+   <script src="assets/js/bootstrap.min.js"></script>
   </body>
 </html>
