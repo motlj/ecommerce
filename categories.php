@@ -20,7 +20,7 @@ require_once 'includes/database.php';
       <div class="row">
         <h3>List of Products</h3>
       </div>
-          <?php 
+        <?php 
           if ($admin) {
             require_once'includes/adminNavBar.php';
           } else {
@@ -49,19 +49,17 @@ require_once 'includes/database.php';
             echo '<h1>' . $row['product_name'] . '</h1>';
             echo '<p>'. $row['description'].'</p>';
             echo '<h3>Price: $' . $row['price'] . '</h3>';
-            echo '<input type="submit" value="More Details"></td>';
+            echo '<input type="submit" value="More Details">';
             echo '</form>';
             echo '<form method="POST" action="addToCart.php">';
             echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
-            echo '<td><input type="submit" value="Add to Cart"></td>';
+            echo '<input type="submit" value="Add to Cart">';
             echo '</form>';
-            echo '</tr>';
+            echo '</div>';
+            echo '</div>';
           }
           Database::disconnect();
-          ?>
-           </tbody>
-        </table>
-      </div>
+        ?>
       <div>
         <a href="index.php">Return to Index</a>
       </div>
