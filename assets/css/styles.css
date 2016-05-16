@@ -144,3 +144,7 @@ a:hover {
 #rowHeight {
     height: 75px;
 }
+
+#categoryImage {
+    height: 100px;
+}
