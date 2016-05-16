@@ -146,5 +146,6 @@ a:hover {
 }
 
 #categoryImage {
-    height: 100px;
+    height: 150px;
+    vertical-align: center;
 }
