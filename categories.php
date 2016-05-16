@@ -20,60 +20,45 @@ require_once 'includes/database.php';
       <div class="row">
         <h3>List of Products</h3>
       </div>
-      <div class="row">
-        <table class="table table-striped table-bordered">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Image</th>
-              <th>Price</th>
-              <th>Action</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-           <tbody>
-    
-              <?php 
-              if ($admin) {
-                require_once'includes/adminNavBar.php';
-              } else {
-                require_once'includes/navbar.php';
-              }
+          <?php 
+          if ($admin) {
+            require_once'includes/adminNavBar.php';
+          } else {
+            require_once'includes/navbar.php';
+          }
 
-              $category_id = $_GET['id'];
-              $pdo = Database::connect();
-              $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-              $sql = 'SELECT * FROM product WHERE category_fk = ?';
-              $q = $pdo->prepare($sql);
-              $q->execute(array($category_id));
-              $products = $q->fetchAll();
+          $category_id = $_GET['id'];
+          $pdo = Database::connect();
+          $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+          $sql = 'SELECT * FROM product WHERE category_fk = ?';
+          $q = $pdo->prepare($sql);
+          $q->execute(array($category_id));
+          $products = $q->fetchAll();
 
-              foreach ($products as $row) {
-                echo '<tr>';
-                echo '<form method="GET" action="productDetails.php">';
-                echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
-                echo '<td>'.$row['product_name'].'</td>'; 
-
-                $sql2 = 'SELECT image_link FROM image WHERE product_fk = ? AND featured = 1';
-                $q2 = $pdo->prepare($sql2);
-                $q2->execute(array($row['id']));
-                $thumbnail = $q2->fetch();
-
-                echo '<td>';
-                echo '<img id="tiny" src=" ' . $thumbnail['image_link'] . ' ">';
-                echo '</td>';
-
-                echo '<td>'.$row['price'].'</td>';
-                echo '<td><input type="submit" value="More Details"></td>';
-                echo '</form>';
-                echo '<form method="POST" action="addToCart.php">';
-                echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
-                echo '<td><input type="submit" value="Add to Cart"></td>';
-                echo '</form>';
-                echo '</tr>';
-              }
-              Database::disconnect();
-              ?>
+          foreach ($products as $row) {
+            $sql2 = 'SELECT image_link FROM image WHERE product_fk = ? AND featured = 1';
+            $q2 = $pdo->prepare($sql2);
+            $q2->execute(array($row['id']));
+            $thumbnail = $q2->fetch();
+            
+            echo '<div class="row">'
+            echo '<div class="col-lg-3 col-md-3 col-sm-12><img id="tiny" src=" ' . $thumbnail['image_link'] . ' "></div>';
+            echo '<div class="col-lg-9 col-md-9 col-sm-12>'
+            echo '<form method="GET" action="productDetails.php">';
+            echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
+            echo '<h1>' . $row['product_name'] . '</h1>';
+            echo '<p>'. $row['description'].'</p>';
+            echo '<h3>Price: $' . $row['price'] . '</h3>';
+            echo '<input type="submit" value="More Details"></td>';
+            echo '</form>';
+            echo '<form method="POST" action="addToCart.php">';
+            echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
+            echo '<td><input type="submit" value="Add to Cart"></td>';
+            echo '</form>';
+            echo '</tr>';
+          }
+          Database::disconnect();
+          ?>
            </tbody>
         </table>
       </div>
