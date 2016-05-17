@@ -6,8 +6,7 @@ require_once('includes/database.php');
 <!DOCTYPE html>
 <html lang="en">
  <head>
-<!--     <link rel="shortcut icon" type="image/x-icon" href="assets/img/jmfav.png">
- -->    <meta charset="utf-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
@@ -40,8 +39,10 @@ require_once('includes/database.php');
       </div>
 
       <div id="hidden">
-        <div id="banner">
-          <img id="banner" alt="Hand Crafted Wooden Signs" title="Hand Crafted Wooden Signs" src="assets/img/americanflagbanner.jpg" alt="Wooden American Flag Map">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <img id="banner" alt="Hand Crafted Wooden Signs" title="Hand Crafted Wooden Signs" src="assets/img/americanflagbanner.jpg" alt="Wooden American Flag Map">
+          </div>
         </div>
         <br>
         <hr>
