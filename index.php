@@ -39,11 +39,7 @@ require_once('includes/database.php');
       </div>
 
       <div id="hidden">
-        <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <img id="banner" alt="Hand Crafted Wooden Signs" title="Hand Crafted Wooden Signs" src="assets/img/americanflagbanner.jpg" alt="Wooden American Flag Map">
-          </div>
-        </div>
+        <img id="banner" alt="Hand Crafted Wooden Signs" title="Hand Crafted Wooden Signs" src="assets/img/americanflagbanner.jpg" alt="Wooden American Flag Map">
         <br>
         <hr>
         <h2 class="center">Featured Categories</h2>
