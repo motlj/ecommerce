@@ -16,20 +16,22 @@ require_once 'includes/database.php';
  </head>
 
   <body>
+    <?php 
+      if ($admin) {
+        require_once'includes/adminNavBar.php';
+      } else {
+        require_once'includes/navbar.php';
+      }
+    ?>
+
     <div id="searchResults" class="row">
     </div>
-    <div id="hidden">
+    <div id="hidden">          
       <div class="container">
         <div class="row">
           <h3>List of Products</h3>
         </div>
-          <?php 
-            if ($admin) {
-              require_once'includes/adminNavBar.php';
-            } else {
-              require_once'includes/navbar.php';
-            }
-
+          <?php
             $category_id = $_GET['id'];
             $pdo = Database::connect();
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
