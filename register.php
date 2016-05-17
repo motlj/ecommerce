@@ -144,10 +144,10 @@
               <h4>Don't miss out on your oppotunity to have a one of a kind hand-made creation from <strong>J. Marie Sign &amp; Design</strong>. Register now to purchase somethign truly local and unique like these:</h4>
               <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6">
-                  <a href="productDetails?id=21"><img alt="Pipe Lamp" title="Pipe Lamp" id="registerImg" src="assets/img/lamp/lamp1.JPG"></a>
+                  <a href="productDetails.php?id=21"><img alt="Pipe Lamp" title="Pipe Lamp" id="registerImg" src="assets/img/lamp/lamp1.JPG"></a>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6">
-                  <a href="productDetails?id=27"><img alt="Terrarium" title="Terrarium" id="registerImg" src="assets/img/terrarium/terrarium1.JPG"></a>
+                  <a href="productDetails.php?id=27"><img alt="Terrarium" title="Terrarium" id="registerImg" src="assets/img/terrarium/terrarium1.JPG"></a>
                 </div>    
               </div>          
             </center></div>
