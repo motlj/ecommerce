@@ -43,7 +43,7 @@ require_once 'includes/database.php';
             
             echo '<div class="row">';
             echo '<div class="col-lg-3 col-md-3 col-sm-12"><center><img id="categoryImage" src="'.$thumbnail['image_link'].'"></center></div>';
-            echo '<div class="col-lg-1 col-md-1 col-sm-0>';
+            echo '<div class="col-lg-1 col-md-1 col-sm-0></div>';
             echo '<div class="col-lg-8 col-md-8 col-sm-12>';
             echo '<form method="GET" action="productDetails.php">';
             echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
