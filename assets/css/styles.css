@@ -148,3 +148,7 @@ a:hover {
 #categoryImage {
     height: 200px;
 }
+
+#categoryIndent {
+    margin-left: 20px;
+}
