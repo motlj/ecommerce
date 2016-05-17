@@ -142,7 +142,7 @@
             </div>
             <div class="col-lg-8 col-md-8 col-sm-12"><center>
               <h4>Don't miss out on your oppotunity to have a one of a kind hand-made creation from <strong>J. Marie Sign &amp; Design</strong>. Register now to purchase somethign truly local and unique such as this:</h4>
-              <div class="row">
+              <div id="registerCol" class="row">
                 <div class="col-lg-5 col-md-5 col-sm-5">
                   <a href="productDetails?id=21"><img alt="Pipe Lamp" title="Pipe Lamp" id="registerImg" src="assets/img/lamp/lamp1.JPG"></a>
                 </div>
