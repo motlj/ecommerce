@@ -155,3 +155,7 @@ input {
     border-style: solid;
     border-color: #D0C3AC;
 }
+
+#registerImg {
+    width: 100%;
+}
