@@ -52,11 +52,15 @@ require_once 'includes/database.php';
             echo '<h3>Price: $' . $row['price'] . '</h3>';
             echo '<input type="submit" value="More Details">';
             echo '</form>';
-            echo '<form method="POST" action="addToCart.php">';
-            echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
-            echo '<input type="submit" value="Add to Cart">';
-            echo '</form>';
-            echo '<br>';
+            if ($loggedin) {
+              echo '<form method="POST" action="addToCart.php">';
+              echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
+              echo '<input type="submit" value="Add to Cart">';
+              echo '</form>';
+            } else {
+              echo '"Please "<a href="loginpage.php">login</a>" to add item to cart"';
+            }
+            echo '<hr>';
             echo '</div>';
             echo '</div>';
           }
