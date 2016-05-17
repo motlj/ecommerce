@@ -149,3 +149,9 @@ a:hover {
 #categoryIndent {
     margin-left: 20px;
 }
+
+input {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #D0C3AC;
+}
