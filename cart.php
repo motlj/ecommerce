@@ -45,14 +45,14 @@ require_once'includes/crud.php';
                 $q = $pdo->prepare($sql);
                 $q->execute(array($products['id']));
                 $thumbnail = $q->fetch();
-                
+                echo $thumbnail['image_link'];
+
                 echo '<img id="cartImage" src="'. $thumbnail['image_link'] . '">';
                 echo '</center></div>';
                 echo '<div class="col-lg-1 col-md-1 col-sm-0"></div>';
           	    echo '<div class="col-lg-8 col-md-8 col-sm-12">';
-          	    echo '<h2>' . $row['product_name'] . '</h2>';
-                echo '<h3>' . $row['price'] . '</h3>';
-                echo '<input type="text" name="quantity" value="' . $row['quantity'] . '">';
+          	    echo '<h2>' . $row['product_name'] . '  -  <em>$' . $row['price'] . '</em></h2>';
+                echo '<input type="text" size="2" name="quantity" value="' . $row['quantity'] . '">&nbsp;&nbsp;';
                 echo '<input type="submit" value="Update Quantity">';
                 $cost = $cost + (($row['price']) * ($row['quantity']));
                 echo '</form>';
