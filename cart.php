@@ -37,13 +37,18 @@ require_once'includes/crud.php';
                 echo '<div class="row">';
                 echo '<form method="POST" action="updateQuantity.php">';
                 echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
+                try {
+                	$pdo = Database::connect();
+	                $sql2 = 'SELECT image_link FROM image WHERE product_fk = ? AND featured = 1';
+	                $q2 = $pdo->prepare($sql2);
+	                $q2->execute(array($row['id']));
+	                $thumbnail = $q2->fetch();
+	                echo $thumbnail['image_link'];
+	                	
+                } catch (Exception $e) {
+    				echo 'Caught exception: ',  $e->getMessage(), "\n";
+				}
                 
-                $pdo = Database::connect();
-                $sql2 = 'SELECT image_link FROM image WHERE product_fk = ? AND featured = 1';
-                $q2 = $pdo->prepare($sql2);
-                $q2->execute(array($row['id']));
-                $thumbnail = $q2->fetch();
-                echo $thumbnail['image_link'];
 
                 echo '<div class="col-lg-3 col-md-3 col-sm-12"><center><img id="cartImage" src="'. $thumbnail['image_link'] . '"></center></div>';
                 echo '<div class="col-lg-1 col-md-1 col-sm-0"></div>';
@@ -52,7 +57,9 @@ require_once'includes/crud.php';
                 echo '<input type="text" size="2" name="quantity" value="' . $row['quantity'] . '">&nbsp;&nbsp;';
                 echo '<input type="submit" value="Update Quantity">';
                 $cost = $cost + (($row['price']) * ($row['quantity']));
-                echo '</form> &nbsp;&nbsp;&nbsp;&nbsp; <form method="POST" action="deleteFromCart.php">';
+                echo '</form>'
+                echo '<br>';
+                echo '<form method="POST" action="deleteFromCart.php">';
 	            echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
 	            echo '<input type="submit" value="Remove From Cart">';
 	            echo '</form>';
