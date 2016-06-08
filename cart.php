@@ -52,7 +52,7 @@ require_once'includes/crud.php';
                 echo '<input type="text" size="2" name="quantity" value="' . $row['quantity'] . '">&nbsp;&nbsp;';
                 echo '<input type="submit" value="Update Quantity">';
                 $cost = $cost + (($row['price']) * ($row['quantity']));
-                echo '</form>'
+                echo '</form>';
                 echo '<br>';
                 echo '<form method="POST" action="deleteFromCart.php">';
 	            echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
