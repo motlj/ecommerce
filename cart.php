@@ -26,7 +26,48 @@ require_once'includes/crud.php';
 	    <div class="row">
 	      <h3>Cart</h3>
 	    </div>
-	    <div class="row">
+	    <?php
+	    if($loggedin) {
+	    	$fetchCart = new cart();				
+			$products = $fetchCart->fetchCart();
+			$cost = 0;
+
+			foreach ($products as $row) {            	
+            	$pdo = Database::connect();
+                $sql = 'SELECT image_link FROM image WHERE product_fk = ? AND featured = 1';
+                $q = $pdo->prepare($sql);
+                $q->execute(array($products['id']));
+                $thumbnail = $q->fetch();
+
+                echo '<div class="row">';
+                echo '<form method="POST" action="updateQuantity.php">';
+                echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
+                echo '<div class="col-lg-3 col-md-3 col-sm-12"><center>';
+                echo '<img id="cartImage" src="'. $thumbnail['image_link'] . '">';
+                echo '</center></div>';
+                echo '<div class="col-lg-1 col-md-1 col-sm-0"></div>';
+          	    echo '<div class="col-lg-8 col-md-8 col-sm-12">';
+          	    echo '<h2>' . $row['product_name'] . '</h2>';
+                echo '<h3>' . $row['price'] . '</h3>';
+                echo '<input type="text" name="quantity" value="' . $row['quantity'] . '">';
+                echo '<input type="submit" value="Update Quantity">';
+                $cost = $cost + (($row['price']) * ($row['quantity']));
+                echo '</form>';
+                echo '<form method="POST" action="deleteFromCart.php">';
+	            echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
+	            echo '<input type="submit" value="Remove From Cart">';
+	            echo '</form>';
+    		}
+    		echo '<br>';
+            echo '<h4>Subtotal:  ' . $cost . '</h4>';
+            $tax = ($cost * .056);            
+            echo '<h4>Tax:  ' . $tax . '</h4>';
+            echo '<h3>Total:  ' . ($cost + $tax) . '</h3>';
+    	}
+
+	    ?>
+
+<!-- 	    <div class="row">
 	      <table class="table table-striped table-bordered">
 	        <thead>
 	          <tr>
@@ -39,7 +80,7 @@ require_once'includes/crud.php';
 	          </tr>
 	        </thead>
 	         <tbody>
-	          <?php
+	          <?php  /*
 	          if($loggedin) {
 
 				$fetchCart = new cart();				
@@ -90,7 +131,7 @@ require_once'includes/crud.php';
                 echo '</tr>';
 
 		      } 
-	          ?>
+	          */?>
 	         </tbody>
 	      </table>
 	      <br>
@@ -99,7 +140,7 @@ require_once'includes/crud.php';
 
 
 	      ?>
-	    </div>
+	    </div> -->
         <div>
           <a href="checkout.php">Checkout</a>
         </div>
