@@ -37,7 +37,6 @@ require_once'includes/crud.php';
                 echo '<div class="row">';
                 echo '<form method="POST" action="updateQuantity.php">';
                 echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
-                echo '<div class="col-lg-3 col-md-3 col-sm-12"><center>';
                 
                 $pdo = Database::connect();
                 $sql2 = 'SELECT image_link FROM image WHERE product_fk = ? AND featured = 1';
@@ -46,19 +45,19 @@ require_once'includes/crud.php';
                 $thumbnail = $q2->fetch();
                 echo $thumbnail['image_link'];
 
-                echo '<img id="cartImage" src="'. $thumbnail['image_link'] . '">';
-                echo '</center></div>';
+                echo '<div class="col-lg-3 col-md-3 col-sm-12"><center><img id="cartImage" src="'. $thumbnail['image_link'] . '"></center></div>';
                 echo '<div class="col-lg-1 col-md-1 col-sm-0"></div>';
           	    echo '<div class="col-lg-8 col-md-8 col-sm-12">';
           	    echo '<h2>' . $row['product_name'] . '  -  <em>$' . $row['price'] . '</em></h2>';
                 echo '<input type="text" size="2" name="quantity" value="' . $row['quantity'] . '">&nbsp;&nbsp;';
                 echo '<input type="submit" value="Update Quantity">';
                 $cost = $cost + (($row['price']) * ($row['quantity']));
-                echo '</form>';
-                echo '<form method="POST" action="deleteFromCart.php">';
+                echo '</form> &nbsp;&nbsp;&nbsp;&nbsp; <form method="POST" action="deleteFromCart.php">';
 	            echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
 	            echo '<input type="submit" value="Remove From Cart">';
 	            echo '</form>';
+	            echo '</div>';
+	            echo '</div>';
     		}
     		echo '<br>';
             echo '<h4>Subtotal:  $' . $cost . '</h4>';
@@ -66,7 +65,7 @@ require_once'includes/crud.php';
             echo '<h4>Tax:  $' . $tax . '</h4>';
             echo '<h3>Total:  $' . ($cost + $tax) . '</h3>';
     	}
-
+    	Database::disconnect();
 	    ?>
 
 <!-- 	    <div class="row">
