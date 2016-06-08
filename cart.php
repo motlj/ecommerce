@@ -24,6 +24,7 @@ require_once'includes/crud.php';
       ?>
     <div class="container">
 	    <div class="row">
+	      <br><br><br><br>
 	      <h3>Cart</h3>
 	    </div>
 	    <?php
@@ -33,18 +34,16 @@ require_once'includes/crud.php';
 			$cost = 0;
 
 			foreach ($products as $row) {            	
-
-
                 echo '<div class="row">';
                 echo '<form method="POST" action="updateQuantity.php">';
                 echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
                 echo '<div class="col-lg-3 col-md-3 col-sm-12"><center>';
                 
                 $pdo = Database::connect();
-                $sql = 'SELECT image_link FROM image WHERE product_fk = ? AND featured = 1';
-                $q = $pdo->prepare($sql);
-                $q->execute(array($products['id']));
-                $thumbnail = $q->fetch();
+                $sql2 = 'SELECT image_link FROM image WHERE product_fk = ? AND featured = 1';
+                $q2 = $pdo->prepare($sql2);
+                $q2->execute(array($row['id']));
+                $thumbnail = $q2->fetch();
                 echo $thumbnail['image_link'];
 
                 echo '<img id="cartImage" src="'. $thumbnail['image_link'] . '">';
