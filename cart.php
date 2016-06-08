@@ -33,16 +33,19 @@ require_once'includes/crud.php';
 			$cost = 0;
 
 			foreach ($products as $row) {            	
-            	$pdo = Database::connect();
-                $sql = 'SELECT image_link FROM image WHERE product_fk = ? AND featured = 1';
-                $q = $pdo->prepare($sql);
-                $q->execute(array($products['id']));
-                $thumbnail = $q->fetch();
+
 
                 echo '<div class="row">';
                 echo '<form method="POST" action="updateQuantity.php">';
                 echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
                 echo '<div class="col-lg-3 col-md-3 col-sm-12"><center>';
+                
+                $pdo = Database::connect();
+                $sql = 'SELECT image_link FROM image WHERE product_fk = ? AND featured = 1';
+                $q = $pdo->prepare($sql);
+                $q->execute(array($products['id']));
+                $thumbnail = $q->fetch();
+                
                 echo '<img id="cartImage" src="'. $thumbnail['image_link'] . '">';
                 echo '</center></div>';
                 echo '<div class="col-lg-1 col-md-1 col-sm-0"></div>';
@@ -59,10 +62,10 @@ require_once'includes/crud.php';
 	            echo '</form>';
     		}
     		echo '<br>';
-            echo '<h4>Subtotal:  ' . $cost . '</h4>';
+            echo '<h4>Subtotal:  $' . $cost . '</h4>';
             $tax = ($cost * .056);            
-            echo '<h4>Tax:  ' . $tax . '</h4>';
-            echo '<h3>Total:  ' . ($cost + $tax) . '</h3>';
+            echo '<h4>Tax:  $' . $tax . '</h4>';
+            echo '<h3>Total:  $' . ($cost + $tax) . '</h3>';
     	}
 
 	    ?>
