@@ -37,18 +37,13 @@ require_once'includes/crud.php';
                 echo '<div class="row">';
                 echo '<form method="POST" action="updateQuantity.php">';
                 echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
-                try {
-                	$pdo = Database::connect();
-	                $sql2 = 'SELECT image_link FROM image WHERE product_fk = ? AND featured = 1';
-	                $q2 = $pdo->prepare($sql2);
-	                $q2->execute(array($row['id']));
-	                $thumbnail = $q2->fetch();
-	                echo $thumbnail['image_link'];
-	                	
-                } catch (Exception $e) {
-    				echo 'Caught exception: ',  $e->getMessage(), "\n";
-				}
                 
+                $pdo = Database::connect();
+                $sql2 = 'SELECT image_link FROM image WHERE product_fk = ? AND featured = 1';
+                $q2 = $pdo->prepare($sql2);
+                $q2->execute(array($row['id']));
+                $thumbnail = $q2->fetch();
+                echo $thumbnail['image_link'];
 
                 echo '<div class="col-lg-3 col-md-3 col-sm-12"><center><img id="cartImage" src="'. $thumbnail['image_link'] . '"></center></div>';
                 echo '<div class="col-lg-1 col-md-1 col-sm-0"></div>';
