@@ -18,15 +18,28 @@
 
     <div id="hidden">
       <div class="container">
-        <div class="starter-template">
-          <h1>Login</h1>
-          <p class="lead">Please enter username and password to login to your account.<br></p>
-        </div>
-        <div>
+        <div class="row">
+          <div class="starter-template">
+            <p class="lead">Please enter username and password to login to your account.<br></p>
+          </div>
+        </div>         
+        <div class="control-group controls">
           <form action="includes/login.php" method="post">
-            <input type="text" name="user_name" placeholder="user_name">
-            <input type="password" name="password" placeholder="password">
-            <input type="submit" value="Login">        
+            <div class="row">
+              <div class="col-lg-3 col-md-3 col-sm-12">
+                <input type="text" name="user_name" placeholder="User Name">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-3 col-md-3 col-sm-12">
+                <input type="password" name="password" placeholder="Password">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-3 col-md-3 col-sm-12">
+                <input type="submit" value="Login"> 
+              </div>
+            </div>       
           </form>
         </div>
         <div>
