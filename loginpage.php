@@ -51,7 +51,7 @@
         <br>
         <div>
           <form action="register.php" method="post">
-            <input type="submit" value="Register">
+            <input type="submit" class="btn btn-success form-actions" value="Register">
           </form>
         </div>
       </div>
