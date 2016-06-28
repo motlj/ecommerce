@@ -30,21 +30,25 @@
                 <input type="text" name="user_name" placeholder="User Name">
               </div>
             </div>
+            <br>
             <div class="row">
               <div class="col-lg-3 col-md-3 col-sm-12">
                 <input type="password" name="password" placeholder="Password">
               </div>
             </div>
+            <br>
             <div class="row">
               <div class="col-lg-3 col-md-3 col-sm-12">
-                <input type="submit" value="Login"> 
+                <input type="submit" class="btn btn-success form-actions" value="Login"> 
               </div>
             </div>       
           </form>
         </div>
+        <br>
         <div>
         	<p>If you do not have an account please click register below</p>
         </div>
+        <br>
         <div>
           <form action="register.php" method="post">
             <input type="submit" value="Register">
