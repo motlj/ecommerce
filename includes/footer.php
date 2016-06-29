@@ -1,4 +1,4 @@
-<!--
+
   <nav class="navbar navbar-default navbar-bottom">
   <div class="row">
       <div class="container">
@@ -16,7 +16,7 @@
       </div>
     </div>
   </nav>
--->
+
   <link rel="shortcut icon" type="image/x-icon" href="assets/img/jmfav.png">
    
   <script type="text/javascript" src="assets/js/jquery.min.js"></script>
