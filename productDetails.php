@@ -23,12 +23,12 @@ require_once'includes/database.php';
 	     }
       ?>
     
-    <div id="hidden">
-      <div class="container">
+    <div class="container">
         
-        <div id="searchResults" class="row">
-        </div>
+      <div id="searchResults" class="row">
+      </div>
 
+      <div id="hidden">
         <div class="row">
             <?php
               $id = $_GET['id'];

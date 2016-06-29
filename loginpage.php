@@ -13,13 +13,14 @@
   <body>
     <?php require_once('includes/navbar.php');?>
 
-    <div id="hidden">
-      <div class="container" id="login"><center>
-        <div id="searchResults" class="row">
-        </div>
-        <br>
-        <br>
-        <br>
+    <div class="container" id="login"><center>
+      <div id="searchResults" class="row">
+      </div>
+      <br>
+      <br>
+      <br>
+
+      <div id="hidden">
         <div class="row">
           <div class="col-lg-3 col-md-3 col-sm-0 col-xs-0">
           </div>
