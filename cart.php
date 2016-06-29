@@ -68,9 +68,9 @@ require_once'includes/crud.php';
 		            //echo '<p>this is the id:' . $row['id'] . '</p>';
 		            echo '<br><input type="submit" class="btn btn-danger form-actions" value="Remove From Cart">';
 		            echo '</form>';
-		            echo '</div>';
-		            echo '</div>';
 		            echo '<hr>';
+		            echo '</div>';
+		            echo '</div>';
 	    		}
 	    		echo '<br>';
 	    		echo '<center><div class="row">';
