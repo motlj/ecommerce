@@ -40,7 +40,7 @@ require_once'includes/database.php';
 
 
             
-          <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"> 
             <table>  
               <thead>
                 <?php
@@ -122,7 +122,7 @@ require_once'includes/database.php';
                         echo '</tr>';
                       } else {
                         echo '<tr>';
-                        echo '<td colspan="2"><a href="loginpage.php">Login</a></td>';
+                        echo '<td colspan="2">Please <a href="loginpage.php">Login</a> to add to cart</td>';
                         echo '</tr>';
                       }
                     }
@@ -131,6 +131,8 @@ require_once'includes/database.php';
               </tbody>
             </table>
           </div> <!-- end col-->
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+          </div>
         </div> <!-- end row-->
 
         <div>
