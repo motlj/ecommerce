@@ -80,7 +80,7 @@ require_once'includes/database.php';
           </div>
 
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <h3>Product Information</h3></th>
+            <h3>Product Information</h3>
                 <?php
                     $pdo = Database::connect();
                     $id = $_GET['id'];
@@ -98,11 +98,11 @@ require_once'includes/database.php';
                       echo '<div class="row">';
                       echo '<h5>'.$row['description'].'</h5>';
                       echo '</div>';
-                      echo 'div class="row">'; 
+                      echo '<div class="row">'; 
                       echo '<h5>$'.$row['price'].'</h5>';
                       echo '</div>';
                       if($loggedin) {
-                        echo 'div class="row">';
+                        echo '<div class="row">';
                         echo '<form method="POST" action="addToCart.php">';
                         echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
                         echo '<input type="hidden" name="product_name" value="' . $row['product_name'] . '">';
