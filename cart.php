@@ -40,11 +40,9 @@ require_once'includes/crud.php';
 				$cost = 0;
 				echo '<div class="row">';
 	            echo '<form method="POST" action="updateQuantity.php">';
-	            echo '<input type="hidden" name="id" value="' . $products['id'] . '">';
+	            echo '<input type="hidden" name="id" value="' . $products['product_fk'] . '">';
 
 				foreach ($products as $row) {
-
-	            	//echo '<div class="row">this is the product id:' . $row['product_fk'] . '</p></div>';
 
 	                $pdo = Database::connect();
 	                $sql2 = 'SELECT image_link FROM image WHERE product_fk = ? AND featured = 1';
@@ -52,7 +50,6 @@ require_once'includes/crud.php';
 	                $q2->execute(array($row['product_fk']));
 	                $thumbnail = $q2->fetch();
 
-	                //echo '<div class="row"><p>' . $thumbnail['image_link'] . '</p></div>';
 	                echo '<div class="col-lg-3 col-md-3 col-sm-12"><img id="cartImage" src="'. $thumbnail['image_link'] . '"></div>';
 
 	                echo '<div class="col-lg-1 col-md-1 col-sm-0"></div>';
