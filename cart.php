@@ -35,9 +35,10 @@ require_once'includes/crud.php';
 			echo '<div class="row">';
             echo '<form method="POST" action="updateQuantity.php">';
             echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
-            echo '<div class="row">this is the product id:' . $products['id'] . '</p></div>';
-            echo '<div class="row">this is the row id:' . $row['id'] . '</p></div>';
-			foreach ($products as $row) {            	
+
+			foreach ($products as $row) {
+			echo '<div class="row">this is the product id:' . $products['id'] . '</p></div>';
+            echo '<div class="row">this is the row id:' . $row['id'] . '</p></div>';            	
                 //echo '<div class="row">this is the id:' . $row['id'] . '</p></div>';
                 $pdo = Database::connect();
                 $sql2 = 'SELECT image_link FROM image WHERE product_fk = ? AND featured = 1';
