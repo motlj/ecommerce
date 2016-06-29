@@ -28,8 +28,9 @@ require_once'includes/crud.php';
         </div>
 	    
 	    <div class="row">
-	      <br><br><br><br>
-	      <center><h2>Your Shopping Cart</h2></center>
+	      <br><br>
+	      <center><h1>Your Shopping Cart</h1></center>
+	      <br><br><br>
 	    </div>
 	    <?php
 	    if($loggedin) {
