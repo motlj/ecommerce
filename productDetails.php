@@ -80,7 +80,6 @@ require_once'includes/database.php';
           </div>
 
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <h3>Product Information</h3>
                 <?php
                     $pdo = Database::connect();
                     $id = $_GET['id'];
@@ -93,13 +92,13 @@ require_once'includes/database.php';
                   foreach ($query as $row) {
 
                       echo '<div class="row">';
-                      echo '<h4>'.$row['product_name'].'</h4>';
+                      echo '<h2>'.$row['product_name'].'</h2>';
                       echo '</div>';
                       echo '<div class="row">';
-                      echo '<h5>'.$row['description'].'</h5>';
+                      echo '<h4>'.$row['description'].'</h4>';
                       echo '</div>';
                       echo '<div class="row">'; 
-                      echo '<h5>$'.$row['price'].'</h5>';
+                      echo '<h4>$'.$row['price'].'</h4>';
                       echo '</div>';
                       if($loggedin) {
                         echo '<div class="row">';
@@ -110,6 +109,7 @@ require_once'includes/database.php';
                         echo '<input type="hidden" name="price" value="' . $row['price'] . '">';
                         echo '<input type="submit" class="btn btn-success form-actions" value="Add to Cart">';
                         echo '</form>';
+                        echo '</div>';
                       } else {
                         echo '<div class="row">';
                         echo '<p>Please <a href="loginpage.php">Login</a> to add to cart</p>';
