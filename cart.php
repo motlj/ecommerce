@@ -22,14 +22,14 @@ require_once'includes/crud.php';
 	       require_once'includes/navbar.php';
 	     }
       ?>
-    <div class="container">
+    <div class="container"><center>
     	
     	<div id="searchResults" class="row">
         </div>
 	    
 	    <div class="row">
 	      <br><br><br><br>
-	      <h3>Cart</h3>
+	      <center><h2>Your Shopping Cart</h2></center>
 	    </div>
 	    <?php
 	    if($loggedin) {
@@ -68,6 +68,7 @@ require_once'includes/crud.php';
 	            echo '</form>';
 	            echo '</div>';
 	            echo '</div>';
+	            echo '<hr>';
     		}
     		echo '<br>';
             echo '<h4>Subtotal:  $' . $cost . '</h4>';
@@ -168,7 +169,7 @@ require_once'includes/crud.php';
         <br>
         <br>
         <br>
-    </div> <!-- /container -->
+    </center></div> <!-- /container -->
 
   <?php 
    require_once('includes/footer.php');
