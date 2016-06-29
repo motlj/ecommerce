@@ -70,7 +70,7 @@ require_once'includes/crud.php';
 		            echo '</form>';
 		            echo '</div>';
 		            echo '</div>';
-		            echo '<hr>';
+		            echo '<br><hr><br>';
 	    		}
 	    		echo '<br>';
 	    		echo '<div class="row">';
