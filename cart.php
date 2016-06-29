@@ -40,7 +40,7 @@ require_once'includes/crud.php';
 				$cost = 0;
 				echo '<div class="row">';
 	            echo '<form method="POST" action="updateQuantity.php">';
-	            echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
+	            echo '<input type="hidden" name="id" value="' . $products['id'] . '">';
 
 				foreach ($products as $row) {
 
@@ -60,7 +60,7 @@ require_once'includes/crud.php';
 
 	          	    echo '<h2>' . $row['product_name'] . '  -  <em>$' . $row['price'] . '</em></h2>';
 	                echo '<input type="text" size="2" name="quantity" value="' . $row['quantity'] . '">&nbsp;&nbsp;';
-	                echo '<input type="submit" class="btn btn-success form-actions" value="Update Quantity">';
+	                echo '<input type="submit" class="btn btn-primary form-actions" value="Update Quantity">';
 	                $cost = $cost + (($row['price']) * ($row['quantity']));
 	                echo '</form><br>';
 	                echo '<form method="POST" action="deleteFromCart.php">';
