@@ -14,7 +14,7 @@ require_once'includes/crud.php';
 	  <title>J. Marie Sign &amp; Design | Cart</title>
  </head>
 
- <body>
+ <body><center>
 	  <?php 
 	     if ($admin) {
 	       require_once'includes/adminNavBar.php';
@@ -22,7 +22,7 @@ require_once'includes/crud.php';
 	       require_once'includes/navbar.php';
 	     }
       ?>
-    <div class="container"><center>
+    <div class="container">
     	
     	<div id="searchResults" class="row">
         </div>
@@ -30,7 +30,7 @@ require_once'includes/crud.php';
 	    <div id="hidden">
 		    <div class="row">
 		      <br><br>
-		      <center><h1>Your Shopping Cart</h1></center>
+		      <h1>Your Shopping Cart</h1>
 		      <br><hr><br>
 		    </div>
 		    <?php
@@ -53,7 +53,7 @@ require_once'includes/crud.php';
 	                $thumbnail = $q2->fetch();
 
 	                //echo '<div class="row"><p>' . $thumbnail['image_link'] . '</p></div>';
-	                echo '<div class="col-lg-3 col-md-3 col-sm-12"><center><img id="cartImage" src="'. $thumbnail['image_link'] . '"></center></div>';
+	                echo '<div class="col-lg-3 col-md-3 col-sm-12"><img id="cartImage" src="'. $thumbnail['image_link'] . '"></div>';
 
 	                echo '<div class="col-lg-1 col-md-1 col-sm-0"></div>';
 	          	    echo '<div class="col-lg-8 col-md-8 col-sm-12">';
@@ -69,11 +69,11 @@ require_once'includes/crud.php';
 		            echo '<br><input type="submit" class="btn btn-danger form-actions" value="Remove From Cart">';
 		            echo '</form>';
 		            echo '</div>';
-		            echo '<hr>';
 		            echo '</div>';
+		            echo '<hr>';
 	    		}
 	    		echo '<br>';
-	    		echo '<center><div class="row">';
+	    		echo '<div class="row">';
 	            echo '<h4>Subtotal:  $' . $cost . '</h4>';
 	            echo '</div>';
 	            $tax = ($cost * .056);   
@@ -90,16 +90,16 @@ require_once'includes/crud.php';
 	    	Database::disconnect();
 		    ?>
 
-	        <div><center>
+	        <div>
 	        	<form method="POST" action="checkout.php">
 	        		<input type="submit" class="btn btn-success form-actions" value="Checkout">
 	        	</form>
 	          <!-- <a href="checkout.php">Checkout</a> -->
-	        <center></div>
+	        </div>
 	        <br>
 	        <br>
 
-	        <div><center>
+	        <div>
 	          <a href="index.php">Return to Index</a>
 	        </div>
 	        <br>
@@ -107,10 +107,10 @@ require_once'includes/crud.php';
 	        <br>
 	        <br>
 	    </div>
-    </center></div> <!-- /container -->
+	</div> <!-- /container -->
 
   <?php 
    require_once('includes/footer.php');
   ?>
-  </body>
+  </center></body>
 </html>
