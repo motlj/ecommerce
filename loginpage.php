@@ -18,6 +18,9 @@
 
     <div id="hidden">
       <div class="container" id="login"><center>
+        <br>
+        <br>
+        <br>
         <div class="row">
           <div class="col-lg-3 col-md-3 col-sm-0 col-xs-0">
           </div>
@@ -29,19 +32,19 @@
           <div class="control-group controls">
             <form action="includes/login.php" method="post">
               <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="col-lg-12 col-md-12 col-sm-12">
                   <input type="text" name="user_name" placeholder="User Name">
                 </div>
               </div>
               <br>
               <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="col-lg-12 col-md-12 col-sm-12">
                   <input type="password" name="password" placeholder="Password">
                 </div>
               </div>
               <br>
               <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="col-lg-12 col-md-12 col-sm-12">
                   <input type="submit" class="btn btn-success form-actions" value="Login"> 
                 </div>
               </div>       
@@ -60,7 +63,7 @@
           <div class="col-lg-3 col-md-3 col-sm-0 col-xs-0">
           </div>
         </div>
-      </center></div>
+      <br><br><br></center></div>
     </div>
 
     <?php require_once('includes/footer.php');?>
