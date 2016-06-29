@@ -80,13 +80,7 @@ require_once'includes/database.php';
           </div>
 
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <table class="table table-striped table-bordered">
-              <thead>
-                <tr>
-                  <th colspan="2"><h3>Product Information</h3></th>
-                </tr>
-              </thead>
-              <tbody>
+            <h3>Product Information</h3></th>
                 <?php
                     $pdo = Database::connect();
                     $id = $_GET['id'];
@@ -98,38 +92,32 @@ require_once'includes/database.php';
 
                   foreach ($query as $row) {
 
-                      echo '<tr>';
-                      echo '<td><strong>Product:</strong></td>';
-                      echo '<td><h4>'.$row['product_name'].'</h4></td>';
-                      echo '</tr>';
-                      echo '<tr>';
-                      echo '<td><strong>Description:</strong></td>';
-                      echo '<td>'.$row['description'].'</td>'; 
-                      echo '</tr>';
-                      echo '<tr>';
-                      echo '<td><strong>Price:</strong></td>';
-                      echo '<td>$'.$row['price'].'</td>';
-                      echo '</tr>';
+                      echo '<div class="row">';
+                      echo '<h4>'.$row['product_name'].'</h4>';
+                      echo '</div>';
+                      echo '<div class="row">';
+                      echo '<h5>'.$row['description'].'</h5>';
+                      echo '</div>';
+                      echo 'div class="row">'; 
+                      echo '<h5>$'.$row['price'].'</h5>';
+                      echo '</div>';
                       if($loggedin) {
-                        echo '<tr>';
+                        echo 'div class="row">';
                         echo '<form method="POST" action="addToCart.php">';
                         echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
                         echo '<input type="hidden" name="product_name" value="' . $row['product_name'] . '">';
                         echo '<input type="hidden" name="description" value="' . $row['description'] . '">';
                         echo '<input type="hidden" name="price" value="' . $row['price'] . '">';
-                        echo '<td colspan="2"><input type="submit" value="Add to Cart"></td>';
+                        echo '<input type="submit" class="btn btn-success form-actions" value="Add to Cart">';
                         echo '</form>';
-                        echo '</tr>';
                       } else {
-                        echo '<tr>';
-                        echo '<td colspan="2">Please <a href="loginpage.php">Login</a> to add to cart</td>';
-                        echo '</tr>';
+                        echo '<div class="row">';
+                        echo '<p>Please <a href="loginpage.php">Login</a> to add to cart</p>';
+                        echo '</div>';
                       }
                     }
                 Database::disconnect();
                 ?>
-              </tbody>
-            </table>
           </div> <!-- end col-->
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
           </div>
