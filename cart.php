@@ -60,7 +60,7 @@ require_once'includes/crud.php';
                 echo '<form method="POST" action="deleteFromCart.php">';
 	            echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
 	            //echo '<p>this is the id:' . $row['id'] . '</p>';
-	            echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" class="btn btn-success form-actions" value="Remove From Cart">';
+	            echo '<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" class="btn btn-success form-actions" value="Remove From Cart">';
 	            echo '</form>';
 	            echo '</div>';
 	            echo '</div>';
