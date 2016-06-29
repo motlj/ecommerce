@@ -94,9 +94,11 @@ require_once'includes/database.php';
                       echo '<div class="row">';
                       echo '<h2>'.$row['product_name'].'</h2>';
                       echo '</div>';
+                      echo '<hr>';
                       echo '<div class="row">';
                       echo '<h4>'.$row['description'].'</h4>';
                       echo '</div>';
+                      echo '<hr>';
                       echo '<div class="row">'; 
                       echo '<h4>$'.$row['price'].'</h4>';
                       echo '</div>';
@@ -122,7 +124,8 @@ require_once'includes/database.php';
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
           </div>
         </div> <!-- end row-->
-
+        <br>
+        <br>
         <div>
           <a href="index.php">Return to Homepage</a>
         </div>
