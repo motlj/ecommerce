@@ -49,10 +49,9 @@ require_once'includes/crud.php';
 	                $q2 = $pdo->prepare($sql2);
 	                $q2->execute(array($row['product_fk']));
 	                $thumbnail = $q2->fetch();
-
-	                echo '<div class="col-lg-3 col-md-3 col-sm-12"><img id="cartImage" src="'. $thumbnail['image_link'] . '"></div>';
-
+	                
 	                echo '<div class="col-lg-1 col-md-1 col-sm-0"></div>';
+	                echo '<div class="col-lg-3 col-md-3 col-sm-12"><img id="cartImage" src="'. $thumbnail['image_link'] . '"></div>';
 	          	    echo '<div class="col-lg-8 col-md-8 col-sm-12">';
 
 	          	    echo '<h2>' . $row['product_name'] . '  -  <em>$' . $row['price'] . '</em></h2>';

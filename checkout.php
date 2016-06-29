@@ -39,6 +39,9 @@ require_once'includes/crud.php';
 					    
 					    echo '<form method="POST" action="placeOrderFunction.php">';
 					    echo '<input type="hidden" name="id" value="' . $cust['id'] . '">';
+					    echo '<input type="hidden" name="id" value="' . $cust['name'] . '">';
+					    echo '<input type="hidden" name="id" value="' . $cust['last_name'] . '">';
+					    echo '<input type="hidden" name="id" value="' . $cust['email_address'] . '">';
 					    echo ''.$cust['name'].'';
 					    echo '&nbsp;'; 
 					    echo ''.$cust['last_name'].'';
