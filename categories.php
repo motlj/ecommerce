@@ -53,11 +53,8 @@ require_once 'includes/database.php';
               echo '<form method="GET" action="productDetails.php">';
               echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
               echo '<h1>' . $row['product_name'] . '</h1>';
-              echo '<hr>';
               echo '<p>'. $row['description'].'</p>';
-              echo '<hr>';
               echo '<h3>Price: $' . $row['price'] . '</h3>';
-              echo '<hr>';
               echo '<input type="submit" class="btn btn-success form-actions" value="More Details">';
               echo '</form>';
               echo '<br>';
@@ -71,6 +68,7 @@ require_once 'includes/database.php';
               }
               echo '</div>';
               echo '</div>';
+              echo '<hr>';
             }
             Database::disconnect();
           ?>
