@@ -23,13 +23,13 @@ require_once 'includes/database.php';
         require_once'includes/navbar.php';
       }
     ?>
+      
+    <div class="container">
 
-    <div id="hidden">          
-      <div class="container">
+      <div id="searchResults" class="row">
+      </div>
 
-        <div id="searchResults" class="row">
-        </div>
-
+      <div id="hidden">
         <div class="row">
           <h3>List of Products</h3>
         </div>
