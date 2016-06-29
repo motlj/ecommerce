@@ -64,105 +64,40 @@ require_once'includes/crud.php';
                 echo '<form method="POST" action="deleteFromCart.php">';
 	            echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
 	            //echo '<p>this is the id:' . $row['id'] . '</p>';
-	            echo '<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" class="btn btn-success form-actions" value="Remove From Cart">';
+	            echo '<br><input type="submit" class="btn btn-danger form-actions" value="Remove From Cart">';
 	            echo '</form>';
 	            echo '</div>';
 	            echo '</div>';
 	            echo '<hr>';
     		}
     		echo '<br>';
+    		echo '<center><div class="row">';
             echo '<h4>Subtotal:  $' . $cost . '</h4>';
+            echo '</div>';
             $tax = ($cost * .056);   
             $roundedTax = number_format((float)$tax,2, '.', '');         
+            echo '<div class="row">';
             echo '<h4>Tax:  $' . $roundedTax . '</h4>';
+            echo '</div>';
             $total = $roundedTax + $cost;
             $roundedTotal = number_format((float)$total,2, '.', '');
+            echo '<div class="row">';
             echo '<h3>Total:  $' . $roundedTotal . '</h3>';
+            echo '</div>';
     	}
     	Database::disconnect();
 	    ?>
 
-<!-- 	    <div class="row">
-	      <table class="table table-striped table-bordered">
-	        <thead>
-	          <tr>
-	            <th>Name</th>
-	            <th>Price</th>
-	            <th>Image</th>
-	            <th>Quantity</th>
-	            <th>Action</th>
-	            <th>Action</th>
-	          </tr>
-	        </thead>
-	         <tbody>
-	          <?php  /*
-	          if($loggedin) {
-
-				$fetchCart = new cart();				
-				$products = $fetchCart->fetchCart();
-				$cost = 0;
-
-				foreach ($products as $row) {
-	                echo '<tr>';
-	                echo '<form method="POST" action="updateQuantity.php">';
-	                echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
-	                echo '<td>' . $row['product_name'] . '</td>';
-	                echo '<td>' . $row['price'] . '</td>';
-                	
-                	$pdo = Database::connect();
-	                $sql = 'SELECT image_link FROM image WHERE product_fk = ? AND featured = 1';
-	                $q = $pdo->prepare($sql);
-	                $q->execute(array($products['id']));
-	                $thumbnail = $q->fetch();
-	                echo '<td>';
-	                echo '<img id="tiny" src=" ' . $thumbnail['image_link'] . ' ">';
-	                echo '</td>';
-	                Database::disconnect();
-
-	                echo '<td><input type="text" name="quantity" value="' . $row['quantity'] . '"></td>';
-	                echo '<td><input type="submit" value="Update Quantity"></td>';
-		            $cost = $cost + (($row['price']) * ($row['quantity']));
-	                echo '</form>';
-	               	echo '<form method="POST" action="deleteFromCart.php">';
-		            echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
-		            echo '<td><input type="submit" value="Remove From Cart"></td>';
-		            echo '</form>';
-	                echo '</tr>';
-	            }
-	            echo '<br>';
-                echo '<tr>';
-                echo '<th>Subtotal</th>';
-                echo '<th>Tax</th>';
-                echo '</tr>';
-                echo '<tr>';
-                echo '<td>' . $cost . '</td>';
-                $tax = ($cost * .056);
-                echo '<td>' . $tax . '</td>';
-                echo '</tr>';
-                echo '<br>';
-                echo '<tr>';
-                echo '<th>Total:</th>';
-                echo '<th>' . ($cost + $tax) . '</th>';
-                echo '</tr>';
-
-		      } 
-	          */?>
-	         </tbody>
-	      </table>
-	      <br>
-	      <?php
-
-
-
-	      ?>
-	    </div> -->
-        <div>
-          <a href="checkout.php">Checkout</a>
-        </div>
+        <div><center>
+        	<form method="POST" action="checkout.php">
+        		<input type="submit" class="btn btn-success form-actions" value="Checkout">
+        	</form>
+          <!-- <a href="checkout.php">Checkout</a> -->
+        <center></div>
         <br>
         <br>
 
-        <div>
+        <div><center>
           <a href="index.php">Return to Index</a>
         </div>
         <br>
