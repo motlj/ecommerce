@@ -1,16 +1,13 @@
   <div class="row">
-    <div class="container">
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-        <center class="bold">&reg;2016</center>
-      </div>
+    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+      <a href="includes/sitemap.php"><center class="bold">Sitemap</center></a>
+    </div>
 
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-        <a href="includes/sitemap.php"><center class="bold">Sitemap</center></a>
-      </div>
+    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+      <center class="bold">&copy;Josh Motl 2016</center>
+    </div>
 
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-        <center class="bold">&copy;Josh Motl 2016</center>
-      </div>
+    <div class="col-lg-8 col-md-8 col-sm-0 col-xs-0">
     </div>
   </div>
 
