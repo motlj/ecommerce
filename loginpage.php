@@ -13,11 +13,10 @@
   <body>
     <?php require_once('includes/navbar.php');?>
 
-    <div id="searchResults" class="row">
-    </div>
-
     <div id="hidden">
       <div class="container" id="login"><center>
+        <div id="searchResults" class="row">
+        </div>
         <br>
         <br>
         <br>

@@ -51,11 +51,12 @@
       }
     ?>
 
-    <div id="searchResults" class="row">
-    </div>
-
     <div id="hidden">
       <div class="container">
+        
+        <div id="searchResults" class="row">
+        </div>
+        
         <div class="span10 offset1">
           <div class="row">
             <h3>Please fill out all fields to register.</h3>

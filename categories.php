@@ -24,10 +24,12 @@ require_once 'includes/database.php';
       }
     ?>
 
-    <div id="searchResults" class="row">
-    </div>
     <div id="hidden">          
       <div class="container">
+
+        <div id="searchResults" class="row">
+        </div>
+
         <div class="row">
           <h3>List of Products</h3>
         </div>

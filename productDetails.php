@@ -22,10 +22,13 @@ require_once'includes/database.php';
 	       require_once'includes/navbar.php';
 	     }
       ?>
-    <div id="searchResults" class="row">
-    </div>
+    
     <div id="hidden">
       <div class="container">
+        
+        <div id="searchResults" class="row">
+        </div>
+
         <div class="row">
             <?php
               $id = $_GET['id'];

@@ -23,6 +23,10 @@ require_once'includes/crud.php';
 	     }
       ?>
     <div class="container">
+    	
+    	<div id="searchResults" class="row">
+        </div>
+	    
 	    <div class="row">
 	      <br><br><br><br>
 	      <h3>Cart</h3>

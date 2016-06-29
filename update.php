@@ -27,6 +27,10 @@ require_once 'includes/crud.php';
   ?>
 
   <div class="container">
+
+    <div id="searchResults" class="row">
+    </div>
+    
     <div class="row">
       <h3>Update User Information</h3>
     </div>
