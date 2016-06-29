@@ -83,7 +83,7 @@ require_once'includes/database.php';
             <table class="table table-striped table-bordered">
               <thead>
                 <tr>
-                  <th colspan="2">Product Information</th>
+                  <th colspan="2"><h3>Product Information</h3></th>
                 </tr>
               </thead>
               <tbody>
@@ -99,16 +99,16 @@ require_once'includes/database.php';
                   foreach ($query as $row) {
 
                       echo '<tr>';
-                      echo '<td>Product:</td>';
-                      echo '<td>'.$row['product_name'].'</td>';
+                      echo '<td><strong>Product:</strong></td>';
+                      echo '<td><h4>'.$row['product_name'].'</h4></td>';
                       echo '</tr>';
                       echo '<tr>';
-                      echo '<td>Description:</td>';
+                      echo '<td><strong>Description:</strong></td>';
                       echo '<td>'.$row['description'].'</td>'; 
                       echo '</tr>';
                       echo '<tr>';
-                      echo '<td>Price:</td>';
-                      echo '<td>'.$row['price'].'</td>';
+                      echo '<td><strong>Price:</strong></td>';
+                      echo '<td>$'.$row['price'].'</td>';
                       echo '</tr>';
                       if($loggedin) {
                         echo '<tr>';
