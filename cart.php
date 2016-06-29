@@ -38,7 +38,7 @@ require_once'includes/crud.php';
 
 			foreach ($products as $row) {
 
-            	echo '<div class="row">this is the product id:' . $item['id'] . '</p></div>';
+            	echo '<div class="row">this is the product id:' . $row['product_fk'] . '</p></div>';
 
                 $pdo = Database::connect();
                 $sql2 = 'SELECT image_link FROM image WHERE product_fk = ? AND featured = 1';
