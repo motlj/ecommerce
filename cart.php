@@ -38,15 +38,15 @@ require_once'includes/crud.php';
 
 			foreach ($products as $row) {
 
-            	echo '<div class="row">this is the product id:' . $row['product_fk'] . '</p></div>';
+            	//echo '<div class="row">this is the product id:' . $row['product_fk'] . '</p></div>';
 
                 $pdo = Database::connect();
                 $sql2 = 'SELECT image_link FROM image WHERE product_fk = ? AND featured = 1';
                 $q2 = $pdo->prepare($sql2);
-                $q2->execute(array($row['id']));
+                $q2->execute(array($row['product_fk']));
                 $thumbnail = $q2->fetch();
 
-                echo '<div class="row"><p>' . $thumbnail['image_link'] . '</p></div>';
+                //echo '<div class="row"><p>' . $thumbnail['image_link'] . '</p></div>';
                 echo '<div class="col-lg-3 col-md-3 col-sm-12"><center><img id="cartImage" src="'. $thumbnail['image_link'] . '"></center></div>';
 
                 echo '<div class="col-lg-1 col-md-1 col-sm-0"></div>';
@@ -59,7 +59,7 @@ require_once'includes/crud.php';
                 echo '</form>&nbsp;';
                 echo '&nbsp;<form method="POST" action="deleteFromCart.php">';
 	            echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
-	            echo '<p>this is the id:' . $row['id'] . '</p>';
+	            //echo '<p>this is the id:' . $row['id'] . '</p>';
 	            echo '<input type="submit" class="btn btn-success form-actions" value="Remove From Cart">';
 	            echo '</form>';
 	            echo '</div>';
