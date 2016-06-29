@@ -68,10 +68,11 @@ require_once'includes/crud.php';
     		echo '<br>';
             echo '<h4>Subtotal:  $' . $cost . '</h4>';
             $tax = ($cost * .056);   
-            $tax = round($tax,2);         
-            echo '<h4>Tax:  $' . $tax . '</h4>';
-            $total = $tax + $cost;
-            echo '<h3>Total:  $' . $total . '</h3>';
+            $roundedTax = number_format((float),$tax,2, '.', '');         
+            echo '<h4>Tax:  $' . $roundedTax . '</h4>';
+            $total = $roundedTax + $cost;
+            $roundedTotal = number_format((float),$total,2, '.', '');
+            echo '<h3>Total:  $' . $roundedTotal . '</h3>';
     	}
     	Database::disconnect();
 	    ?>
