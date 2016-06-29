@@ -5,7 +5,7 @@
 	try {
 	  $pdo = Database::connect();
 	  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	  $sql = "SELECT * FROM `product` WHERE `product`.`product_name` LIKE :search OR `product`.`description` LIKE :search";
+	  $sql = "SELECT `product`.*, `image`.* FROM `product` INNER JOIN `image` ON `product`.`id`=`image`.`product_fk` WHERE `image`.`featured` = 1 AND (`product`.`product_name` LIKE :search OR `product`.`description` LIKE :search)";
 	  $q = $pdo->prepare($sql);
 	  $q->bindValue(':search', '%' . $search . '%');
 	  $q->execute();
