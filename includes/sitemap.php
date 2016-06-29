@@ -11,10 +11,13 @@
  </head>
  <body>
 
-    <div class="container">
+    <div class="container"><h4>
+      <br>
+      <br>
       <a alt="Homepage" title="Homepage" href="../index.php">Homepage</a>
       <br>
       <a alt="Register Account" title="Register Account" href="../register.php">Registration</a>
+      <br>
       <a alt="Login Page" title="Login Page" href="../loginpage.php">Login Page</a>
       <br>
       <a alt="Update User Information" title="Update User Information" href="../update.php">Update User Information</a>
@@ -25,7 +28,7 @@
       <br>
       <a alt="Cart" title="Cart" href="../cart.php">Cart</a>
       <br>
-    </div><!-- /.container -->
+    </h4></div><!-- /.container -->
 
   </body>
 </html>
