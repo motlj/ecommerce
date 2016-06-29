@@ -40,7 +40,7 @@ require_once'includes/crud.php';
 				$cost = 0;
 				echo '<div class="row">';
 	            echo '<form method="POST" action="updateQuantity.php">';
-	            echo '<input type="hidden" name="id" value="' . $products['product_fk'] . '">';
+	            echo '<input type="hidden" name="id" value="' . $products['id'] . '">';
 
 				foreach ($products as $row) {
 
